@@ -1,0 +1,7 @@
+{
+  "status": "INDEPENDENT_NUMPY_RECOUNT_PASS",
+  "comparisons": 8,
+  "max_absolute_error": 1.1102230246251565e-16,
+  "same_matrices_and_box_relaxation": true,
+  "not_a_confidence_interval_or_semantic_ground_truth": true
+}

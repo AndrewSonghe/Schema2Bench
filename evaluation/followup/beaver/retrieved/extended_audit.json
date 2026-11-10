@@ -1,0 +1,6 @@
+{
+  "status": "EXTENDED_NUMPY_RECOUNT_PASS",
+  "checks": 57,
+  "max_absolute_error": 0.0,
+  "scope": "same fixed scores, independent arithmetic; uncertainty remains outer bounds"
+}

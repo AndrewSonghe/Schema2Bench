@@ -1,0 +1,282 @@
+{
+  "status": "UNEQUAL_THREE_DB_FIXED_DENOMINATOR_ANALYSIS_COMPLETE",
+  "domains": {
+    "dw": 250,
+    "csail_stata_nova": 198,
+    "csail_stata_neutron": 24
+  },
+  "reference_counts": {
+    "dw": 121,
+    "csail_stata_nova": 43,
+    "csail_stata_neutron": 30
+  },
+  "models": [
+    "qwen3_4b",
+    "granite3p3_8b",
+    "qwen25coder_7b",
+    "qwen25_7b",
+    "llama31_8b",
+    "mistral7b",
+    "qwen25_14b",
+    "qwen3_8b",
+    "gemma2_9b",
+    "phi4"
+  ],
+  "results": {
+    "base": {
+      "tables": {
+        "template": {
+          "gap_domain_macro": [
+            0.0480244548689463,
+            0.3869014098387366
+          ],
+          "tef_original_pooling": [
+            0.18250019156482947,
+            0.3555504461585174
+          ],
+          "score_unknown": 10
+        },
+        "refill": {
+          "gap_domain_macro": [
+            0.030679012345679015,
+            0.3513083301893732
+          ],
+          "tef_original_pooling": [
+            0.08434061468739835,
+            0.28300542723162336
+          ],
+          "score_unknown": 84
+        },
+        "ring": {
+          "gap_domain_macro": [
+            0.022957829805375016,
+            0.3074457744780037
+          ],
+          "tef_original_pooling": [
+            0.07647717209296066,
+            0.2538952933146559
+          ],
+          "score_unknown": 11
+        }
+      },
+      "direct": {
+        "template": {
+          "gap_refill_minus": [
+            -0.08388432472876918,
+            0.04926195918941984
+          ],
+          "tef_refill_minus": [
+            -0.14270171911991128,
+            -0.02851919536036838
+          ]
+        },
+        "ring": {
+          "gap_refill_minus": [
+            -0.05156986227477182,
+            0.06463292181069959
+          ],
+          "tef_refill_minus": [
+            -0.1306017627921558,
+            0.16897464114988767
+          ]
+        }
+      },
+      "per_domain": {
+        "template": {
+          "dw": {
+            "gap_refill_minus": [
+              -0.09413333333333333,
+              0.09273902662993572
+            ],
+            "tef_refill_minus": [
+              -0.07491803074480505,
+              0.027386299761844292
+            ]
+          },
+          "csail_stata_nova": {
+            "gap_refill_minus": [
+              -0.11863075196408532,
+              0.08504685093832381
+            ],
+            "tef_refill_minus": [
+              -0.21341906058218116,
+              -0.06350538780194591
+            ]
+          },
+          "csail_stata_neutron": {
+            "gap_refill_minus": [
+              -0.03888888888888889,
+              -0.030000000000000002
+            ],
+            "tef_refill_minus": [
+              -0.11875138029470769,
+              -0.055579848950411875
+            ]
+          }
+        },
+        "ring": {
+          "dw": {
+            "gap_refill_minus": [
+              -0.09235555555555552,
+              0.09235555555555552
+            ],
+            "tef_refill_minus": [
+              -0.06875800791758108,
+              0.23369574387595604
+            ]
+          },
+          "csail_stata_nova": {
+            "gap_refill_minus": [
+              -0.07605773497246367,
+              0.07654320987654323
+            ],
+            "tef_refill_minus": [
+              -0.2129846147984661,
+              0.04670931882574822
+            ]
+          },
+          "csail_stata_neutron": {
+            "gap_refill_minus": [
+              0.013703703703703734,
+              0.025000000000000022
+            ],
+            "tef_refill_minus": [
+              0.03321896209023846,
+              0.1641538297618503
+            ]
+          }
+        }
+      },
+      "reference_unknown": 663,
+      "source_unknown": 724
+    },
+    "verified": {
+      "tables": {
+        "template": {
+          "gap_domain_macro": [
+            0.0480244548689463,
+            0.3869014098387366
+          ],
+          "tef_original_pooling": [
+            0.18250019156482947,
+            0.3555504461585174
+          ],
+          "score_unknown": 10
+        },
+        "refill": {
+          "gap_domain_macro": [
+            0.030679012345679015,
+            0.3513083301893732
+          ],
+          "tef_original_pooling": [
+            0.08434061468739835,
+            0.28300542723162336
+          ],
+          "score_unknown": 84
+        },
+        "ring": {
+          "gap_domain_macro": [
+            0.022957829805375016,
+            0.3074457744780037
+          ],
+          "tef_original_pooling": [
+            0.07647717209296066,
+            0.2538952933146559
+          ],
+          "score_unknown": 11
+        }
+      },
+      "direct": {
+        "template": {
+          "gap_refill_minus": [
+            -0.08388432472876918,
+            0.04926195918941984
+          ],
+          "tef_refill_minus": [
+            -0.14270171911991128,
+            -0.02851919536036838
+          ]
+        },
+        "ring": {
+          "gap_refill_minus": [
+            -0.05156986227477182,
+            0.06463292181069959
+          ],
+          "tef_refill_minus": [
+            -0.1306017627921558,
+            0.16897464114988767
+          ]
+        }
+      },
+      "per_domain": {
+        "template": {
+          "dw": {
+            "gap_refill_minus": [
+              -0.09413333333333333,
+              0.09273902662993572
+            ],
+            "tef_refill_minus": [
+              -0.07491803074480505,
+              0.027386299761844292
+            ]
+          },
+          "csail_stata_nova": {
+            "gap_refill_minus": [
+              -0.11863075196408532,
+              0.08504685093832381
+            ],
+            "tef_refill_minus": [
+              -0.21341906058218116,
+              -0.06350538780194591
+            ]
+          },
+          "csail_stata_neutron": {
+            "gap_refill_minus": [
+              -0.03888888888888889,
+              -0.030000000000000002
+            ],
+            "tef_refill_minus": [
+              -0.11875138029470769,
+              -0.055579848950411875
+            ]
+          }
+        },
+        "ring": {
+          "dw": {
+            "gap_refill_minus": [
+              -0.09235555555555552,
+              0.09235555555555552
+            ],
+            "tef_refill_minus": [
+              -0.06875800791758108,
+              0.23369574387595604
+            ]
+          },
+          "csail_stata_nova": {
+            "gap_refill_minus": [
+              -0.07605773497246367,
+              0.07654320987654323
+            ],
+            "tef_refill_minus": [
+              -0.2129846147984661,
+              0.04670931882574822
+            ]
+          },
+          "csail_stata_neutron": {
+            "gap_refill_minus": [
+              0.013703703703703734,
+              0.025000000000000022
+            ],
+            "tef_refill_minus": [
+              0.03321896209023846,
+              0.1641538297618503
+            ]
+          }
+        }
+      },
+      "reference_unknown": 663,
+      "source_unknown": 724
+    }
+  },
+  "scope": "Three databases in one converted benchmark; fixed unequal sample sizes; gap is equal-domain macro, TEF retains original domain-macro accuracy and item-pooled CDF/disagreement; per-domain TEF uses same pooled Spider source. Direct coordinate-box bounds preserve shared source/reference but are not confidence intervals or sharp joint feasible bounds. Verified target equals base until any separately recorded proof."
+}

@@ -1,0 +1,91 @@
+{
+  "status": "BIRD_UNIFORM_SEMANTIC_STRESS_COMPLETE",
+  "counts": {
+    "original": {
+      "supported": 141,
+      "incorrect": 14,
+      "insufficient": 5
+    },
+    "rewrite": {
+      "supported": 117,
+      "incorrect": 32,
+      "insufficient": 10,
+      "unavailable": 1
+    },
+    "reference": {
+      "incorrect": 54,
+      "supported": 89,
+      "insufficient": 17
+    }
+  },
+  "original_rewrite_pair_labels": {
+    "incorrect|supported": 14,
+    "insufficient|insufficient": 1,
+    "insufficient|supported": 4,
+    "supported|incorrect": 32,
+    "supported|insufficient": 9,
+    "supported|supported": 99,
+    "supported|unavailable": 1
+  },
+  "risk_counts": {
+    "refill": 24,
+    "ring": 23,
+    "rewrite": 43,
+    "reference": 71
+  },
+  "results": {
+    "base": {
+      "refill": {
+        "gap_rewrite_minus": [
+          -0.1820438519395492,
+          0.09308878734287797
+        ],
+        "tef_rewrite_minus": [
+          -0.10124849556268475,
+          0.29476652257675406
+        ]
+      },
+      "ring": {
+        "gap_rewrite_minus": [
+          -0.11222458407280515,
+          0.12234646023240925
+        ],
+        "tef_rewrite_minus": [
+          -0.1457456372232968,
+          0.07896344294003872
+        ]
+      }
+    },
+    "verified": {
+      "refill": {
+        "gap_rewrite_minus": [
+          -0.14212950430458912,
+          0.03213462931947153
+        ],
+        "tef_rewrite_minus": [
+          -0.00853931213955627,
+          0.2355659876018525
+        ]
+      },
+      "ring": {
+        "gap_rewrite_minus": [
+          -0.06981440652057501,
+          0.07467695059570223
+        ],
+        "tef_rewrite_minus": [
+          -0.09172779926928865,
+          0.023583978078658946
+        ]
+      }
+    }
+  },
+  "denominators": {
+    "per_method": 2000,
+    "source": 1034,
+    "reference": 906,
+    "models": 10
+  },
+  "prior_flags_union": true,
+  "uncertain_includes_incorrect_insufficient_invalid_unavailable": true,
+  "meaning": "Sampled model-audit concerns treated as unknown for sensitivity only; no labels extrapolated to unsampled items; not a human gold standard, confidence interval, or a replacement for original results."
+}

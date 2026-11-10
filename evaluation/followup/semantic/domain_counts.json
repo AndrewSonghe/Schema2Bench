@@ -1,0 +1,126 @@
+{
+  "status": "FIXED_MODEL_AUDIT_COUNTS_BY_DOMAIN",
+  "counts": {
+    "california_schools": {
+      "original": {
+        "supported": 20
+      },
+      "rewrite": {
+        "supported": 14,
+        "incorrect": 4,
+        "insufficient": 2
+      },
+      "reference": {
+        "incorrect": 10,
+        "supported": 7,
+        "insufficient": 3
+      }
+    },
+    "card_games": {
+      "original": {
+        "supported": 20
+      },
+      "rewrite": {
+        "supported": 17,
+        "incorrect": 3
+      },
+      "reference": {
+        "insufficient": 3,
+        "incorrect": 5,
+        "supported": 12
+      }
+    },
+    "codebase_community": {
+      "original": {
+        "supported": 20
+      },
+      "rewrite": {
+        "supported": 12,
+        "incorrect": 6,
+        "insufficient": 2
+      },
+      "reference": {
+        "supported": 16,
+        "incorrect": 4
+      }
+    },
+    "european_football_2": {
+      "original": {
+        "supported": 20
+      },
+      "rewrite": {
+        "supported": 13,
+        "incorrect": 5,
+        "insufficient": 2
+      },
+      "reference": {
+        "supported": 13,
+        "incorrect": 6,
+        "insufficient": 1
+      }
+    },
+    "financial": {
+      "original": {
+        "supported": 20
+      },
+      "rewrite": {
+        "supported": 17,
+        "insufficient": 1,
+        "unavailable": 1,
+        "incorrect": 1
+      },
+      "reference": {
+        "insufficient": 6,
+        "supported": 8,
+        "incorrect": 6
+      }
+    },
+    "formula_1": {
+      "original": {
+        "supported": 20
+      },
+      "rewrite": {
+        "supported": 14,
+        "incorrect": 5,
+        "insufficient": 1
+      },
+      "reference": {
+        "supported": 12,
+        "incorrect": 6,
+        "insufficient": 2
+      }
+    },
+    "superhero": {
+      "original": {
+        "supported": 20
+      },
+      "rewrite": {
+        "supported": 11,
+        "incorrect": 8,
+        "insufficient": 1
+      },
+      "reference": {
+        "supported": 12,
+        "insufficient": 2,
+        "incorrect": 6
+      }
+    },
+    "thrombosis_prediction": {
+      "original": {
+        "incorrect": 14,
+        "insufficient": 5,
+        "supported": 1
+      },
+      "rewrite": {
+        "supported": 19,
+        "insufficient": 1
+      },
+      "reference": {
+        "supported": 9,
+        "incorrect": 11
+      }
+    }
+  },
+  "labels_sha256": "97c1c32816046d09376d6c5a41ad8602ad772fc8a9c9c794fce147f71035475f",
+  "scope": "Fixed audit sample by domain; no extrapolation or human gold."
+}

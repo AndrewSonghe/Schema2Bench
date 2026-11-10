@@ -62,7 +62,7 @@ Target gap measures how closely the release reproduces pairwise model-accuracy d
 \end{equation}
 Lower is better. Negative $\Delta G(a,b)=G(a)-G(b)$ favors the first construction; positive-improvement summaries use $I_G=G(\mathrm{Template})-G(\mathrm{Refill})$. Multiplying by 100 gives gap percentage points (pp), distinct from accuracy changes. Domain-mean Kendall $\tau$-b measures ordering with ties. Common accuracy shifts preserve gaps; near-tie changes can reverse ranking.
 
-Source fidelity asks how much model behavior changes from the source benchmark. For item $i$, let $Y_i\in\{0,1\}^M$ be the joint model-response vector. Source-to-target TEF compares model accuracies, correct-count CDF indicators $\mathbf1\{\sum_mY_{i,m}\le k\}$ for $k=0,\ldots,M-1$, and pairwise disagreements $|Y_{i,m}-Y_{i,n}|$. With source and release feature means $\Psi_s,\Psi_z$,
+Source fidelity measures changes in model behavior. Let $Y_i\in\{0,1\}^M$ be item $i$'s joint model-response vector. TEF compares accuracies, correct-count CDF indicators $\mathbf1\{\sum_mY_{i,m}\le k\}$, $k=0,\ldots,M-1$, and pairwise disagreements $|Y_{i,m}-Y_{i,n}|$. For source/release feature means $\Psi_s,\Psi_z$,
 \begin{equation}
  L_{\tef}(z)=\sum_jw_j|\Psi_{z,j}-\Psi_{s,j}|
  =D_{\rm diff}+D_{\rm acc}+\tfrac12D_{\rm dis}.
@@ -143,7 +143,7 @@ Thrombosis prediction &311$\to$304&161$\to$126\\\midrule
 Total &3,835$\to$3,778&1,118$\to$906\\\bottomrule
 \end{tabular}\end{table}
 
-The five-method comparison uses the first release; ten-release sensitivity varies Template/Refill. Paired controls use separate 2,000-task arms and 906 references; realization retains main-release SQL. Other populations are stated separately: revised references (417), the external pilot (750 tasks/method, 595 references), and 3,778-pair/982-reference and fourteen-model sensitivities.
+The main comparison uses the first release; ten-release sensitivity varies Template/Refill. Paired controls use separate 2,000-task arms and 906 references; realization retains main-release SQL. Other checks state their populations separately.
 
 \subsection{Comparators}\label{sec:comparators}
 Template and deterministic refill share the paired construction pool; Refill changes grounding as described in Section~\ref{sec:framework}. RingSQL-style combines template SQL with Qwen question generation. Omni reuses SQL/question-generation components with local Qwen on target snapshots. Synth follows the author's SQL synthesis, question generation, backtranslation and self-comparison workflow with local Qwen; the original 25-row cap is removed.\footnote{SynthSQL toolkit: \url{https://github.com/NeginKhalifat/SQL-benchmark}, retained commit \texttt{dff8c75e}. It is distinct from SING-SQL and SynSQL.} These are local adaptations, not complete author-system reproductions. Generation budgets differ (Table~\ref{tab:cost}); the comparison fixes release size and evaluation populations.
@@ -277,12 +277,12 @@ The API supports 732/800 Refill tasks and 603/800 Ring tasks (Table~\ref{tab:aud
 Value depth improves TEF for at most 0.002221 gap cost. An illustrative 0.003 tolerance (0.3 pp) accepts this cost, but not Rewritten-minus-Ring's 0.006397 upper bound. Prospective non-inferiority testing requires a fixed tolerance and sufficient precision.
 
 \paragraph{Scope of inference}
-The strongest evidence concerns the eight domains; the external pilot remains adverse or unresolved. Eligibility screening, unequal budgets and proof coverage, shared data and possible training overlap limit generalization. Risk bounds vary flagged scores while fixing the rest. Other engines and multi-turn workloads require separate evaluation.
+The eight-domain study provides the main comparison. External pilots show a context-dependent Refill--Ring tradeoff, while the BEAVER pilot retains Refill's source-fidelity advantage over Template. Eligibility screening, unequal budgets and proof coverage, shared data and possible training overlap limit generalization. Risk bounds vary flagged scores while fixing the rest.
 
 \paragraph{Resources and reproducibility}
-Table~\ref{tab:cost} reports tokens including failures. Ten releases reuse 75,080 distinct target model--item records. Recorded worker time is 1,834.24 seconds including loading, not exclusive GPU time or makespan. Expanded Astra auditing and controls cost an estimated \$124.41, excluding the earlier 400 responses; rewrite review costs \$0.265. These accounting scopes differ.
+Table~\ref{tab:cost} includes failed-call tokens. Ten releases reuse 75,080 target model--item records; worker time is 1,834.24 seconds including loading, not makespan. Expanded Astra auditing/controls cost an estimated \$124.41 excluding 400 reused responses; rewrite/original Terra review costs \$0.265/\$0.272.
 
-The artifact supports matrix replay, risk recounts, binary-witness checks and a 32-instance SQLite cache check. Rebuilding generation/inference requires external models, data permissions and recorded environments.
+Code, tasks and analysis artifacts are public.\footnote{\url{https://github.com/AndrewSonghe/Schema2Bench}} They support matrix replay, risk recounts, binary-witness checks and a 32-instance SQLite cache check. Full generation/inference requires external models, databases and recorded environments.
 
 \section{Conclusion}
-Schema2Bench distinguishes source fidelity from target alignment in Text-to-SQL benchmark migration. Across eight domains, construction accounts for most Refill--Template gap improvement, while question rewriting improves target alignment at the expense of source fidelity. Construction choices should follow the benchmark's intended use.
+Schema2Bench distinguishes source fidelity from target alignment in Text-to-SQL benchmark migration. Construction accounts for most Refill--Template gap improvement; wording and inference context also change the measured tradeoffs. Semantic assessment qualifies these execution-based observations. Construction choices should follow the benchmark's intended use.

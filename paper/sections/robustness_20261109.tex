@@ -1,6 +1,6 @@
 \section{Robustness analysis}\label{sec:robustness}
 \subsection{Conditional sampling and reference sensitivity}\label{sec:precision}
-For the first-release gap difference $-0.0556925$, a separately frozen diagnostic resamples paired tasks within domain/stratum and references within domain, preserving each ten-model response vector. Across 1,000 draws, the conditional 95\% range is $[-0.0665464,-0.0434725]$; pair-only, reference-only and joint half-widths are 0.007725/0.008464/0.011537. These describe sampling variation within screened pools and domains.
+For the first-release gap difference $-0.0556925$, a frozen diagnostic resamples paired tasks within domain/stratum and references within domain, preserving ten-model response vectors. Across 1,000 draws, the conditional 95\% range is $[-0.0665464,-0.0434725]$, describing variation within screened pools and domains.
 
 Leaving any one of the eight domains out retains a favorable main gap contrast, ranging from $-0.0646841$ to $-0.0454772$. All 56 three-of-eight compositions have means between $-0.0964710$ and $-0.0145340$. These checks vary the observed domain composition; independent construction variance is outside their scope.
 
@@ -10,15 +10,15 @@ We evaluate all 417 same-domain items in BIRD's October 2026 Mini-Dev SQLite rev
 Revised-reference Refill-minus-Template gap is $[-0.076995,-0.024912]$, favorable in six domains and unresolved in California/Formula 1; Refill-minus-Ring is $[+0.040718,+0.103446]$. The unpaired sets differ structurally: 288/417 revised versus 86/906 old items are proxy-hard; 252/417 versus 76/906 contain nested SELECT. This changes references within the same BIRD domains; source TEF is unchanged.
 
 \subsection{API-based semantic assessment}\label{sec:semantic}
-We assess question--SQL agreement with LLMs \citep{zheng2023judge,liu2023geval}, separately from execution scoring. OpenAI's \texttt{gpt-6-astra} API uses a fixed prompt, medium reasoning effort and supported/incorrect/insufficient labels. It sees question, schema and SQL, with methods, prior labels and scores hidden. Responses and model identifiers are archived; earlier Qwen/Terra judgments provide cross-checks. Labels are model assessments, not human annotations or calibrated confidence. Risk analyses relax non-supported/unavailable items, preserving denominators and unflagged scores.
+We assess question--SQL agreement separately with LLMs \citep{zheng2023judge,liu2023geval}. OpenAI's \texttt{gpt-6-astra} API sees question, schema and SQL under a fixed prompt with medium reasoning; methods, prior labels and scores are hidden. Archived responses use supported/incorrect/insufficient labels, cross-checked with Qwen/Terra. These are model judgments, not human annotations or calibrated confidence. Sensitivity analyses relax flagged scores, preserving denominators.
 
 \paragraph{Generated-task audits}
-The earlier fixed-hash audit covers 400 tasks, stratified by method, domain and SQL structure. Terra performs both label review and blind SQL generation, so the checks are related. Of the separate 78/135/137-concern scenarios, the latter two leave Refill's TEF advantage over Synth unresolved. Keeping recorded Synth scores only for 654 nonempty roundtrip matches and relaxing the rest, with the denominator fixed, gives ten-release mean TEF bounds $[-1.076911,+0.283264]$.
+An earlier 400-task audit stratifies by method, domain and SQL structure. Terra's related label-review and blind-generation checks leave the Synth contrast unresolved under the 135/137-concern scenarios. Retaining only 654 nonempty Synth roundtrip matches and relaxing other scores at the fixed denominator gives ten-release mean TEF bounds $[-1.076911,+0.283264]$.
 
-The expanded sample contains 100 records per method per domain (4,000 total). It was fixed after the earlier audit; 400 Astra responses are reused, 3,599 are added, and one transport failure remains unavailable. Previously exposed synthetic controls score 24/24 in each class. Table~\ref{tab:audit-expanded} reports the judgments for each method. The union of 1,133 non-supported/unavailable records and 620 earlier SQL flags contains 1,433 items. Their ten-model scores are relaxed within each original 2,000-item denominator.
+The expanded sample fixes 100 records per method/domain after that audit: 400 Astra responses are reused, 3,599 added and one unavailable. Exposed synthetic controls score 24/24 per class. Table~\ref{tab:audit-expanded} reports the labels. Union of 1,133 non-supported/unavailable records and 620 earlier SQL flags gives 1,433 items, whose scores are relaxed within each original 2,000-item denominator.
 
 \begin{table}[t]\centering\small
-\caption{API semantic judgments. S/I/U: supported/incorrect/insufficient. The final column counts unavailable responses for generated tasks and invalid responses for reference cross-checks. Panel (a) uses the post-hoc expanded sample; panel (b) reuses the same 160 references across judges/contracts.}
+\caption{API semantic judgments. S/I/U: supported/incorrect/insufficient; NA/inv.: unavailable/invalid. Panel (a) uses the expanded sample, (b) the same references across judges/contracts, and (c) paired original/rewritten questions under one Terra contract.}
 \label{tab:audit-expanded}
 \begin{tabular}{lrrrr}\toprule
 \multicolumn{5}{l}{\textit{(a) Astra: 800 tasks/method, 100/domain}}\\
@@ -32,7 +32,10 @@ Synth &442&308&50&0\\\midrule
 Judge / contract & S & I & U & NA/inv.\\\midrule
 Terra &89&54&17&0\\
 Qwen: strict JSON &76&9&1&74\\
-Qwen: code-fence parsing &121&37&2&0\\\bottomrule
+Qwen: code-fence parsing &121&37&2&0\\\midrule
+\multicolumn{5}{l}{\textit{(c) Terra: 160 paired tasks, 20/domain}}\\
+Original Refill &141&14&5&0\\
+Rewritten Refill &117&32&10&1\\\bottomrule
 \end{tabular}\end{table}
 
 The 1,433-record scenario retains Refill-minus-Template TEF $[-0.179682,-0.050176]$. Shared-source continuous LP outer bounds for Ring/Omni/Synth are $[-0.293390,+0.139461]$, $[-0.840707,+0.132174]$ and $[-0.587412,+0.236106]$, all crossing zero, as do joint gap bounds. Three of 48 LP/MILP gap endpoints reach time limits; numerical bounds retain outward tolerances, earlier wider bounds and failures. 
@@ -57,7 +60,7 @@ None added & Revised BIRD reference &417&$[-0.076995,-0.024912]$\\
 The 71-reference scenario favors Refill over Template in all ten releases. Strict cross-check plus generated concerns, or revised references plus the larger generated-risk union, leave the first release unresolved (Table~\ref{tab:reference-stress}). Reference-only changes leave TEF unchanged: construction and reference risks affect the two goals differently.
 
 \subsection{Uncertainty in the wording comparison}\label{sec:risk-sources}
-Figure~\ref{fig:risk-sources} separates construction and reference risks in the wording experiment through six scenarios. Construction flags cover 43 rewritten, seven original Refill and 23 Ring items; reference flags cover 71 Terra or 105 strict Terra/Qwen concerns. Each flagged item has all ten scores relaxed. ``Both'' combines the two sets, excluding the separate 1,433-item union. Other scores stay fixed; source/reference variables are shared.
+Figure~\ref{fig:risk-sources} uses the earlier audit flags to separate construction and reference risks in the wording experiment through six scenarios. Construction flags cover 43 rewritten, seven original Refill and 23 Ring items; reference flags cover 71 Terra or 105 strict Terra/Qwen concerns. Each flagged item has all ten scores relaxed. ``Both'' combines the two sets, excluding the separate 1,433-item union. Other scores stay fixed; source/reference variables are shared.
 
 \begin{figure*}[t]
 \centering
@@ -66,11 +69,13 @@ Figure~\ref{fig:risk-sources} separates construction and reference risks in the 
 \label{fig:risk-sources}
 \end{figure*}
 
-Construction flags alone preserve the rewrite's gap advantage over original Refill, while either reference-risk set makes its direction unresolved (Fig.~\ref{fig:risk-sources}, top). Target-reference measurement is thus the bottleneck for this comparison under the flagged risks. Reference flags leave source TEF unchanged; construction flags leave both TEF contrasts unresolved (bottom). 
+Construction flags alone preserve the rewrite's gap advantage over original Refill, while either reference-risk set makes its direction unresolved (Fig.~\ref{fig:risk-sources}, top). Reference flags leave source TEF unchanged; construction flags leave both TEF contrasts unresolved (bottom).
 
-Binary searches independently verify positive differences in 14 of 16 crossing Verified cases. ``W'' denotes a feasible assignment, ``?'' an unresolved search, and blank no search. The two unresolved cases use 71 reference flags, alone or combined, with six-second limits.
+A uniform Terra follow-up reviews the 160 paired originals, reusing rewrite/reference reviews under the same prompt and label contract (Table~\ref{tab:audit-expanded}c). Union with prior flags gives 24 original, 43 rewritten, 23 Ring and 71 reference concerns. Relaxing these scores yields Verified rewrite-minus-original gap $[-0.142130,+0.032135]$ and TEF $[-0.008539,+0.235566]$. Both cross zero: the execution-level wording tradeoff remains conditional on semantic judgments.
 
-The 105-reference-only case admits a gap difference of $+0.000037889$, sharing the reference matrix and fixing other definite scores. Flagged binary scores have no additional SQL-equivalence or native-error constraints. This is score-model feasibility, not a semantic correction or reversal probability. Assignments accompany the replay records.
+Binary searches verify positive differences in 14/16 crossing Verified cases: ``W'' denotes feasibility, ``?'' unresolved search, blank no search. Two cases with 71 reference flags reach six-second limits.
+
+The 105-reference-only case admits $+0.000037889$, sharing references and fixing other definite scores. Flagged scores have no added SQL-equivalence/native-error constraints. The replayable assignment establishes score-model feasibility, not semantic correctness or reversal probability.
 
 \subsection{Measurement priorities, model panel and coverage}\label{sec:sensitivity}
 TEF combines three views of source behavior. Accuracy and the correct-count CDF favor Refill against all comparators; disagreement favors it over Template, is adverse to Ring ($[+0.012123,+0.066481]$), and unresolved for Omni/Synth. Equal-component and item-micro conventions leave Refill-minus-Synth unresolved: $[-0.400081,+0.034253]$ and $[-0.430144,+0.025669]$. Accuracy-heavy, CDF-heavy and domain-macro variants remain favorable; Template/Ring/Omni directions persist. Equal/accuracy-heavy/CDF-heavy weights are $(5/6,5/6,5/6)$, $(10/7,5/7,5/14)$ and $(5/7,10/7,5/14)$, each summing to 2.5.
@@ -110,28 +115,24 @@ Fourteen models: native proof &3,778&906&$[0.025787,0.032648]$&Unknown-score bou
 
 LIMIT counts are 1,739/2,000 for Template/Refill, 1,753 Ring, 424 Omni and 872 Synth, versus 62/906 references. Only 108/240 method--domain--structure cells (10/40 LIMIT cells) have ten tasks in both populations, preventing complete matched analysis. The pilot's unquoted-table-name repair applies to none of 21,361 stored failed outputs.
 
-\subsection{External pilot and transfer scope}\label{sec:external}
+\subsection{External pilots and transfer scope}\label{sec:external}
 \begin{table*}[t]\centering\small
-\caption{External-pilot measurement differences over three domains, 750 tasks/method and 595 references. Negative favors Refill. Bounds retain unknown scores; additional reference proofs leave source TEF unchanged.}
+\caption{External-pilot direct differences (Refill minus comparator). Negative favors Refill. TACO: 750 tasks/method, 595 references, native compilation plus reference proofs. BEAVER: 472 tasks/method, 194 references. Each pilot uses three databases; TEF uses the matching source context. Bounds retain unknown scores.}
 \label{tab:external-pilot}
 \begin{tabular}{llrr}\toprule
-Contrast & Scoring & $\Delta\mathrm{TEF}$ & $\Delta G$\\\midrule
-Refill $-$ Template & Native compilation & $[-0.006024,+0.016398]$ & $[-0.048972,+0.057087]$\\
-Refill $-$ Ring & Native compilation & $[+0.133673,+0.280760]$ & $[+0.064666,+0.280121]$\\
-Refill $-$ Template & Additional reference proofs & Unchanged & $[-0.030517,+0.044555]$\\
-Refill $-$ Ring & Additional reference proofs & Unchanged & $[+0.148866,+0.277121]$\\\bottomrule
+Setting & Comparator & $\Delta\mathrm{TEF}$ & $\Delta G$\\\midrule
+TACO: retrieved schema & Template & $[-0.006024,+0.016398]$ & $[-0.030517,+0.044555]$\\
+TACO: retrieved schema & Ring & $[+0.133673,+0.280760]$ & $[+0.148866,+0.277121]$\\\midrule
+BEAVER: retrieved schema & Template & $[-0.146163,-0.037765]$ & $[-0.081035,+0.060364]$\\
+BEAVER: retrieved schema & Ring & $[-0.235815,-0.016203]$ & $[-0.056789,+0.099330]$\\
+BEAVER: sufficient schema & Template & $[-0.142702,-0.028519]$ & $[-0.083884,+0.049262]$\\
+BEAVER: sufficient schema & Ring & $[-0.130602,+0.168975]$ & $[-0.051570,+0.064633]$\\\bottomrule
 \end{tabular}\end{table*}
 
-The TACO OpenData pilot \citep{deng2026taco} uses two related Beijing databases and Connecticut: 750 tasks/method and 595 potentially synthetic references. Relaxed admission and fixed hash anchors differ from the original $N=2,000$, $H\le0.01$ selector; historical gates remain intact.
+TACO OpenData \citep{deng2026taco} supplies two related Beijing databases and Connecticut, with potentially synthetic references. Relaxed admission and fixed hash anchors differ from the main selector. Expanding retrieval from six to 16 objects raises reference-table coverage from 270/595 to 408/595; comparisons remain unresolved against Template and adverse against Ring (Table~\ref{tab:external-pilot}).
 
-An exploratory 16-object retrieval variant raises reference-table coverage from 270/595 to 408/595 versus the initial six-table setting; prompts are not nested. It changes 120 Spider prompts, reusing 8,226 exactly bound source outputs. The measurement comparisons remain unresolved against Template and adverse against Ring, including after additional reference proofs (Table~\ref{tab:external-pilot}). Higher table coverage does not resolve these comparisons.
+Astra labels 120 references 13 supported, 93 incorrect and 14 insufficient (two missing inputs); incomplete review schemas prevent treating these as true error rates. On 120 fixed SQL/schema pairs, naturalized-minus-original execution match is $[+4.50,+16.33]$ pp under native compilation, but naturalized-minus-quoted is $[-4.33,+7.75]$. Connecticut Template is adverse ($[-23,-2]$ pp). Formatting accounts for part of the apparent gain; semantic concerns remain in the denominator. Omni admits 162/141/170 and Synth 0/0/72 SQLs, below each 250 quota; their question generation and model evaluation remain incomplete.
 
-Astra labels 120 references 13 supported, 93 incorrect and 14 insufficient (two missing inputs); blind SQL gives ten matches, 15 differences and 95 unresolved. Incomplete review schemas and judge errors prevent treating these as true error rates or explaining away adverse results. Refill/Template expose table names in 750/750 questions versus 2/595 references and use more LIMIT/fewer JOINs in Beijing; these differences are not isolated causes.
+A second pilot uses CORE-T's SQLite-converted BEAVER \citep{chen2024beaver}.\footnote{\url{https://github.com/UKPLab/emnlp2026-core-t}} Construction falls short of 250 pairs in two databases. A separate ten-model partial panel retains 250/198/24 tasks per method in DW/Nova/Neutron and 121/43/30 references; Nova and Neutron are related. Retrieved schemas cover all required objects for only 33/194 references. An oracle-context control supplies required tables/views selected using reference SQL, with SQL hidden, and reruns Spider with full compact DDL.
 
-On 120 fixed SQL/schema pairs, naturalized-minus-original execution match is $[-22.33,+27.25]$ pp under Base and $[+4.50,+16.33]$ under uniform native compilation. Quoting alone gives $[+2.67,+14.75]$; naturalized-minus-quoted is $[-4.33,+7.75]$. Connecticut Template is adverse ($[-23,-2]$). Post-hoc SQL normalization also leaves naturalization unresolved. These controls implicate executable formatting without isolating name removal; semantic concerns remain in the denominator.
-
-
-
-
-
-Omni admits 162/141/170 executable deduplicated SQLs and Synth 0/0/72 compiling SQLs across the three domains, below each 250 quota. Questions and ten-model evaluations remain incomplete; failure is not zero accuracy. The pilot exposes coverage and reference problems beyond the main study.
+Refill's pooled TEF advantage over Template persists; against Ring it becomes unresolved with sufficient schema. Neutron's sufficient-schema TEF and gap both favor Ring. References retain 660/1,940 and 663/1,940 unknowns, with 21 definite matches in each context. Schema coverage alone does not resolve target alignment; source fidelity also depends on workload and inference context.

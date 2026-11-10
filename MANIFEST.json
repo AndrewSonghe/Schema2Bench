@@ -17,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4852,
-      "sha256": "951e68f80a4d42283339fbeace82d65145b83c1f8e8c501f4a609011a38b9bee"
+      "bytes": 5495,
+      "sha256": "27f305856b39830141bc2e6f15a59bdc4cc71c1a9f33dd533572e4045388a256"
     },
     {
       "path": "configs/databases.json",
@@ -371,19 +371,24 @@
       "sha256": "f6d3821f942cc217d5e48fe42e59a456029176756619b60e352881cec770366f"
     },
     {
+      "path": "docs/followup.md",
+      "bytes": 4734,
+      "sha256": "61f06f1b0818e353c37180cfbd0ab3b90f78f8228f8eb4a82ba1fb95b3591c04"
+    },
+    {
       "path": "docs/overview.png",
       "bytes": 108739,
       "sha256": "807bfe02fbe755a4807ea1c31bd967bdf23f2ee5ae84c46356e5eae9cab8efd6"
     },
     {
       "path": "docs/paper-map.md",
-      "bytes": 2320,
-      "sha256": "83b00b36bb002ea2dba7d1f61774a833dfec2c9cc159e6491da44f07318b94df"
+      "bytes": 2755,
+      "sha256": "8727ecaef7744dc473796f63874ff0ecf114a193f39cce25ecde86ddbeda5466"
     },
     {
       "path": "docs/reproduction.md",
-      "bytes": 4696,
-      "sha256": "6c59aaabd9cc9dd00772e2319aaaf5f0000574dc622c75f5cfeb0aee4759f6c7"
+      "bytes": 5903,
+      "sha256": "3e98677a1ace74a188a21a0d02aad19728e3877e05392c057ab19b544de3bd1a"
     },
     {
       "path": "evaluation/cache_check/original_result.json",
@@ -394,6 +399,91 @@
       "path": "evaluation/cache_check/queries.json",
       "bytes": 15365,
       "sha256": "ab74872cb5646ff69932297e3a1f30c2e08d61d7f601b2d5150dc919c1bec037"
+    },
+    {
+      "path": "evaluation/followup/beaver/retrieved/arithmetic_audit.json",
+      "bytes": 250,
+      "sha256": "aff0d448f16124bb8ef1c13aebe0c79e5550d95a7b8006bb67c744b3e874412d"
+    },
+    {
+      "path": "evaluation/followup/beaver/retrieved/expected.json",
+      "bytes": 7418,
+      "sha256": "1a85df903aba1d5347a43866e5ff34c364f74a09615802fe330068cfc898daf0"
+    },
+    {
+      "path": "evaluation/followup/beaver/retrieved/extended_audit.json",
+      "bytes": 181,
+      "sha256": "3d82e01189995bac32b87e0ae456f3baa1d34540c8137b87334006fafb8eae87"
+    },
+    {
+      "path": "evaluation/followup/beaver/retrieved/scores.jsonl.gz",
+      "bytes": 128021,
+      "sha256": "272fa13b7c308dfaeba83805985982eb0c3c1b7fb55febff698f61128114ea6a"
+    },
+    {
+      "path": "evaluation/followup/beaver/sufficient/arithmetic_audit.json",
+      "bytes": 250,
+      "sha256": "3729b4c638ae8f8696444f382b276284867fff8faaa49f649ee9ea87d6dea58c"
+    },
+    {
+      "path": "evaluation/followup/beaver/sufficient/expected.json",
+      "bytes": 7415,
+      "sha256": "c8b5711033b8ae4557ee3f0692579a9dc3f1cf3e585989163c2fe7186a306245"
+    },
+    {
+      "path": "evaluation/followup/beaver/sufficient/extended_audit.json",
+      "bytes": 181,
+      "sha256": "3d82e01189995bac32b87e0ae456f3baa1d34540c8137b87334006fafb8eae87"
+    },
+    {
+      "path": "evaluation/followup/beaver/sufficient/scores.jsonl.gz",
+      "bytes": 125624,
+      "sha256": "9145dc98509d74a209397b5b4ec160c081949968d47da59d03f55d471538e74c"
+    },
+    {
+      "path": "evaluation/followup/provenance.json",
+      "bytes": 3692,
+      "sha256": "4867e38aaf80be567e9d03cb0de53b30559bf44cb1ed246e70bae66d6f6eda9b"
+    },
+    {
+      "path": "evaluation/followup/semantic/arithmetic_audit.json",
+      "bytes": 223,
+      "sha256": "c873e19e34be84089a7a6dc34d042d28db403764fe156a248b251c1102f0ad42"
+    },
+    {
+      "path": "evaluation/followup/semantic/date_label_pattern.json",
+      "bytes": 790,
+      "sha256": "2f2294f6418310f4d59a0415e9eeb9c51df0e78191002d8fff9918e06404e8b0"
+    },
+    {
+      "path": "evaluation/followup/semantic/domain_counts.json",
+      "bytes": 2534,
+      "sha256": "c97ee3f4e0c9b810a49271d67852e9f46e6c96bc861f5cb7d8819d219ecbf59b"
+    },
+    {
+      "path": "evaluation/followup/semantic/expected.json",
+      "bytes": 2170,
+      "sha256": "b92a6627ab0456c96905144eca6f33bd0f12c67ad91029bb6834fef0a55ad972"
+    },
+    {
+      "path": "evaluation/followup/semantic/labels.jsonl.gz",
+      "bytes": 32888,
+      "sha256": "c49a27b54b251fbc02a3559f4fd439118a5bc0dc9209b687d52a8253fdc9abfd"
+    },
+    {
+      "path": "evaluation/followup/semantic/prior_flags.json",
+      "bytes": 1640,
+      "sha256": "2466249858468f235318b0d108258dac520d456adf6693e3adb62f646f4c15d7"
+    },
+    {
+      "path": "evaluation/followup/semantic/responses.jsonl.gz",
+      "bytes": 27309,
+      "sha256": "a4f543f37a1114207a0562ea17122063880762dea58cb83fa8e65cd530ea624d"
+    },
+    {
+      "path": "evaluation/followup/semantic/rewrite_matrix.jsonl.gz",
+      "bytes": 51337,
+      "sha256": "210a6a4de6a23ecf27a05f067f3bf502b5ea809d9905a3031b93995114877765"
     },
     {
       "path": "evaluation/proofs/20261105_ordered_rowcap_cache_proof_v1/PROOFS.jsonl",
@@ -717,8 +807,8 @@
     },
     {
       "path": "paper/sections/current_scientific_main.tex",
-      "bytes": 33138,
-      "sha256": "d4c7f05406df3f6d55bd70154002d10b51840216dde728f875a6acfb0d6401fd"
+      "bytes": 33003,
+      "sha256": "7c513052585776966d3401625b789abd0221cea54c654e96e07303b011950f25"
     },
     {
       "path": "paper/sections/migration_tables_20261107.tex",
@@ -737,8 +827,8 @@
     },
     {
       "path": "paper/sections/robustness_20261109.tex",
-      "bytes": 15545,
-      "sha256": "f8d2d74df6f00d5496b46d7dc69c15f7445e936cecbdf1e755ce6ab6923fb904"
+      "bytes": 15755,
+      "sha256": "924e570622ea3e2e0822a28de7ce66362548f53471797404e8e3fb90c80f48a4"
     },
     {
       "path": "paper/sections/submission_main.tex",
@@ -866,6 +956,11 @@
       "sha256": "39dd2fc7d9616e9bf5f5770cb359b774618fc4efa9904687a28198557984148c"
     },
     {
+      "path": "scripts/replay_followup.py",
+      "bytes": 8641,
+      "sha256": "42cdc92aac80fa6fdf4d5e65bf2884abd6cbad6a99d1a63dd8075c60c646f7d4"
+    },
+    {
       "path": "scripts/replay_main.py",
       "bytes": 226,
       "sha256": "04588961019a05022820991ea36bf38ec8fb7a230b60a1fc1ef3f6654db19485"
@@ -976,6 +1071,6 @@
       "sha256": "300736032288807d04648c77963038207fbe4af907fd15d02083f9b72a4878de"
     }
   ],
-  "total_bytes": 56106843,
-  "scope": "Research artifact for offline reanalysis; databases and model weights are external dependencies."
+  "total_bytes": 56514501,
+  "scope": "Research artifact for offline reanalysis, including BEAVER context and uniform semantic follow-ups; databases and model weights are external dependencies."
 }

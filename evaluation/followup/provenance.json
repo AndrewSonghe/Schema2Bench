@@ -1,0 +1,83 @@
+{
+  "scope": "Derived score records, labels and response text; no BEAVER questions, SQL, database rows or model weights.",
+  "sources": [
+    {
+      "source": "20261110_coret_partial_panel_v1/score/SCORES.jsonl",
+      "sha256": "cf26038a88d6c0409da6a95764431b390bf0e59b55d671ed6174fb5d795265cc"
+    },
+    {
+      "source": "20261109_taco_schema16_native_proof_v1/runs/SCORES_WITH_PROOF.jsonl",
+      "sha256": "eb01613f58060537948291e2816b4ca27863aab3146695a6f8d01951686ccd85"
+    },
+    {
+      "source": "20261110_coret_partial_panel_v1/ANALYSIS_RESULT.json",
+      "sha256": "1a85df903aba1d5347a43866e5ff34c364f74a09615802fe330068cfc898daf0"
+    },
+    {
+      "source": "20261110_coret_partial_panel_v1/ANALYSIS_AUDIT.json",
+      "sha256": "aff0d448f16124bb8ef1c13aebe0c79e5550d95a7b8006bb67c744b3e874412d"
+    },
+    {
+      "source": "20261110_coret_partial_panel_v1/EXTENDED_AUDIT_RESULT.json",
+      "sha256": "3d82e01189995bac32b87e0ae456f3baa1d34540c8137b87334006fafb8eae87"
+    },
+    {
+      "source": "20261110_coret_schema_sufficiency_v1/score/SCORES.jsonl",
+      "sha256": "a6fd17c8b7736b5b9a48bf5b6202c23db6e735355ff3037ebab99a530a05b01d"
+    },
+    {
+      "source": "20261110_coret_schema_sufficiency_v1/ANALYSIS_RESULT.json",
+      "sha256": "c8b5711033b8ae4557ee3f0692579a9dc3f1cf3e585989163c2fe7186a306245"
+    },
+    {
+      "source": "20261110_coret_schema_sufficiency_v1/ANALYSIS_AUDIT.json",
+      "sha256": "3729b4c638ae8f8696444f382b276284867fff8faaa49f649ee9ea87d6dea58c"
+    },
+    {
+      "source": "20261110_coret_schema_sufficiency_v1/EXTENDED_AUDIT_RESULT.json",
+      "sha256": "3d82e01189995bac32b87e0ae456f3baa1d34540c8137b87334006fafb8eae87"
+    },
+    {
+      "source": "20261110_bird_uniform_semantic_v1/analysis/AUDIT_LABELS.jsonl",
+      "sha256": "97c1c32816046d09376d6c5a41ad8602ad772fc8a9c9c794fce147f71035475f"
+    },
+    {
+      "source": "20261108_astra_semantic_audit_v1/sensitivity/FLAGGED.jsonl",
+      "sha256": "f208e6761df883795a15488d205522119aa976125bd9c105b688e5b0e00dd39a"
+    },
+    {
+      "source": "20261109_refill_rewrite_metrics_v2/REWRITE_MATRIX.jsonl",
+      "sha256": "f131614c6789ca119798ded9ecf733102bc1b2bb483cec5f8b2f271f5a8b0930"
+    },
+    {
+      "source": "20261110_bird_uniform_semantic_v1/analysis/RESULT.json",
+      "sha256": "b92a6627ab0456c96905144eca6f33bd0f12c67ad91029bb6834fef0a55ad972"
+    },
+    {
+      "source": "20261110_bird_uniform_semantic_v1/analysis/AUDIT_RESULT.json",
+      "sha256": "c873e19e34be84089a7a6dc34d042d28db403764fe156a248b251c1102f0ad42"
+    },
+    {
+      "source": "20261110_bird_uniform_semantic_v1/analysis/DATE_LABEL_PATTERN.json",
+      "sha256": "2f2294f6418310f4d59a0415e9eeb9c51df0e78191002d8fff9918e06404e8b0"
+    },
+    {
+      "source": "20261110_bird_uniform_semantic_v1/analysis/DOMAIN_COUNTS.json",
+      "sha256": "c97ee3f4e0c9b810a49271d67852e9f46e6c96bc861f5cb7d8819d219ecbf59b"
+    }
+  ],
+  "beaver_contexts": {
+    "retrieved": "Original 16-object retrieval, matched Spider source outputs and existing source execution proofs.",
+    "sufficient": "Oracle required tables/views for all 1610 target items; full compact DDL for 1034 Spider items. All predictions rerun; reference SQL hidden."
+  },
+  "semantic": {
+    "model": "gpt-6.1-terra",
+    "original_new_reviews": 160,
+    "reused_available_reviews": 319,
+    "unavailable": 1,
+    "output_token_limit": 192,
+    "reasoning": "none",
+    "contract": "Same review prompt and JSON schema. Reference format name reference_review; original/rewrite format name semantic_audit.",
+    "risk_rule": "Union prior flags with sampled non-supported/unavailable labels; unsampled items receive no new labels."
+  }
+}

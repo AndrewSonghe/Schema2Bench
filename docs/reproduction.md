@@ -59,13 +59,37 @@ python3 scripts/replay_witness.py
 Semantic recount reproduces the generated-task panel in Table VIII from the
 final 4,000-item label file. The prompt and response schema are included under
 `evaluation/semantic/`. The one unavailable response remains in the denominator.
-The reference cross-check panel uses a different sample and is described in the
-manuscript; it is not recomputed by this command.
+The reference cross-check panel uses a different sample. The uniform Terra
+follow-up below includes its 160 reference labels; the other Qwen contracts are
+not recomputed by this command.
 
 The witness command checks exact coverage of the permitted unknown cells and
 recomputes the saved positive gap difference, approximately 0.000037889. It
 verifies feasibility under the stated score model; it does not repeat the search
 or decide whether those assignments are semantically correct.
+
+## External contexts and uniform semantic review
+
+```bash
+python3 scripts/replay_followup.py
+```
+
+This standard-library command reconstructs the BEAVER score matrices in both
+schema contexts, checks all population and model counts, and recomputes Base
+and Verified TEF/gap tables, direct contrasts and per-database contrasts.
+Each context uses its own 1,034-item Spider source; source scores from different
+contexts are not pooled. Unknown counts are checked against the saved analysis.
+
+It then recounts the 480 uniform semantic labels, reparses 479 available response
+texts, checks paired original/rewrite labels, and builds the union with prior
+flags. It recomputes the semantic-sensitivity contrasts using the main score
+matrices and the added rewrite matrix. All numeric outputs must agree with the
+saved results within 1e-10. Success ends with `FOLLOWUP_REPLAY_VERIFIED`.
+
+This command uses no API, GPU or database. It verifies score-based analyses and
+response parsing; it does not independently establish semantic truth or repeat
+database execution. Context definitions and interpretation are in
+[External and semantic checks](followup.md).
 
 ## Figures
 

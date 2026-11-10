@@ -14,8 +14,9 @@ The study compares five constructions on eight BIRD databases with ten models,
 2,000 tasks per method and 906 target references. Refill improves source fidelity
 and target-gap error over the template baseline under the reported scoring
 convention. Ring-style construction gives lower target gap and mean selection
-regret. Rewriting questions while keeping SQL fixed improves target alignment
-but reduces source fidelity.
+regret. Under execution scoring, rewriting questions with SQL fixed improves
+target alignment but reduces source fidelity. A uniform semantic review leaves
+both directions unresolved when sampled concerns are treated as unknown scores.
 
 ## Start with the saved results
 
@@ -27,13 +28,15 @@ python3 scripts/verify_manifest.py
 python3 scripts/replay_main.py
 python3 scripts/recount_semantic.py
 python3 scripts/replay_witness.py
+python3 scripts/replay_followup.py
 ```
 
 The main replay recomputes both scoring layers for all ten releases and compares
 the tables and direct method contrasts with the archived values. It prints one
 confirmation per release. Semantic recount verifies the 4,000 API judgments;
 the witness replay checks the saved binary assignment used in the reference-risk
-analysis. See [reproduction instructions](docs/reproduction.md) for expected
+analysis. The follow-up replay checks the BEAVER schema-context comparison and
+the uniform semantic sensitivity. See [reproduction instructions](docs/reproduction.md) for expected
 outputs and additional commands.
 
 ## Contents
@@ -53,6 +56,8 @@ outputs and additional commands.
 [Data formats](docs/data.md) explain the record fields and scoring layers.
 [Paper-to-artifact mapping](docs/paper-map.md) identifies which results can be
 recomputed here and which are supplied as saved analyses.
+[External and semantic checks](docs/followup.md) describe the additional evidence
+in the current manuscript.
 
 ## Construction and selection
 
@@ -101,6 +106,10 @@ Text-to-SQL Benchmark Migration Preserves*. See `CITATION.cff` for its authors.
 The experiments use [Spider](https://yale-lily.github.io/spider/) and
 [BIRD](https://bird-bench.github.io/). Obtain databases and model weights through
 their original distribution channels and follow the applicable terms.
+The BEAVER follow-up uses the SQLite conversion distributed with
+[CORE-T](https://github.com/UKPLab/emnlp2026-core-t). Only derived score records
+from that pilot are included here; its questions, SQL and database contents are
+obtained from the upstream distribution.
 
 ## Build the manuscript
 

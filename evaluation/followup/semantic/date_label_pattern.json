@@ -1,0 +1,28 @@
+{
+  "status": "POST_HOC_MODEL_LABEL_PATTERN_COUNTED",
+  "counts": [
+    {
+      "label": "incorrect",
+      "error_type": "time_order_limit",
+      "question_has_date_instruction": true,
+      "sql_mentions_column": true,
+      "n": 14
+    },
+    {
+      "label": "insufficient",
+      "error_type": "ambiguous",
+      "question_has_date_instruction": true,
+      "sql_mentions_column": true,
+      "n": 5
+    },
+    {
+      "label": "supported",
+      "error_type": "none",
+      "question_has_date_instruction": false,
+      "sql_mentions_column": false,
+      "n": 1
+    }
+  ],
+  "analysis_labels_sha256": "97c1c32816046d09376d6c5a41ad8602ad772fc8a9c9c794fce147f71035475f",
+  "scope": "Pattern occurrence in frozen sample; no model label changed and not proof of the judge reasoning."
+}

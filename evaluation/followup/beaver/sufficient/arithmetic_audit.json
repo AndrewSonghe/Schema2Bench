@@ -1,0 +1,6 @@
+{
+  "status": "NUMPY_DIRECT_CONTRASTS_RECALCULATED",
+  "checks": 20,
+  "max_absolute_error": 1.1102230246251565e-16,
+  "scope": "same input scores, independent interval arithmetic; not semantic verification, confidence interval or joint sharpness"
+}

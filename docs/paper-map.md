@@ -18,7 +18,9 @@ numerical output is included without its full input pipeline.
 | Section VII: generated-task semantic audit | `evaluation/semantic/` | Recounts the 4,000 archived labels and retains the judging contract |
 | Section VII: uncertainty and witnesses | `figures/data/risk.json`, `replay/witness/` | Saved scenario bounds and independent replay of one binary witness |
 | Section VII: weight sensitivity | `figures/data/weights.json` | Saved component bounds and region plotting |
-| Section VII: revised references, larger panels and external pilot | `paper/` | Reported results; full rerun inputs are not included in this compact release |
+| Section VII: uniform Terra review and joint semantic sensitivity | `evaluation/followup/semantic/`, `scripts/replay_followup.py` | Recounts 480 labels, parses 479 responses and replays the added score sensitivities |
+| Section VII: BEAVER pilot and schema-context control | `evaluation/followup/beaver/`, `scripts/replay_followup.py` | Recomputes TEF/gap tables, unknown counts and direct aggregate/domain contrasts from stored scores |
+| Section VII: revised references, larger panels and TACO pilot | `paper/` | Reported results; full rerun inputs are not included in this compact release |
 
 The package is sufficient to inspect the main construction components and
 recompute the main stored-score comparison. It should not be described as a
