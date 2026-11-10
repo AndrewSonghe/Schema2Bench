@@ -11,6 +11,7 @@ numerical output is included without its full input pipeline.
 | Section IV: cache checks | `evaluation/cache_check/`, `scripts/check_sqlite_sample.py` | Original 32-query sample; rerun requires matching external databases |
 | Sections IV-V: five-method comparison | `replay/main/` | Item-level replay of both scoring layers, direct TEF/gap contrasts and ten releases |
 | Section V: model-selection regret | `figures/data/regret.json`, `paper/` | Saved analysis and figure input |
+| Section VI-A: earlier seven-database selection and repair | `evaluation/historical/`, `scripts/recount_historical.py` | Recounts archived selection and 147-cell generation summaries; see [scope](historical.md) |
 | Section VI: column/value controls | `figures/data/name.json`, `depth.json` | Saved aggregate and domain analyses |
 | Section VI: same-SQL rewriting | `figures/data/rewrite.json` | Saved analyses and plotting input |
 | Section VI: difficulty support | `scripts/check_difficulty_support.py` | Recomputes the 0.3775 capacity certificate |

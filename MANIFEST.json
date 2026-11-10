@@ -17,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6136,
-      "sha256": "d81e0d18b5b40a7c636d03d42ea90ad3f3938d62c29fe0024b101c529c958664"
+      "bytes": 6404,
+      "sha256": "0aa8815fb237b606db5c8b6fc5ff251bc88d375adcec2f0cbf6b4a368b76606c"
     },
     {
       "path": "configs/databases.json",
@@ -376,14 +376,19 @@
       "sha256": "61f06f1b0818e353c37180cfbd0ab3b90f78f8228f8eb4a82ba1fb95b3591c04"
     },
     {
+      "path": "docs/historical.md",
+      "bytes": 1803,
+      "sha256": "f2e5ea0c21693baef7716f38681c8f314cbf305ff5498b428e1907decd85a456"
+    },
+    {
       "path": "docs/overview.png",
       "bytes": 108739,
       "sha256": "807bfe02fbe755a4807ea1c31bd967bdf23f2ee5ae84c46356e5eae9cab8efd6"
     },
     {
       "path": "docs/paper-map.md",
-      "bytes": 2754,
-      "sha256": "8306ac83dc23498eafebe4a85d33a1e1017db09424f824bf020421212dc179db"
+      "bytes": 2968,
+      "sha256": "2bf574eb539cf0f07113f9f5644e1e197031e8a7a4c4dabfdaa5a0ebcd920154"
     },
     {
       "path": "docs/reproduction.md",
@@ -484,6 +489,36 @@
       "path": "evaluation/followup/semantic/rewrite_matrix.jsonl.gz",
       "bytes": 51337,
       "sha256": "210a6a4de6a23ecf27a05f067f3bf502b5ea809d9905a3031b93995114877765"
+    },
+    {
+      "path": "evaluation/historical/generation_jobs.csv",
+      "bytes": 36852,
+      "sha256": "c4797e9fda450c66311bc2d3ce13c2bcf3587d4ac1a56f5a117016f59254dfad"
+    },
+    {
+      "path": "evaluation/historical/generation_summary.csv",
+      "bytes": 5756,
+      "sha256": "5070d08e32cca5ec993ba0054c34c029ec7a9fd6d1f6d804fd81f2ecf5cd8ba3"
+    },
+    {
+      "path": "evaluation/historical/scope.json",
+      "bytes": 2007,
+      "sha256": "897bf1f9a11f57b956ae0539c5abf22c1640a5a13fee8901c5d0c1ea46f3115a"
+    },
+    {
+      "path": "evaluation/historical/selection_baselines.json",
+      "bytes": 2433,
+      "sha256": "2f2cdabbe8a4d655cdedcdd40af4c261bbef547f0c2db3245e520b2284910166"
+    },
+    {
+      "path": "evaluation/historical/selection_cost.json",
+      "bytes": 19357,
+      "sha256": "719282408004216b8807d876d3b3a5e29c5d316030523168ea877545ae4fe2e4"
+    },
+    {
+      "path": "evaluation/historical/selection_exact.json",
+      "bytes": 29105,
+      "sha256": "69724b463271e56f631467d261acf8bcc66a570b06d72e404bd3275668ed6706"
     },
     {
       "path": "evaluation/proofs/20261105_ordered_rowcap_cache_proof_v1/PROOFS.jsonl",
@@ -802,13 +837,13 @@
     },
     {
       "path": "paper/sections/abstract.tex",
-      "bytes": 1515,
-      "sha256": "cfad2f687837887a42602e790ea1023632d1d233fb7a6995a34bf5837b6408cc"
+      "bytes": 1512,
+      "sha256": "c550e5fa8d2a01c04a903dd9060e2b9ced624f6f30909cd36af2cf3ca6bcda77"
     },
     {
       "path": "paper/sections/current_scientific_main.tex",
-      "bytes": 32541,
-      "sha256": "611506acb903ffd35b90d7e51f1f6946405857b53bef80d17153d5dec9a3f635"
+      "bytes": 34126,
+      "sha256": "0e5544887cae416405e8167c0ecc4a20802bcd49b4b3b734a58ef7a6197de77f"
     },
     {
       "path": "paper/sections/migration_tables_20261107.tex",
@@ -817,18 +852,18 @@
     },
     {
       "path": "paper/sections/paired_construction_20261109.tex",
-      "bytes": 3755,
-      "sha256": "ed474e96ed02d31b37e7107e1551b17d109c609cda485a3e0a574583152629fb"
+      "bytes": 3592,
+      "sha256": "eb0735f92958479eab75357c70dde2956bac1f25f8d23d62771c4a75034c667d"
     },
     {
       "path": "paper/sections/question_realization_20261109.tex",
-      "bytes": 2860,
-      "sha256": "fc1ccccc69eca857c5e4d6eb3385fda480d24fe4c48f1b18cec6b6128c25f4c7"
+      "bytes": 2243,
+      "sha256": "50f0b8d55508b646a7f23727f3162397fd0b28f1632372213cecff72e2ee74de"
     },
     {
       "path": "paper/sections/robustness_20261109.tex",
-      "bytes": 15770,
-      "sha256": "43059f308fee37f262a0753b2db100f1ad15a5802fe4e640c4ea6260e9a851fb"
+      "bytes": 14771,
+      "sha256": "7d8f9e2b1a776bb20edbc552ebee0551e045d8e5d07f6ff70fa627c24d098ef1"
     },
     {
       "path": "paper/sections/submission_main.tex",
@@ -951,6 +986,11 @@
       "sha256": "47bf142fbeb10e6a8c7c410aeb7837b2b3282d992fa1b88aefbbfa3ed32b4d13"
     },
     {
+      "path": "scripts/recount_historical.py",
+      "bytes": 3332,
+      "sha256": "3903dc98dd9e0917ccd3983a0468e5a1dc726dc8ce8ab22e580588b02721f7ac"
+    },
+    {
       "path": "scripts/recount_semantic.py",
       "bytes": 707,
       "sha256": "39dd2fc7d9616e9bf5f5770cb359b774618fc4efa9904687a28198557984148c"
@@ -1071,6 +1111,6 @@
       "sha256": "300736032288807d04648c77963038207fbe4af907fd15d02083f9b72a4878de"
     }
   ],
-  "total_bytes": 56514786,
-  "scope": "Research artifact for offline reanalysis, including BEAVER context and uniform semantic follow-ups; databases and model weights are external dependencies."
+  "total_bytes": 56615716,
+  "scope": "Research artifact for offline reanalysis, including earlier seven-database selection and construction, BEAVER context and uniform semantic follow-ups; databases and model weights are external dependencies."
 }

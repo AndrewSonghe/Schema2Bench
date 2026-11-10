@@ -1,0 +1,64 @@
+{
+  "databases": [
+    "Chinook",
+    "IMDb",
+    "Instacart",
+    "SFDFFD",
+    "TPC-DS",
+    "TPC-H",
+    "USAccidents"
+  ],
+  "models": [
+    "Phi-4-mini-instruct",
+    "SmolLM3-3B",
+    "Granite-3.3-8B-Instruct",
+    "Qwen3-4B-Instruct-2507",
+    "OLMo-2-0425-1B-Instruct",
+    "Falcon-H1-7B-Instruct",
+    "InternLM3-8B-Instruct"
+  ],
+  "selection": {
+    "source_items": 1034,
+    "candidates": 2806,
+    "release_size": 2000,
+    "seeds": 10,
+    "swaps": 14,
+    "swap_domain": "TPC-DS",
+    "H": 0.0094330900243309,
+    "overlapping_releases": true
+  },
+  "generation": {
+    "methods": 7,
+    "databases": 7,
+    "seeds": [
+      1101,
+      2202,
+      3303
+    ],
+    "attempts_per_cell": 500,
+    "cells": 147
+  },
+  "scope": "Earlier construction and seven-model panel; not the current deterministic Refill comparison. Saved cell-level and exact-replay summaries, not a full regeneration package.",
+  "inputs": {
+    "generation_jobs.csv": {
+      "source": "Schema2Bench/out/generation_stability_ablation_v1/analysis/job_metrics.csv",
+      "sha256": "c4797e9fda450c66311bc2d3ce13c2bcf3587d4ac1a56f5a117016f59254dfad"
+    },
+    "generation_summary.csv": {
+      "source": "Schema2Bench/out/generation_stability_ablation_v1/analysis/across_seed_summary.csv",
+      "sha256": "5070d08e32cca5ec993ba0054c34c029ec7a9fd6d1f6d804fd81f2ecf5cd8ba3"
+    },
+    "selection_exact.json": {
+      "source": "Schema2Bench/development/20261103_icde_primary_repro_v1/runs/EXACT_REPLAY.json",
+      "sha256": "69724b463271e56f631467d261acf8bcc66a570b06d72e404bd3275668ed6706"
+    },
+    "selection_baselines.json": {
+      "source": "Schema2Bench/out/bounded_cached_stability_20260913/SUMMARY.json",
+      "sha256": "2f2cdabbe8a4d655cdedcdd40af4c261bbef547f0c2db3245e520b2284910166"
+    },
+    "selection_cost.json": {
+      "source": "Schema2Bench/out/method_extension_development_20260913/BUDGET_SUMMARY.json",
+      "sha256": "719282408004216b8807d876d3b3a5e29c5d316030523168ea877545ae4fe2e4"
+    }
+  }
+}

@@ -21,6 +21,9 @@ target alignment but reduces source fidelity. A uniform semantic review leaves
 both directions unresolved when sampled concerns are treated as unknown scores.
 
 Spider supplies the source query structures and source model responses.
+Earlier experiments on Chinook, IMDb, Instacart, SFDFFD, TPC-DS, TPC-H and
+USAccidents evaluate repair and bounded selection with a separate seven-model
+panel. Their [archived results](docs/historical.md) are reported separately.
 Additional studies use BIRD's `student_club` database and four SynSQL-2.5M
 databases for value-sampling controls, including the garment database for
 candidate generation. External evaluations use three databases each from TACO
@@ -39,6 +42,7 @@ python3 scripts/replay_main.py
 python3 scripts/recount_semantic.py
 python3 scripts/replay_witness.py
 python3 scripts/replay_followup.py
+python3 scripts/recount_historical.py
 ```
 
 The main replay recomputes both scoring layers for all ten releases and compares

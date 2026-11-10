@@ -14,7 +14,7 @@ We propose Schema2Bench for \emph{cross-domain benchmark migration}: constructin
 
 \emph{Source fidelity} asks whether migration preserves which models succeed and where they disagree on the source benchmark. \emph{Target alignment} asks whether it reproduces accuracy differences on target tasks. We measure them with \emph{test-effect fidelity error} (TEF) and \emph{target gap error}, alongside rankings and selection regret.
 
-The main comparison uses Spider as the source, eight databases from BIRD as targets, five constructions and ten models. Refill best preserves source behavior under the declared execution scoring and weights; Ring has lower target gap and mean selection regret. Same-SQL rewriting improves target alignment but reduces source fidelity; semantic sensitivity leaves both directions unresolved. Further studies use SynSQL-2.5M, TACO and BEAVER.
+The main comparison uses Spider as the source, eight databases from BIRD as targets, five constructions and ten models. Refill best preserves source behavior under the declared execution scoring and weights; Ring has lower target gap and mean selection regret. Same-SQL rewriting improves target alignment but reduces source fidelity; semantic sensitivity leaves both directions unresolved. Seven additional databases evaluate construction and selection, alongside SynSQL-2.5M, TACO and BEAVER studies.
 
 Our contributions are an evidence-grounded migration method with quota-constrained selection (Section~\ref{sec:framework}), bounds on selection-induced changes in source fidelity and on structural coverage (Sections~\ref{sec:framework} and~\ref{sec:current-support}), and controlled experiments relating construction choices to source fidelity and target alignment (Sections~\ref{sec:measurement}--\ref{sec:robustness}).
 
@@ -117,7 +117,7 @@ The experiments address three questions: which model comparisons migration prese
 \subsection{Datasets and models}
 The primary comparison uses eight databases from BIRD (Table~\ref{tab:screening}), ten models, 2,000 tasks/method and 906 shared references. Spider supplies 1,034 source items from 20 databases. Prompts use data definition language (DDL) schemas from retained snapshots.
 
-Further studies use BIRD's \texttt{student\_club} and four SynSQL-2.5M databases for value sampling (Section~\ref{sec:ablation}), including garment for candidate generation (Section~\ref{sec:acquisition}), and three databases each from TACO and BEAVER (Section~\ref{sec:external}). BIRD Mini-Dev revises references on the same eight main databases (Section~\ref{sec:precision}).
+An earlier seven-database study evaluates construction and selection (Section~\ref{sec:selection}). Further studies use BIRD's \texttt{student\_club} and four SynSQL-2.5M databases for value sampling (Section~\ref{sec:ablation}), including garment for candidate generation (Section~\ref{sec:acquisition}), and three databases each from TACO and BEAVER (Section~\ref{sec:external}). BIRD Mini-Dev revises references on the same eight main databases (Section~\ref{sec:precision}).
 
 The panel comprises Qwen3-4B (Instruct-2507), Granite-3.3-8B-Instruct, Qwen2.5-Coder-7B-Instruct, Qwen2.5-7B-Instruct, Llama-3.1-8B-Instruct, Mistral-7B-Instruct-v0.3, Qwen2.5-14B-Instruct, Qwen3-8B, Gemma-2-9B-it and Phi-4. Qwen2.5-7B also participates in generation \citep{qwen2024qwen25}.
 
@@ -221,19 +221,30 @@ We separate construction from selection, then test column preference, value dept
 \end{figure*}
 
 \subsection{Construction versus selection}\label{sec:selection}
-Most Template--Refill gap improvement precedes selection (Table~\ref{tab:anchor}). Structural adjustment adds 0.0204 pp over matched random, positive in 9/10 seeds. Each arm uses 2,000 tasks, ten models and 906 references with Verified scoring.
+Most Template--Refill gap improvement precedes selection (Table~\ref{tab:anchor}(a)). Structural adjustment adds 0.0204 pp over matched random, positive in 9/10 seeds. Each arm uses 2,000 tasks, ten models and 906 references with Verified scoring.
 
 \begin{table}[t]\centering\small
-\caption{Selection controls over ten overlapping releases, 2,000 tasks per arm. Positive $I_G=G(\mathrm{Template})-G(\mathrm{Refill})$ favors Refill.}
+\caption{Selection results: ten overlapping 2,000-task releases per study. (a) BIRD, ten models; positive $I_G=G(\mathrm{Template})-G(\mathrm{Refill})$ favors Refill. (b) Earlier seven-database, seven-model study; lower losses are better.}
 \label{tab:anchor}
 \begin{tabular}{lrrr}\toprule
+\multicolumn{4}{l}{\textit{(a) BIRD: construction versus selection}}\\
 Selection & Swaps & $H$ & $I_G$ (pp)\\\midrule
 Shared quota-random anchor &0&0&5.5386\\
 Matched-random adjustment &10&0.01&5.5449\\
-Structural adjustment &10&0.01&5.5652\\\bottomrule
+Structural adjustment &10&0.01&5.5652\\\midrule
+\multicolumn{4}{l}{\textit{(b) Seven additional databases: selection}}\\
+Selector & \multicolumn{2}{c}{Structural loss} & TEF\\\midrule
+Quota random & \multicolumn{2}{c}{0.269519} &0.050071\\
+Structural greedy & \multicolumn{2}{c}{0.213055} &0.048692\\
+Bounded cost-aware & \multicolumn{2}{c}{0.260790} &0.047229\\\bottomrule
 \end{tabular}\end{table}
 
 Anchor mean $\tau$-b is 0.2312/0.3270 for Template/refill versus 0.2292/0.3272 after adjustment. Structural-minus-matched-random TEF is $[+0.000227,+0.000977]$ with source schema summaries (8/10 unfavorable; 2/10 unresolved) and $[-0.000777,+0.000452]$ with source DDL (2/10 favorable; 8/10 unresolved). Directed selection therefore trades structural gain against adverse or unresolved TEF differences.
+
+\paragraph{Seven additional databases}
+Earlier experiments use Chinook, IMDb, Instacart, SFDFFD, TPC-DS, TPC-H and USAccidents. A SQL-first constructor supplies 2,806 candidates for 2,000-task releases with a seven-model panel. Bounded cost-aware selection reduces mean TEF by 5.67\% relative to quota random, improving all ten paired seeds (Table~\ref{tab:anchor}(b)); greedy retains lower structural loss. Unequal quotas direct all 14 swaps to TPC-DS, so the gain concerns the pooled profile.
+
+Across 147 construction runs (seven methods, seven databases, three seeds; 500 attempts each), repair increases unique SQL yield from 396.00 to 417.90 per 1,000 attempts, improving 20/21 paired settings. Controlled construction has lower profile error but lower yield and higher token cost than Ring-style. These results support the earlier construction and selection modules; the main BIRD comparison evaluates the current Refill variant.
 
 \input{sections/paired_construction_20261109}
 \input{sections/question_realization_20261109}

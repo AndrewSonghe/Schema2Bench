@@ -1,0 +1,68 @@
+{
+  "status": "ALL_TEN_SEED_CACHED_DEVELOPMENT_COMPLETE",
+  "means": {
+    "quota_random": {
+      "structural_loss": 0.2695186647041782,
+      "loss": 0.05007056447531247,
+      "accuracy_mae": 0.023922701345534446,
+      "difficulty_wasserstein": 0.015179441834760983,
+      "pairwise_disagreement_mae": 0.021936842590034075,
+      "spearman": 1.0,
+      "worst_model_accuracy_deviation": 0.06148046652640569
+    },
+    "structural_greedy": {
+      "structural_loss": 0.21305491144546523,
+      "loss": 0.04869242632555245,
+      "accuracy_mae": 0.024675598472554378,
+      "difficulty_wasserstein": 0.012714589665653506,
+      "pairwise_disagreement_mae": 0.022604476374689136,
+      "spearman": 1.0,
+      "worst_model_accuracy_deviation": 0.05390716272319429
+    },
+    "structural_local_search": {
+      "structural_loss": 0.18929804018659369,
+      "loss": 0.055944662555153686,
+      "accuracy_mae": 0.02521379767535263,
+      "difficulty_wasserstein": 0.01851649626968777,
+      "pairwise_disagreement_mae": 0.024428737220226576,
+      "spearman": 0.9928571428571429,
+      "worst_model_accuracy_deviation": 0.0422996728450203
+    },
+    "bounded_exchange": {
+      "structural_loss": 0.26116259424753674,
+      "loss": 0.047747379480007617,
+      "accuracy_mae": 0.024042672839130766,
+      "difficulty_wasserstein": 0.012931873445703231,
+      "pairwise_disagreement_mae": 0.021545666390347235,
+      "spearman": 1.0,
+      "worst_model_accuracy_deviation": 0.05943064201033218
+    }
+  },
+  "comparisons": {
+    "quota_random": {
+      "structure_wins": 10,
+      "TEF_wins": 10,
+      "TEF_gain_min": 0.0008816337076785891,
+      "TEF_gain_max": 0.004834320938504014,
+      "mean_TEF_gain": 0.0023231849953048505
+    },
+    "structural_greedy": {
+      "structure_wins": 0,
+      "TEF_wins": 7,
+      "TEF_gain_min": -0.0025034968569679003,
+      "TEF_gain_max": 0.005454722764427662,
+      "mean_TEF_gain": 0.0009450468455448384
+    },
+    "structural_local_search": {
+      "structure_wins": 0,
+      "TEF_wins": 10,
+      "TEF_gain_min": 0.0004952319196300584,
+      "TEF_gain_max": 0.013200523071173337,
+      "mean_TEF_gain": 0.008197283075146073
+    }
+  },
+  "H_min": 0.0094330900243309,
+  "H_max": 0.009997374662028108,
+  "scope": "All ten historical seeds on one reused universe and fixed cached panel. Not independent replication, statistical superiority, or calibrated noninferiority.",
+  "new_model_calls": 0
+}
