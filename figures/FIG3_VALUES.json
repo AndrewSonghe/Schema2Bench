@@ -1,0 +1,130 @@
+{
+  "fig3/tef_refill_minus_method/template/base": [
+    -0.19329435540341122,
+    0.005344168434736764
+  ],
+  "fig3/tef_refill_minus_method/template/verified_evidence": [
+    -0.1317297196135951,
+    -0.07909868317126294
+  ],
+  "fig3/tef_refill_minus_method/ring/base": [
+    -0.29340073706203235,
+    0.03455731782788998
+  ],
+  "fig3/tef_refill_minus_method/ring/verified_evidence": [
+    -0.2335935902436522,
+    -0.061506120914387424
+  ],
+  "fig3/tef_refill_minus_method/omni/base": [
+    -0.7340076788200379,
+    -0.19518553624475138
+  ],
+  "fig3/tef_refill_minus_method/omni/verified_evidence": [
+    -0.6657694122939424,
+    -0.3246551860336653
+  ],
+  "fig3/tef_refill_minus_method/synth/base": [
+    -0.6869213474209406,
+    0.19827226517368837
+  ],
+  "fig3/tef_refill_minus_method/synth/verified_evidence": [
+    -0.45360462613447533,
+    -0.02108424255633888
+  ],
+  "fig3/gap_refill_minus_method/template/base": [
+    -0.11603853446036749,
+    -0.00024171729961409288
+  ],
+  "fig3/gap_refill_minus_method/template/verified_evidence": [
+    -0.05569251280355384,
+    -0.05569251280355384
+  ],
+  "fig3/gap_refill_minus_method/ring/base": [
+    0.005230862018303622,
+    0.12347923795840882
+  ],
+  "fig3/gap_refill_minus_method/ring/verified_evidence": [
+    0.06848369861122473,
+    0.07296550728911184
+  ],
+  "fig3/gap_refill_minus_method/omni/base": [
+    -0.05241333273590626,
+    0.19143673588895985
+  ],
+  "fig3/gap_refill_minus_method/omni/verified_evidence": [
+    0.034514508088298236,
+    0.13954379226650718
+  ],
+  "fig3/gap_refill_minus_method/synth/base": [
+    -0.2056606877197143,
+    0.20759802250491124
+  ],
+  "fig3/gap_refill_minus_method/synth/verified_evidence": [
+    0.002346531108402385,
+    0.15627058887236156
+  ],
+  "fig3/regret/refill/california_schools": [
+    12.727272727272727,
+    12.727272727272727
+  ],
+  "fig3/regret/refill/card_games": [
+    3.896103896103896,
+    11.688311688311689
+  ],
+  "fig3/regret/refill/codebase_community": [
+    8.49673202614379,
+    8.49673202614379
+  ],
+  "fig3/regret/refill/european_football_2": [
+    4.395604395604396,
+    4.395604395604396
+  ],
+  "fig3/regret/refill/financial": [
+    2.4390243902439024,
+    14.634146341463415
+  ],
+  "fig3/regret/refill/formula_1": [
+    0.0,
+    0.0
+  ],
+  "fig3/regret/refill/superhero": [
+    0.0,
+    0.0
+  ],
+  "fig3/regret/refill/thrombosis_prediction": [
+    11.904761904761905,
+    11.904761904761905
+  ],
+  "fig3/regret/ring/california_schools": [
+    3.6363636363636362,
+    3.6363636363636362
+  ],
+  "fig3/regret/ring/card_games": [
+    3.896103896103896,
+    3.896103896103896
+  ],
+  "fig3/regret/ring/codebase_community": [
+    3.2679738562091503,
+    3.2679738562091503
+  ],
+  "fig3/regret/ring/european_football_2": [
+    0.0,
+    4.395604395604396
+  ],
+  "fig3/regret/ring/financial": [
+    2.4390243902439024,
+    2.4390243902439024
+  ],
+  "fig3/regret/ring/formula_1": [
+    5.511811023622047,
+    5.511811023622047
+  ],
+  "fig3/regret/ring/superhero": [
+    10.169491525423728,
+    10.169491525423728
+  ],
+  "fig3/regret/ring/thrombosis_prediction": [
+    6.349206349206349,
+    6.349206349206349
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "max_output_tokens": 2048,
+  "labels": [
+    "supported",
+    "incorrect",
+    "insufficient"
+  ],
+  "total_items": 4000,
+  "per_method_domain": 100,
+  "prior_responses_reused": 400,
+  "new_responses": 3599,
+  "unavailable": 1,
+  "meaning": "Model judgments of question-SQL agreement, not human annotations or calibrated confidence."
+}

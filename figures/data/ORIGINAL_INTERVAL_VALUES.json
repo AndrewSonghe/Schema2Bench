@@ -1,0 +1,314 @@
+{
+  "fig3/tef_refill_minus_method/template/base": [
+    -0.19329435540341122,
+    0.005344168434736764
+  ],
+  "fig3/tef_refill_minus_method/template/verified_evidence": [
+    -0.1317297196135951,
+    -0.07909868317126294
+  ],
+  "fig3/tef_refill_minus_method/ring/base": [
+    -0.29340073706203235,
+    0.03455731782788998
+  ],
+  "fig3/tef_refill_minus_method/ring/verified_evidence": [
+    -0.2335935902436522,
+    -0.061506120914387424
+  ],
+  "fig3/tef_refill_minus_method/omni/base": [
+    -0.7340076788200379,
+    -0.19518553624475138
+  ],
+  "fig3/tef_refill_minus_method/omni/verified_evidence": [
+    -0.6657694122939424,
+    -0.3246551860336653
+  ],
+  "fig3/tef_refill_minus_method/synth/base": [
+    -0.6869213474209406,
+    0.19827226517368837
+  ],
+  "fig3/tef_refill_minus_method/synth/verified_evidence": [
+    -0.45360462613447533,
+    -0.02108424255633888
+  ],
+  "fig3/gap_refill_minus_method/template/base": [
+    -0.11603853446036749,
+    -0.00024171729961409288
+  ],
+  "fig3/gap_refill_minus_method/template/verified_evidence": [
+    -0.05569251280355384,
+    -0.05569251280355384
+  ],
+  "fig3/gap_refill_minus_method/ring/base": [
+    0.005230862018303622,
+    0.12347923795840882
+  ],
+  "fig3/gap_refill_minus_method/ring/verified_evidence": [
+    0.06848369861122473,
+    0.07296550728911184
+  ],
+  "fig3/gap_refill_minus_method/omni/base": [
+    -0.05241333273590626,
+    0.19143673588895985
+  ],
+  "fig3/gap_refill_minus_method/omni/verified_evidence": [
+    0.034514508088298236,
+    0.13954379226650718
+  ],
+  "fig3/gap_refill_minus_method/synth/base": [
+    -0.2056606877197143,
+    0.20759802250491124
+  ],
+  "fig3/gap_refill_minus_method/synth/verified_evidence": [
+    0.002346531108402385,
+    0.15627058887236156
+  ],
+  "fig3/regret/refill/california_schools": [
+    12.727272727272727,
+    12.727272727272727
+  ],
+  "fig3/regret/refill/card_games": [
+    3.896103896103896,
+    11.688311688311689
+  ],
+  "fig3/regret/refill/codebase_community": [
+    8.49673202614379,
+    8.49673202614379
+  ],
+  "fig3/regret/refill/european_football_2": [
+    4.395604395604396,
+    4.395604395604396
+  ],
+  "fig3/regret/refill/financial": [
+    2.4390243902439024,
+    14.634146341463415
+  ],
+  "fig3/regret/refill/formula_1": [
+    0.0,
+    0.0
+  ],
+  "fig3/regret/refill/superhero": [
+    0.0,
+    0.0
+  ],
+  "fig3/regret/refill/thrombosis_prediction": [
+    11.904761904761905,
+    11.904761904761905
+  ],
+  "fig3/regret/ring/california_schools": [
+    3.6363636363636362,
+    3.6363636363636362
+  ],
+  "fig3/regret/ring/card_games": [
+    3.896103896103896,
+    3.896103896103896
+  ],
+  "fig3/regret/ring/codebase_community": [
+    3.2679738562091503,
+    3.2679738562091503
+  ],
+  "fig3/regret/ring/european_football_2": [
+    0.0,
+    4.395604395604396
+  ],
+  "fig3/regret/ring/financial": [
+    2.4390243902439024,
+    2.4390243902439024
+  ],
+  "fig3/regret/ring/formula_1": [
+    5.511811023622047,
+    5.511811023622047
+  ],
+  "fig3/regret/ring/superhero": [
+    10.169491525423728,
+    10.169491525423728
+  ],
+  "fig3/regret/ring/thrombosis_prediction": [
+    6.349206349206349,
+    6.349206349206349
+  ],
+  "fig4/Column preference/tef": [
+    -0.016593084844558324,
+    -0.005466451751558132
+  ],
+  "fig4/Value sampling/tef": [
+    -0.012477126604678732,
+    -0.0012612722974425024
+  ],
+  "fig4/Question realization/tef": [
+    0.03519058255204056,
+    0.20396752104098725
+  ],
+  "fig4/Column preference/gap": [
+    -0.0038157452963660317,
+    -0.0014250736586355669
+  ],
+  "fig4/Column preference/california_schools/gap": [
+    -0.007224242424242428,
+    -0.007224242424242428
+  ],
+  "fig4/Column preference/card_games/gap": [
+    0.017878210678210677,
+    0.02095815295815296
+  ],
+  "fig4/Column preference/codebase_community/gap": [
+    0.02604502541757444,
+    0.039909368191721147
+  ],
+  "fig4/Column preference/european_football_2/gap": [
+    -0.04382026862026864,
+    -0.04377533577533578
+  ],
+  "fig4/Column preference/financial/gap": [
+    -0.003484010840108403,
+    -0.003484010840108403
+  ],
+  "fig4/Column preference/formula_1/gap": [
+    -0.01826141732283464,
+    -0.018083639545056863
+  ],
+  "fig4/Column preference/superhero/gap": [
+    0.0,
+    0.0
+  ],
+  "fig4/Column preference/thrombosis_prediction/gap": [
+    -0.001659259259259261,
+    0.0002991181657848319
+  ],
+  "fig4/Value sampling/gap": [
+    0.001863266224706058,
+    0.0022210211785394446
+  ],
+  "fig4/Value sampling/california_schools/gap": [
+    0.02058181818181818,
+    0.02058181818181818
+  ],
+  "fig4/Value sampling/card_games/gap": [
+    0.0028698412698412615,
+    0.003022222222222215
+  ],
+  "fig4/Value sampling/codebase_community/gap": [
+    -0.001088743645606395,
+    0.001443137254901964
+  ],
+  "fig4/Value sampling/european_football_2/gap": [
+    -0.0032888888888888863,
+    -0.0032888888888888863
+  ],
+  "fig4/Value sampling/financial/gap": [
+    0.007520867208672086,
+    0.007698644986449864
+  ],
+  "fig4/Value sampling/formula_1/gap": [
+    -0.0028164479440070003,
+    -0.0028164479440070003
+  ],
+  "fig4/Value sampling/superhero/gap": [
+    -0.021050094161958563,
+    -0.021050094161958563
+  ],
+  "fig4/Value sampling/thrombosis_prediction/gap": [
+    0.01217777777777778,
+    0.012177777777777784
+  ],
+  "fig4/Question realization/gap": [
+    -0.07182319673531166,
+    -0.06656892662460517
+  ],
+  "fig4/Question realization/california_schools/gap": [
+    -0.1784,
+    -0.1752
+  ],
+  "fig4/Question realization/card_games/gap": [
+    -0.06029552669552666,
+    -0.05949552669552666
+  ],
+  "fig4/Question realization/codebase_community/gap": [
+    -0.06326913580246914,
+    -0.056151633986928115
+  ],
+  "fig4/Question realization/european_football_2/gap": [
+    -0.025830525030525003,
+    -0.009187789987789964
+  ],
+  "fig4/Question realization/financial/gap": [
+    -0.09348943089430894,
+    -0.08557181571815717
+  ],
+  "fig4/Question realization/formula_1/gap": [
+    -0.08600804899387575,
+    -0.08600804899387575
+  ],
+  "fig4/Question realization/superhero/gap": [
+    -0.0454854990583804,
+    -0.03912919020715629
+  ],
+  "fig4/Question realization/thrombosis_prediction/gap": [
+    -0.021807407407407428,
+    -0.021807407407407428
+  ],
+  "fig5/no_risk/refill/gap": [
+    -0.07182319673531166,
+    -0.06656892662460517
+  ],
+  "fig5/construction_only/refill/gap": [
+    -0.09374200826971886,
+    -0.04163661901051456
+  ],
+  "fig5/reference_71_only/refill/gap": [
+    -0.11375832024260596,
+    0.0010981146918807912
+  ],
+  "fig5/reference_105_only/refill/gap": [
+    -0.12358931532542328,
+    0.030323569499052235
+  ],
+  "fig5/construction_plus_reference_71/refill/gap": [
+    -0.13555172652681133,
+    0.025616639901482118
+  ],
+  "fig5/construction_plus_reference_105/refill/gap": [
+    -0.14564549088739875,
+    0.05468694584340194
+  ],
+  "fig5/no_risk/refill/tef": [
+    0.03519058255204056,
+    0.20396752104098725
+  ],
+  "fig5/construction_only/refill/tef": [
+    -0.0021161335451011162,
+    0.22336612729667304
+  ],
+  "fig5/no_risk/ring/gap": [
+    -0.0033394981240869475,
+    0.0063965806645066535
+  ],
+  "fig5/construction_only/ring/gap": [
+    -0.03372459317169752,
+    0.03797626325552061
+  ],
+  "fig5/reference_71_only/ring/gap": [
+    -0.03910976241395538,
+    0.04273172163263073
+  ],
+  "fig5/reference_105_only/ring/gap": [
+    -0.049120505288284634,
+    0.05153447413117058
+  ],
+  "fig5/construction_plus_reference_71/ring/gap": [
+    -0.06981440652057501,
+    0.07467695059570223
+  ],
+  "fig5/construction_plus_reference_105/ring/gap": [
+    -0.08015356173324892,
+    0.08338089897625248
+  ],
+  "fig5/no_risk/ring/tef": [
+    -0.04617373737373737,
+    -0.00979637868042124
+  ],
+  "fig5/construction_only/ring/tef": [
+    -0.09172779926928865,
+    0.023583978078658946
+  ]
+}

@@ -1,0 +1,4 @@
+Run with Python 3 from any directory:
+python3 verify_witness.py
+
+This compact replay binds the original verified score matrices to the saved 105-reference-only binary assignment. It recomputes the paper witness, preserves scores outside the declared unknown set, and checks exact cell coverage. It neither reruns search nor establishes semantic validity.

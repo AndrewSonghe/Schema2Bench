@@ -1,0 +1,381 @@
+{
+  "status": "WEIGHT_SIMPLEX_INTERVAL_RELAXATION_COMPLETE",
+  "results": {
+    "base": {
+      "comparisons": {
+        "template": {
+          "blocks_lower_upper": [
+            [
+              -0.06646211813713143,
+              -0.0010729280621469828
+            ],
+            [
+              -0.06377214700193425,
+              0.014369439071566735
+            ],
+            [
+              -0.12612018052869117,
+              -0.015904685149365997
+            ]
+          ],
+          "original_weight_difference": [
+            -0.19329435540341125,
+            0.005344168434736753
+          ],
+          "favorable_closure_vertices_w1_w2": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              2.5,
+              0.0
+            ],
+            [
+              2.3263012314017955,
+              0.17369876859820446
+            ],
+            [
+              0.0,
+              1.31338936787219
+            ]
+          ],
+          "unfavorable_closure_vertices_w1_w2": [],
+          "rules": "favorable iff sum(w_i*upper_i)<0; unfavorable iff sum(w_i*lower_i)>0; otherwise unresolved; w3=2.5-w1-w2; vertices describe closures, not strict boundaries"
+        },
+        "ring": {
+          "blocks_lower_upper": [
+            [
+              -0.1588687791853936,
+              -0.03781853645966642
+            ],
+            [
+              -0.11785957446808512,
+              0.02284255319148936
+            ],
+            [
+              -0.03334476681710725,
+              0.09906660219213412
+            ]
+          ],
+          "original_weight_difference": [
+            -0.29340073706203235,
+            0.03455731782789
+          ],
+          "favorable_closure_vertices_w1_w2": [
+            [
+              1.8093016372678203,
+              0.0
+            ],
+            [
+              2.5,
+              0.0
+            ],
+            [
+              0.9414005469919116,
+              1.5585994530080884
+            ]
+          ],
+          "unfavorable_closure_vertices_w1_w2": [],
+          "rules": "favorable iff sum(w_i*upper_i)<0; unfavorable iff sum(w_i*lower_i)>0; otherwise unresolved; w3=2.5-w1-w2; vertices describe closures, not strict boundaries"
+        },
+        "omni": {
+          "blocks_lower_upper": [
+            [
+              -0.3640187791853936,
+              -0.16191853645966642
+            ],
+            [
+              -0.32300957446808515,
+              -0.10125744680851065
+            ],
+            [
+              -0.09395865033311841,
+              0.13598089404685149
+            ]
+          ],
+          "original_weight_difference": [
+            -0.7340076788200379,
+            -0.1951855362447513
+          ],
+          "favorable_closure_vertices_w1_w2": [
+            [
+              1.1411644343834713,
+              0.0
+            ],
+            [
+              2.5,
+              0.0
+            ],
+            [
+              0.0,
+              2.5
+            ],
+            [
+              0.0,
+              1.4329565528549555
+            ]
+          ],
+          "unfavorable_closure_vertices_w1_w2": [],
+          "rules": "favorable iff sum(w_i*upper_i)<0; unfavorable iff sum(w_i*lower_i)>0; otherwise unresolved; w3=2.5-w1-w2; vertices describe closures, not strict boundaries"
+        },
+        "synth": {
+          "blocks_lower_upper": [
+            [
+              -0.32421877918539366,
+              0.03203146354033359
+            ],
+            [
+              -0.2832095744680851,
+              0.09269255319148934
+            ],
+            [
+              -0.1589859875349237,
+              0.14709649688373094
+            ]
+          ],
+          "original_weight_difference": [
+            -0.6869213474209407,
+            0.1982722651736884
+          ],
+          "favorable_closure_vertices_w1_w2": [],
+          "unfavorable_closure_vertices_w1_w2": [],
+          "rules": "favorable iff sum(w_i*upper_i)<0; unfavorable iff sum(w_i*lower_i)>0; otherwise unresolved; w3=2.5-w1-w2; vertices describe closures, not strict boundaries"
+        }
+      },
+      "gap_minus_ring": {
+        "refill": [
+          0.00523086201830361,
+          0.1234792379584088
+        ],
+        "template": [
+          0.06902665532342149,
+          0.17629323927520504
+        ],
+        "ring": [
+          0.0,
+          0.0
+        ],
+        "omni": [
+          -0.1209992627620737,
+          0.11098472854595337
+        ],
+        "synth": [
+          -0.1376987604468554,
+          0.2663166947245791
+        ]
+      },
+      "illustrative_posthoc_gap_increment_tolerance": 0.01,
+      "certified_within_tolerance": [
+        "ring"
+      ],
+      "definitely_outside_tolerance": [
+        "template"
+      ]
+    },
+    "verified": {
+      "comparisons": {
+        "template": {
+          "blocks_lower_upper": [
+            [
+              -0.04443586618569911,
+              -0.03168722819597817
+            ],
+            [
+              -0.04686953578336558,
+              -0.017705705996131547
+            ],
+            [
+              -0.08084863528906082,
+              -0.05941149795830647
+            ]
+          ],
+          "original_weight_difference": [
+            -0.13172971961359511,
+            -0.07909868317126295
+          ],
+          "favorable_closure_vertices_w1_w2": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              2.5,
+              0.0
+            ],
+            [
+              0.0,
+              2.5
+            ]
+          ],
+          "unfavorable_closure_vertices_w1_w2": [],
+          "rules": "favorable iff sum(w_i*upper_i)<0; unfavorable iff sum(w_i*lower_i)>0; otherwise unresolved; w3=2.5-w1-w2; vertices describe closures, not strict boundaries"
+        },
+        "ring": {
+          "blocks_lower_upper": [
+            [
+              -0.1388579250813913,
+              -0.0763946014645701
+            ],
+            [
+              -0.1010384912959381,
+              -0.01835744680851066
+            ],
+            [
+              0.012605652267354394,
+              0.06649185471738664
+            ]
+          ],
+          "original_weight_difference": [
+            -0.2335935902436522,
+            -0.06150612091438744
+          ],
+          "favorable_closure_vertices_w1_w2": [
+            [
+              1.163368742113555,
+              0.0
+            ],
+            [
+              2.5,
+              0.0
+            ],
+            [
+              0.0,
+              2.5
+            ],
+            [
+              0.0,
+              1.9591161483248127
+            ]
+          ],
+          "unfavorable_closure_vertices_w1_w2": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.20806408524093242,
+              0.0
+            ],
+            [
+              0.0,
+              0.2773053646256276
+            ]
+          ],
+          "rules": "favorable iff sum(w_i*upper_i)<0; unfavorable iff sum(w_i*lower_i)>0; otherwise unresolved; w3=2.5-w1-w2; vertices describe closures, not strict boundaries"
+        },
+        "omni": {
+          "blocks_lower_upper": [
+            [
+              -0.3431079250813913,
+              -0.2184446014645701
+            ],
+            [
+              -0.3052884912959381,
+              -0.16040744680851063
+            ],
+            [
+              -0.034745991833225874,
+              0.10839372447883086
+            ]
+          ],
+          "original_weight_difference": [
+            -0.6657694122939424,
+            -0.3246551860336653
+          ],
+          "favorable_closure_vertices_w1_w2": [
+            [
+              0.8291081237639306,
+              0.0
+            ],
+            [
+              2.5,
+              0.0
+            ],
+            [
+              0.0,
+              2.5
+            ],
+            [
+              0.0,
+              1.0081217648691045
+            ]
+          ],
+          "unfavorable_closure_vertices_w1_w2": [],
+          "rules": "favorable iff sum(w_i*upper_i)<0; unfavorable iff sum(w_i*lower_i)>0; otherwise unresolved; w3=2.5-w1-w2; vertices describe closures, not strict boundaries"
+        },
+        "synth": {
+          "blocks_lower_upper": [
+            [
+              -0.2325579250813913,
+              -0.07039460146457008
+            ],
+            [
+              -0.19473849129593812,
+              -0.012357446808510666
+            ],
+            [
+              -0.05261641951429185,
+              0.12333561143348377
+            ]
+          ],
+          "original_weight_difference": [
+            -0.45360462613447533,
+            -0.02108424255633886
+          ],
+          "favorable_closure_vertices_w1_w2": [
+            [
+              1.5915897885579977,
+              0.0
+            ],
+            [
+              2.5,
+              0.0
+            ],
+            [
+              0.0,
+              2.5
+            ],
+            [
+              0.0,
+              2.2723272109750736
+            ]
+          ],
+          "unfavorable_closure_vertices_w1_w2": [],
+          "rules": "favorable iff sum(w_i*upper_i)<0; unfavorable iff sum(w_i*lower_i)>0; otherwise unresolved; w3=2.5-w1-w2; vertices describe closures, not strict boundaries"
+        }
+      },
+      "gap_minus_ring": {
+        "refill": [
+          0.06848369861122472,
+          0.07296550728911183
+        ],
+        "template": [
+          0.12417621141477855,
+          0.12865802009266566
+        ],
+        "ring": [
+          0.0,
+          0.0
+        ],
+        "omni": [
+          -0.07106009365528244,
+          0.038450999200813574
+        ],
+        "synth": [
+          -0.08778689026113683,
+          0.07061897618070943
+        ]
+      },
+      "illustrative_posthoc_gap_increment_tolerance": 0.01,
+      "certified_within_tolerance": [
+        "ring"
+      ],
+      "definitely_outside_tolerance": [
+        "refill",
+        "template"
+      ]
+    }
+  },
+  "scope": "All nonnegative weights sum 2.5, independent coordinate box relaxation; shared source coordinate retained. Relaxation is sufficient but not sharp; no statistical confidence or newly validated data. Actual shared target request correlations are relaxed; fixed first release only. Policy tolerance retrospective and illustrative."
+}

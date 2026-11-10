@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "path": "EXPECTED.json",
+      "bytes": 57486,
+      "sha256": "63e383ba6849c69e6360a28b62026b8ff18dfefba68e0e0280be97db1e1d0849"
+    },
+    {
+      "path": "matrices/core.jsonl",
+      "bytes": 2141296,
+      "sha256": "cef94e48d34abca196066e825d8baaed6b360692b67dcfe1ad9d22abb11f7e11"
+    },
+    {
+      "path": "matrices/memberships.json",
+      "bytes": 1562071,
+      "sha256": "1b3e5674b85f760c07503eed397c247e22037320f1723b2da05c638af6a24985"
+    },
+    {
+      "path": "matrices/omni.jsonl",
+      "bytes": 582092,
+      "sha256": "030936a7ba8d8907c1b713f1ef25e54b82440d3173a38dcc07d7027aee33de58"
+    },
+    {
+      "path": "matrices/reference.jsonl",
+      "bytes": 241071,
+      "sha256": "02a17827bb45acda63fd3dbf05c10935fbff2b0d23d9c68995f0477bb2b4fa2b"
+    },
+    {
+      "path": "matrices/ring.jsonl",
+      "bytes": 618287,
+      "sha256": "098451938fe8b5c136dbd1d3fb03397821fdefd6cfeb380b8d52829cb4c3864d"
+    },
+    {
+      "path": "matrices/source.jsonl",
+      "bytes": 288779,
+      "sha256": "b9d93cda85e539e592eec05239168b56e976a6384978f886f879eff053548384"
+    },
+    {
+      "path": "matrices/synth.jsonl",
+      "bytes": 654500,
+      "sha256": "83817475cf52413c5dadec33889db5be0e963b6db34f2ed58a8186b2d78c5d37"
+    },
+    {
+      "path": "replay.py",
+      "bytes": 6903,
+      "sha256": "bccab17f84cf352781c6eceaa2435cb0c67c6bb01d3838b44970834cd81ee7f1"
+    }
+  ],
+  "scope": "Stored-score replay only."
+}

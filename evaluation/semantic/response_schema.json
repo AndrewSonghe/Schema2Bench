@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "incorrect",
+        "insufficient"
+      ]
+    },
+    "error_type": {
+      "type": "string",
+      "enum": [
+        "none",
+        "ambiguous",
+        "scope",
+        "aggregation_join",
+        "time_order_limit",
+        "extra_filter",
+        "other"
+      ]
+    }
+  },
+  "required": [
+    "label",
+    "error_type"
+  ],
+  "additionalProperties": false
+}

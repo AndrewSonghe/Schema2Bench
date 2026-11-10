@@ -1,0 +1,292 @@
+{
+  "status": "SIX_SCENARIO_RISK_FACTORIZATION_COMPLETE",
+  "risk_sets": {
+    "rewrite": 43,
+    "refill": 7,
+    "ring": 23,
+    "reference_terra": 71,
+    "reference_terra_qwen_strict": 105
+  },
+  "denominators": {
+    "each_method": 2000,
+    "reference": 906,
+    "source": 1034,
+    "models": 10
+  },
+  "weights": [
+    1,
+    1,
+    0.5
+  ],
+  "results": {
+    "base": {
+      "no_risk": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.1201142745682322,
+            -0.0029706935958140773
+          ],
+          "tef_rewrite_minus": [
+            -0.060690092381941146,
+            0.2648629872232187
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.05050868524012351,
+            0.056832898951900544
+          ],
+          "tef_rewrite_minus": [
+            -0.10278669675478186,
+            0.04713899634644316
+          ]
+        }
+      },
+      "construction_only": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.13947318582727558,
+            0.020906645726669598
+          ],
+          "tef_rewrite_minus": [
+            -0.09605960667379587,
+            0.28377846111103305
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.07858848685691028,
+            0.0867879215357213
+          ],
+          "tef_rewrite_minus": [
+            -0.1457456372232968,
+            0.07896344294003872
+          ]
+        }
+      },
+      "reference_71_only": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.1554579644981955,
+            0.06291469594063769
+          ],
+          "tef_rewrite_minus": [
+            -0.060690092381941146,
+            0.2648629872232187
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.0833152301163122,
+            0.0914010436416676
+          ],
+          "tef_rewrite_minus": [
+            -0.10278669675478186,
+            0.04713899634644316
+          ]
+        }
+      },
+      "reference_105_only": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.16524957378743055,
+            0.08824869965801031
+          ],
+          "tef_rewrite_minus": [
+            -0.060690092381941146,
+            0.2648629872232187
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.09317932303224274,
+            0.09928080409511027
+          ],
+          "tef_rewrite_minus": [
+            -0.10278669675478186,
+            0.04713899634644316
+          ]
+        }
+      },
+      "construction_plus_reference_71": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.17559940749510475,
+            0.08680554219296616
+          ],
+          "tef_rewrite_minus": [
+            -0.09605960667379587,
+            0.28377846111103305
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.11222458407280515,
+            0.12234646023240925
+          ],
+          "tef_rewrite_minus": [
+            -0.1457456372232968,
+            0.07896344294003872
+          ]
+        }
+      },
+      "construction_plus_reference_105": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.18572213323918732,
+            0.11209716165581614
+          ],
+          "tef_rewrite_minus": [
+            -0.09605960667379587,
+            0.28377846111103305
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.12250860704852196,
+            0.13031105065504153
+          ],
+          "tef_rewrite_minus": [
+            -0.1457456372232968,
+            0.07896344294003872
+          ]
+        }
+      }
+    },
+    "verified": {
+      "no_risk": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.07182319673531166,
+            -0.06656892662460517
+          ],
+          "tef_rewrite_minus": [
+            0.03519058255204056,
+            0.20396752104098725
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.0033394981240869475,
+            0.0063965806645066535
+          ],
+          "tef_rewrite_minus": [
+            -0.04617373737373737,
+            -0.00979637868042124
+          ]
+        }
+      },
+      "construction_only": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.09374200826971886,
+            -0.04163661901051456
+          ],
+          "tef_rewrite_minus": [
+            -0.0021161335451011162,
+            0.22336612729667304
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.03372459317169752,
+            0.03797626325552061
+          ],
+          "tef_rewrite_minus": [
+            -0.09172779926928865,
+            0.023583978078658946
+          ]
+        }
+      },
+      "reference_71_only": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.11375832024260596,
+            0.0010981146918807912
+          ],
+          "tef_rewrite_minus": [
+            0.03519058255204056,
+            0.20396752104098725
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.03910976241395538,
+            0.04273172163263073
+          ],
+          "tef_rewrite_minus": [
+            -0.04617373737373737,
+            -0.00979637868042124
+          ]
+        }
+      },
+      "reference_105_only": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.12358931532542328,
+            0.030323569499052235
+          ],
+          "tef_rewrite_minus": [
+            0.03519058255204056,
+            0.20396752104098725
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.049120505288284634,
+            0.05153447413117058
+          ],
+          "tef_rewrite_minus": [
+            -0.04617373737373737,
+            -0.00979637868042124
+          ]
+        }
+      },
+      "construction_plus_reference_71": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.13555172652681133,
+            0.025616639901482118
+          ],
+          "tef_rewrite_minus": [
+            -0.0021161335451011162,
+            0.22336612729667304
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.06981440652057501,
+            0.07467695059570223
+          ],
+          "tef_rewrite_minus": [
+            -0.09172779926928865,
+            0.023583978078658946
+          ]
+        }
+      },
+      "construction_plus_reference_105": {
+        "refill": {
+          "gap_rewrite_minus": [
+            -0.14564549088739875,
+            0.05468694584340194
+          ],
+          "tef_rewrite_minus": [
+            -0.0021161335451011162,
+            0.22336612729667304
+          ]
+        },
+        "ring": {
+          "gap_rewrite_minus": [
+            -0.08015356173324892,
+            0.08338089897625248
+          ],
+          "tef_rewrite_minus": [
+            -0.09172779926928865,
+            0.023583978078658946
+          ]
+        }
+      }
+    }
+  },
+  "scope": "Fixed observed matrices, semantic flags as hypothetical unknown rather than truth. Two distinct generation requests with identical prompt remain distinct unknown variables; shared source/reference coordinates retained. These coordinate outer bounds are not confidence intervals, sharp joint bounds or feasible counterexamples; no 1433-pool expansion."
+}

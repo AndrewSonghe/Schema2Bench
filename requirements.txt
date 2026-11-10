@@ -1,0 +1,6 @@
+# Matrix replay, witness verification and semantic recount use the standard library.
+# These packages support selection, structural diagnostics, SQL scoring and plots.
+numpy>=1.24,<3
+scipy>=1.11,<2
+matplotlib>=3.8,<4
+sqlglot==27.14.0

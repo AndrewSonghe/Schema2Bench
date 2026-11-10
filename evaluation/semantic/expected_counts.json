@@ -1,0 +1,135 @@
+{
+  "by_domain": {
+    "california_schools": {
+      "incorrect": 103,
+      "insufficient": 46,
+      "supported": 351
+    },
+    "card_games": {
+      "incorrect": 119,
+      "insufficient": 22,
+      "supported": 359
+    },
+    "codebase_community": {
+      "incorrect": 131,
+      "insufficient": 30,
+      "supported": 339
+    },
+    "european_football_2": {
+      "incorrect": 100,
+      "insufficient": 19,
+      "supported": 381
+    },
+    "financial": {
+      "incorrect": 91,
+      "insufficient": 41,
+      "supported": 368
+    },
+    "formula_1": {
+      "incorrect": 99,
+      "insufficient": 22,
+      "supported": 379
+    },
+    "superhero": {
+      "incorrect": 117,
+      "insufficient": 22,
+      "supported": 360,
+      "unavailable": 1
+    },
+    "thrombosis_prediction": {
+      "incorrect": 106,
+      "insufficient": 64,
+      "supported": 330
+    }
+  },
+  "by_method": {
+    "omni": {
+      "incorrect": 418,
+      "insufficient": 92,
+      "supported": 290
+    },
+    "refill": {
+      "incorrect": 17,
+      "insufficient": 51,
+      "supported": 732
+    },
+    "ring": {
+      "incorrect": 123,
+      "insufficient": 73,
+      "supported": 603,
+      "unavailable": 1
+    },
+    "synth": {
+      "incorrect": 308,
+      "insufficient": 50,
+      "supported": 442
+    },
+    "template": {
+      "supported": 800
+    }
+  },
+  "count": 4000,
+  "labels": {
+    "incorrect": 866,
+    "insufficient": 266,
+    "supported": 2867,
+    "unavailable": 1
+  },
+  "nominal_weighted_by_method": {
+    "omni": {
+      "incorrect": 0.5233120267874048,
+      "insufficient": 0.11422564945616936,
+      "invalid_or_unavailable": 0.0,
+      "nominal_population_weight": 1999.9999999999995,
+      "supported": 0.36246232375642584,
+      "supported_with_missing_bounds": [
+        0.36246232375642584,
+        0.36246232375642584
+      ]
+    },
+    "refill": {
+      "incorrect": 0.021250000000000126,
+      "insufficient": 0.06370502645502683,
+      "invalid_or_unavailable": 0.0,
+      "nominal_population_weight": 1999.9999999999882,
+      "supported": 0.915044973544973,
+      "supported_with_missing_bounds": [
+        0.915044973544973,
+        0.915044973544973
+      ]
+    },
+    "ring": {
+      "incorrect": 0.15381890175563634,
+      "insufficient": 0.09130588467375181,
+      "invalid_or_unavailable": 0.0012857142857142859,
+      "nominal_population_weight": 1999.9999999999998,
+      "supported": 0.7535894992848975,
+      "supported_with_missing_bounds": [
+        0.7535894992848975,
+        0.7548752135706118
+      ]
+    },
+    "synth": {
+      "incorrect": 0.38435582665528495,
+      "insufficient": 0.06235856525440496,
+      "invalid_or_unavailable": 0.0,
+      "nominal_population_weight": 2000.0000000000027,
+      "supported": 0.5532856080903101,
+      "supported_with_missing_bounds": [
+        0.5532856080903101,
+        0.5532856080903101
+      ]
+    },
+    "template": {
+      "incorrect": 0.0,
+      "insufficient": 0.0,
+      "invalid_or_unavailable": 0.0,
+      "nominal_population_weight": 1999.9999999999877,
+      "supported": 1.0,
+      "supported_with_missing_bounds": [
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

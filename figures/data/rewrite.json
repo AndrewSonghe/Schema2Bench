@@ -1,0 +1,2399 @@
+{
+  "status": "REFILL_REWRITE_PAIRED_METRICS_COMPLETE",
+  "results": {
+    "base": {
+      "original": {
+        "tables": {
+          "rewrite": {
+            "tef": [
+              0.213558630498359,
+              0.4328087426117573
+            ],
+            "gap": [
+              0.06200203476033443,
+              0.14102823767917524
+            ]
+          },
+          "refill": {
+            "tef": [
+              0.11129884356707774,
+              0.33475689444383844
+            ],
+            "gap": [
+              0.1176620720004188,
+              0.2080485275554163
+            ]
+          },
+          "ring": {
+            "tef": [
+              0.2414264362151009,
+              0.462380019207502
+            ],
+            "gap": [
+              0.0591987914024929,
+              0.13837855842665336
+            ]
+          }
+        },
+        "contrasts": {
+          "refill": {
+            "tef_rewrite_minus": [
+              -0.060690092381941146,
+              0.2648629872232187
+            ],
+            "gap_rewrite_minus": [
+              -0.1201142745682322,
+              -0.0029706935958140773
+            ]
+          },
+          "ring": {
+            "tef_rewrite_minus": [
+              -0.10278669675478186,
+              0.04713899634644316
+            ],
+            "gap_rewrite_minus": [
+              -0.05050868524012351,
+              0.056832898951900544
+            ]
+          }
+        },
+        "domains": {
+          "california_schools": {
+            "rewrite": {
+              "gap": [
+                0.06293333333333334,
+                0.3014949494949495
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 11,
+                "known_reversal": 6,
+                "tie_or_unresolved": 28
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6,
+                  9
+                ],
+                "bound": [
+                  0.036363636363636376,
+                  0.2
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.10656161616161619,
+                0.48643232323232327
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 12,
+                "known_reversal": 8,
+                "tie_or_unresolved": 25
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.07272727272727275,
+                  0.18181818181818185
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.0526868686868687,
+                0.28583434343434344
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 10,
+                "known_reversal": 7,
+                "tie_or_unresolved": 28
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.2181818181818182
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.3804686868686869,
+              0.14527676767676767
+            ]
+          },
+          "card_games": {
+            "rewrite": {
+              "gap": [
+                0.05803290043290046,
+                0.11975873015873016
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 27,
+                "tie_or_unresolved": 10,
+                "known_reversal": 8
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.025974025974025927,
+                  0.045454545454545414
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.1273177489177489,
+                0.18142799422799422
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 21,
+                "tie_or_unresolved": 16,
+                "known_reversal": 8
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0.025974025974025927,
+                  0.12337662337662336
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.0566741702741703,
+                0.11421645021645027
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 25,
+                "known_reversal": 10,
+                "tie_or_unresolved": 10
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.025974025974025927,
+                  0.045454545454545414
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.08889004329004326,
+              -0.03989148629148626
+            ]
+          },
+          "codebase_community": {
+            "rewrite": {
+              "gap": [
+                0.06698562091503267,
+                0.16327668845315904
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 13,
+                "known_reversal": 14,
+                "known_concordant": 18
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0.02614379084967322,
+                  0.0980392156862745
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.151120987654321,
+                0.2125356572258533
+              ],
+              "known_rank_pair_counts": {
+                "known_reversal": 19,
+                "known_concordant": 20,
+                "tie_or_unresolved": 6
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.07843137254901966,
+                  0.0980392156862745
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.05144517066085693,
+                0.1536708787218591
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 16,
+                "known_reversal": 10,
+                "known_concordant": 19
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  6,
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.0980392156862745
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.12377923021060275,
+              -0.01023093681917213
+            ]
+          },
+          "european_football_2": {
+            "rewrite": {
+              "gap": [
+                0.06647716727716729,
+                0.10150036630036631
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 32,
+                "known_reversal": 10,
+                "tie_or_unresolved": 3
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  6
+                ],
+                "bound": [
+                  0.03296703296703296,
+                  0.04395604395604391
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.09202051282051281,
+                0.10960293040293038
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 32,
+                "known_reversal": 11,
+                "tie_or_unresolved": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0.03296703296703296,
+                  0.04395604395604391
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.06722539682539683,
+                0.10864664224664225
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 32,
+                "known_reversal": 8,
+                "tie_or_unresolved": 5
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.04395604395604391
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.029275702075702046,
+              -0.004562637362637344
+            ]
+          },
+          "financial": {
+            "rewrite": {
+              "gap": [
+                0.04034037940379404,
+                0.10662547425474254
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 31,
+                "tie_or_unresolved": 8,
+                "known_reversal": 6
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.07317073170731708,
+                  0.07317073170731708
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.12378970189701896,
+                0.19343739837398372
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 24,
+                "known_reversal": 12,
+                "tie_or_unresolved": 9
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  3,
+                  6
+                ],
+                "bound": [
+                  0.024390243902439046,
+                  0.14634146341463417
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.04519024390243906,
+                0.10927696476964772
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 31,
+                "tie_or_unresolved": 8,
+                "known_reversal": 6
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0.024390243902439046,
+                  0.024390243902439046
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.11956856368563684,
+              -0.04781138211382112
+            ]
+          },
+          "formula_1": {
+            "rewrite": {
+              "gap": [
+                0.05362799650043745,
+                0.07971023622047244
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 27,
+                "tie_or_unresolved": 6,
+                "known_reversal": 12
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.055118110236220486,
+                  0.055118110236220486
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.1416811898512686,
+                0.1603100612423447
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 30,
+                "known_reversal": 10,
+                "tie_or_unresolved": 5
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.04059212598425196,
+                0.06291303587051617
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 27,
+                "known_reversal": 12,
+                "tie_or_unresolved": 6
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.055118110236220486,
+                  0.055118110236220486
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.09942747156605422,
+              -0.07019842519685039
+            ]
+          },
+          "superhero": {
+            "rewrite": {
+              "gap": [
+                0.07468625235404901,
+                0.10007532956685503
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 31,
+                "tie_or_unresolved": 4,
+                "known_reversal": 10
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.10169491525423735
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.11695367231638419,
+                0.13722033898305086
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 32,
+                "tie_or_unresolved": 3,
+                "known_reversal": 10
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.07914425612052735,
+                0.09913822975517894
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 31,
+                "tie_or_unresolved": 3,
+                "known_reversal": 11
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.10169491525423735,
+                  0.10169491525423735
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.053529190207156276,
+              -0.025316760828625207
+            ]
+          },
+          "thrombosis_prediction": {
+            "rewrite": {
+              "gap": [
+                0.07293262786596119,
+                0.15578412698412697
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 26,
+                "known_reversal": 8,
+                "tie_or_unresolved": 11
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2
+                ],
+                "bound": [
+                  0.023809523809523836,
+                  0.07936507936507936
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.08185114638447971,
+                0.1834215167548501
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 25,
+                "known_reversal": 10,
+                "tie_or_unresolved": 10
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.09523809523809523,
+                  0.13492063492063494
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.08063209876543209,
+                0.17333192239858905
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 26,
+                "known_reversal": 10,
+                "tie_or_unresolved": 9
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2
+                ],
+                "bound": [
+                  0.023809523809523836,
+                  0.07936507936507936
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.06597530864197534,
+              0.028969312169312166
+            ]
+          }
+        }
+      },
+      "model_audit_stress": {
+        "tables": {
+          "rewrite": {
+            "tef": [
+              0.18257609235092725,
+              0.4497783536154109
+            ],
+            "gap": [
+              0.014869810995948862,
+              0.25132813422605105
+            ]
+          },
+          "refill": {
+            "tef": [
+              0.10754328801152219,
+              0.3377235611105051
+            ],
+            "gap": [
+              0.059362847494874936,
+              0.2988359398642897
+            ]
+          },
+          "ring": {
+            "tef": [
+              0.22579423118608738,
+              0.4727584739678717
+            ],
+            "gap": [
+              0.014667875912636033,
+              0.23894948382856807
+            ]
+          }
+        },
+        "contrasts": {
+          "refill": {
+            "tef_rewrite_minus": [
+              -0.09605960667379587,
+              0.28377846111103305
+            ],
+            "gap_rewrite_minus": [
+              -0.17559940749510475,
+              0.08680554219296616
+            ]
+          },
+          "ring": {
+            "tef_rewrite_minus": [
+              -0.1457456372232968,
+              0.07896344294003872
+            ],
+            "gap_rewrite_minus": [
+              -0.11222458407280515,
+              0.12234646023240925
+            ]
+          }
+        },
+        "domains": {
+          "california_schools": {
+            "rewrite": {
+              "gap": [
+                0.008234343434343434,
+                0.5437171717171717
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 45
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  5,
+                  6,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.3818181818181818
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.025979797979797985,
+                0.7075393939393939
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 45
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0,
+                  0.3272727272727272
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.003159595959595962,
+                0.5210101010101009
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 45
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.3818181818181818
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.45923232323232327,
+              0.2919191919191919
+            ]
+          },
+          "card_games": {
+            "rewrite": {
+              "gap": [
+                0.021679653679653688,
+                0.18303492063492066
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 17,
+                "tie_or_unresolved": 26,
+                "known_reversal": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.09740259740259738
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.0845067821067821,
+                0.22904704184704183
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 15,
+                "tie_or_unresolved": 28,
+                "known_reversal": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.16883116883116883
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.023728715728715752,
+                0.16537604617604623
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 16,
+                "tie_or_unresolved": 25,
+                "known_reversal": 4
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.09740259740259738
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.12558845598845597,
+              0.01872438672438674
+            ]
+          },
+          "codebase_community": {
+            "rewrite": {
+              "gap": [
+                0.03616906318082787,
+                0.21982047930283227
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 24,
+                "known_reversal": 7,
+                "known_concordant": 14
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6,
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.12418300653594772
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.12861525054466233,
+                0.23867944807552652
+              ],
+              "known_rank_pair_counts": {
+                "known_reversal": 14,
+                "known_concordant": 16,
+                "tie_or_unresolved": 15
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.05228758169934644,
+                  0.12418300653594772
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.025942193173565713,
+                0.19927320261437909
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 28,
+                "known_reversal": 5,
+                "known_concordant": 12
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  6,
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.12418300653594772
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.154161801016703,
+              0.033089905591866364
+            ]
+          },
+          "european_football_2": {
+            "rewrite": {
+              "gap": [
+                0.006904029304029313,
+                0.19630964590964592
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 23,
+                "tie_or_unresolved": 20,
+                "known_reversal": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  6,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.13186813186813184
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.03016849816849817,
+                0.17309499389499386
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 25,
+                "tie_or_unresolved": 15,
+                "known_reversal": 5
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0,
+                  0.12087912087912078
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.016061538461538467,
+                0.1940893772893773
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 22,
+                "tie_or_unresolved": 18,
+                "known_reversal": 5
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.28571428571428564
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.08419829059829058,
+              0.065178021978022
+            ]
+          },
+          "financial": {
+            "rewrite": {
+              "gap": [
+                5.42005420054201e-05,
+                0.25460162601626013
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 6,
+                "tie_or_unresolved": 39
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.20731707317073172
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.03758699186991869,
+                0.3292097560975609
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 5,
+                "tie_or_unresolved": 39,
+                "known_reversal": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  3,
+                  6
+                ],
+                "bound": [
+                  0,
+                  0.2682926829268293
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.0007523035230352335,
+                0.24968455284552848
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 6,
+                "tie_or_unresolved": 39
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0,
+                  0.1585365853658537
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.16507967479674795,
+              0.08839241192411926
+            ]
+          },
+          "formula_1": {
+            "rewrite": {
+              "gap": [
+                0.008237970253718281,
+                0.16762344706911636
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 37,
+                "known_concordant": 8
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.11023622047244092
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.08635800524934382,
+                0.22240769903762028
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 10,
+                "tie_or_unresolved": 35
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0,
+                  0.06299212598425197
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.003717935258092734,
+                0.1393553805774278
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 38,
+                "known_concordant": 7
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0,
+                  0.11811023622047245
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.1456097987751531,
+              0.009730883639545055
+            ]
+          },
+          "superhero": {
+            "rewrite": {
+              "gap": [
+                0.011758945386064045,
+                0.20283841807909608
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 15,
+                "tie_or_unresolved": 29,
+                "known_reversal": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  0,
+                  2,
+                  4,
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.17796610169491522
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.05731073446327682,
+                0.20249190207156306
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 20,
+                "tie_or_unresolved": 22,
+                "known_reversal": 3
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.06779661016949157
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.01662975517890773,
+                0.181524670433145
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 18,
+                "tie_or_unresolved": 24,
+                "known_reversal": 3
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.1610169491525424
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.1470674199623352,
+              0.09285574387947274
+            ]
+          },
+          "thrombosis_prediction": {
+            "rewrite": {
+              "gap": [
+                0.025920282186948845,
+                0.24267936507936505
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 17,
+                "tie_or_unresolved": 28
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2
+                ],
+                "bound": [
+                  0,
+                  0.1507936507936508
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.02437671957671958,
+                0.28821728395061724
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 17,
+                "tie_or_unresolved": 28
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0,
+                  0.20634920634920634
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.02735097001763668,
+                0.26128253968253967
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 15,
+                "tie_or_unresolved": 28,
+                "known_reversal": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2
+                ],
+                "bound": [
+                  0,
+                  0.1507936507936508
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.12385749559082894,
+              0.09455379188712522
+            ]
+          }
+        }
+      }
+    },
+    "verified": {
+      "original": {
+        "tables": {
+          "rewrite": {
+            "tef": [
+              0.25508036916158705,
+              0.40559227376694323
+            ],
+            "gap": [
+              0.09745162497079418,
+              0.10270589508150067
+            ]
+          },
+          "refill": {
+            "tef": [
+              0.1385006242638481,
+              0.283650780826145
+            ],
+            "gap": [
+              0.16927482170610583,
+              0.16927482170610583
+            ]
+          },
+          "ring": {
+            "tef": [
+              0.2834028815192058,
+              0.4356626907022538
+            ],
+            "gap": [
+              0.09630931441699402,
+              0.10079112309488113
+            ]
+          }
+        },
+        "contrasts": {
+          "refill": {
+            "tef_rewrite_minus": [
+              0.03519058255204056,
+              0.20396752104098725
+            ],
+            "gap_rewrite_minus": [
+              -0.07182319673531166,
+              -0.06656892662460517
+            ]
+          },
+          "ring": {
+            "tef_rewrite_minus": [
+              -0.04617373737373737,
+              -0.00979637868042124
+            ],
+            "gap_rewrite_minus": [
+              -0.0033394981240869475,
+              0.0063965806645066535
+            ]
+          }
+        },
+        "domains": {
+          "california_schools": {
+            "rewrite": {
+              "gap": [
+                0.1699717171717172,
+                0.1731717171717172
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 32,
+                "known_reversal": 11,
+                "tie_or_unresolved": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.036363636363636376,
+                  0.036363636363636376
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.34837171717171717,
+                0.34837171717171717
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 26,
+                "known_reversal": 17,
+                "tie_or_unresolved": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.1272727272727273,
+                  0.1272727272727273
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.1500929292929293,
+                0.15329292929292931
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 31,
+                "known_reversal": 13,
+                "tie_or_unresolved": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.036363636363636376,
+                  0.036363636363636376
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.1784,
+              -0.1752
+            ]
+          },
+          "card_games": {
+            "rewrite": {
+              "gap": [
+                0.09079711399711402,
+                0.09159711399711402
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 30,
+                "known_reversal": 9,
+                "tie_or_unresolved": 6
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.03896103896103892,
+                  0.03896103896103892
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.15109264069264067,
+                0.15109264069264067
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 26,
+                "tie_or_unresolved": 10,
+                "known_reversal": 9
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0.03896103896103892,
+                  0.11688311688311687
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.08578816738816743,
+                0.08658816738816744
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 28,
+                "known_reversal": 11,
+                "tie_or_unresolved": 6
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.03896103896103892,
+                  0.03896103896103892
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.06029552669552666,
+              -0.05949552669552666
+            ]
+          },
+          "codebase_community": {
+            "rewrite": {
+              "gap": [
+                0.11924531590413943,
+                0.12636281771968044
+              ],
+              "known_rank_pair_counts": {
+                "known_reversal": 22,
+                "known_concordant": 22,
+                "tie_or_unresolved": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.0326797385620915,
+                  0.0326797385620915
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.18251445170660857,
+                0.18251445170660857
+              ],
+              "known_rank_pair_counts": {
+                "known_reversal": 23,
+                "known_concordant": 21,
+                "tie_or_unresolved": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.08496732026143794,
+                  0.08496732026143794
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.10163427741466959,
+                0.10861060275962235
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 24,
+                "known_reversal": 20,
+                "tie_or_unresolved": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.0326797385620915,
+                  0.0326797385620915
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.06326913580246914,
+              -0.056151633986928115
+            ]
+          },
+          "european_football_2": {
+            "rewrite": {
+              "gap": [
+                0.07717899877899878,
+                0.09382173382173382
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 33,
+                "known_reversal": 10,
+                "tie_or_unresolved": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  6
+                ],
+                "bound": [
+                  0.04395604395604391,
+                  0.04395604395604391
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.10300952380952379,
+                0.10300952380952379
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 33,
+                "known_reversal": 11,
+                "tie_or_unresolved": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0.04395604395604391,
+                  0.04395604395604391
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.07694945054945054,
+                0.09942759462759462
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 33,
+                "known_reversal": 8,
+                "tie_or_unresolved": 4
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.04395604395604391
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.025830525030525003,
+              -0.009187789987789964
+            ]
+          },
+          "financial": {
+            "rewrite": {
+              "gap": [
+                0.06550243902439025,
+                0.07342005420054201
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 35,
+                "tie_or_unresolved": 1,
+                "known_reversal": 9
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.07317073170731708,
+                  0.07317073170731708
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.15899186991869918,
+                0.15899186991869918
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 28,
+                "known_reversal": 16,
+                "tie_or_unresolved": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  3,
+                  6
+                ],
+                "bound": [
+                  0.024390243902439046,
+                  0.14634146341463417
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.07742222222222225,
+                0.07742222222222225
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 36,
+                "tie_or_unresolved": 1,
+                "known_reversal": 8
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0.024390243902439046,
+                  0.024390243902439046
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.09348943089430894,
+              -0.08557181571815717
+            ]
+          },
+          "formula_1": {
+            "rewrite": {
+              "gap": [
+                0.06554470691163605,
+                0.06554470691163605
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 30,
+                "known_reversal": 12,
+                "tie_or_unresolved": 3
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0.055118110236220486,
+                  0.055118110236220486
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.15155275590551182,
+                0.15155275590551182
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 31,
+                "known_reversal": 11,
+                "tie_or_unresolved": 3
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.050241119860017475,
+                0.052641119860017474
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 30,
+                "known_reversal": 12,
+                "tie_or_unresolved": 3
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.055118110236220486,
+                  0.055118110236220486
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.08600804899387575,
+              -0.08600804899387575
+            ]
+          },
+          "superhero": {
+            "rewrite": {
+              "gap": [
+                0.08552015065913372,
+                0.09187645951035783
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 33,
+                "tie_or_unresolved": 2,
+                "known_reversal": 10
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.10169491525423735
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.13100564971751413,
+                0.13100564971751413
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 33,
+                "known_reversal": 12
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.09476610169491528,
+                0.09476610169491528
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 33,
+                "known_reversal": 12
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.10169491525423735,
+                  0.10169491525423735
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.0454854990583804,
+              -0.03912919020715629
+            ]
+          },
+          "thrombosis_prediction": {
+            "rewrite": {
+              "gap": [
+                0.10585255731922397,
+                0.10585255731922397
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 33,
+                "known_reversal": 10,
+                "tie_or_unresolved": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2
+                ],
+                "bound": [
+                  0.06349206349206349,
+                  0.06349206349206349
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.1276599647266314,
+                0.1276599647266314
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 31,
+                "known_reversal": 13,
+                "tie_or_unresolved": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.11904761904761907,
+                  0.11904761904761907
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.13358024691358025,
+                0.13358024691358025
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 31,
+                "known_reversal": 13,
+                "tie_or_unresolved": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2
+                ],
+                "bound": [
+                  0.06349206349206349,
+                  0.06349206349206349
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.021807407407407428,
+              -0.021807407407407428
+            ]
+          }
+        }
+      },
+      "model_audit_stress": {
+        "tables": {
+          "rewrite": {
+            "tef": [
+              0.22266370249492035,
+              0.4229132172442697
+            ],
+            "gap": [
+              0.024887158541456286,
+              0.215935999294112
+            ]
+          },
+          "refill": {
+            "tef": [
+              0.13399400487850532,
+              0.2867952252705894
+            ],
+            "gap": [
+              0.09002333687088285,
+              0.2639828446365389
+            ]
+          },
+          "ring": {
+            "tef": [
+              0.26727510374142804,
+              0.4460056844697156
+            ],
+            "gap": [
+              0.027676903487512467,
+              0.20409672815959715
+            ]
+          }
+        },
+        "contrasts": {
+          "refill": {
+            "tef_rewrite_minus": [
+              -0.0021161335451011162,
+              0.22336612729667304
+            ],
+            "gap_rewrite_minus": [
+              -0.13555172652681133,
+              0.025616639901482118
+            ]
+          },
+          "ring": {
+            "tef_rewrite_minus": [
+              -0.09172779926928865,
+              0.023583978078658946
+            ],
+            "gap_rewrite_minus": [
+              -0.06981440652057501,
+              0.07467695059570223
+            ]
+          }
+        },
+        "domains": {
+          "california_schools": {
+            "rewrite": {
+              "gap": [
+                0.017527272727272725,
+                0.43364848484848484
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 45
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.2545454545454545
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.16623030303030303,
+                0.5885494949494949
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 45
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0,
+                  0.3272727272727272
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.009511111111111118,
+                0.40589898989898987
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 45
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.3272727272727272
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.26470303030303033,
+              -0.01790707070707071
+            ]
+          },
+          "card_games": {
+            "rewrite": {
+              "gap": [
+                0.040251659451659476,
+                0.1554124098124098
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 24,
+                "tie_or_unresolved": 15,
+                "known_reversal": 6
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.09090909090909088
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.10167849927849927,
+                0.19984069264069262
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 24,
+                "tie_or_unresolved": 14,
+                "known_reversal": 7
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.16233766233766234
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.04170620490620495,
+                0.13780317460317465
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 25,
+                "tie_or_unresolved": 13,
+                "known_reversal": 7
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.09090909090909088
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.10101587301587298,
+              -0.0066101010101009975
+            ]
+          },
+          "codebase_community": {
+            "rewrite": {
+              "gap": [
+                0.06919912854030501,
+                0.18343994190268703
+              ],
+              "known_rank_pair_counts": {
+                "tie_or_unresolved": 16,
+                "known_reversal": 11,
+                "known_concordant": 18
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0.006535947712418277,
+                  0.11111111111111116
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.15657632534495278,
+                0.2086582425562818
+              ],
+              "known_rank_pair_counts": {
+                "known_reversal": 18,
+                "known_concordant": 19,
+                "tie_or_unresolved": 8
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.05882352941176472,
+                  0.11111111111111116
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.0625754538852578,
+                0.15432563543936095
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 20,
+                "known_reversal": 11,
+                "tie_or_unresolved": 14
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  7,
+                  9
+                ],
+                "bound": [
+                  0.006535947712418277,
+                  0.11111111111111116
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.10434103122730574,
+              -0.01137196804647783
+            ]
+          },
+          "european_football_2": {
+            "rewrite": {
+              "gap": [
+                0.008160195360195369,
+                0.1893958485958486
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 23,
+                "tie_or_unresolved": 20,
+                "known_reversal": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  6,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.13186813186813184
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.03542466422466422,
+                0.16839658119658116
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 25,
+                "tie_or_unresolved": 15,
+                "known_reversal": 5
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0,
+                  0.12087912087912078
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.01793894993894994,
+                0.18638241758241758
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 22,
+                "tie_or_unresolved": 18,
+                "known_reversal": 5
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.28571428571428564
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.08284444444444443,
+              0.05745641025641028
+            ]
+          },
+          "financial": {
+            "rewrite": {
+              "gap": [
+                5.42005420054201e-05,
+                0.22457452574525746
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 12,
+                "tie_or_unresolved": 33
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.1951219512195122
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.05189810298102981,
+                0.3009972899728997
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 9,
+                "tie_or_unresolved": 33,
+                "known_reversal": 3
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  3,
+                  6
+                ],
+                "bound": [
+                  0,
+                  0.25609756097560976
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.002629810298102987,
+                0.22092140921409217
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 12,
+                "tie_or_unresolved": 33
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0,
+                  0.14634146341463417
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.16036856368563687,
+              0.05754796747967482
+            ]
+          },
+          "formula_1": {
+            "rewrite": {
+              "gap": [
+                0.009544006999125105,
+                0.15333613298337706
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 15,
+                "tie_or_unresolved": 30
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.11023622047244092
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.09448888888888889,
+                0.21346701662292214
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 15,
+                "tie_or_unresolved": 30
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  6
+                ],
+                "bound": [
+                  0,
+                  0.06299212598425197
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.005548206474190718,
+                0.12837865266841644
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 15,
+                "tie_or_unresolved": 30
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0,
+                  0.11811023622047245
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.13656832895888013,
+              -0.011615748031496063
+            ]
+          },
+          "superhero": {
+            "rewrite": {
+              "gap": [
+                0.015138229755178916,
+                0.19314802259887007
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 17,
+                "tie_or_unresolved": 27,
+                "known_reversal": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  0,
+                  2,
+                  4,
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.17796610169491522
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.06801054613935968,
+                0.19608888888888887
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 21,
+                "tie_or_unresolved": 20,
+                "known_reversal": 4
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.06779661016949157
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.026067043314500934,
+                0.17647306967984933
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 19,
+                "tie_or_unresolved": 22,
+                "known_reversal": 4
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7,
+                  9
+                ],
+                "bound": [
+                  0,
+                  0.1610169491525424
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.14038418079096043,
+              0.07842410546139364
+            ]
+          },
+          "thrombosis_prediction": {
+            "rewrite": {
+              "gap": [
+                0.03922257495590827,
+                0.19453262786596118
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 22,
+                "tie_or_unresolved": 21,
+                "known_reversal": 2
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2
+                ],
+                "bound": [
+                  0,
+                  0.13492063492063494
+                ]
+              }
+            },
+            "refill": {
+              "gap": [
+                0.04587936507936509,
+                0.23586455026455025
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 22,
+                "tie_or_unresolved": 22,
+                "known_reversal": 1
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  7
+                ],
+                "bound": [
+                  0.015873015873015872,
+                  0.19047619047619047
+                ]
+              }
+            },
+            "ring": {
+              "gap": [
+                0.0554384479717813,
+                0.22259047619047617
+              ],
+              "known_rank_pair_counts": {
+                "known_concordant": 19,
+                "tie_or_unresolved": 21,
+                "known_reversal": 5
+              },
+              "selection_regret": {
+                "possible_selected_models": [
+                  2
+                ],
+                "bound": [
+                  0,
+                  0.13492063492063494
+                ]
+              }
+            },
+            "rewrite_minus_refill_gap": [
+              -0.09418835978835981,
+              0.0590095238095238
+            ]
+          }
+        }
+      }
+    }
+  },
+  "counts_transitions": {
+    "((1, 1), (1, 1))": 10899,
+    "((0, 0), (0, 0))": 8654,
+    "((0, 1), (0, 0))": 394,
+    "((0, 1), (0, 1))": 53
+  },
+  "model_audit_flags": {
+    "rewrite": 43,
+    "refill": 7,
+    "ring": 23,
+    "reference": 71
+  },
+  "matrix_sha256": "f131614c6789ca119798ded9ecf733102bc1b2bb483cec5f8b2f271f5a8b0930",
+  "scope": "First release, 2000 items/arm including invalid unknown, 906 references, ten models. Source TEF and target gap direct shared-variable outer bounds, not CI; rank known signs and selection regret possible-best bound; posthoc sample audit stress not population semantic truth; old results unchanged."
+}

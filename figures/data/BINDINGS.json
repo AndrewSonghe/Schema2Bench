@@ -1,0 +1,30 @@
+{
+  "main": {
+    "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/EXPECTED.json",
+    "sha256": "63e383ba6849c69e6360a28b62026b8ff18dfefba68e0e0280be97db1e1d0849"
+  },
+  "name": {
+    "source": "Schema2Bench/development/20261109_name_shared_uncertainty_v1/runs/RESULT.json",
+    "sha256": "ca5e90ab3a75a12d6fb6fe8902b5eb5a9fdd2b2e1c8a190edc19f29d4a1701e9"
+  },
+  "depth": {
+    "source": "Schema2Bench/development/20261109_depth_shared_uncertainty_v1/runs/RESULT.json",
+    "sha256": "a7effae89212af0f6931799130821f0d17082d14e7f7fe4364aa5199cc2f34ac"
+  },
+  "rewrite": {
+    "source": "Schema2Bench/development/20261109_refill_rewrite_metrics_v2/RESULT.json",
+    "sha256": "2c0fa4eb12868e5584ee4d918ca51239f1a3e12f37d0030eabc5cda5acfacab0"
+  },
+  "regret": {
+    "source": "output/schema2bench_fig2_print_final_20261109/validation/EXPERIMENT_FIGURE_DISCUSSION_AUDIT.json",
+    "sha256": "ca26df91889c1409020d2870363659c8259659186bf3c2091f85f5e791b1583b"
+  },
+  "risk": {
+    "source": "Schema2Bench/development/20261109_v6_risk_factorization_v1/RESULT.json",
+    "sha256": "18f99576291545d98ab89763d97fd765010dad27af339bf66eb74a84cf20a27f"
+  },
+  "witnesses": {
+    "source": "Schema2Bench/development/20261109_v6_feasible_counterexample_v1/SEARCH_RESULT.json",
+    "sha256": "97a5ae244d9232184fe2918173afb3e47ca857c40e407893e962c91861fc09d8"
+  }
+}

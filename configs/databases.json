@@ -1,0 +1,146 @@
+{
+  "included": false,
+  "snapshots": [
+    {
+      "database": "california_schools",
+      "bytes": 11116544,
+      "sha256": "986817d793479801ed55133e55aa27e335422c0cd3866b54a3d6317b7c5f09c1"
+    },
+    {
+      "database": "card_games",
+      "bytes": 261820416,
+      "sha256": "c98bdb57fe7474da798b407785544b9af0daaad5d61fd21e2a73309493bc1227"
+    },
+    {
+      "database": "codebase_community",
+      "bytes": 481419264,
+      "sha256": "92101be6d2a9f6adceea59d38f6d1c556087f9eea1432432a21268cb1348036d"
+    },
+    {
+      "database": "european_football_2",
+      "bytes": 597754880,
+      "sha256": "e4d361dbeec6591a4b315877c0c481da05c8ff5a3d389b34d6e17b6f15bee4e0"
+    },
+    {
+      "database": "financial",
+      "bytes": 71294976,
+      "sha256": "d15d89cdb068a202b6f2b99342af44dffc1d52545b39ceaf62efdc0ba570101e"
+    },
+    {
+      "database": "formula_1",
+      "bytes": 22360064,
+      "sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a"
+    },
+    {
+      "database": "superhero",
+      "bytes": 237568,
+      "sha256": "75e94a2c3236ee3bb2c01fb97a1c4b4c1c269bcefd4eab1d04be323d2d0825b1"
+    },
+    {
+      "database": "thrombosis_prediction",
+      "bytes": 7327744,
+      "sha256": "e7e16d74b4731b4b8d33fdbe8c29cd5622620788ce8d1f335631f65fc7cf1db9"
+    },
+    {
+      "database": "car_1",
+      "bytes": 65536,
+      "sha256": "9d851e396e02997a1de073ae982fe1e4b1769fdffce2fac6e325857a3a938709"
+    },
+    {
+      "database": "flight_2",
+      "bytes": 77824,
+      "sha256": "db777ba6488ae2b515cb138d71ff23c4533e5fd0355854648a1102faff3fb7af"
+    },
+    {
+      "database": "world_1",
+      "bytes": 319488,
+      "sha256": "17b986695f16786d58d66f85e49dba87bdfe72953207ab9b1b49da9d2301ef65"
+    },
+    {
+      "database": "wta_1",
+      "bytes": 104738816,
+      "sha256": "8f20747456d7748674b4f05432f3de96446ced95b8bd5a6fd01284f6c28f727c"
+    },
+    {
+      "database": "battle_death",
+      "bytes": 28672,
+      "sha256": "12569f4493a9655639c4ea86ba4bd8a4ea6411e1b8ae0e1fdf3d6a995344265d"
+    },
+    {
+      "database": "concert_singer",
+      "bytes": 36864,
+      "sha256": "4fa1ba5ab4577e895271088b1dc44aa94be88e25a54293317a67584112ef059d"
+    },
+    {
+      "database": "course_teach",
+      "bytes": 28672,
+      "sha256": "da45fcdde64ac2b9330146506b7653ad4417489d8e496e509045e1b02245d793"
+    },
+    {
+      "database": "cre_Doc_Template_Mgt",
+      "bytes": 24576,
+      "sha256": "9c3fdd03d8795ecde60aae782ce50c4fb1d6c03de1401fcdd6dc177342a53df5"
+    },
+    {
+      "database": "dog_kennels",
+      "bytes": 49152,
+      "sha256": "ea5fbc6cf6aaf500371c5c121c339d9802ba6f5fbecd948a5274c0b487a9f486"
+    },
+    {
+      "database": "employee_hire_evaluation",
+      "bytes": 36864,
+      "sha256": "760fec5cc872ef0cdf99242614f05c93dbd00d422ac9da87ea64fcf555be7373"
+    },
+    {
+      "database": "museum_visit",
+      "bytes": 28672,
+      "sha256": "3217aee38d8e3661d374bf025591b7164a1179c568ef5d20f3c338035fc6e1dd"
+    },
+    {
+      "database": "network_1",
+      "bytes": 28672,
+      "sha256": "bec92cd9a68d6f23469a0df246429299f44caaf75eab12275784e0bb7d0aa9ca"
+    },
+    {
+      "database": "orchestra",
+      "bytes": 32768,
+      "sha256": "13b64af1cf6fcbd34953a44f951b2bf79bedc000b344549212dac1a9345e2f86"
+    },
+    {
+      "database": "pets_1",
+      "bytes": 16384,
+      "sha256": "8ffe0ea9b3b034ca8860a2f18300a98c7583ce2522ea195726a04803f675e5bb"
+    },
+    {
+      "database": "poker_player",
+      "bytes": 20480,
+      "sha256": "63fffd7b68524f07a742a74b74b95a4ba178e6419f3574b9ee78b8dda1df46ba"
+    },
+    {
+      "database": "real_estate_properties",
+      "bytes": 32768,
+      "sha256": "5d0bd83afa93a843e68f892d8430fe625d7ed2508aae00a341926b0b5b478a29"
+    },
+    {
+      "database": "singer",
+      "bytes": 20480,
+      "sha256": "5c1b72755d148c294b26d7b479307e8799b93485ac918720f953e2ab84d59a0a"
+    },
+    {
+      "database": "student_transcripts_tracking",
+      "bytes": 49152,
+      "sha256": "5a1f4928a1fd36f6edb31c4f054203b2e2fab6b18e5951c4f5633628f82a8e56"
+    },
+    {
+      "database": "tvshow",
+      "bytes": 28672,
+      "sha256": "1212c2e75cf1dcf3aeb4055331a85298b073d8a613ead77975b13bd3346b9fc4"
+    },
+    {
+      "database": "voter_1",
+      "bytes": 20480,
+      "sha256": "815bf1611b8a32f649d292a6138562f1761a0c10cb256e20f6561199cff31531"
+    }
+  ],
+  "note": "Local snapshot hashes establish byte identity, not publisher signatures."
+}

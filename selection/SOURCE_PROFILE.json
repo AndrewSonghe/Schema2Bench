@@ -1,0 +1,35 @@
+{
+  "row_count": 7000,
+  "operators": {
+    "select_filter": 0.32035950948282427,
+    "aggregation": 0.2490669510244497,
+    "join": 0.2110594866326453,
+    "group_by": 0.13519689237565694,
+    "top_k": 0.0843171604844238
+  },
+  "difficulty": {
+    "easy": 0.464,
+    "medium": 0.348,
+    "hard": 0.188
+  },
+  "shapes": {
+    "has_filter": 0.5002857142857143,
+    "has_join": 0.39585714285714285,
+    "has_group_by": 0.25357142857142856,
+    "has_aggregation": 0.46714285714285714,
+    "has_order_by": 0.23257142857142857,
+    "has_limit": 0.15814285714285714
+  },
+  "average_joins": 0.5418571428571428,
+  "average_tokens": 15.879857142857142,
+  "difficulty_definition": {
+    "feature_source": "final_sql_only",
+    "easy": "complexity_score <= 1",
+    "medium": "2 <= complexity_score <= 3",
+    "hard": "complexity_score >= 4"
+  },
+  "profile_role": "structure_only",
+  "source_benchmark": "Spider train",
+  "source_path": "datasets/spider/train_spider.json",
+  "response_evaluation_split": "Spider dev (loaded only after selection)"
+}

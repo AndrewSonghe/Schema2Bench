@@ -1,0 +1,66 @@
+{
+  "fig5/no_risk/refill/gap": [
+    -0.07182319673531166,
+    -0.06656892662460517
+  ],
+  "fig5/construction_only/refill/gap": [
+    -0.09374200826971886,
+    -0.04163661901051456
+  ],
+  "fig5/reference_71_only/refill/gap": [
+    -0.11375832024260596,
+    0.0010981146918807912
+  ],
+  "fig5/reference_105_only/refill/gap": [
+    -0.12358931532542328,
+    0.030323569499052235
+  ],
+  "fig5/construction_plus_reference_71/refill/gap": [
+    -0.13555172652681133,
+    0.025616639901482118
+  ],
+  "fig5/construction_plus_reference_105/refill/gap": [
+    -0.14564549088739875,
+    0.05468694584340194
+  ],
+  "fig5/no_risk/refill/tef": [
+    0.03519058255204056,
+    0.20396752104098725
+  ],
+  "fig5/construction_only/refill/tef": [
+    -0.0021161335451011162,
+    0.22336612729667304
+  ],
+  "fig5/no_risk/ring/gap": [
+    -0.0033394981240869475,
+    0.0063965806645066535
+  ],
+  "fig5/construction_only/ring/gap": [
+    -0.03372459317169752,
+    0.03797626325552061
+  ],
+  "fig5/reference_71_only/ring/gap": [
+    -0.03910976241395538,
+    0.04273172163263073
+  ],
+  "fig5/reference_105_only/ring/gap": [
+    -0.049120505288284634,
+    0.05153447413117058
+  ],
+  "fig5/construction_plus_reference_71/ring/gap": [
+    -0.06981440652057501,
+    0.07467695059570223
+  ],
+  "fig5/construction_plus_reference_105/ring/gap": [
+    -0.08015356173324892,
+    0.08338089897625248
+  ],
+  "fig5/no_risk/ring/tef": [
+    -0.04617373737373737,
+    -0.00979637868042124
+  ],
+  "fig5/construction_only/ring/tef": [
+    -0.09172779926928865,
+    0.023583978078658946
+  ]
+}

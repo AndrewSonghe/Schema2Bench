@@ -1,0 +1,424 @@
+{
+  "sample_hash": "031e9b97d1b1f480d406142100ffd4ca11f6321788056c31eb9f70b11f03698d",
+  "queries": [
+    {
+      "query_key": "786bd8e215c38e5eb4cda91e4c2cd7b92ab829fe9d16fee4d4afd178268f86ba",
+      "database": "superhero",
+      "database_sha256": "75e94a2c3236ee3bb2c01fb97a1c4b4c1c269bcefd4eab1d04be323d2d0825b1",
+      "sql": "SELECT COUNT(DISTINCT full_name), superhero_name FROM superhero WHERE publisher_id = 65 GROUP BY superhero_name;",
+      "expected_columns": 2,
+      "expected_rows": []
+    },
+    {
+      "query_key": "13046ae071d818bdf3e4947dcdef7ebf8d350597551c8e788418e982aa708bcd",
+      "database": "formula_1",
+      "database_sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a",
+      "sql": "SELECT SUM(CASE WHEN T1.lat BETWEEN 1 AND 10 THEN T1.lng ELSE 0 END) AS lng, T1.lat, T1.alt, T1.circuitRef FROM circuits AS T1 WHERE T1.circuitId >= 50 GROUP BY T1.lat HAVING SUM(T1.lng) > 63 ORDER BY T1.lat LIMIT 3",
+      "expected_columns": 4,
+      "expected_rows": [
+        [
+          0,
+          28.3487,
+          null,
+          "buddh"
+        ]
+      ]
+    },
+    {
+      "query_key": "3ef11b917bd3816e275fe4a14059b4881433f113c8102f7a7b7f9f9e5a263f0a",
+      "database": "financial",
+      "database_sha256": "d15d89cdb068a202b6f2b99342af44dffc1d52545b39ceaf62efdc0ba570101e",
+      "sql": "SELECT MIN(balance), balance, bank FROM trans WHERE  amount != 61 LIMIT 7",
+      "expected_columns": 3,
+      "expected_rows": [
+        [
+          -41126,
+          -41126,
+          null
+        ]
+      ]
+    },
+    {
+      "query_key": "752d690eccf3e6fb4a32580d7a5e244c4f84d6679c0119909be9b7c6db9d4a81",
+      "database": "codebase_community",
+      "database_sha256": "92101be6d2a9f6adceea59d38f6d1c556087f9eea1432432a21268cb1348036d",
+      "sql": "SELECT AVG(T1.Score), T1.UserDisplayName, T1.UserId \nFROM comments AS T1 \nJOIN posts AS T2 ON T1.PostId = T2.Id \nWHERE T2.Id BETWEEN 1 AND 10 OR T1.UserId = 56 \nGROUP BY T1.UserId \nHAVING SUM(T1.Id) <= 58 \nORDER BY T1.UserId \nLIMIT 9",
+      "expected_columns": 3,
+      "expected_rows": [
+        [
+          0.0,
+          null,
+          6
+        ],
+        [
+          1.4,
+          null,
+          13
+        ],
+        [
+          11.0,
+          null,
+          37
+        ]
+      ]
+    },
+    {
+      "query_key": "3bf210fc8f5f33dd5520d632fa8a7a55ad0145c6fccc106ba8b786e0b847e850",
+      "database": "superhero",
+      "database_sha256": "75e94a2c3236ee3bb2c01fb97a1c4b4c1c269bcefd4eab1d04be323d2d0825b1",
+      "sql": "SELECT COUNT(DISTINCT hero_id) FROM hero_attribute WHERE attribute_value BETWEEN 1 AND 10;",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          159
+        ]
+      ]
+    },
+    {
+      "query_key": "dafe5ab6d6af70da7cb57fae447fd2073aa0cbb54b0dbb3701eb15e8c5a24567",
+      "database": "superhero",
+      "database_sha256": "75e94a2c3236ee3bb2c01fb97a1c4b4c1c269bcefd4eab1d04be323d2d0825b1",
+      "sql": "SELECT COUNT(DISTINCT hero_id) FROM hero_attribute WHERE attribute_id BETWEEN 1 AND 10 AND attribute_id >= 75;",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "query_key": "7a15be79826adad374c344b8a7a623c66adf699cb94430fa000ca93254474181",
+      "database": "thrombosis_prediction",
+      "database_sha256": "e7e16d74b4731b4b8d33fdbe8c29cd5622620788ce8d1f335631f65fc7cf1db9",
+      "sql": "SELECT ID, HGB FROM Laboratory WHERE UA > 8 GROUP BY HGB HAVING MAX(ID) <= 35 LIMIT 10",
+      "expected_columns": 2,
+      "expected_rows": []
+    },
+    {
+      "query_key": "eda0f85d695a15c0c1a99b6866db19bcbbc61e128fe0956033aaffed96b01573",
+      "database": "formula_1",
+      "database_sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a",
+      "sql": "SELECT url, TIME FROM races WHERE round > 66 LIMIT 10",
+      "expected_columns": 2,
+      "expected_rows": []
+    },
+    {
+      "query_key": "ee0f179bb32b4843891e4ca9ec8202ca83248f298411adec718b9c5247c6db76",
+      "database": "california_schools",
+      "database_sha256": "986817d793479801ed55133e55aa27e335422c0cd3866b54a3d6317b7c5f09c1",
+      "sql": "SELECT SUM(T1.Latitude), SUM(T2.AvgScrWrite) FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds WHERE T2.AvgScrMath <= 56 LIMIT 3",
+      "expected_columns": 2,
+      "expected_rows": [
+        [
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "query_key": "6c081d58ac82c49cce2866cbfd0a73a331f397fdc3b878f9c87f50108f55647a",
+      "database": "california_schools",
+      "database_sha256": "986817d793479801ed55133e55aa27e335422c0cd3866b54a3d6317b7c5f09c1",
+      "sql": "SELECT DISTINCT schools.MailZip, satscores.NumGE1500 FROM schools INNER JOIN satscores ON schools.CDSCode = satscores.cds WHERE schools.CharterNum > 41 LIMIT 9;",
+      "expected_columns": 2,
+      "expected_rows": []
+    },
+    {
+      "query_key": "6702bc695772cfe5de7cc636b9efcc28bfaebcfbd85221d75b51abd77d06f05c",
+      "database": "california_schools",
+      "database_sha256": "986817d793479801ed55133e55aa27e335422c0cd3866b54a3d6317b7c5f09c1",
+      "sql": "SELECT SUM(t1.Latitude), SUM(t2.AvgScrWrite) FROM schools AS t1 JOIN satscores AS t2 ON t1.CDSCode = t2.cds WHERE t2.AvgScrMath <= 56 LIMIT 3",
+      "expected_columns": 2,
+      "expected_rows": [
+        [
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "query_key": "d1524d9e8e214d97bb34c9b50eebed667e2f3a3811ca2233653787375dac0bfd",
+      "database": "thrombosis_prediction",
+      "database_sha256": "e7e16d74b4731b4b8d33fdbe8c29cd5622620788ce8d1f335631f65fc7cf1db9",
+      "sql": "SELECT c.SM FROM Laboratory AS c WHERE  c.IGA = 41 LIMIT 2",
+      "expected_columns": 1,
+      "expected_rows": []
+    },
+    {
+      "query_key": "fa45ecf41c1ca7b96d38b9d2d47ea7b2a4e16663a5f56820e520b46f98b0f680",
+      "database": "european_football_2",
+      "database_sha256": "e4d361dbeec6591a4b315877c0c481da05c8ff5a3d389b34d6e17b6f15bee4e0",
+      "sql": "SELECT AVG(defenceTeamWidth) FROM Team_Attributes WHERE chanceCreationCrossing BETWEEN 1 AND 10",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          null
+        ]
+      ]
+    },
+    {
+      "query_key": "574aa1c53e8a791bc73170b33ccfae0148940ec6e7bf7a376ff4039dfe771866",
+      "database": "european_football_2",
+      "database_sha256": "e4d361dbeec6591a4b315877c0c481da05c8ff5a3d389b34d6e17b6f15bee4e0",
+      "sql": "SELECT \n    MAX(team_fifa_api_id) AS max_team_fifa_api_id,\n    COUNT(DISTINCT team_api_id) AS unique_team_api_ids\nFROM \n    Team\nWHERE \n    team_api_id != 67;",
+      "expected_columns": 2,
+      "expected_rows": [
+        [
+          112513,
+          299
+        ]
+      ]
+    },
+    {
+      "query_key": "d1eed2174f1529e10e785ddf4103cd40413ba02b0e8e000cf7b3c3932b2d5f2b",
+      "database": "california_schools",
+      "database_sha256": "986817d793479801ed55133e55aa27e335422c0cd3866b54a3d6317b7c5f09c1",
+      "sql": "SELECT MAX(AvgScrMath)\nFROM satscores\nWHERE NumTstTakr = 47;",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          493
+        ]
+      ]
+    },
+    {
+      "query_key": "a46b2f08cb70f0b3470666d640bd73172aa6267b5ada3c4642700a0f9ca4e4ef",
+      "database": "formula_1",
+      "database_sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a",
+      "sql": "SELECT COUNT(*) AS count, name FROM circuits WHERE alt >= 8 GROUP BY name;",
+      "expected_columns": 2,
+      "expected_rows": []
+    },
+    {
+      "query_key": "3a1a5ec855251056090ab7703ccb23b19381ff6e72594552c6a555a3fbc7386e",
+      "database": "card_games",
+      "database_sha256": "c98bdb57fe7474da798b407785544b9af0daaad5d61fd21e2a73309493bc1227",
+      "sql": "SELECT SUM(id) FROM set_translations WHERE id >= 95 LIMIT 8",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          728190
+        ]
+      ]
+    },
+    {
+      "query_key": "429698eff8c93c7918f394f234713cee3d8cc735776fb13fcf6f2567f5a4ea88",
+      "database": "financial",
+      "database_sha256": "d15d89cdb068a202b6f2b99342af44dffc1d52545b39ceaf62efdc0ba570101e",
+      "sql": "SELECT amount FROM loan WHERE payments <= 4 LIMIT 5",
+      "expected_columns": 1,
+      "expected_rows": []
+    },
+    {
+      "query_key": "640ae829278d8d414ee51302d5978f9e02b4c745262ee676e8d5a83cf4b3ab6f",
+      "database": "california_schools",
+      "database_sha256": "986817d793479801ed55133e55aa27e335422c0cd3866b54a3d6317b7c5f09c1",
+      "sql": "SELECT OpenDate, Street \nFROM schools \nWHERE Latitude BETWEEN 1 AND 10 \nLIMIT 6;",
+      "expected_columns": 2,
+      "expected_rows": []
+    },
+    {
+      "query_key": "e66cd82806705452da48e5305d45005e6f8decf09353d4582499f0b12b88bf67",
+      "database": "codebase_community",
+      "database_sha256": "92101be6d2a9f6adceea59d38f6d1c556087f9eea1432432a21268cb1348036d",
+      "sql": "SELECT AVG(U.Reputation) FROM users AS U JOIN votes AS V ON U.Id = V.UserId WHERE V.Id IS NOT NULL",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          3770.6423357664235
+        ]
+      ]
+    },
+    {
+      "query_key": "d163267ccdff9c32135b7cdec3eae8769828577d5b0a770ff37b1628c74ce971",
+      "database": "formula_1",
+      "database_sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a",
+      "sql": "SELECT MAX(year) FROM races WHERE date > '1966-12-31'",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          2017
+        ]
+      ]
+    },
+    {
+      "query_key": "3a68e3aa8681fbda5f61d34e300e332943c30d13d2f4a2118ef8d98d6e905dee",
+      "database": "formula_1",
+      "database_sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a",
+      "sql": "SELECT AVG(lng) AS average_longitude\nFROM circuits\nWHERE circuitId = 24 OR (lng BETWEEN 1 AND 10);",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          7.509178421052631
+        ]
+      ]
+    },
+    {
+      "query_key": "a8beb5195aedaca25bb8415be36b75c0c53d12e8b0acb7a040f9a223fc69dd47",
+      "database": "thrombosis_prediction",
+      "database_sha256": "e7e16d74b4731b4b8d33fdbe8c29cd5622620788ce8d1f335631f65fc7cf1db9",
+      "sql": "SELECT MAX(T1.ID) AS max_id, COUNT(*) AS patient_count FROM Patient AS T1 WHERE T1.ID > 55",
+      "expected_columns": 2,
+      "expected_rows": [
+        [
+          5845877,
+          1238
+        ]
+      ]
+    },
+    {
+      "query_key": "37b8d594d6dc0b586e325f103131bcdc30c663493919ecd9825cd4c9244dd940",
+      "database": "codebase_community",
+      "database_sha256": "92101be6d2a9f6adceea59d38f6d1c556087f9eea1432432a21268cb1348036d",
+      "sql": "SELECT AVG(T1.LinkTypeId) AS AverageLinkTypeId, COUNT(DISTINCT T1.CreationDate) AS CountCreationDates FROM postLinks AS T1 WHERE T1.RelatedPostId < 72",
+      "expected_columns": 2,
+      "expected_rows": [
+        [
+          1.4026845637583893,
+          140
+        ]
+      ]
+    },
+    {
+      "query_key": "73217250dfc7793ffb199b844b773f98bbf71f916bb2e3d498b3c22c56a6ff2c",
+      "database": "card_games",
+      "database_sha256": "c98bdb57fe7474da798b407785544b9af0daaad5d61fd21e2a73309493bc1227",
+      "sql": "SELECT SUM(c.id) AS sum_card_ids, COUNT(c.id) AS count_card_ids, MAX(c.id) AS max_card_id\nFROM cards c\nJOIN rulings r ON c.uuid = r.uuid\nWHERE r.id != 56\nLIMIT 2;",
+      "expected_columns": 3,
+      "expected_rows": [
+        [
+          2245308756,
+          87768,
+          48288
+        ]
+      ]
+    },
+    {
+      "query_key": "afc572aeef47c8a458ee523417747dd6f829c55279e4ee60de7cb0b108c56bdf",
+      "database": "formula_1",
+      "database_sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a",
+      "sql": "SELECT COUNT(circuitId), name FROM circuits WHERE alt >= 8",
+      "expected_columns": 2,
+      "expected_rows": [
+        [
+          0,
+          null
+        ]
+      ]
+    },
+    {
+      "query_key": "5d043dc62104e87a909e3f2a0c9b39bc0f9a4b2e0fdc5279f3ee0968cd2dedbf",
+      "database": "formula_1",
+      "database_sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a",
+      "sql": "SELECT driverId, grid FROM results WHERE statusId = 71 AND grid BETWEEN 1 AND 10 GROUP BY grid HAVING MIN(fastestLap) = 18 LIMIT 1",
+      "expected_columns": 2,
+      "expected_rows": []
+    },
+    {
+      "query_key": "457b78986d905a2e83a5c0b0ac35dea37e8929e60e3bc73763f2b74dd56ce017",
+      "database": "california_schools",
+      "database_sha256": "986817d793479801ed55133e55aa27e335422c0cd3866b54a3d6317b7c5f09c1",
+      "sql": "SELECT Charter, MailStrAbr, COUNT(*) as CharterSchoolCount\nFROM schools\nWHERE Latitude > 42\nGROUP BY MailStrAbr\nLIMIT 10;",
+      "expected_columns": 3,
+      "expected_rows": [
+        [
+          0,
+          "18257 East Main St.",
+          1
+        ],
+        [
+          0,
+          "PO Box 186",
+          2
+        ]
+      ]
+    },
+    {
+      "query_key": "408e3caaec7a7f46dfa0c29abdecbe2a9dec0f6a6b4bf0752d8a97249de44763",
+      "database": "california_schools",
+      "database_sha256": "986817d793479801ed55133e55aa27e335422c0cd3866b54a3d6317b7c5f09c1",
+      "sql": "SELECT EILName, Magnet, EILName FROM schools WHERE CharterNum < 40 GROUP BY EILName LIMIT 7",
+      "expected_columns": 3,
+      "expected_rows": [
+        [
+          "Adult",
+          null,
+          "Adult"
+        ],
+        [
+          "Elementary",
+          0,
+          "Elementary"
+        ],
+        [
+          "Elementary-High Combination",
+          0,
+          "Elementary-High Combination"
+        ],
+        [
+          "High School",
+          0,
+          "High School"
+        ],
+        [
+          "Intermediate/Middle/Junior High",
+          0,
+          "Intermediate/Middle/Junior High"
+        ],
+        [
+          "Ungraded",
+          null,
+          "Ungraded"
+        ]
+      ]
+    },
+    {
+      "query_key": "09d331f8e65097c8489066153aaa5b6a9a163cba7811d90a349f290ca089ab60",
+      "database": "formula_1",
+      "database_sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a",
+      "sql": "SELECT AVG(grid) FROM results WHERE number BETWEEN 1 AND 10 OR driverId < 73",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          10.181091443021453
+        ]
+      ]
+    },
+    {
+      "query_key": "86386686fdf7e1b7c55168ac9f886222aa3dd1aa6d7520f560310509abaa2f87",
+      "database": "formula_1",
+      "database_sha256": "17185981cd747f6cdc374cb02a6096db3130e6ec2ddc582fe1686a28fb4c4c8a",
+      "sql": "SELECT COUNT(DISTINCT statusId) FROM results WHERE laps != 94;",
+      "expected_columns": 1,
+      "expected_rows": [
+        [
+          132
+        ]
+      ]
+    },
+    {
+      "query_key": "5c739861bf502c2478743f2e903390ef26a9d80411337eccde469951e0636db5",
+      "database": "codebase_community",
+      "database_sha256": "92101be6d2a9f6adceea59d38f6d1c556087f9eea1432432a21268cb1348036d",
+      "sql": "SELECT AVG(g.Score), g.UserDisplayName, g.UserId FROM comments AS g WHERE g.PostId BETWEEN 1 AND 10 OR  g.UserId = 56 GROUP BY g.UserId HAVING SUM(g.Id) <= 58 LIMIT 9",
+      "expected_columns": 3,
+      "expected_rows": [
+        [
+          0.0,
+          null,
+          6
+        ],
+        [
+          1.4,
+          null,
+          13
+        ],
+        [
+          11.0,
+          null,
+          37
+        ]
+      ]
+    }
+  ]
+}

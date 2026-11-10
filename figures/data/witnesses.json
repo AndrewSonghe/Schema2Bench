@@ -1,0 +1,327 @@
+{
+  "status": "BOUNDED_BINARY_FEASIBLE_SEARCH_FINISHED",
+  "tasks_planned": 16,
+  "tasks_completed": 16,
+  "wall_seconds": 12.896598667,
+  "global_wall_limit_seconds": 180,
+  "per_endpoint_limit_seconds": 6,
+  "results": [
+    {
+      "scenario": "no_risk",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "feasible_max_observed": 0.0015147719866195472,
+      "outer_bound": [
+        -0.0033394981240869475,
+        0.0063965806645066535
+      ],
+      "search": {
+        "iterations": 1,
+        "accepted": 1,
+        "wall_seconds": 3.2250000000011436e-05,
+        "variables": 99,
+        "seed": 7196155040423319339
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_00.jsonl",
+      "assignment_sha256": "5aab4918dd9af45e79a49f786e769ccb572838e0f6ded249f0ca2e5fe9f92ccc"
+    },
+    {
+      "scenario": "construction_only",
+      "comparison": "rewrite_minus_refill",
+      "metric": "tef",
+      "feasible_max_observed": 0.11622224244994649,
+      "outer_bound": [
+        -0.0021161335451011162,
+        0.22336612729667304
+      ],
+      "search": {
+        "iterations": 1,
+        "accepted": 1,
+        "wall_seconds": 5.6332999999963995e-05,
+        "variables": 1149,
+        "seed": 9820503301695492573
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_01.jsonl",
+      "assignment_sha256": "7c1da6bafe24739482b12d2b5f1b7139904a6ba2c254eaac223ec5b7a9eb4c9d"
+    },
+    {
+      "scenario": "construction_only",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "feasible_max_observed": 0.0018947138341225862,
+      "outer_bound": [
+        -0.03372459317169752,
+        0.03797626325552061
+      ],
+      "search": {
+        "iterations": 1,
+        "accepted": 0,
+        "wall_seconds": 2.6124999999987963e-05,
+        "variables": 744,
+        "seed": 836384130867689300
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_02.jsonl",
+      "assignment_sha256": "456efccbc2f83c1712cd39020b9311f2bbb753152bab03f9d96d55ffba229edf"
+    },
+    {
+      "scenario": "construction_only",
+      "comparison": "rewrite_minus_ring",
+      "metric": "tef",
+      "feasible_max_observed": 0.0001177197506969695,
+      "outer_bound": [
+        -0.09172779926928865,
+        0.023583978078658946
+      ],
+      "search": {
+        "iterations": 2041,
+        "accepted": 511,
+        "wall_seconds": 0.05705004199999997,
+        "variables": 1351,
+        "seed": 5795157751958442190
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_03.jsonl",
+      "assignment_sha256": "c7d2b98de98c2513be6e985b3967d7b6606f8fba6de4e8a8ecb9b9f72bf310f8"
+    },
+    {
+      "scenario": "reference_71_only",
+      "comparison": "rewrite_minus_refill",
+      "metric": "gap",
+      "feasible_max_observed": -0.01922778032346056,
+      "outer_bound": [
+        -0.11375832024260596,
+        0.0010981146918807912
+      ],
+      "search": {
+        "iterations": 450453,
+        "accepted": 1274,
+        "wall_seconds": 6.0000055,
+        "variables": 763,
+        "seed": 16654852789410031352
+      },
+      "found_reverse": false
+    },
+    {
+      "scenario": "reference_71_only",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "feasible_max_observed": 0.002249923891821596,
+      "outer_bound": [
+        -0.03910976241395538,
+        0.04273172163263073
+      ],
+      "search": {
+        "iterations": 1,
+        "accepted": 0,
+        "wall_seconds": 2.7584000000580033e-05,
+        "variables": 809,
+        "seed": 17000156047936128987
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_05.jsonl",
+      "assignment_sha256": "c181e1690534572a15ee2ffd7236b209428bfc20e8f72a5cf4232c60c5b5c859"
+    },
+    {
+      "scenario": "reference_105_only",
+      "comparison": "rewrite_minus_refill",
+      "metric": "gap",
+      "feasible_max_observed": 3.788904233681883e-05,
+      "outer_bound": [
+        -0.12358931532542328,
+        0.030323569499052235
+      ],
+      "search": {
+        "iterations": 3548,
+        "accepted": 503,
+        "wall_seconds": 0.0494090000000007,
+        "variables": 1103,
+        "seed": 7324707394502454807
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_06.jsonl",
+      "assignment_sha256": "7d5622c5c25288fa50e6ef274a2336b697074399164ccb433131992fbfd7b64c"
+    },
+    {
+      "scenario": "reference_105_only",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "feasible_max_observed": 0.0015275833938428523,
+      "outer_bound": [
+        -0.049120505288284634,
+        0.05153447413117058
+      ],
+      "search": {
+        "iterations": 1,
+        "accepted": 0,
+        "wall_seconds": 1.9709000000034393e-05,
+        "variables": 1149,
+        "seed": 4677806307664991706
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_07.jsonl",
+      "assignment_sha256": "936bd9d686ef24be6fcd1738f11e7dadf6ff049e806d7d85707d3ac785082baa"
+    },
+    {
+      "scenario": "construction_plus_reference_71",
+      "comparison": "rewrite_minus_refill",
+      "metric": "gap",
+      "feasible_max_observed": -0.005211541391064322,
+      "outer_bound": [
+        -0.13555172652681133,
+        0.025616639901482118
+      ],
+      "search": {
+        "iterations": 438208,
+        "accepted": 1182,
+        "wall_seconds": 6.000010667,
+        "variables": 1252,
+        "seed": 202620927690949583
+      },
+      "found_reverse": false
+    },
+    {
+      "scenario": "construction_plus_reference_71",
+      "comparison": "rewrite_minus_refill",
+      "metric": "tef",
+      "feasible_max_observed": 0.12270907385914741,
+      "outer_bound": [
+        -0.0021161335451011162,
+        0.22336612729667304
+      ],
+      "search": {
+        "iterations": 1,
+        "accepted": 1,
+        "wall_seconds": 5.937499999930651e-05,
+        "variables": 1149,
+        "seed": 17017157967187688835
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_09.jsonl",
+      "assignment_sha256": "5154e6e08914e4e4d861c051ae7a6f52eb6813881e034a30c21fd8ab9d0a6135"
+    },
+    {
+      "scenario": "construction_plus_reference_71",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "feasible_max_observed": 0.000775469047926195,
+      "outer_bound": [
+        -0.06981440652057501,
+        0.07467695059570223
+      ],
+      "search": {
+        "iterations": 1,
+        "accepted": 0,
+        "wall_seconds": 2.3915999999957194e-05,
+        "variables": 1454,
+        "seed": 3600830407939914046
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_10.jsonl",
+      "assignment_sha256": "210b8b306d6786fa23a9bb975b5e5f336ff833314ce77704a4e698b694990fa9"
+    },
+    {
+      "scenario": "construction_plus_reference_71",
+      "comparison": "rewrite_minus_ring",
+      "metric": "tef",
+      "feasible_max_observed": 3.1098216202936e-05,
+      "outer_bound": [
+        -0.09172779926928865,
+        0.023583978078658946
+      ],
+      "search": {
+        "iterations": 2037,
+        "accepted": 482,
+        "wall_seconds": 0.05952783400000072,
+        "variables": 1351,
+        "seed": 382910198368538425
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_11.jsonl",
+      "assignment_sha256": "6234db01ad71eea1e01a6a97ab609c5c576d5093529668cc3e55910c84cdb3e7"
+    },
+    {
+      "scenario": "construction_plus_reference_105",
+      "comparison": "rewrite_minus_refill",
+      "metric": "gap",
+      "feasible_max_observed": 8.989755890415187e-05,
+      "outer_bound": [
+        -0.14564549088739875,
+        0.05468694584340194
+      ],
+      "search": {
+        "iterations": 2978,
+        "accepted": 643,
+        "wall_seconds": 0.0423571669999987,
+        "variables": 1592,
+        "seed": 15492074501564967907
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_12.jsonl",
+      "assignment_sha256": "1d6061412dc6d44ed480daabbd574bfbd93720532adffc9e05a137ebd19e8daf"
+    },
+    {
+      "scenario": "construction_plus_reference_105",
+      "comparison": "rewrite_minus_refill",
+      "metric": "tef",
+      "feasible_max_observed": 0.11361890209025448,
+      "outer_bound": [
+        -0.0021161335451011162,
+        0.22336612729667304
+      ],
+      "search": {
+        "iterations": 1,
+        "accepted": 0,
+        "wall_seconds": 4.1957999998842865e-05,
+        "variables": 1149,
+        "seed": 9269997839460570623
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_13.jsonl",
+      "assignment_sha256": "79679889fb7921a58750903c5c873ef00147f8519bf059d18c1949ad9ab9ed32"
+    },
+    {
+      "scenario": "construction_plus_reference_105",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "feasible_max_observed": 0.003903071622976982,
+      "outer_bound": [
+        -0.08015356173324892,
+        0.08338089897625248
+      ],
+      "search": {
+        "iterations": 1,
+        "accepted": 0,
+        "wall_seconds": 2.7959000000521428e-05,
+        "variables": 1794,
+        "seed": 6581577534250096785
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_14.jsonl",
+      "assignment_sha256": "fc8426da5a97e602038549795375d6060c123435760f22936cb3854ae153cfd8"
+    },
+    {
+      "scenario": "construction_plus_reference_105",
+      "comparison": "rewrite_minus_ring",
+      "metric": "tef",
+      "feasible_max_observed": 0.00011334622823819078,
+      "outer_bound": [
+        -0.09172779926928865,
+        0.023583978078658946
+      ],
+      "search": {
+        "iterations": 2239,
+        "accepted": 497,
+        "wall_seconds": 0.06413579200000008,
+        "variables": 1351,
+        "seed": 16426606082377250806
+      },
+      "found_reverse": true,
+      "assignment_file": "ASSIGNMENT_15.jsonl",
+      "assignment_sha256": "e1941ee92c09bfe25b9335ff3bc4d0bf9e1dda4489ffe67e5ddaff420dbb4c61"
+    }
+  ],
+  "scope": "Verified layer, crossing endpoints only. Each best is a feasible binary objective under scenario, not an optimum or upper bound. Reverse requires independent raw-cell and metric revalidation. Missing certificates or non-reversal is unresolved; source/target variables shared exactly by ID. Original release unchanged."
+}

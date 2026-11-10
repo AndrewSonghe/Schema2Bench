@@ -1,0 +1,119 @@
+{
+  "status": "BINARY_WITNESSES_INDEPENDENT_METRIC_RECOMPUTATION_PASS",
+  "count": 14,
+  "results": [
+    {
+      "scenario": "no_risk",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "verified_value": 0.0015147719866195465,
+      "assignments": 99,
+      "assignment_sha256": "5aab4918dd9af45e79a49f786e769ccb572838e0f6ded249f0ca2e5fe9f92ccc"
+    },
+    {
+      "scenario": "construction_only",
+      "comparison": "rewrite_minus_refill",
+      "metric": "tef",
+      "verified_value": 0.11622224244994646,
+      "assignments": 1149,
+      "assignment_sha256": "7c1da6bafe24739482b12d2b5f1b7139904a6ba2c254eaac223ec5b7a9eb4c9d"
+    },
+    {
+      "scenario": "construction_only",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "verified_value": 0.0018947138341225862,
+      "assignments": 744,
+      "assignment_sha256": "456efccbc2f83c1712cd39020b9311f2bbb753152bab03f9d96d55ffba229edf"
+    },
+    {
+      "scenario": "construction_only",
+      "comparison": "rewrite_minus_ring",
+      "metric": "tef",
+      "verified_value": 0.0001177197506984683,
+      "assignments": 1351,
+      "assignment_sha256": "c7d2b98de98c2513be6e985b3967d7b6606f8fba6de4e8a8ecb9b9f72bf310f8"
+    },
+    {
+      "scenario": "reference_71_only",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "verified_value": 0.002249923891821596,
+      "assignments": 809,
+      "assignment_sha256": "c181e1690534572a15ee2ffd7236b209428bfc20e8f72a5cf4232c60c5b5c859"
+    },
+    {
+      "scenario": "reference_105_only",
+      "comparison": "rewrite_minus_refill",
+      "metric": "gap",
+      "verified_value": 3.788904233684103e-05,
+      "assignments": 1103,
+      "assignment_sha256": "7d5622c5c25288fa50e6ef274a2336b697074399164ccb433131992fbfd7b64c"
+    },
+    {
+      "scenario": "reference_105_only",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "verified_value": 0.0015275833938428523,
+      "assignments": 1149,
+      "assignment_sha256": "936bd9d686ef24be6fcd1738f11e7dadf6ff049e806d7d85707d3ac785082baa"
+    },
+    {
+      "scenario": "construction_plus_reference_71",
+      "comparison": "rewrite_minus_refill",
+      "metric": "tef",
+      "verified_value": 0.12270907385914741,
+      "assignments": 1149,
+      "assignment_sha256": "5154e6e08914e4e4d861c051ae7a6f52eb6813881e034a30c21fd8ab9d0a6135"
+    },
+    {
+      "scenario": "construction_plus_reference_71",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "verified_value": 0.000775469047926195,
+      "assignments": 1454,
+      "assignment_sha256": "210b8b306d6786fa23a9bb975b5e5f336ff833314ce77704a4e698b694990fa9"
+    },
+    {
+      "scenario": "construction_plus_reference_71",
+      "comparison": "rewrite_minus_ring",
+      "metric": "tef",
+      "verified_value": 3.1098216204610875e-05,
+      "assignments": 1351,
+      "assignment_sha256": "6234db01ad71eea1e01a6a97ab609c5c576d5093529668cc3e55910c84cdb3e7"
+    },
+    {
+      "scenario": "construction_plus_reference_105",
+      "comparison": "rewrite_minus_refill",
+      "metric": "gap",
+      "verified_value": 8.989755890415803e-05,
+      "assignments": 1592,
+      "assignment_sha256": "1d6061412dc6d44ed480daabbd574bfbd93720532adffc9e05a137ebd19e8daf"
+    },
+    {
+      "scenario": "construction_plus_reference_105",
+      "comparison": "rewrite_minus_refill",
+      "metric": "tef",
+      "verified_value": 0.11361890209025448,
+      "assignments": 1149,
+      "assignment_sha256": "79679889fb7921a58750903c5c873ef00147f8519bf059d18c1949ad9ab9ed32"
+    },
+    {
+      "scenario": "construction_plus_reference_105",
+      "comparison": "rewrite_minus_ring",
+      "metric": "gap",
+      "verified_value": 0.003903071622976982,
+      "assignments": 1794,
+      "assignment_sha256": "fc8426da5a97e602038549795375d6060c123435760f22936cb3854ae153cfd8"
+    },
+    {
+      "scenario": "construction_plus_reference_105",
+      "comparison": "rewrite_minus_ring",
+      "metric": "tef",
+      "verified_value": 0.00011334622823988387,
+      "assignments": 1351,
+      "assignment_sha256": "e1941ee92c09bfe25b9335ff3bc4d0bf9e1dda4489ffe67e5ddaff420dbb4c61"
+    }
+  ],
+  "scope": "Plausible binary completions of existing unknown cells, including scenario flags; not actual truth or evidence of observed reversal. Non-witness cases remain unknown. Common reference/source cells shared."
+}

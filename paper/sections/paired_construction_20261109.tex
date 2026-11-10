@@ -1,0 +1,26 @@
+\subsection{Column preference and value sampling}\label{sec:ablation}
+Separate controls disable descriptive-column preference or reduce value sampling from fifty to five. Each uses ten models, 1,034 source tasks, 906 references, 38 strata, 250 tasks per domain per arm and recorded $H=0.01$. Random states and plans are paired by slot, with separate duplicate memories. Both candidates must qualify in the same final stratum. These are separate releases from the main comparison.
+
+Preference removes only descriptive-name priority, retaining identifier filtering, text preference, grounding and admission. Programmatic realization uses eight-second and 1,000-row caps. Four domains require 1,600 extra slots each before freezing; the arms share 1,159/2,000 question--SQL slots. Depth fixes 2,400 slots/domain/arm: fifty/five values admit 7,131/6,149 candidates, with 5,375 joint admissions and 769 shared released slots. Astra supports both versions of 80 depth pairs, 24 with identical prompts, using exposed controls. These admission differences remain part of the controls.
+
+Native SQLite checks resolve 827 preference and 903 depth AST-rejected predictions as mismatches without rewriting SQL. Identical domain/request/prompt/gold/raw-output bindings share one unknown variable across arms; other unknowns remain conservatively relaxed. This post-hoc treatment changes dependence, not scores or membership. Table~\ref{tab:ablation-layers} retains the earlier independent-arm bounds.
+
+\begin{table*}[t]\centering\small
+\caption{Separate construction controls under Verified scoring. Negative favors full preference or fifty values. Shared-request bounds bind identical outcomes; independent-arm bounds retain the earlier relaxation.}
+\label{tab:ablation-layers}
+\begin{tabular}{llrr}\toprule
+Intervention & Unknown-variable treatment & Direct TEF difference & Direct target-gap difference\\\midrule
+Column preference & Independent arms & $[-0.029752,+0.008062]$ & $[-0.011942,+0.006559]$\\
+Column preference & Shared identical requests & $[-0.016593,-0.005466]$ & $[-0.003816,-0.001425]$\\
+50 versus 5 values & Independent arms & $[-0.024987,+0.011333]$ & $[-0.006878,+0.011031]$\\
+50 versus 5 values & Shared identical requests & $[-0.012477,-0.001261]$ & $[+0.001863,+0.002221]$\\\bottomrule
+\end{tabular}\end{table*}
+
+Column preference improves both aggregate metrics on this fixed paired release, whereas deeper value sampling improves TEF with a small gap cost (Table~\ref{tab:ablation-layers}). The base-layer shared-request TEF bounds also favor both interventions; their gap bounds cross zero. Separate numerical LP checks reproduce 26 aggregate/domain comparisons per intervention on the same saved data.
+
+Domain effects differ (Fig.~\ref{fig:construction-effects}b--d). Column preference worsens gap in card games and codebase. Excluding European football changes its seven-domain mean to $[+0.001899,+0.004625]$; excluding Formula 1 leaves the direction unresolved. Value depth also has mixed effects. By comparison, question realization improves verified gap in all eight domains.
+
+
+
+\paragraph{Testing the value-depth effect on more databases}
+Four SynSQL-2.5M training databases \citep{li2025omnisql} supply 1,000 identical pairs; BIRD \texttt{student\_club} changes 150/250 pairs. Three further targets stop below quota. The thirteen-domain synthesis uses 3,250 tasks/arm and 1,733 references: Verified TEF/gap differences are $[-0.050927,+0.049902]$/$[-0.029026,+0.030559]$. Adding native proofs only on the original eight domains gives $[-0.013017,+0.011489]$/$[-0.004886,+0.007287]$. Both remain unresolved. Inactive arms, unequal proof coverage and synthetic/training overlap limit independent replication.

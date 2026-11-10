@@ -1,0 +1,185 @@
+{
+  "scope": "Read-only inspection of saved first-release verified matrices for plot feasibility; reproduces published regret ranges. No new model or SQL execution.",
+  "first_release_seed": 2026110601,
+  "source_sha256": {
+    "core.jsonl": "cef94e48d34abca196066e825d8baaed6b360692b67dcfe1ad9d22abb11f7e11",
+    "ring.jsonl": "098451938fe8b5c136dbd1d3fb03397821fdefd6cfeb380b8d52829cb4c3864d",
+    "reference.jsonl": "02a17827bb45acda63fd3dbf05c10935fbff2b0d23d9c68995f0477bb2b4fa2b",
+    "memberships.json": "1b3e5674b85f760c07503eed397c247e22037320f1723b2da05c638af6a24985"
+  },
+  "mean": {
+    "refill": [
+      5.482437417516326,
+      7.98085363544474
+    ],
+    "ring": [
+      4.408746834646588,
+      4.958197384097138
+    ]
+  },
+  "domains": {
+    "california_schools": {
+      "refill": {
+        "regret_pp": [
+          12.727272727272727,
+          12.727272727272727
+        ],
+        "possible_winner_columns": [
+          7
+        ]
+      },
+      "ring": {
+        "regret_pp": [
+          3.6363636363636362,
+          3.6363636363636362
+        ],
+        "possible_winner_columns": [
+          9
+        ]
+      }
+    },
+    "card_games": {
+      "refill": {
+        "regret_pp": [
+          3.896103896103896,
+          11.688311688311689
+        ],
+        "possible_winner_columns": [
+          7,
+          9
+        ]
+      },
+      "ring": {
+        "regret_pp": [
+          3.896103896103896,
+          3.896103896103896
+        ],
+        "possible_winner_columns": [
+          9
+        ]
+      }
+    },
+    "codebase_community": {
+      "refill": {
+        "regret_pp": [
+          8.49673202614379,
+          8.49673202614379
+        ],
+        "possible_winner_columns": [
+          7
+        ]
+      },
+      "ring": {
+        "regret_pp": [
+          3.2679738562091503,
+          3.2679738562091503
+        ],
+        "possible_winner_columns": [
+          9
+        ]
+      }
+    },
+    "european_football_2": {
+      "refill": {
+        "regret_pp": [
+          4.395604395604396,
+          4.395604395604396
+        ],
+        "possible_winner_columns": [
+          6
+        ]
+      },
+      "ring": {
+        "regret_pp": [
+          0.0,
+          4.395604395604396
+        ],
+        "possible_winner_columns": [
+          2,
+          9
+        ]
+      }
+    },
+    "financial": {
+      "refill": {
+        "regret_pp": [
+          2.4390243902439024,
+          14.634146341463415
+        ],
+        "possible_winner_columns": [
+          3,
+          6
+        ]
+      },
+      "ring": {
+        "regret_pp": [
+          2.4390243902439024,
+          2.4390243902439024
+        ],
+        "possible_winner_columns": [
+          6
+        ]
+      }
+    },
+    "formula_1": {
+      "refill": {
+        "regret_pp": [
+          0.0,
+          0.0
+        ],
+        "possible_winner_columns": [
+          6
+        ]
+      },
+      "ring": {
+        "regret_pp": [
+          5.511811023622047,
+          5.511811023622047
+        ],
+        "possible_winner_columns": [
+          7
+        ]
+      }
+    },
+    "superhero": {
+      "refill": {
+        "regret_pp": [
+          0.0,
+          0.0
+        ],
+        "possible_winner_columns": [
+          9
+        ]
+      },
+      "ring": {
+        "regret_pp": [
+          10.169491525423728,
+          10.169491525423728
+        ],
+        "possible_winner_columns": [
+          7
+        ]
+      }
+    },
+    "thrombosis_prediction": {
+      "refill": {
+        "regret_pp": [
+          11.904761904761905,
+          11.904761904761905
+        ],
+        "possible_winner_columns": [
+          7
+        ]
+      },
+      "ring": {
+        "regret_pp": [
+          6.349206349206349,
+          6.349206349206349
+        ],
+        "possible_winner_columns": [
+          2
+        ]
+      }
+    }
+  }
+}

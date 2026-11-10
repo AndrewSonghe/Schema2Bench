@@ -1,0 +1,22 @@
+{
+  "sha256": {
+    "SCORES.json": "ae5b2d25528f4057c578c541e343d6f82cf18b1bbe5c5ba2b2634408fc331347",
+    "ASSIGNMENT_06.jsonl": "7d5622c5c25288fa50e6ef274a2336b697074399164ccb433131992fbfd7b64c",
+    "verify_witness.py": "25a6ebd7729c1faa0641497ba86f1a1267bee8d1a9ea0f2a4d2d88eb12844aba"
+  },
+  "original_evidence_bindings": {
+    "Schema2Bench/development/20261109_v6_feasible_counterexample_v1/search.py": "ed3e5a9e5acafa7bbb0f1db2743423a00291d8121089b973e7cb3aa9063870e5",
+    "Schema2Bench/development/20261109_v6_risk_factorization_v1/RESULT.json": "18f99576291545d98ab89763d97fd765010dad27af339bf66eb74a84cf20a27f",
+    "Schema2Bench/development/20261107_eightdomain_repro_v2/matrices/memberships.json": "1b3e5674b85f760c07503eed397c247e22037320f1723b2da05c638af6a24985",
+    "Schema2Bench/development/20261107_eightdomain_repro_v2/matrices/core.jsonl": "cef94e48d34abca196066e825d8baaed6b360692b67dcfe1ad9d22abb11f7e11",
+    "Schema2Bench/development/20261107_eightdomain_repro_v2/matrices/ring.jsonl": "098451938fe8b5c136dbd1d3fb03397821fdefd6cfeb380b8d52829cb4c3864d",
+    "Schema2Bench/development/20261107_eightdomain_repro_v2/matrices/source.jsonl": "b9d93cda85e539e592eec05239168b56e976a6384978f886f879eff053548384",
+    "Schema2Bench/development/20261107_eightdomain_repro_v2/matrices/reference.jsonl": "02a17827bb45acda63fd3dbf05c10935fbff2b0d23d9c68995f0477bb2b4fa2b",
+    "Schema2Bench/development/20261109_refill_rewrite_metrics_v2/REWRITE_MATRIX.jsonl": "f131614c6789ca119798ded9ecf733102bc1b2bb483cec5f8b2f271f5a8b0930",
+    "Schema2Bench/development/20261109_refill_rewrite_terra_verify_v2/AUDIT_LABELS.jsonl": "30ed2ebbc3e104082860ad5fc21b4450ea70f1ae5d54c2520fae9853fce8d40b",
+    "Schema2Bench/development/20261108_astra_semantic_audit_v1/sensitivity/FLAGGED.jsonl": "f208e6761df883795a15488d205522119aa976125bd9c105b688e5b0e00dd39a",
+    "Schema2Bench/development/20261109_bird_reference_terra_audit_v1/runs/PAIRS.jsonl": "93674bd40683f04929218e0077363bd67d18e4989e64432098d67644b1328ca9",
+    "Schema2Bench/development/20261109_reference_qwen_crosscheck_v1/PAIRED_LABELS.jsonl": "361aa7bc2861c5162e7921106f11d05e5d4b0bfc9d152a94e4d7ae42a63f3bff"
+  },
+  "scope": "Saved matrices and one existing witness; no new model predictions or search."
+}

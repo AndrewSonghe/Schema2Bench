@@ -1,0 +1,11 @@
+{
+  "status": "LIMIT_PROOFS_INDEPENDENTLY_AUDITED",
+  "score_proofs": 1965,
+  "roundtrip_proofs": 199,
+  "unique_query_claims": 1764,
+  "direct_sqlite_reexecutions": 32,
+  "sample_hash": "031e9b97d1b1f480d406142100ffd4ca11f6321788056c31eb9f70b11f03698d",
+  "proof_result_sha256": "bf1559ace17062f523ab1e1ff37516e54be5ec1fa0aae0b5b0c1a632fa9eee34",
+  "scores_sha256": "c36c8568c1e832da6facc99a07813fc35a5f97904fc17abb4afcf28cd378f61b",
+  "scope": "All proof records and unchanged score intervals independently checked against cached executions. 32 fixed-hash simple SELECT queries reexecuted directly; sample is not exhaustive. Same-instance SQL comparison does not prove NL meaning."
+}

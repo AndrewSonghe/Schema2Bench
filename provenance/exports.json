@@ -1,0 +1,78 @@
+{
+  "sources": [
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/bird_selected_workload.jsonl",
+      "sha256": "2f5e8453324eef915b87b552c5ca470823e224173f06b50f9154eefb69c37da4"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/bird_selected_predictions.jsonl",
+      "sha256": "ad093df379124a82e58fdde5fe592e43d47847bbc9cc487919f0cf4fe96c85b0"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/source/SOURCE_LABELS.jsonl",
+      "sha256": "b19074f544d07dd2fe744122b636a73844313beabb421beaef56f2abd5237b1a"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/source/SOURCE_PROMPTS.jsonl",
+      "sha256": "06533475ce6f1e6cdc380bab24b97369fc71f13e27356261dca4865837a94614"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/source/PREDICTIONS.jsonl",
+      "sha256": "c6ac3db3f4d73e152c22443710cb9306745802839d0dc311718cdf743a546de1"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/ring/SOURCE_LABELS.jsonl",
+      "sha256": "b893c58a7a4ab2f5426e3f5d9836993a20e1e41ffb102c109e3c99a4d8850075"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/ring/SOURCE_PROMPTS.jsonl",
+      "sha256": "b05df89a6d90c60c4194789379a9ab7b6fcf0253db59cdac5ab71186bdc7a889"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/ring/PREDICTIONS.jsonl",
+      "sha256": "570dd68237f1cb2737f514c13e8556bb9b8f38d444b3455a059020d96f8c4f5f"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/omni/SOURCE_LABELS.jsonl",
+      "sha256": "5583c1801c1a0c9778e24a4efaf0ccb3ceac763bcf7ab0f5fe31965ff581cd3b"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/omni/SOURCE_PROMPTS.jsonl",
+      "sha256": "0c1e232cb6705bd85cb07a76141ce367048167826ca8450dfc712fdec054536e"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/omni/PREDICTIONS.jsonl",
+      "sha256": "14293e429fb2317199c40a2d1fd53efe63f4538e7b1b28ea9929e112be53e047"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/synth/SOURCE_LABELS.jsonl",
+      "sha256": "a29b1fb28e5e6530fa3089e60b89366aac6607db47d47fdeac03dd3467b534a5"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/synth/SOURCE_PROMPTS.jsonl",
+      "sha256": "a5af0eb1f675e2513f9b8675e362501d205c7eba63a8ce8d80686871850795cf"
+    },
+    {
+      "source": "Schema2Bench/development/20261107_eightdomain_repro_v2/raw/synth/PREDICTIONS.jsonl",
+      "sha256": "3a8d9a08835ec19d0c11e00d5d47bc3c2eb8fe19ee512b401949af4f3a0c73de"
+    },
+    {
+      "source": "Schema2Bench/development/20261109_astra_4000_completion_v1/inputs/BLIND.jsonl",
+      "sha256": "0d9dbb7b722b2f8e79f3b9bc2c271ff3c1e00623d9efaaa135ec283d8d8f98e7"
+    },
+    {
+      "source": "Schema2Bench/development/20261109_astra_4000_completion_v1/inputs/PRIVATE.jsonl",
+      "sha256": "a09a0d8f1ca5239af3d62c1d218f1c4b66973c3ce5c1ac236bf2fc207ca92135"
+    },
+    {
+      "source": "Schema2Bench/development/20261109_astra_4000_completion_v1/runs/LABELS.jsonl",
+      "sha256": "279bd0409522ef8bcfa718d3a11b92790db82a1443609e50e3ff4991d264f84e"
+    }
+  ],
+  "transformations": [
+    "Task projection retains ID, domain, question and SQL; shared prompts are split and hash-verified.",
+    "Model outputs omit token-ID arrays and retain raw text, parsed SQL, termination metadata, counts and hashes; gzip compression is lossless.",
+    "Semantic labels join blinded IDs to construction and domain; original blinded review inputs are included.",
+    "Local path normalization affects provenance strings only."
+  ]
+}

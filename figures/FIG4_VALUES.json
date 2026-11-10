@@ -1,0 +1,122 @@
+{
+  "fig4/Column preference/tef": [
+    -0.016593084844558324,
+    -0.005466451751558132
+  ],
+  "fig4/Value sampling/tef": [
+    -0.012477126604678732,
+    -0.0012612722974425024
+  ],
+  "fig4/Question realization/tef": [
+    0.03519058255204056,
+    0.20396752104098725
+  ],
+  "fig4/Column preference/gap": [
+    -0.0038157452963660317,
+    -0.0014250736586355669
+  ],
+  "fig4/Column preference/california_schools/gap": [
+    -0.007224242424242428,
+    -0.007224242424242428
+  ],
+  "fig4/Column preference/card_games/gap": [
+    0.017878210678210677,
+    0.02095815295815296
+  ],
+  "fig4/Column preference/codebase_community/gap": [
+    0.02604502541757444,
+    0.039909368191721147
+  ],
+  "fig4/Column preference/european_football_2/gap": [
+    -0.04382026862026864,
+    -0.04377533577533578
+  ],
+  "fig4/Column preference/financial/gap": [
+    -0.003484010840108403,
+    -0.003484010840108403
+  ],
+  "fig4/Column preference/formula_1/gap": [
+    -0.01826141732283464,
+    -0.018083639545056863
+  ],
+  "fig4/Column preference/superhero/gap": [
+    0.0,
+    0.0
+  ],
+  "fig4/Column preference/thrombosis_prediction/gap": [
+    -0.001659259259259261,
+    0.0002991181657848319
+  ],
+  "fig4/Value sampling/gap": [
+    0.001863266224706058,
+    0.0022210211785394446
+  ],
+  "fig4/Value sampling/california_schools/gap": [
+    0.02058181818181818,
+    0.02058181818181818
+  ],
+  "fig4/Value sampling/card_games/gap": [
+    0.0028698412698412615,
+    0.003022222222222215
+  ],
+  "fig4/Value sampling/codebase_community/gap": [
+    -0.001088743645606395,
+    0.001443137254901964
+  ],
+  "fig4/Value sampling/european_football_2/gap": [
+    -0.0032888888888888863,
+    -0.0032888888888888863
+  ],
+  "fig4/Value sampling/financial/gap": [
+    0.007520867208672086,
+    0.007698644986449864
+  ],
+  "fig4/Value sampling/formula_1/gap": [
+    -0.0028164479440070003,
+    -0.0028164479440070003
+  ],
+  "fig4/Value sampling/superhero/gap": [
+    -0.021050094161958563,
+    -0.021050094161958563
+  ],
+  "fig4/Value sampling/thrombosis_prediction/gap": [
+    0.01217777777777778,
+    0.012177777777777784
+  ],
+  "fig4/Question realization/gap": [
+    -0.07182319673531166,
+    -0.06656892662460517
+  ],
+  "fig4/Question realization/california_schools/gap": [
+    -0.1784,
+    -0.1752
+  ],
+  "fig4/Question realization/card_games/gap": [
+    -0.06029552669552666,
+    -0.05949552669552666
+  ],
+  "fig4/Question realization/codebase_community/gap": [
+    -0.06326913580246914,
+    -0.056151633986928115
+  ],
+  "fig4/Question realization/european_football_2/gap": [
+    -0.025830525030525003,
+    -0.009187789987789964
+  ],
+  "fig4/Question realization/financial/gap": [
+    -0.09348943089430894,
+    -0.08557181571815717
+  ],
+  "fig4/Question realization/formula_1/gap": [
+    -0.08600804899387575,
+    -0.08600804899387575
+  ],
+  "fig4/Question realization/superhero/gap": [
+    -0.0454854990583804,
+    -0.03912919020715629
+  ],
+  "fig4/Question realization/thrombosis_prediction/gap": [
+    -0.021807407407407428,
+    -0.021807407407407428
+  ]
+}

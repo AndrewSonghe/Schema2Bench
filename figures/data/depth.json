@@ -1,0 +1,215 @@
+{
+  "pairs_sha256": "6c5de204f6e17e7d767a42a57d7a30c05ccbdaf0a355e3f717737102a077f52e",
+  "results": {
+    "base": {
+      "by_domain_shared": {
+        "california_schools": {
+          "exact_paired_slots": 49,
+          "shared_unknown_cells": 12
+        },
+        "card_games": {
+          "exact_paired_slots": 77,
+          "shared_unknown_cells": 12
+        },
+        "codebase_community": {
+          "exact_paired_slots": 166,
+          "shared_unknown_cells": 67
+        },
+        "european_football_2": {
+          "exact_paired_slots": 58,
+          "shared_unknown_cells": 1
+        },
+        "financial": {
+          "exact_paired_slots": 133,
+          "shared_unknown_cells": 15
+        },
+        "formula_1": {
+          "exact_paired_slots": 140,
+          "shared_unknown_cells": 0
+        },
+        "superhero": {
+          "exact_paired_slots": 71,
+          "shared_unknown_cells": 1
+        },
+        "thrombosis_prediction": {
+          "exact_paired_slots": 75,
+          "shared_unknown_cells": 14
+        }
+      },
+      "components": {
+        "accuracy": [
+          -0.002504101989639973,
+          0.0036000000000000034
+        ],
+        "correct_count_cdf": [
+          -0.007099999999999995,
+          -0.0005502901353965139
+        ],
+        "model_disagreement": [
+          -0.009800000000000003,
+          -0.007187749838813666
+        ]
+      },
+      "domain_gap_differences": {
+        "california_schools": [
+          0.01563636363636363,
+          0.024298989898989903
+        ],
+        "card_games": [
+          0.0007780663780663698,
+          0.006349206349206352
+        ],
+        "codebase_community": [
+          -0.003620624546114748,
+          0.0023680464778504102
+        ],
+        "european_football_2": [
+          -0.003720634920634923,
+          -0.003157997557997554
+        ],
+        "financial": [
+          0.006133333333333328,
+          0.0098319783197832
+        ],
+        "formula_1": [
+          -0.003972703412073489,
+          -0.002816447944007
+        ],
+        "superhero": [
+          -0.028995856873822962,
+          -0.020495668549905827
+        ],
+        "thrombosis_prediction": [
+          0.011822222222222222,
+          0.016723809523809526
+        ]
+      },
+      "full_minus_nohint_macro_gap": [
+        -0.0007424792728325717,
+        0.004137739564716126
+      ],
+      "full_minus_nohint_tef": [
+        -0.014504101989639969,
+        -0.0005441650548033438
+      ],
+      "prior_independent_arm_macro_gap": [
+        -0.012314064405202014,
+        0.015694226503747293
+      ],
+      "prior_independent_arm_tef": [
+        -0.03043743532297332,
+        0.01615583494519668
+      ],
+      "shared": {
+        "exact_paired_slots": 769,
+        "shared_unknown_cells": 122
+      }
+    },
+    "verified": {
+      "by_domain_shared": {
+        "california_schools": {
+          "exact_paired_slots": 49,
+          "shared_unknown_cells": 0
+        },
+        "card_games": {
+          "exact_paired_slots": 77,
+          "shared_unknown_cells": 12
+        },
+        "codebase_community": {
+          "exact_paired_slots": 166,
+          "shared_unknown_cells": 62
+        },
+        "european_football_2": {
+          "exact_paired_slots": 58,
+          "shared_unknown_cells": 1
+        },
+        "financial": {
+          "exact_paired_slots": 133,
+          "shared_unknown_cells": 8
+        },
+        "formula_1": {
+          "exact_paired_slots": 140,
+          "shared_unknown_cells": 0
+        },
+        "superhero": {
+          "exact_paired_slots": 71,
+          "shared_unknown_cells": 1
+        },
+        "thrombosis_prediction": {
+          "exact_paired_slots": 75,
+          "shared_unknown_cells": 7
+        }
+      },
+      "components": {
+        "accuracy": [
+          -0.0004771266046787348,
+          0.0036000000000000034
+        ],
+        "correct_count_cdf": [
+          -0.007099999999999996,
+          -0.0010502901353965145
+        ],
+        "model_disagreement": [
+          -0.009800000000000001,
+          -0.007621964324091983
+        ]
+      },
+      "domain_gap_differences": {
+        "california_schools": [
+          0.02058181818181818,
+          0.02058181818181818
+        ],
+        "card_games": [
+          0.0028698412698412615,
+          0.003022222222222215
+        ],
+        "codebase_community": [
+          -0.001088743645606395,
+          0.001443137254901964
+        ],
+        "european_football_2": [
+          -0.0032888888888888863,
+          -0.0032888888888888863
+        ],
+        "financial": [
+          0.007520867208672086,
+          0.007698644986449864
+        ],
+        "formula_1": [
+          -0.0028164479440070003,
+          -0.0028164479440070003
+        ],
+        "superhero": [
+          -0.021050094161958563,
+          -0.021050094161958563
+        ],
+        "thrombosis_prediction": [
+          0.01217777777777778,
+          0.012177777777777784
+        ]
+      },
+      "full_minus_nohint_macro_gap": [
+        0.001863266224706058,
+        0.0022210211785394446
+      ],
+      "full_minus_nohint_tef": [
+        -0.012477126604678732,
+        -0.0012612722974425024
+      ],
+      "prior_independent_arm_macro_gap": [
+        -0.006877879122321642,
+        0.011031074088592347
+      ],
+      "prior_independent_arm_tef": [
+        -0.024987014682160073,
+        0.011333043197936852
+      ],
+      "shared": {
+        "exact_paired_slots": 769,
+        "shared_unknown_cells": 91
+      }
+    }
+  },
+  "scope": "Conservative coordinatewise bounds after binding identical request/gold outcomes; post-hoc same-pool sensitivity, not a CI, exact joint interval or semantic audit.",
+  "status": "PAIRED_SHARED_OUTCOME_BOUNDS_COMPLETE"
+}

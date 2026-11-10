@@ -1,0 +1,28 @@
+\subsection{Question realization with fixed SQL}\label{sec:realization}
+We vary question wording while fixing SQL to compare its effects on the two objectives. A preliminary comparison finds 1,973 Ring--Template pairs with identical SQL and schema prefixes in the same domain but different questions. Ring's execution-match rate is $[-13.96,-13.73]$ pp lower. This motivates the wording intervention, with semantic agreement assessed separately.
+
+We retain all 2,000 first-release Refill SQLs, databases and quotas, using the recorded Ring-style Qwen2.5-7B realization configuration. The plan and 160-item audit (20/domain) freeze before outputs. There are 1,999 format-valid questions and 19,990 predictions; the remaining item stays unknown without replacement.
+
+
+
+
+Rewriting moves Refill toward Ring in target alignment and away from original Refill in source fidelity (Table~\ref{tab:realization-results}). Verified gap improves in all eight domains (Fig.~\ref{fig:construction-effects}d), and the aggregate direction also holds under Base scoring. Definite concordance counts increase. The regret intervals overlap and do not establish a direct selection benefit. The Ring comparison captures the tradeoff: rewritten questions retain lower TEF, but the target-gap difference crosses zero.
+
+\begin{table*}[t]\centering\small
+\caption{Same-SQL question rewriting on the first release. Panel (a) reports Verified outcomes; rank counts use 360 dependent model pairs and regret is in accuracy pp. Panel (b) reports direct unknown-score bounds; negative favors rewriting.}
+\label{tab:realization-results}
+\begin{tabular}{lrrr}\toprule
+\multicolumn{4}{l}{\textit{(a) Release outcomes}}\\
+Release & Target gap & Definite concordances & Mean regret (pp)\\\midrule
+Original Refill & $0.169275$ & 229/360 & $[5.48,7.98]$\\
+Rewritten Refill & $[0.097452,0.102706]$ & 248/360 & $[4.30,5.57]$\\
+Ring & $[0.096309,0.100791]$ & 246/360 & $[4.41,4.96]$\\\midrule
+\multicolumn{4}{l}{\textit{(b) Direct differences}}\\
+Contrast & Scoring & $\Delta\mathrm{TEF}$ & $\Delta G$\\\midrule
+Rewritten $-$ original Refill & Verified & $[+0.035191,+0.203968]$ & $[-0.071823,-0.066569]$\\
+Rewritten $-$ Ring & Verified & $[-0.046174,-0.009796]$ & $[-0.003339,+0.006397]$\\
+Rewritten $-$ original Refill & Base & Crosses zero & $[-0.120114,-0.002971]$\\\bottomrule
+\end{tabular}\end{table*}
+
+Terra assesses the 160-item sample as 117 supported, 32 incorrect and ten insufficient, with one unavailable item. The audit reuses exposed synthetic controls. Holding SQL fixed controls the executable target; these judgments separately assess whether the rewritten question expresses it. Section~\ref{sec:risk-sources} tests how the flagged construction and reference items affect the comparison. The observed SQL pool is separate from the original frozen-pool qualification.
+

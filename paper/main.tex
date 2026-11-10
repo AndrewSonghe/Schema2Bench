@@ -1,0 +1,51 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[numbers,sort&compress]{natbib}
+\renewcommand{\bibfont}{\footnotesize\interlinepenalty=10000}
+\setlength{\bibsep}{\IEEEbibitemsep}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{array,tabularx,alphalph}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{flushend}
+\usepackage{pgfplots}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{url}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\hypersetup{colorlinks=true,allcolors=black}
+\graphicspath{{./}}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{12pt plus 2pt minus 2pt}
+
+\newtheorem{proposition}{Proposition}
+\newcommand{\tef}{\mathrm{TEF}}
+
+\title{Schema2Bench: Measuring What Text-to-SQL Benchmark Migration Preserves}
+\author{\IEEEauthorblockN{He Song\IEEEauthorrefmark{1}, Ning Liu\IEEEauthorrefmark{1}, Haitao Yuan\IEEEauthorrefmark{2}, Yonghui Xu\IEEEauthorrefmark{1}, Lizhen Cui\IEEEauthorrefmark{1},\\
+Wenpeng Hu\IEEEauthorrefmark{3}, Zhunchen Luo\IEEEauthorrefmark{3}, Guotong Geng\IEEEauthorrefmark{3}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Shandong University\\
+\IEEEauthorrefmark{2}Nanyang Technological University\\
+\IEEEauthorrefmark{3}Academy of Military Science}}
+
+\begin{document}
+\raggedbottom
+\maketitle
+\input{sections/abstract}
+\input{sections/submission_main}
+
+
+\FloatBarrier
+\label{closure:main-end}
+\clearpage
+\section*{Acknowledgments and AI use disclosure}
+OpenAI Codex assisted with language editing, partial translation and partial data analysis. Qwen-based models supported SQL and question generation (Sections~\ref{sec:framework}--\ref{sec:construction}); OpenAI's \texttt{gpt-6-astra} API and Qwen/Terra models provided semantic judgments (Section~\ref{sec:semantic}). The authors are responsible for the content and conclusions.
+\bibliography{references_submission}
+\bibliographystyle{IEEEtranN}
+\end{document}

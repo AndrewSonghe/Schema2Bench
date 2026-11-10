@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using these materials."
+type: article
+title: "Schema2Bench: Measuring What Text-to-SQL Benchmark Migration Preserves"
+authors:
+  - family-names: Song
+    given-names: He
+  - family-names: Liu
+    given-names: Ning
+  - family-names: Yuan
+    given-names: Haitao
+  - family-names: Xu
+    given-names: Yonghui
+  - family-names: Cui
+    given-names: Lizhen
+  - family-names: Hu
+    given-names: Wenpeng
+  - family-names: Luo
+    given-names: Zhunchen
+  - family-names: Geng
+    given-names: Guotong
+version: "submission-draft"

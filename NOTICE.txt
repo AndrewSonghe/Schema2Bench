@@ -1,0 +1,5 @@
+Schema2Bench research artifact.
+
+Third-party datasets, model metadata and derived examples retain their original terms.
+Database files and model weights are not distributed in this repository.
+No additional rights to third-party materials are granted by this distribution.

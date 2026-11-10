@@ -1,0 +1,24 @@
+{
+  "task_counts": {
+    "ring": 2000,
+    "omni": 2000,
+    "synth": 2000,
+    "source": 1034
+  },
+  "prediction_records": {
+    "paired": 84140,
+    "source": 10340,
+    "ring": 20000,
+    "omni": 20000,
+    "synth": 20000
+  },
+  "matrix_rows": {
+    "source": 1034,
+    "synth": 2000,
+    "reference": 906,
+    "omni": 2000,
+    "ring": 2000,
+    "core": 7508
+  },
+  "semantic_records": 4000
+}
