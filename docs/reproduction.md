@@ -60,7 +60,7 @@ Semantic recount reproduces the generated-task panel in Table VIII from the
 final 4,000-item label file. The prompt and response schema are included under
 `evaluation/semantic/`. The one unavailable response remains in the denominator.
 The reference cross-check panel uses a different sample. The uniform Terra
-follow-up below includes its 160 reference labels; the other Qwen contracts are
+follow-up below includes its 160 reference labels; the other Qwen parsing settings are
 not recomputed by this command.
 
 The witness command checks exact coverage of the permitted unknown cells and

@@ -1,22 +1,32 @@
 # Schema2Bench
 
-**Measuring What Text-to-SQL Benchmark Migration Preserves**
+**Evidence-Grounded Cross-Domain Text-to-SQL Benchmark Migration**
 
-Schema2Bench studies what happens to model comparisons when a Text-to-SQL
-benchmark is moved to a different relational database. The framework separates
-SQL grounding, question realization and workload selection. Evaluation asks two
-questions: does the new workload preserve model behavior on the source
-benchmark, and does it reproduce model differences on target reference tasks?
+Schema2Bench constructs Text-to-SQL benchmark workloads for new relational
+databases using schema constraints, sampled values and execution checks. It
+combines SQL construction and question generation with quota-constrained
+selection. A perturbation bound controls selection-induced changes in source
+fidelity, and structural coverage analysis identifies shortages in the candidate
+pool. Evaluation examines both source model behavior and model differences on
+target reference tasks.
 
 ![Benchmark migration across databases](docs/overview.png)
 
-The study compares five constructions on eight BIRD databases with ten models,
+The main study compares five constructions on eight databases from BIRD with ten models,
 2,000 tasks per method and 906 target references. Refill improves source fidelity
 and target-gap error over the template baseline under the reported scoring
 convention. Ring-style construction gives lower target gap and mean selection
 regret. Under execution scoring, rewriting questions with SQL fixed improves
 target alignment but reduces source fidelity. A uniform semantic review leaves
 both directions unresolved when sampled concerns are treated as unknown scores.
+
+Spider supplies the source query structures and source model responses.
+Additional studies use BIRD's `student_club` database and four SynSQL-2.5M
+databases for value-sampling controls, including the garment database for
+candidate generation. External evaluations use three databases each from TACO
+and BEAVER. BIRD Mini-Dev provides revised reference tasks on the original eight
+databases. These studies have different sample sizes and construction settings;
+the five-method comparison is the main BIRD experiment.
 
 ## Start with the saved results
 
@@ -100,8 +110,8 @@ sampling confidence intervals.
 
 ## Paper and data sources
 
-This repository accompanies the manuscript *Schema2Bench: Measuring What
-Text-to-SQL Benchmark Migration Preserves*. See `CITATION.cff` for its authors.
+This repository accompanies the manuscript *Schema2Bench: Evidence-Grounded
+Cross-Domain Text-to-SQL Benchmark Migration*. See `CITATION.cff` for its authors.
 
 The experiments use [Spider](https://yale-lily.github.io/spider/) and
 [BIRD](https://bird-bench.github.io/). Obtain databases and model weights through

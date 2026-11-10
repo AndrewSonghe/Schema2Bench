@@ -7,8 +7,8 @@
     },
     {
       "path": "CITATION.cff",
-      "bytes": 597,
-      "sha256": "65be14c81db845913fe4d7dfcf3d9f2c35a27d9b1130298420e0fda38b951ec5"
+      "bytes": 603,
+      "sha256": "495119543ece6515d8aeafe51a1df98031a1f573b9fe87b98fc1fe3c82a317e1"
     },
     {
       "path": "NOTICE.txt",
@@ -17,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5495,
-      "sha256": "27f305856b39830141bc2e6f15a59bdc4cc71c1a9f33dd533572e4045388a256"
+      "bytes": 6136,
+      "sha256": "d81e0d18b5b40a7c636d03d42ea90ad3f3938d62c29fe0024b101c529c958664"
     },
     {
       "path": "configs/databases.json",
@@ -367,8 +367,8 @@
     },
     {
       "path": "docs/data.md",
-      "bytes": 3352,
-      "sha256": "f6d3821f942cc217d5e48fe42e59a456029176756619b60e352881cec770366f"
+      "bytes": 3357,
+      "sha256": "08b45bd3c49f4dec947a35fc467fc9b61db6e1fe51a8d0ccf6743f62fa67f5ff"
     },
     {
       "path": "docs/followup.md",
@@ -382,13 +382,13 @@
     },
     {
       "path": "docs/paper-map.md",
-      "bytes": 2755,
-      "sha256": "8727ecaef7744dc473796f63874ff0ecf114a193f39cce25ecde86ddbeda5466"
+      "bytes": 2754,
+      "sha256": "8306ac83dc23498eafebe4a85d33a1e1017db09424f824bf020421212dc179db"
     },
     {
       "path": "docs/reproduction.md",
-      "bytes": 5903,
-      "sha256": "3e98677a1ace74a188a21a0d02aad19728e3877e05392c057ab19b544de3bd1a"
+      "bytes": 5910,
+      "sha256": "3fad58ecda9e1e855df60fdbfef4ba25377c8bd48892c1c77250440c1f77ed0c"
     },
     {
       "path": "evaluation/cache_check/original_result.json",
@@ -792,8 +792,8 @@
     },
     {
       "path": "paper/main.tex",
-      "bytes": 2088,
-      "sha256": "887017b234b2b478b2647952d0d88d5a6175fa0cdf4e9ce666f9b7bfa8ce10d2"
+      "bytes": 2094,
+      "sha256": "a9fe3ce875676006b81158f57fcbcbf2821afb93d35f8a37e0883fb78ce636a1"
     },
     {
       "path": "paper/references_submission.bib",
@@ -802,33 +802,33 @@
     },
     {
       "path": "paper/sections/abstract.tex",
-      "bytes": 1605,
-      "sha256": "f5f61d1de2da04cf319cb1f8b9ab9d2df4a7dd384ba7f0270f617a41f0c4c1fc"
+      "bytes": 1515,
+      "sha256": "cfad2f687837887a42602e790ea1023632d1d233fb7a6995a34bf5837b6408cc"
     },
     {
       "path": "paper/sections/current_scientific_main.tex",
-      "bytes": 32626,
-      "sha256": "42857fd986765a3be4338af8dfb5113d94dfb1f9b1c872297ed7cf71938f6706"
+      "bytes": 32541,
+      "sha256": "611506acb903ffd35b90d7e51f1f6946405857b53bef80d17153d5dec9a3f635"
     },
     {
       "path": "paper/sections/migration_tables_20261107.tex",
-      "bytes": 1733,
-      "sha256": "39c6cec020cd041db12ac48f4ade37c017d0778bc7a4d4657957735db4e9dcee"
+      "bytes": 1736,
+      "sha256": "e1f941786be88404be50e6eeaf6c902dca50e70b5115f4b89d733529ccdbd135"
     },
     {
       "path": "paper/sections/paired_construction_20261109.tex",
-      "bytes": 3735,
-      "sha256": "eb0fcaa126661c84460e04c483d5fc1474b571c81e652c917c1cf2eab129d1d1"
+      "bytes": 3755,
+      "sha256": "ed474e96ed02d31b37e7107e1551b17d109c609cda485a3e0a574583152629fb"
     },
     {
       "path": "paper/sections/question_realization_20261109.tex",
-      "bytes": 2847,
-      "sha256": "f8a3bfe5ff83ba2ac121b0fbca939165285268ae6d59c1d7dcc2d978c3e0a52a"
+      "bytes": 2860,
+      "sha256": "fc1ccccc69eca857c5e4d6eb3385fda480d24fe4c48f1b18cec6b6128c25f4c7"
     },
     {
       "path": "paper/sections/robustness_20261109.tex",
-      "bytes": 15779,
-      "sha256": "172714e204e094b7cb7a2db0a1cdf8619f12200e7baf6966a7fa73c0de81b652"
+      "bytes": 15770,
+      "sha256": "43059f308fee37f262a0753b2db100f1ad15a5802fe4e640c4ea6260e9a851fb"
     },
     {
       "path": "paper/sections/submission_main.tex",
@@ -1071,6 +1071,6 @@
       "sha256": "300736032288807d04648c77963038207fbe4af907fd15d02083f9b72a4878de"
     }
   ],
-  "total_bytes": 56514270,
+  "total_bytes": 56514786,
   "scope": "Research artifact for offline reanalysis, including BEAVER context and uniform semantic follow-ups; databases and model weights are external dependencies."
 }

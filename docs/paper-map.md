@@ -15,7 +15,7 @@ numerical output is included without its full input pipeline.
 | Section VI: same-SQL rewriting | `figures/data/rewrite.json` | Saved analyses and plotting input |
 | Section VI: difficulty support | `scripts/check_difficulty_support.py` | Recomputes the 0.3775 capacity certificate |
 | Section VI: general support diagnostic | `diagnostics/support.py` | Executable four-block LP/integer relaxation with example |
-| Section VII: generated-task semantic audit | `evaluation/semantic/` | Recounts the 4,000 archived labels and retains the judging contract |
+| Section VII: generated-task semantic audit | `evaluation/semantic/` | Recounts the 4,000 archived labels and retains the review protocol |
 | Section VII: uncertainty and witnesses | `figures/data/risk.json`, `replay/witness/` | Saved scenario bounds and independent replay of one binary witness |
 | Section VII: weight sensitivity | `figures/data/weights.json` | Saved component bounds and region plotting |
 | Section VII: uniform Terra review and joint semantic sensitivity | `evaluation/followup/semantic/`, `scripts/replay_followup.py` | Recounts 480 labels, parses 479 responses and replays the added score sensitivities |

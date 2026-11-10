@@ -26,7 +26,7 @@ The other method matrices cover fixed 2,000-item sets. Source and reference
 uncertainty is shared when constructing direct contrasts. Subtracting separately
 optimized row intervals would compute a different comparison.
 
-Base applies the original execution contract. Verified adds recorded native
+Base applies the original execution scoring rules. Verified adds recorded native
 SQLite, row-count and ordering evidence. Proof coverage differs by method;
 Verified does not mean human-verified question semantics.
 

@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the accompanying manuscript when using these materials."
 type: article
-title: "Schema2Bench: Measuring What Text-to-SQL Benchmark Migration Preserves"
+title: "Schema2Bench: Evidence-Grounded Cross-Domain Text-to-SQL Benchmark Migration"
 authors:
   - family-names: Song
     given-names: He
