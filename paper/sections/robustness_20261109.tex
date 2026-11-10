@@ -38,10 +38,10 @@ Original Refill &141&14&5&0\\
 Rewritten Refill &117&32&10&1\\\bottomrule
 \end{tabular}\end{table}
 
-The 1,433-record scenario retains Refill-minus-Template TEF $[-0.179682,-0.050176]$. Shared-source continuous LP outer bounds for Ring/Omni/Synth are $[-0.293390,+0.139461]$, $[-0.840707,+0.132174]$ and $[-0.587412,+0.236106]$, all crossing zero, as do joint gap bounds. Three of 48 LP/MILP gap endpoints reach time limits; numerical bounds retain outward tolerances, earlier wider bounds and failures. 
+The 1,433-record scenario retains Refill-minus-Template TEF $[-0.179682,-0.050176]$. Shared-source linear-programming (LP) outer bounds for Ring/Omni/Synth are $[-0.293390,+0.139461]$, $[-0.840707,+0.132174]$ and $[-0.587412,+0.236106]$, all crossing zero, as do joint gap bounds. Three of 48 LP/mixed-integer gap endpoints reach time limits; bounds retain outward tolerances and earlier wider results.
 
 \paragraph{Target-reference audits}
-A separate fixed sample takes 20 of the original 906 references per domain. Table~\ref{tab:audit-expanded}b reports Terra's judgments and the Qwen cross-check under the strict JSON and predeclared code-fence parsing contracts. Under the latter, 107/160 labels agree with Terra. Candidate-blind SQL execution gives 97 matches, 54 differences and nine unresolved; 13 review-nonsupported items nevertheless match, while ten supported items differ. Review labels and execution matches measure different properties. The 105-item strict union counts format failures and negative/insufficient judgments as risks, not confirmed errors.
+A separate fixed sample takes 20 of the original 906 references per domain. Table~\ref{tab:audit-expanded}(b) reports Terra's judgments and the Qwen cross-check under the strict JSON and predeclared code-fence parsing contracts. Under the latter, 107/160 labels agree with Terra. Candidate-blind SQL execution gives 97 matches, 54 differences and nine unresolved; 13 review-nonsupported items nevertheless match, while ten supported items differ. Review labels and execution matches measure different properties. The 105-item strict union counts format failures and negative/insufficient judgments as risks, not confirmed errors.
 
 \begin{table*}[t]\centering\small
 \caption{Refill-minus-Template gap sensitivities on the first Verified release. Each risk set retains its denominator and unflagged scores; ranges bound unknown scores.}
@@ -65,17 +65,17 @@ Figure~\ref{fig:risk-sources} uses the earlier audit flags to separate construct
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/v8/Fig5.pdf}
-\caption{Construction and reference concerns in the same-SQL rewrite comparison. Target gap is shown above source TEF; the side columns record bounded witness-search status.}
+\caption{Same-SQL rewrite sensitivity using the earlier audit flags. Target gap is shown above source TEF; side columns record bounded witness-search status.}
 \label{fig:risk-sources}
 \end{figure*}
 
 Construction flags alone preserve the rewrite's gap advantage over original Refill, while either reference-risk set makes its direction unresolved (Fig.~\ref{fig:risk-sources}, top). Reference flags leave source TEF unchanged; construction flags leave both TEF contrasts unresolved (bottom).
 
-A uniform Terra follow-up reviews the 160 paired originals, reusing rewrite/reference reviews under the same prompt and label contract (Table~\ref{tab:audit-expanded}c). Union with prior flags gives 24 original, 43 rewritten, 23 Ring and 71 reference concerns. Relaxing these scores yields Verified rewrite-minus-original gap $[-0.142130,+0.032135]$ and TEF $[-0.008539,+0.235566]$. Both cross zero: the execution-level wording tradeoff remains conditional on semantic judgments.
-
 Binary searches verify positive differences in 14/16 crossing Verified cases: ``W'' denotes feasibility, ``?'' unresolved search, blank no search. Two cases with 71 reference flags reach six-second limits.
 
 The 105-reference-only case admits $+0.000037889$, sharing references and fixing other definite scores. Flagged scores have no added SQL-equivalence/native-error constraints. The replayable assignment establishes score-model feasibility, not semantic correctness or reversal probability.
+
+A uniform Terra follow-up reviews the 160 paired originals, reusing rewrite/reference reviews under the same prompt and label contract (Table~\ref{tab:audit-expanded}(c)). Union with prior flags gives 24 original, 43 rewritten, 23 Ring and 71 reference concerns. Relaxing these scores yields Verified rewrite-minus-original gap $[-0.142130,+0.032135]$ and TEF $[-0.008539,+0.235566]$. Both cross zero: the execution-level wording tradeoff remains conditional on semantic judgments.
 
 \subsection{Measurement priorities, model panel and coverage}\label{sec:sensitivity}
 TEF combines three views of source behavior. Accuracy and the correct-count CDF favor Refill against all comparators; disagreement favors it over Template, is adverse to Ring ($[+0.012123,+0.066481]$), and unresolved for Omni/Synth. Equal-component and item-micro conventions leave Refill-minus-Synth unresolved: $[-0.400081,+0.034253]$ and $[-0.430144,+0.025669]$. Accuracy-heavy, CDF-heavy and domain-macro variants remain favorable; Template/Ring/Omni directions persist. Equal/accuracy-heavy/CDF-heavy weights are $(5/6,5/6,5/6)$, $(10/7,5/7,5/14)$ and $(5/7,10/7,5/14)$, each summing to 2.5.
@@ -117,7 +117,7 @@ LIMIT counts are 1,739/2,000 for Template/Refill, 1,753 Ring, 424 Omni and 872 S
 
 \subsection{External pilots and transfer scope}\label{sec:external}
 \begin{table*}[t]\centering\small
-\caption{External-pilot direct differences (Refill minus comparator). Negative favors Refill. TACO: 750 tasks/method, 595 references, native compilation plus reference proofs. BEAVER: 472 tasks/method, 194 references. Each pilot uses three databases; TEF uses the matching source context. Bounds retain unknown scores.}
+\caption{External-pilot direct differences (Refill minus comparator). Negative favors Refill. TACO: 750 tasks/method, 595 references, native compilation plus reference proofs. BEAVER: 472 tasks/method, 194 references, Verified scoring. Each pilot uses three databases and its matching source context. Bounds retain unknown scores.}
 \label{tab:external-pilot}
 \begin{tabular}{llrr}\toprule
 Setting & Comparator & $\Delta\mathrm{TEF}$ & $\Delta G$\\\midrule
@@ -131,7 +131,7 @@ BEAVER: sufficient schema & Ring & $[-0.130602,+0.168975]$ & $[-0.051570,+0.0646
 
 TACO OpenData \citep{deng2026taco} supplies two related Beijing databases and Connecticut, with potentially synthetic references. Relaxed admission and fixed hash anchors differ from the main selector. Expanding retrieval from six to 16 objects raises reference-table coverage from 270/595 to 408/595; comparisons remain unresolved against Template and adverse against Ring (Table~\ref{tab:external-pilot}).
 
-Astra labels 120 references 13 supported, 93 incorrect and 14 insufficient (two missing inputs); incomplete review schemas prevent treating these as true error rates. On 120 fixed SQL/schema pairs, naturalized-minus-original execution match is $[+4.50,+16.33]$ pp under native compilation, but naturalized-minus-quoted is $[-4.33,+7.75]$. Connecticut Template is adverse ($[-23,-2]$ pp). Formatting accounts for part of the apparent gain; semantic concerns remain in the denominator. Omni admits 162/141/170 and Synth 0/0/72 SQLs, below each 250 quota; their question generation and model evaluation remain incomplete.
+The 120-reference audit records 13 Astra-supported, 93 incorrect and 14 insufficient cases, including two missing inputs. Incomplete review schemas prevent treating these as true error rates. On 120 fixed SQL/schema pairs, naturalized-minus-original execution match is $[+4.50,+16.33]$ pp under native compilation, but naturalized-minus-quoted is $[-4.33,+7.75]$. Connecticut Template is adverse ($[-23,-2]$ pp). Formatting accounts for part of the apparent gain; semantic concerns remain in the denominator. Omni admits 162/141/170 and Synth 0/0/72 SQLs, below each 250 quota; their question generation and model evaluation remain incomplete.
 
 A second pilot uses CORE-T's SQLite-converted BEAVER \citep{chen2024beaver}.\footnote{\url{https://github.com/UKPLab/emnlp2026-core-t}} Construction falls short of 250 pairs in two databases. A separate ten-model partial panel retains 250/198/24 tasks per method in DW/Nova/Neutron and 121/43/30 references; Nova and Neutron are related. Retrieved schemas cover all required objects for only 33/194 references. An oracle-context control supplies required tables/views selected using reference SQL, with SQL hidden, and reruns Spider with full compact DDL.
 

@@ -1,7 +1,7 @@
 \section{Introduction}
-Text-to-SQL systems let users query relational databases through natural language. Evaluating a system on a new database requires questions and reference SQL grounded in its schema and data. Spider and BIRD \citep{yu2018spider,li2023bird} provide established workloads for comparing models, but transferring their questions requires adapting tables, join paths, column meanings and values. Benchmark construction therefore recurs whenever evaluation moves across databases.
+Choosing a Text-to-SQL system for a new database requires questions and reference SQL grounded in its schema and data. Spider and BIRD \citep{yu2018spider,li2023bird} provide established workloads for comparing models, but reusing their query structures requires adapting tables, join paths, column meanings and values. The resulting workload must support the model comparisons for which it will be used.
 
-Query mutation and synthetic data generation offer ways to build such workloads. SQLMorph expands queries and varies their wording to diagnose model behavior \citep{malekpour2026sqlmorph}; RingSQL and OmniSQL construct question--SQL pairs through templates or generation \citep{sterbentz2026ringsql,li2025omnisql}. Yet executable queries and broad structural coverage do not establish whether the resulting workload supports the intended model comparison. A construction that produces many easy questions can obscure differences visible on the source benchmark. Conversely, retaining those differences may poorly represent the tasks on which a model will be used.
+Query mutation and synthetic data generation offer ways to build such workloads. SQLMorph expands queries and varies wording to diagnose model behavior \citep{malekpour2026sqlmorph}; RingSQL and OmniSQL construct question--SQL pairs through templates or generation \citep{sterbentz2026ringsql,li2025omnisql}. Executability and structural coverage, however, do not establish which model comparisons a workload supports. Generating mostly easy queries can obscure differences visible on the source benchmark. Preserving those differences may, in turn, favor a workload that poorly represents target tasks.
 
 \begin{figure*}[t]
 \centering
@@ -10,13 +10,13 @@ Query mutation and synthetic data generation offer ways to build such workloads.
 \label{fig:problem}
 \end{figure*}
 
-We study \emph{cross-domain benchmark migration}: constructing a fixed-size workload on a target database from source query structure (Fig.~\ref{fig:problem}). Cross-database evaluation seeks continuity with the source, including which models succeed and where they disagree; target model selection seeks agreement with target tasks. These objectives need not favor the same construction. We measure source continuity through \emph{test-effect fidelity error} (TEF), which compares accuracies, correct-count distributions and pairwise disagreements, and target agreement through \emph{target gap error}, which compares model-accuracy differences with target references. Rankings and selection regret connect the measurements to model choice.
+We study \emph{cross-domain benchmark migration}: constructing a fixed-size workload on a target database from source query structure (Fig.~\ref{fig:problem}). For comparisons across databases, \emph{source fidelity} asks whether the workload preserves which models succeed and where they disagree. For target model selection, \emph{target alignment} asks whether it reproduces accuracy differences on target tasks. We measure these objectives with \emph{test-effect fidelity error} (TEF) and \emph{target gap error}, and report rankings and selection regret.
 
-Schema2Bench separates SQL grounding, question realization and workload selection so that their effects can be examined individually. A deterministic refill planner uses target schema and value information to construct candidates; a quota-constrained selector then adjusts structural coverage at a fixed release size. We bound how much this selection can change source fidelity and identify structural deficits that the candidate pool cannot repair through selection alone.
+Schema2Bench separates SQL grounding, question realization and workload selection. Its deterministic refill planner constructs candidates using target schema and values. A quota-constrained selector adjusts coverage, with a tight bound on changes in source fidelity. A support certificate identifies structural deficits that selection cannot remove.
 
-Our evaluation compares five constructions on eight BIRD databases with ten models. Refill better preserves source behavior under the declared scoring and weights, whereas the external adaptations have lower target gap and Ring has lower mean selection regret. Holding SQL fixed, question rewriting brings Refill's target gap close to Ring's while increasing its source-fidelity error.
+Our five-construction study covers eight BIRD databases and ten models. Under the declared execution scoring and weights, Refill best preserves source behavior, whereas Ring has lower target gap and mean selection regret. With SQL fixed, rewriting reduces target gap but increases source-fidelity error; joint semantic-risk analysis leaves both directions unresolved. External pilots show context-dependent results.
 
-Our contributions are the distinction between source fidelity and target alignment (Section~\ref{sec:objectives}); a construction framework with bounded selection and a structural support certificate (Sections~\ref{sec:framework} and~\ref{sec:current-support}); and controlled experiments that explain the observed tradeoffs and test their sensitivity to semantics, references and measurement weights (Sections~\ref{sec:measurement}--\ref{sec:robustness}).
+The contributions are a measurement framework separating source fidelity from target alignment (Section~\ref{sec:objectives}), a migration procedure with bounded selection and a structural support certificate (Sections~\ref{sec:framework} and~\ref{sec:current-support}), and controlled experiments linking construction choices to model comparisons and their uncertainty (Sections~\ref{sec:measurement}--\ref{sec:robustness}).
 
 \section{Related work}
 \paragraph{Database-bound evaluation}
@@ -62,7 +62,7 @@ Target gap measures how closely the release reproduces pairwise model-accuracy d
 \end{equation}
 Lower is better. Negative $\Delta G(a,b)=G(a)-G(b)$ favors the first construction; positive-improvement summaries use $I_G=G(\mathrm{Template})-G(\mathrm{Refill})$. Multiplying by 100 gives gap percentage points (pp), distinct from accuracy changes. Domain-mean Kendall $\tau$-b measures ordering with ties. Common accuracy shifts preserve gaps; near-tie changes can reverse ranking.
 
-Source fidelity measures changes in model behavior. Let $Y_i\in\{0,1\}^M$ be item $i$'s joint model-response vector. TEF compares accuracies, correct-count CDF indicators $\mathbf1\{\sum_mY_{i,m}\le k\}$, $k=0,\ldots,M-1$, and pairwise disagreements $|Y_{i,m}-Y_{i,n}|$. For source/release feature means $\Psi_s,\Psi_z$,
+Source fidelity measures changes in model behavior. Let $Y_i\in\{0,1\}^M$ be item $i$'s joint model-response vector. TEF compares accuracies, correct-count cumulative distribution function (CDF) indicators $\mathbf1\{\sum_mY_{i,m}\le k\}$, $k=0,\ldots,M-1$, and pairwise disagreements $|Y_{i,m}-Y_{i,n}|$. For source/release feature means $\Psi_s,\Psi_z$,
 \begin{equation}
  L_{\tef}(z)=\sum_jw_j|\Psi_{z,j}-\Psi_{s,j}|
  =D_{\rm diff}+D_{\rm acc}+\tfrac12D_{\rm dis}.
@@ -77,7 +77,7 @@ CDF/disagreement use item-micro weights; source accuracy averages 20 databases. 
 \subsection{Quota-constrained adaptation}
 Given eligible candidates $\mathcal C$, disjoint strata and quotas $q$, the release satisfies $Az=q$, $\mathbf1^\top z=N$ and $z\in\{0,1\}^{|\mathcal C|}$. Selection uses SQL structure, schema evidence, metadata and a seed. It excludes evaluator responses; prior outcome-dependent candidate eligibility remains part of the experimental population.
 
-The structural objective averages operator-event TV, SQL-only difficulty TV, six shape deviations, relative mean join-count error and relative mean SQL-length error:
+The structural objective averages operator-event and SQL-only difficulty total variation (TV), six shape deviations, relative mean join-count error and relative mean SQL-length error:
 \begin{align}
  L_{\rm struct}(z)=\frac15\bigg(&\frac{\|\widehat P_o-P_o^*\|_1}{2}
  +\frac{\|\widehat P_d-P_d^*\|_1}{2}
@@ -115,7 +115,7 @@ Matched random draws 16 alternatives/seed with matched stratum-removal counts, s
 \section{Experimental design}\label{sec:design}
 The experiments address three questions: which model comparisons migration preserves (Section~\ref{sec:measurement}), which construction choices account for the differences (Section~\ref{sec:construction}), and how the conclusions depend on evaluation assumptions (Section~\ref{sec:robustness}).
 \subsection{Evaluation populations}
-The primary comparison uses eight BIRD databases (Table~\ref{tab:screening}), ten models, 2,000 tasks/method and 906 shared references; Spider supplies 1,034 source items from 20 databases. DDL prompts bind to retained local snapshots.
+The primary comparison uses eight BIRD databases (Table~\ref{tab:screening}), ten models, 2,000 tasks/method and 906 shared references; Spider supplies 1,034 source items from 20 databases. Prompts use data definition language (DDL) schemas from retained snapshots.
 
 The panel comprises Qwen3-4B (Instruct-2507), Granite-3.3-8B-Instruct, Qwen2.5-Coder-7B-Instruct, Qwen2.5-7B-Instruct, Llama-3.1-8B-Instruct, Mistral-7B-Instruct-v0.3, Qwen2.5-14B-Instruct, Qwen3-8B, Gemma-2-9B-it and Phi-4. Qwen2.5-7B also participates in generation \citep{qwen2024qwen25}.
 
@@ -180,9 +180,9 @@ Both terms share $s$. We sum weighted coordinate bounds, evaluating endpoints an
 \section{Benchmark migration outcomes}\label{sec:measurement}
 \input{sections/migration_tables_20261107}
 \subsection{Source fidelity and target alignment}
-Refill improves on Template while revealing a tradeoff with the external adaptations. In the first release, verified target-gap error falls from 0.224967 to 0.169275, a reduction of 0.055693. Every direct Refill-minus-comparator TEF upper bound is negative (Fig.~\ref{fig:main-contrasts}a). Ring, Omni and Synth, however, have target-gap upper bounds below Refill's value. Under the declared weights, Refill is closest to the source response profile among these five constructions; the external adaptations are closer to the target-reference gaps. 
+Refill improves on Template while revealing a tradeoff with the external adaptations. In the first release, verified target-gap error falls from 0.224967 to 0.169275, a reduction of 0.055693. Every direct Refill-minus-comparator TEF upper bound is negative (Fig.~\ref{fig:main-contrasts}(a)). Ring, Omni and Synth, however, have target-gap upper bounds below Refill's value. Under the declared weights, Refill is closest to the source response profile among these five constructions; the external adaptations are closer to the target-reference gaps.
 
-Figures~\ref{fig:main-contrasts}--\ref{fig:risk-sources} mark unknown-score bounds with caps and coincident endpoints with ticks. In Fig.~\ref{fig:main-contrasts}a--b, gray/blue denotes Base/Verified; negative favors Refill, with gap in $100\Delta G$ pp.
+Figures~\ref{fig:main-contrasts}--\ref{fig:risk-sources} mark unknown-score bounds with caps and coincident endpoints with ticks. In Fig.~\ref{fig:main-contrasts}(a)--(b), gray/blue denotes Base/Verified; negative favors Refill, with gap in $100\Delta G$ pp.
 
 Across ten overlapping releases, verified TEF directions remain favorable against all four comparators; the three external sets remain fixed. Base-layer mean contrasts cross zero for Template, Ring and Synth, while Omni remains favorable.
 
@@ -205,7 +205,7 @@ Omni & $[0.000, 17.895]$ & $[0.794, 12.246]$ & $[6.349, 19.512]$ & $[0.000, 28.0
 Synth & $[0.000, 27.258]$ & $[0.000, 19.046]$ & $[0.000, 25.490]$ & $[0.000, 37.369]$ & $[0.000, 23.858]$\\
 \bottomrule\end{tabular}\end{table*}
 
-On the 906-reference Verified population, Ring has lower mean regret than Refill throughout the reported ranges (Table~\ref{tab:regret}), despite Refill's lower source TEF. Domain-level losses vary: Ring does better in California and codebase, while Refill does better in Formula 1 and superhero. Omni and Synth retain wide ranges with zero lower bounds. Figure~\ref{fig:main-contrasts}c separates lower bounds (solid bars) from the remaining ranges (hatching).
+On the 906-reference Verified population, Ring has lower mean regret than Refill throughout the reported ranges (Table~\ref{tab:regret}), despite Refill's lower source TEF. Domain-level losses vary: Ring does better in California and codebase, while Refill does better in Formula 1 and superhero. Omni and Synth retain wide ranges with zero lower bounds. Figure~\ref{fig:main-contrasts}(c) separates lower bounds (solid bars) from the remaining ranges (hatching).
 
 All 1,118 references give overlapping Refill/Ring ranges, with 1,356 Base and 706 Verified unknown cells. Across ten overlapping releases with 906 references, Refill mean lower/upper endpoints span 5.482--7.696/5.482--7.981 pp. These sensitivities vary reference coverage and release membership within the existing screened pool.
 \section{Analysis of construction choices}\label{sec:construction}
@@ -270,7 +270,7 @@ Synth all recorded generation &553,507,001&15,411,464&258,674 calls, including f
 
 \section{Discussion}
 \paragraph{Implications for benchmark design}
-Benchmark construction should follow the evaluation objective. Refill improves on Template across the TEF weight region, making it preferable for source continuity in this comparison. Ring's lower verified mean regret instead favors it for target model selection. The Refill--Ring TEF comparison also depends on how much weight is assigned to model disagreement.
+Benchmark construction should follow the evaluation objective. Under Verified scoring, Refill improves on Template across the TEF weight region. Ring's lower mean regret instead favors it for model selection on the 906-reference population. The Refill--Ring TEF comparison also depends on the weight assigned to model disagreement.
 
 The API supports 732/800 Refill tasks and 603/800 Ring tasks (Table~\ref{tab:audit-expanded}). Ring's lower gap coexists with fewer supported pairs, showing why construction quality also requires semantic assessment.
 

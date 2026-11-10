@@ -3,7 +3,7 @@ Separate controls disable descriptive-column preference or reduce value sampling
 
 Preference removes only descriptive-name priority, retaining identifier filtering, text preference, grounding and admission. Programmatic realization uses eight-second and 1,000-row caps. Four domains require 1,600 extra slots each before freezing; the arms share 1,159/2,000 question--SQL slots. Depth fixes 2,400 slots/domain/arm: fifty/five values admit 7,131/6,149 candidates, with 5,375 joint admissions and 769 shared released slots. Astra supports both versions of 80 depth pairs, 24 with identical prompts, using exposed controls. These admission differences remain part of the controls.
 
-Native SQLite checks resolve 827 preference and 903 depth AST-rejected predictions as mismatches without rewriting SQL. Identical domain/request/prompt/gold/raw-output bindings share one unknown variable across arms; other unknowns remain conservatively relaxed. This post-hoc treatment changes dependence, not scores or membership. Table~\ref{tab:ablation-layers} retains the earlier independent-arm bounds.
+Native SQLite checks resolve 827 preference and 903 depth parser-rejected predictions as mismatches without rewriting SQL. Identical domain/request/prompt/gold/raw-output bindings share one unknown variable across arms; other unknowns remain conservatively relaxed. This post-hoc treatment changes dependence, not scores or membership. Table~\ref{tab:ablation-layers} retains the earlier independent-arm bounds.
 
 \begin{table*}[t]\centering\small
 \caption{Separate construction controls under Verified scoring. Negative favors full preference or fifty values. Shared-request bounds bind identical outcomes; independent-arm bounds retain the earlier relaxation.}
@@ -18,7 +18,7 @@ Column preference & Shared identical requests & $[-0.016593,-0.005466]$ & $[-0.0
 
 Column preference improves both aggregate metrics on this fixed paired release, whereas deeper value sampling improves TEF with a small gap cost (Table~\ref{tab:ablation-layers}). The base-layer shared-request TEF bounds also favor both interventions; their gap bounds cross zero. Separate numerical LP checks reproduce 26 aggregate/domain comparisons per intervention on the same saved data.
 
-Domain effects differ (Fig.~\ref{fig:construction-effects}b--d). Column preference worsens gap in card games and codebase. Excluding European football changes its seven-domain mean to $[+0.001899,+0.004625]$; excluding Formula 1 leaves the direction unresolved. Value depth also has mixed effects. By comparison, question realization improves verified gap in all eight domains.
+Domain effects differ (Fig.~\ref{fig:construction-effects}(b)--(d)). Column preference worsens gap in card games and codebase. Excluding European football changes its seven-domain mean to $[+0.001899,+0.004625]$; excluding Formula 1 leaves the direction unresolved. Value depth also has mixed effects. By comparison, question realization improves verified gap in all eight domains.
 
 
 

@@ -792,8 +792,8 @@
     },
     {
       "path": "paper/main.tex",
-      "bytes": 2063,
-      "sha256": "14fe27293a606d1a2d059e0fccf0a96a08253de948630dbefe8be6142b1c32dd"
+      "bytes": 2088,
+      "sha256": "887017b234b2b478b2647952d0d88d5a6175fa0cdf4e9ce666f9b7bfa8ce10d2"
     },
     {
       "path": "paper/references_submission.bib",
@@ -802,13 +802,13 @@
     },
     {
       "path": "paper/sections/abstract.tex",
-      "bytes": 1517,
-      "sha256": "e874e7efa7e66b214ccf7096d6bcddf2e533225cda19cfd06952787680d1426f"
+      "bytes": 1605,
+      "sha256": "f5f61d1de2da04cf319cb1f8b9ab9d2df4a7dd384ba7f0270f617a41f0c4c1fc"
     },
     {
       "path": "paper/sections/current_scientific_main.tex",
-      "bytes": 33003,
-      "sha256": "7c513052585776966d3401625b789abd0221cea54c654e96e07303b011950f25"
+      "bytes": 32626,
+      "sha256": "42857fd986765a3be4338af8dfb5113d94dfb1f9b1c872297ed7cf71938f6706"
     },
     {
       "path": "paper/sections/migration_tables_20261107.tex",
@@ -817,18 +817,18 @@
     },
     {
       "path": "paper/sections/paired_construction_20261109.tex",
-      "bytes": 3728,
-      "sha256": "083c8a7589d872d81b75d0e1611d76c038deb60483cbf07cf3414fbe2fdbd160"
+      "bytes": 3735,
+      "sha256": "eb0fcaa126661c84460e04c483d5fc1474b571c81e652c917c1cf2eab129d1d1"
     },
     {
       "path": "paper/sections/question_realization_20261109.tex",
-      "bytes": 2845,
-      "sha256": "297bff6dc53cd36a201cf595139f6caa0294b0a0e5476d3e4d3637e916c8f0fd"
+      "bytes": 2847,
+      "sha256": "f8a3bfe5ff83ba2ac121b0fbca939165285268ae6d59c1d7dcc2d978c3e0a52a"
     },
     {
       "path": "paper/sections/robustness_20261109.tex",
-      "bytes": 15755,
-      "sha256": "924e570622ea3e2e0822a28de7ce66362548f53471797404e8e3fb90c80f48a4"
+      "bytes": 15779,
+      "sha256": "172714e204e094b7cb7a2db0a1cdf8619f12200e7baf6966a7fa73c0de81b652"
     },
     {
       "path": "paper/sections/submission_main.tex",
@@ -1071,6 +1071,6 @@
       "sha256": "300736032288807d04648c77963038207fbe4af907fd15d02083f9b72a4878de"
     }
   ],
-  "total_bytes": 56514501,
+  "total_bytes": 56514270,
   "scope": "Research artifact for offline reanalysis, including BEAVER context and uniform semantic follow-ups; databases and model weights are external dependencies."
 }
