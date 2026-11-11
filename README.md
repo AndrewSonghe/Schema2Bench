@@ -10,7 +10,7 @@ changes in source fidelity and identifies candidate-pool deficits.
 **Benchmark Evaluation** separately measures source fidelity and agreement with
 model accuracy gaps on target references.
 
-This repository accompanies [manuscript v42](paper/Schema2Bench_ICDE2027_v42.pdf)
+This repository accompanies [manuscript v43](paper/Schema2Bench_ICDE2027_v43.pdf)
 (12 body pages, 15 pages including the AI-use disclosure and references).
 The retained identifier `refill` in data, filenames and replay output denotes S2B.
 
@@ -72,7 +72,7 @@ outputs and additional commands.
 | `replay/` | Score matrices, membership lists and executable result checks |
 | `figures/` | Current figures, editable sources for Figures 1-2, and plotting code/data for Figures 3-6 |
 | `configs/` | Model fingerprints, database hashes and experiment settings |
-| `paper/` | v42 manuscript PDF, source and fixed figure assets |
+| `paper/` | v43 manuscript PDF, source and fixed figure assets |
 
 [Data formats](docs/data.md) explain the record fields and scoring layers.
 [Paper-to-artifact mapping](docs/paper-map.md) identifies which results can be
@@ -143,7 +143,7 @@ With TeX Live (including IEEEtran) and `latexmk` installed:
 sh paper/build.sh
 ```
 
-The PDF is written to `paper/build/main.pdf`. The build uses the supplied v42
+The PDF is written to `paper/build/main.pdf`. The build uses the supplied v43
 figures and does not rerun experiments or require plotting dependencies.
-The archived [v42 PDF](paper/Schema2Bench_ICDE2027_v42.pdf) and its SHA-256 are
+The archived [v43 PDF](paper/Schema2Bench_ICDE2027_v43.pdf) and its SHA-256 are
 identified in `provenance/manuscript.json`.

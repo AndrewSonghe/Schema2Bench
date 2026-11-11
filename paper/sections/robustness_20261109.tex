@@ -18,7 +18,7 @@ The earlier stratified 400-task audit and the sensitivity retaining only 654 non
 The expanded audit fixes 100 records per method in each domain, with one unavailable (Table~\ref{tab:audit-expanded}); exposed controls score 24/24 per class. The union of 1,133 audit concerns and 620 earlier SQL flags makes 1,433 items unknown at the original denominators.
 
 \begin{table}[t]\centering\small
-\caption{API judgments: S, supported; I, incorrect; U, insufficient evidence; NA, unavailable or invalid. Bold and underlining rank support counts in (a) and (c); (b) compares judges. These judgments do not verify semantics.}
+\caption{API judgments: S, supported; I, incorrect; U, insufficient evidence; NA, unavailable or invalid. Bold and underlining rank support counts in (a) and (c); (b) compares judges without ranking. These judgments do not verify semantics.}
 \label{tab:audit-expanded}
 \begin{tabular}{lrrrr}\toprule
 \multicolumn{5}{l}{\textit{(a) Astra: 800 tasks per method, 100 per domain}}\\
@@ -51,16 +51,16 @@ Making all 1,433 flagged items unknown preserves S2B's TEF advantage over Templa
 Parsing JSON inside code fences gives Qwen and Terra agreement on 107 of 160 references (Table~\ref{tab:audit-expanded}(b)); independently generated SQL sometimes contradicts labels. The 105-item strict union treats format failures and non-supported judgments as risks, not established errors.
 
 \begin{table*}[t]\centering\small
-\caption{Sensitivity of the first-release Verified S2B-minus-Template gap. Scenarios retain denominators and unflagged scores; intervals bound unknown scores.}
+\caption{First-release Verified gap: S2B minus Template, so negative favors S2B. Scenarios retain denominators and unflagged scores; intervals bound unknown scores.}
 \label{tab:reference-stress}
 \begin{tabular}{llrr}\toprule
 Generated-task concerns & Reference condition & Reference count & Direct gap difference\\\midrule
-None added & Original reference &906&$-0.055693$\\
-1,433 union flags & Original reference &906&$[-0.077344,-0.026784]$\\
-None added & 71 Terra reference concerns &906&$[-0.098374,-0.010170]$\\
+None added & Original reference &906&$\boldsymbol{-0.055693}$\\
+1,433 union flags & Original reference &906&$\boldsymbol{[-0.077344,-0.026784]}$\\
+None added & 71 Terra reference concerns &906&$\boldsymbol{[-0.098374,-0.010170]}$\\
 137 original audit flags & 105 strict cross-judge concerns &906&$[-0.114491,+0.013951]$\\
-137 original audit flags & 79 code-fence sensitivity concerns &906&$[-0.105686,-0.002284]$\\
-None added & Revised BIRD reference &417&$[-0.076995,-0.024912]$\\
+137 original audit flags & 79 code-fence sensitivity concerns &906&$\boldsymbol{[-0.105686,-0.002284]}$\\
+None added & Revised BIRD reference &417&$\boldsymbol{[-0.076995,-0.024912]}$\\
 1,433 union flags & Revised BIRD reference &417&$[-0.105428,+0.000213]$\\\bottomrule
 \end{tabular}\end{table*}
 
@@ -94,18 +94,18 @@ Figure~\ref{fig:weights} varies nonnegative accuracy, CDF and disagreement weigh
 
 
 \begin{table*}[t]\centering\small
-\caption{Eight-database gap sensitivity: positive $I_G=G(\mathrm{Template})-G(\mathrm{S2B})$ favors S2B. Conditional confidence intervals (CIs) resample within domains; bounds describe unknown scores.}
+\caption{Eight-database gap sensitivity: positive $I_G=G(\mathrm{Template})-G(\mathrm{S2B})$ favors S2B. Bold highlights positive estimates or wholly positive intervals. Conditional confidence intervals (CIs) resample within domains; bounds describe unknown scores. Settings are unranked.}
 \label{tab:panel-coverage}
 \begin{tabular}{lrrrl}\toprule
 Setting & Pairs & References & Gap improvement $I_G$ & Interpretation\\\midrule
-Non-Qwen panel &2,000&906&$0.026560$&Ten-release mean\\
-Broader reference coverage &3,778&982&$0.053302\ [0.041870,0.063207]$&Conditional 95\% CI\\
-Equal-skeleton weighting &3,778&982&$0.046936\ [0.034298,0.057670]$&Conditional 95\% CI\\
-Full available pool &3,835&1,118&$[0.009303,0.090704]$&Unknown-score bound\\\midrule
-Fourteen models: strict &2,000&906&$[0.002662,0.059226]$&Unknown-score bound\\
-Fourteen models: database checks &2,000&906&$[0.025795,0.032495]$&Unknown-score bound\\
-Fourteen models: strict &3,778&906&$[0.002188,0.059640]$&Unknown-score bound\\
-Fourteen models: database checks &3,778&906&$[0.025787,0.032648]$&Unknown-score bound\\\bottomrule
+Non-Qwen panel &2,000&906&$\boldsymbol{0.026560}$&Ten-release mean\\
+Broader reference coverage &3,778&982&$\boldsymbol{0.053302\ [0.041870,0.063207]}$&Conditional 95\% CI\\
+Equal-skeleton weighting &3,778&982&$\boldsymbol{0.046936\ [0.034298,0.057670]}$&Conditional 95\% CI\\
+Full available pool &3,835&1,118&$\boldsymbol{[0.009303,0.090704]}$&Unknown-score bound\\\midrule
+Fourteen models: strict &2,000&906&$\boldsymbol{[0.002662,0.059226]}$&Unknown-score bound\\
+Fourteen models: database checks &2,000&906&$\boldsymbol{[0.025795,0.032495]}$&Unknown-score bound\\
+Fourteen models: strict &3,778&906&$\boldsymbol{[0.002188,0.059640]}$&Unknown-score bound\\
+Fourteen models: database checks &3,778&906&$\boldsymbol{[0.025787,0.032648]}$&Unknown-score bound\\\bottomrule
 \end{tabular}
 
 \smallskip\parbox{\textwidth}{\footnotesize The 2,000-pair fourteen-model rows average endpoints over ten overlapping releases.}
@@ -129,12 +129,12 @@ LIMIT appears in 1,739 Template, 2,000 S2B, 1,753 Ring, 424 Omni and 872 Synth t
 Setting & Comparator & $\Delta\mathrm{TEF}$ & $\Delta G$\\\midrule
 TACO: retrieved schema & Template & $[-0.006024,+0.016398]$ & $[-0.030517,+0.044555]$\\
 TACO: retrieved schema & Ring & $[+0.133673,+0.280760]$ & $[+0.148866,+0.277121]$\\\midrule
-BEAVER: retrieved, Base & Template & $[-0.146373,-0.033660]$ & $[-0.081035,+0.060364]$\\
-BEAVER: retrieved, Base & Ring & $[-0.242054,-0.013075]$ & $[-0.056789,+0.099330]$\\
-BEAVER: oracle schema, Base & Template & $[-0.142702,-0.028519]$ & $[-0.083884,+0.049262]$\\
+BEAVER: retrieved, Base & Template & $\boldsymbol{[-0.146373,-0.033660]}$ & $[-0.081035,+0.060364]$\\
+BEAVER: retrieved, Base & Ring & $\boldsymbol{[-0.242054,-0.013075]}$ & $[-0.056789,+0.099330]$\\
+BEAVER: oracle schema, Base & Template & $\boldsymbol{[-0.142702,-0.028519]}$ & $[-0.083884,+0.049262]$\\
 BEAVER: oracle schema, Base & Ring & $[-0.130602,+0.168975]$ & $[-0.051570,+0.064633]$\\\midrule
-BEAVER: retrieved, Verified & Template & $[-0.146163,-0.037765]$ & $[-0.081035,+0.060364]$\\
-BEAVER: retrieved, Verified & Ring & $[-0.235815,-0.016203]$ & $[-0.056789,+0.099330]$\\\bottomrule
+BEAVER: retrieved, Verified & Template & $\boldsymbol{[-0.146163,-0.037765]}$ & $[-0.081035,+0.060364]$\\
+BEAVER: retrieved, Verified & Ring & $\boldsymbol{[-0.235815,-0.016203]}$ & $[-0.056789,+0.099330]$\\\bottomrule
 \end{tabular}\end{table*}
 
 TACO OpenData \citep{deng2026taco} supplies two related Beijing databases and Connecticut, with potentially synthetic references. Admission and initial sampling differ from the main study. With 16 retrieved objects, contrasts are unresolved against Template and favor Ring (Table~\ref{tab:external-pilot}). Incomplete schemas limit semantic assessment; unfinished Omni and Synth runs miss 250-task quotas.

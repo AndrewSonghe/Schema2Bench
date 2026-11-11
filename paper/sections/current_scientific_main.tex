@@ -225,7 +225,7 @@ For each seed, 1,000 bootstrap draws separately resample matched SQL-skeleton cl
 \subsubsection{Model Selection}\label{sec:decision}
 We test whether fidelity improves model selection using a regret rule fixed before this post-hoc calculation. It retains all possible winners under ties and unknowns, without ranking midpoints.
 \begin{table*}[t]\centering\small
-\caption{Model-selection regret in accuracy percentage points, including all possible tied winners. Mean and worst denote domain average and maximum; 906 and 1,118 are reference counts. Columns separate scoring layers; bounds are conservative.}
+\caption{Model-selection regret in accuracy percentage points, including all possible tied winners. Mean and worst denote domain average and maximum; 906 and 1,118 are reference counts. Bounds are conservative; overall first and second ranks remain unresolved.}
 \label{tab:regret}
 \begin{tabular}{lrrrrr}\toprule
 Method & 906: base mean & 906: verified mean & 906: verified worst & 1,118: base mean & 1,118: verified mean\\\midrule
@@ -271,7 +271,7 @@ Bounded selection & \multicolumn{2}{c}{\underline{0.260790}} &\textbf{0.047229}\
 \input{sections/question_realization_20261109}
 
 \begin{table*}[t]\centering\small
-\caption{Recorded tokens including failures. Evaluation rows are release means; generation rows cover different scopes.}
+\caption{Recorded tokens including failures. Evaluation rows are release means; generation scopes differ. Unequal scopes are unranked.}
 \label{tab:cost}
 \begin{tabular}{lrrl}\toprule
 Stage & Input tokens & Output tokens & Scope\\\midrule

@@ -1,6 +1,6 @@
 # Paper-to-artifact map
 
-The map follows manuscript v42. "Replay" means a
+The map follows manuscript v43. "Replay" means a
 calculation is run from the included records. "Saved analysis" means the reported
 numerical output is included without its full input pipeline.
 
@@ -23,7 +23,7 @@ numerical output is included without its full input pipeline.
 | Sections V-D2/V-D3, Table VIII(c): uniform Terra review and joint semantic sensitivity | `evaluation/followup/semantic/`, `scripts/replay_followup.py` | Recounts 480 labels, parses 479 responses and replays the added score sensitivities |
 | Section V-E, Table XI: BEAVER pilot and schema-context control | `evaluation/followup/beaver/`, `scripts/replay_followup.py` | Recomputes TEF/gap tables, unknown counts and direct aggregate/domain contrasts from stored scores |
 | Sections V-D/V-E: revised references, model-panel checks, TACO pilot and seven-database diagnostic | `paper/` | Reported results; full rerun inputs are not included in this compact release |
-| Figures 1-6 and manuscript | `figures/`, `paper/figures/current/`, `paper/Schema2Bench_ICDE2027_v42.pdf` | Published figure assets, editable/plotting sources and the v42 PDF; see [figure instructions](reproduction.md#figures) |
+| Figures 1-6 and manuscript | `figures/`, `paper/figures/current/`, `paper/Schema2Bench_ICDE2027_v43.pdf` | Published figure assets, editable/plotting sources and the v43 PDF; see [figure instructions](reproduction.md#figures) |
 
 The package is sufficient to inspect the main construction components and
 recompute the main stored-score comparison. It should not be described as a
@@ -33,11 +33,18 @@ The manuscript calls the method Schema2Bench (S2B). Existing records retain
 `refill` as their method identifier. The paper's Figure 1 is illustrative;
 Figure 2 describes the workflow. Neither is an additional experimental result.
 
-In v42, bold marks an established best value and underlining marks second
-place within comparable panels and metrics. Interval ranks that are not
-identified remain unmarked. Direct contrasts and different sensitivity
-settings are not treated as competing methods. API support counts rank the
-recorded judgments, not semantic truth.
+In v43, ranking panels retain bold for established best values and underlining
+for second place. Interval ranks that are not identified remain unmarked. The
+13 ranking marks from v42 are unchanged. API support counts describe recorded
+judgments, not semantic truth.
+
+In direct contrasts and sensitivity columns, bold highlights 29 favorable
+estimates or intervals wholly on the favorable side of zero. Captions state the
+focal method or intervention and the sign convention. Opposite-signed intervals
+are adverse; intervals containing zero remain unresolved. This is not a ranking
+of different conditions or a significance symbol. Table X explicitly separates
+point estimates, conditional confidence intervals and unknown-score bounds.
+No custom F/A/U direction codes or significance stars are used.
 
 The experiment narrative separates the main comparison, component controls,
 and robustness. S2B improves source fidelity and target gap over Template in
