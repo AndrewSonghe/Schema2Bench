@@ -1,9 +1,9 @@
 \subsubsection{Column Preference and Value Sampling}\label{sec:ablation}
-Separate releases disable descriptive-column preference or reduce value sampling from fifty to five. They share the main model/source/reference panel, 38 strata, 250 tasks/domain/arm and $H=0.01$. Attempts pair random states and plans; separately deduplicated candidates must qualify in the same final stratum.
+Separate paired releases disable descriptive-column preference or reduce sampling from fifty values to five. They use the main models, source tasks and references, with 38 strata, 250 tasks per domain in each arm and $H=0.01$. Attempts share random states and plans; separately deduplicated candidates must qualify in the same final stratum.
 
-The preference control removes only priority for descriptive column names, retaining identifier filtering, text preference, grounding and admission. Programmatic question generation uses eight-second and 1,000-row caps. Four domains require 1,600 extra slots each before freezing; the arms share 1,159/2,000 question--SQL slots. Depth fixes 2,400 slots/domain/arm: fifty/five values admit 7,131/6,149 candidates, with 5,375 joint admissions and 769 shared released slots. Astra supports both versions of 80 depth pairs, 24 with identical prompts, using exposed controls. These admission differences remain part of the controls.
+The preference control retains identifier filtering, text preference, grounding and admission rules. Programmatic question generation uses eight-second and 1,000-row limits. Four domains require 1,600 extra slots each before freezing; the arms share 1,159 of 2,000 question--SQL pairs. Sampling uses 2,400 slots per domain in each arm: fifty and five values admit 7,131 and 6,149 candidates, respectively, with 5,375 joint admissions and 769 shared release slots. Astra supports both versions of 80 sampling-control pairs, 24 with identical prompts, using exposed controls. Admission differences remain part of the comparison.
 
-SQLite compilation resolves 827 preference and 903 depth parser rejections as mismatches without rewriting SQL. Identical requests and outputs share unknown outcomes across arms; other unknowns remain relaxed. This post-hoc treatment preserves scores, membership and identity records. Table~\ref{tab:ablation-layers} retains earlier independent-arm bounds.
+SQLite compilation resolves 827 preference and 903 sampling-control parser rejections as mismatches without rewriting SQL. Identical requests and outputs share unknowns across arms; others remain relaxed. This post-hoc treatment preserves scores, membership and identity records. Table~\ref{tab:ablation-layers} also retains earlier independent-arm bounds.
 
 \begin{table*}[t]\centering\small
 \caption{Separate construction controls under Verified scoring. Negative favors full preference or fifty values. Bounds with shared variables bind identical outcomes; independent-arm bounds retain the earlier relaxation.}
@@ -11,14 +11,14 @@ SQLite compilation resolves 827 preference and 903 depth parser rejections as mi
 \begin{tabular}{llrr}\toprule
 Intervention & Unknown-variable treatment & Direct TEF difference & Direct target-gap difference\\\midrule
 Column preference & Independent arms & $[-0.029752,+0.008062]$ & $[-0.011942,+0.006559]$\\
-Column preference & Shared identical requests & $[-0.016593,-0.005466]$ & $[-0.003816,-0.001425]$\\
+Column preference & Shared identical requests & $\boldsymbol{[-0.016593,-0.005466]}$ & $\boldsymbol{[-0.003816,-0.001425]}$\\
 50 versus 5 values & Independent arms & $[-0.024987,+0.011333]$ & $[-0.006878,+0.011031]$\\
-50 versus 5 values & Shared identical requests & $[-0.012477,-0.001261]$ & $[+0.001863,+0.002221]$\\\bottomrule
+50 versus 5 values & Shared identical requests & $\boldsymbol{[-0.012477,-0.001261]}$ & $[+0.001863,+0.002221]$\\\bottomrule
 \end{tabular}\end{table*}
 
-Column preference improves both aggregate metrics; deeper sampling trades a small gap cost for better TEF (Table~\ref{tab:ablation-layers}). Base TEF favors both, with unresolved gaps. LP checks reproduce 26 aggregate/domain contrasts per intervention.
+With shared unknowns, column preference improves both metrics; deeper sampling improves TEF at a small gap cost (Table~\ref{tab:ablation-layers}). Base TEF favors both, with unresolved gaps. LP checks reproduce 26 aggregate and domain contrasts per intervention.
 
-Column preference worsens gap in card games and codebase (Fig.~\ref{fig:construction-effects}(b)). Excluding European football changes its seven-domain mean to $[+0.001899,+0.004625]$; excluding Formula 1 leaves it unresolved. Value-depth effects also vary by domain.
+Column preference increases the gap in card games and codebase (Fig.~\ref{fig:construction-effects}(b)). Excluding European football changes its seven-domain mean difference to $[+0.001899,+0.004625]$; excluding Formula 1 leaves it unresolved. Sampling effects also vary by domain.
 
-\paragraph{Testing the value-depth effect on more databases}
-Four SynSQL-2.5M training databases \citep{li2025omnisql} supply 1,000 identical pairs; BIRD \texttt{student\_club} changes 150/250 pairs. Three further targets stop below quota. The combined thirteen-domain analysis uses 3,250 tasks/arm and 1,733 references: Verified TEF/gap differences are $[-0.050927,+0.049902]$/$[-0.029026,+0.030559]$. Adding SQLite evidence only on the original eight domains gives $[-0.013017,+0.011489]$/$[-0.004886,+0.007287]$. Both remain unresolved. Unchanged task pairs, unequal scoring evidence and synthetic/training overlap limit independent replication.
+\paragraph{Value sampling on additional databases}
+Four SynSQL-2.5M training databases \citep{li2025omnisql} supply 1,000 identical pairs; BIRD \texttt{student\_club} changes 150 of 250 pairs. Three further targets miss quotas. Across thirteen domains, 3,250 tasks per arm and 1,733 references give Verified TEF and gap differences of $[-0.050927,+0.049902]$ and $[-0.029026,+0.030559]$, respectively. Adding SQLite evidence only on the original eight domains gives $[-0.013017,+0.011489]$ and $[-0.004886,+0.007287]$. Both remain unresolved. Unchanged pairs, unequal evidence and synthetic training-data overlap limit independent replication.

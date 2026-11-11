@@ -1,6 +1,6 @@
 # Paper-to-artifact map
 
-The map follows manuscript v40. "Replay" means a
+The map follows manuscript v41. "Replay" means a
 calculation is run from the included records. "Saved analysis" means the reported
 numerical output is included without its full input pipeline.
 
@@ -23,7 +23,7 @@ numerical output is included without its full input pipeline.
 | Sections V-D2/V-D3, Table VIII(c): uniform Terra review and joint semantic sensitivity | `evaluation/followup/semantic/`, `scripts/replay_followup.py` | Recounts 480 labels, parses 479 responses and replays the added score sensitivities |
 | Section V-E, Table XI: BEAVER pilot and schema-context control | `evaluation/followup/beaver/`, `scripts/replay_followup.py` | Recomputes TEF/gap tables, unknown counts and direct aggregate/domain contrasts from stored scores |
 | Sections V-D/V-E: revised references, model-panel checks, TACO pilot and seven-database diagnostic | `paper/` | Reported results; full rerun inputs are not included in this compact release |
-| Figures 1-6 and manuscript | `figures/`, `paper/figures/current/`, `paper/Schema2Bench_ICDE2027_v40.pdf` | Published figure assets, editable/plotting sources and the v40 PDF; see [figure instructions](reproduction.md#figures) |
+| Figures 1-6 and manuscript | `figures/`, `paper/figures/current/`, `paper/Schema2Bench_ICDE2027_v41.pdf` | Published figure assets, editable/plotting sources and the v41 PDF; see [figure instructions](reproduction.md#figures) |
 
 The package is sufficient to inspect the main construction components and
 recompute the main stored-score comparison. It should not be described as a
@@ -33,10 +33,14 @@ The manuscript calls the method Schema2Bench (S2B). Existing records retain
 `refill` as their method identifier. The paper's Figure 1 is illustrative;
 Figure 2 describes the workflow. Neither is an additional experimental result.
 
-In v40, bold and underlining mark best and second reported values only within
-comparable groups. Interval-valued rankings require an established order;
-midpoints are not ranked. S2B is uniquely first on the main Verified TEF measure,
-while its target gap is fourth. The TEF runner-up and mutual gap ordering of
-Ring/Omni/Synth remain unresolved. API support counts rank model judgments
-within the same review panel, not semantic truth. Experimental values are
-unchanged from v39.
+In v41, bold consistently highlights established improvements in each stated
+comparison; second-place underlining is removed. Absolute S2B scores in the
+main table are compared with Template, while direct differences use the stated
+comparator. Other tables identify their own comparison. This is not a global
+ranking. API support counts are model judgments, not verified semantics.
+
+The main Verified TEF comparisons favor S2B over all four methods, whereas Ring,
+Omni and Synth have lower target gaps. Unresolved and adverse results remain.
+All eleven table number sequences, nine equation groups, 71 citation keys and
+experimental records are unchanged. The prose expands compressed expressions
+and restores the requested short language-assistance disclosure.

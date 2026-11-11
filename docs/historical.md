@@ -1,6 +1,6 @@
 # Earlier seven-database experiments
 
-Section V-C1 and Table IV(b) of v40 report experiments on Chinook, IMDb, Instacart,
+Section V-C1 and Table IV(b) of v41 report experiments on Chinook, IMDb, Instacart,
 SFDFFD, TPC-DS, TPC-H and USAccidents. They evaluate an earlier SQL-first
 constructor and selection modules. Their seven-model panel differs from the
 current ten-model S2B comparison on BIRD. The identifier `refill` is retained

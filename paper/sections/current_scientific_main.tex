@@ -12,15 +12,15 @@ Existing approaches address different parts of this problem. RingSQL uses schema
 \label{fig:problem}
 \end{figure*}
 
-\textbf{An illustrative example.} Figure~\ref{fig:problem} asks which customers placed at least two orders. On source order rows, \texttt{COUNT(*) >= 2} works. On target order lines, C1 has two rows for one order; C2 has two orders. The transferred pattern returns both, whereas \texttt{COUNT(DISTINCT oid)} correctly retains C2. Executability does not distinguish counting units.
+\textbf{An illustrative example.} Figure~\ref{fig:problem} asks which customers placed at least two orders. \texttt{COUNT(*) >= 2} works on source order rows. On target order lines, C1 has two rows for one order; C2 has two orders. The transferred query returns both; \texttt{COUNT(DISTINCT oid)} correctly retains C2. Execution alone cannot distinguish counting units.
 
 \emph{Second, a valid workload can change model comparisons.} Diagnostic perturbations expose sensitivity to query structure and wording \citep{malekpour2026sqlmorph,chang2023drspider}; benchmark-design and concurrence studies also distinguish evaluation claims from the evidence needed to support them \citep{liu2024ecbd,sun2023concurrence}. Matching structural frequencies alone need not preserve model behavior. Selection can adjust frequencies only within the available candidate pool, and source fidelity need not imply agreement with target references.
 
-Suppose models A/B score 75\%/50\% on the source but 50\%/75\% on target references. Reproducing source rates preserves A's advantage; reproducing target rates favors B. These hypothetical scores separate benchmark continuity from target model choice. Compact evaluation methods estimate performance on an existing benchmark \citep{maiapolo2024tiny}; migration additionally changes the database and task population.
+Suppose models A and B score 75\% and 50\% on the source, but 50\% and 75\% on target references. Preserving source behavior favors A; target alignment favors B. Compact evaluation methods estimate performance on an existing benchmark \citep{maiapolo2024tiny}; migration changes both the database and task population.
 
-\textbf{Our methodology.} Schema2Bench (S2B) contains three modules (Fig.~\ref{fig:framework}). \emph{Benchmark Construction} instantiates source query patterns using target schemas and sampled values, then generates questions from SQL. \emph{Workload Selection} adjusts structural composition under fixed quotas, with a tight bound on source-fidelity change and a coverage bound for deficits that selection cannot remove. \emph{Benchmark Evaluation} measures source fidelity and target alignment separately, retaining unknown scores in direct method comparisons. Candidate screening uses earlier outputs; selection itself reads no evaluator responses. Execution and consistency checks screen operational failures without certifying task semantics.
+\textbf{Our methodology.} Schema2Bench (S2B) has three modules (Fig.~\ref{fig:framework}). \emph{Benchmark Construction} instantiates source query patterns with target schemas and sampled values, then generates questions from SQL. \emph{Workload Selection} adjusts composition under fixed quotas, tightly bounds fidelity changes and identifies coverage deficits that selection cannot remove. \emph{Benchmark Evaluation} separates source fidelity from target alignment and retains unknowns in direct comparisons. Screening uses earlier outputs; selection reads no evaluator responses. Execution and consistency checks screen operational failures without certifying semantics.
 
-\textbf{Experimental evaluation.} We compare five methods on eight BIRD databases with ten models. S2B improves source fidelity under Verified scoring, while external adaptations have lower target gap. Construction accounts for most improvement over Template; changing question wording improves target gap but worsens source fidelity. These results show why generation quality and target model selection require separate evaluation.
+\textbf{Experimental evaluation.} We compare five methods on eight BIRD databases with ten models. S2B improves Verified source fidelity; external adaptations have lower target gap. Construction accounts for most improvement over Template. Rewriting improves gap but worsens fidelity, separating generation quality from target model selection.
 
 \textbf{Contributions.} We make three contributions:
 \begin{enumerate}
@@ -31,10 +31,10 @@ Suppose models A/B score 75\%/50\% on the source but 50\%/75\% on target referen
 
 \section{Preliminaries}\label{sec:preliminaries}
 \subsection{Text-to-SQL Tasks}
-A domain is a database with a fixed schema and data snapshot. Task $(d_i,x_i,s_i)$ pairs question $x_i$ and reference SQL $s_i$ on domain $d_i$. Migration (Fig.~\ref{fig:framework}) constructs a release of $N$ tasks across $D$ domains, using source SQL queries $\mathcal S$ for patterns and statistics. Separate workload $\mathcal W_s$ supplies the behavioral reference for $M\ge2$ models.
+A domain is a fixed database snapshot. Task $(d_i,x_i,s_i)$ pairs question $x_i$ and reference SQL $s_i$ on domain $d_i$. Migration (Fig.~\ref{fig:framework}) constructs $N$ tasks across $D$ domains, using source queries $\mathcal S$ for patterns and statistics. A separate workload $\mathcal W_s$ provides the behavioral reference for $M\ge2$ models.
 
 \subsection{Evaluation Objectives}
-Source fidelity measures continuity with source model behavior; target alignment measures agreement with target-reference model differences. Rankings and regret assess model selection (Section~\ref{sec:objectives}).
+Source fidelity measures continuity with source behavior; target alignment, rankings and regret assess target model comparisons and selection (Section~\ref{sec:objectives}).
 
 \section{Schema2Bench Overview}\label{sec:framework}
 In this section, we first formulate benchmark migration in Section~\ref{sec:problem-definition}, then outline Schema2Bench in Section~\ref{sec:overview-modules}. Its three modules are \emph{Benchmark Construction}, \emph{Workload Selection} and \emph{Benchmark Evaluation}. Sections~\ref{sec:grounded-construction}, \ref{sec:quota-release} and~\ref{sec:measurement-stage} describe their implementations, respectively.
@@ -42,7 +42,7 @@ In this section, we first formulate benchmark migration in Section~\ref{sec:prob
 \subsection{Problem Formulation}\label{sec:problem-definition}
 Candidate pool $\mathcal C$ retains IDs and evidence. Membership $z\in\{0,1\}^{|\mathcal C|}$ specifies release $\mathcal W_z$, selecting item $i$ when $z_i=1$. Strata partition candidates within domains; $A_{g,i}$ indicates membership in stratum $g$, with quota $q_g$. Feasible memberships $\mathcal F$ satisfy $Az=q$ and $\mathbf1^\top z=N$, where $\mathbf1$ is the all-ones vector. Quotas fix domain sizes $N_d>0$ and require sufficient candidates per stratum.
 
-For a sampled initial release $z^0\in\mathcal F$, selection seeks
+Given initial release $z^0\in\mathcal F$, selection seeks
 \begin{equation}
  \min_{z\in\mathcal F}L_{\rm struct}(z)
  \quad\text{subject to }H(z,z^0)\le\tau.
@@ -50,7 +50,7 @@ For a sampled initial release $z^0\in\mathcal F$, selection seeks
 \end{equation}
 $L_{\rm struct}$ measures source-structure mismatch. $H$ bounds changes in source fidelity error (TEF), with tolerance $\tau$ (Section~\ref{sec:quota-release}), not absolute loss.
 \subsection{Framework Overview}\label{sec:overview-modules}
-Figure~\ref{fig:framework} connects the three modules: construction produces candidate pairs, selection controls workload composition, and evaluation compares models on source, selected and reference tasks.
+Figure~\ref{fig:framework} connects candidate construction, workload selection and model evaluation on source, selected and reference tasks.
 
 \begin{figure*}[t]
 \centering
@@ -66,11 +66,11 @@ We detail the three modules below.
 
 Schema2Bench instantiates source operator patterns with target tables, types, keys and sampled values, then derives questions from SQL. The evaluated implementation is programmatic; Section~\ref{sec:realization} tests LLM question generation.
 
-\textbf{Binding operators to the database.} Columns whose names suggest identifiers are excluded from measures and descriptive projections. Text and name/title/description cues guide projected columns; categorical cues guide grouping. SUM requires cues that the column represents an additive measure. Join candidates follow declared keys or entity-key heuristics. Equality predicates use observed values, with up to fifty samples per column. If a join cannot be built, the generator falls back to a grounded filter or scalar aggregate. Structural features are recomputed from the final SQL; the recorded construction stratum is retained separately.
+\textbf{Binding operators to the database.} Columns whose names suggest identifiers are excluded from measures and descriptive projections. Text and descriptive-name cues guide projections; categorical cues guide grouping. SUM requires cues that the column represents an additive measure. Join candidates follow declared keys or entity-key heuristics. Equality predicates use observed values, with up to fifty samples per column. If a join cannot be built, the generator falls back to a grounded filter or scalar aggregate. Structural features are recomputed from the final SQL; the recorded construction stratum is retained separately.
 
 \textbf{Keeping the question aligned with SQL.} Questions name columns, filters, join relationships and aggregation roles. For recognized joins, \texttt{COUNT(*)} describes matched rows: order-line rows in Fig.~\ref{fig:problem}. S2B does not infer a general entity-preserving \texttt{COUNT(DISTINCT)} repair; distinct-order counting requires different SQL. Relationship clarification also applies to Template.
 
-\textbf{Admission and failure handling.} Execution checks and bounded repair handle operational failures. A final LIMIT clause requires recoverable ordering over projected columns or proof of a unique cutoff; the question must state the ordering and limit. Consistency checks screen literal, entity and ordering mismatches; deduplication removes repeated tasks. These checks reduce identifiable failure modes without certifying question--SQL meaning. Canonical IDs pair Template/S2B alternatives without assuming identical semantics (Section~\ref{sec:semantic}).
+\textbf{Admission and failure handling.} Execution checks and bounded repair handle operational failures. A final LIMIT clause requires recoverable ordering over projected columns or proof of a unique cutoff; the question must state the ordering and limit. Consistency checks screen literal, entity and ordering mismatches; deduplication removes repeated tasks. These checks reduce identifiable failure modes without certifying question--SQL meaning. Canonical IDs pair Template and S2B tasks without assuming identical semantics (Section~\ref{sec:semantic}).
 
 
 \subsection{Workload Selection}\label{sec:quota-release}
@@ -86,9 +86,9 @@ Schema2Bench instantiates source operator patterns with target tables, types, ke
  +\frac{|\widehat\ell-\ell^*|}{\ell^*}\bigg).
  \label{eq:struct-expanded}
 \end{align}
-$P_o,P_d$ are operator-event and difficulty distributions; $P_h$ contains filtering/join/grouping/aggregation/ordering/LIMIT rates. $j,\ell$ are mean joins and SQL length in whitespace-separated tokens. Hats/stars denote release/source statistics; $\|\cdot\|_1$ sums absolute coordinates. Difficulty and shapes count tasks. Source means are positive; relative errors can exceed one.
+$P_o,P_d$ describe operator-event and difficulty distributions; $P_h$ contains rates of filtering, joins, grouping, aggregation, ordering and LIMIT. $j,\ell$ denote mean joins and SQL length in whitespace-separated tokens. Hats and stars denote release and source statistics, respectively; $\|\cdot\|_1$ sums absolute coordinates. Difficulty and shapes count tasks. Positive source means allow relative errors above one.
 
-SQL-only difficulty sums joins, twice the additional SELECT and set-operator counts (UNION/INTERSECT/EXCEPT), and indicators for grouping, HAVING, aggregation, ordering, CASE, DISTINCT and at least two AND/OR tokens. Scores $\le1$, 2--3 and $\ge4$ define easy, medium and hard, differing from Spider labels and behavioral/semantic difficulty.
+SQL-only difficulty sums joins, twice the additional SELECT and set-operator counts (UNION, INTERSECT, EXCEPT), and indicators for grouping, HAVING, aggregation, ordering, CASE, DISTINCT and at least two AND or OR tokens. Scores $\le1$, 2--3 and $\ge4$ define easy, medium and hard, differing from Spider labels and behavioral or semantic difficulty.
 
 Let $r_d$ count tasks removed from initial release $z^0$ in domain $d$. The budget function $H=H(z,z^0)$ is
 \begin{equation}
@@ -98,12 +98,12 @@ Let $r_d$ count tasks removed from initial release $z^0$ in domain $d$. The budg
 \end{equation}
 where $w_d^A=1/D$ weights accuracy and $w_d^R=N_d/N$ weights the correct-count cumulative distribution function (CDF) and disagreement across domains (Section~\ref{sec:objectives}). Each exchange $e$ replaces an initial item with an unused candidate outside the initial release in the same stratum. For resulting membership $z'$, gain is $\Delta_e=L_{\rm struct}(z)-L_{\rm struct}(z')$ and cost is $c_d=1/N+1/(DN_d)$. Choose the largest positive $\Delta_e/c_d$ fitting the budget, breaking ties by resulting loss and IDs. Update $z,H$; stop at no admissible improvement or the step cap. Feasibility and decreasing structural loss hold, without global optimality.
 
-For fixed source moments, joint response laws and domain counts, $|L_{\tef}(z)-L_{\tef}(z^0)|\le H$. Response vectors at Hamming distance $h_H$ change accuracy by at most $h_H/M$, and CDF plus half-weighted disagreement by at most $\frac{h_H}M+\frac{h_H(M-h_H)}{M(M-1)}\le1$. Coupling removed/added items gives Eq.~\eqref{eq:budget}, attained by all-zero source and initial responses with all-one replacements. This perturbation bound also holds in expectation under fixed joint laws, including deterministic saved responses.
+For fixed source moments, joint response laws and domain counts, $|L_{\tef}(z)-L_{\tef}(z^0)|\le H$. Response vectors at Hamming distance $h_H$ change accuracy by at most $h_H/M$, and CDF plus half-weighted disagreement by at most $\frac{h_H}M+\frac{h_H(M-h_H)}{M(M-1)}\le1$. Coupling removed and added items gives Eq.~\eqref{eq:budget}, attained by all-zero source and initial responses with all-one replacements. This perturbation bound also holds in expectation under fixed joint laws, including deterministic saved responses.
 
 
 \subsubsection{Candidate Coverage}\label{sec:pool-diagnostic}
 
-Over SQL types $T$, such as easy/medium/hard difficulty, let $p$ and $q_z$ denote source and release proportions, distinct from quotas $q$. The convex hull $\mathcal Q=\operatorname{conv}\{q_z:z\in\mathcal F\}$ contains their feasible mixtures $v$. With dual type weights $h$, the minimum type mismatch is
+Over SQL types $T$, such as easy, medium and hard queries, let $p$ and $q_z$ denote source and release proportions, distinct from quotas $q$. The convex hull $\mathcal Q=\operatorname{conv}\{q_z:z\in\mathcal F\}$ contains their feasible mixtures $v$. With dual type weights $h$, the minimum type mismatch is
 \begin{equation}
 \delta_{\rm sup}=\min_{v\in\mathcal Q}\operatorname{TV}(p,v)
 =\max_{h\in[0,1]^{|T|}}\left(h^\top p-\max_{z\in\mathcal F}h^\top q_z\right).
@@ -112,17 +112,17 @@ The coverage lower bound $\delta_{\rm sup}$ uses a bounded-count linear program 
 
 
 \subsection{Benchmark Evaluation}\label{sec:measurement-stage}
-The same $M$ models answer source, release and reference tasks. Evaluation separates source fidelity from target alignment and retains unresolved scores.
+The same $M$ models answer source, release and reference tasks; unresolved scores remain unknown.
 
 \subsubsection{Evaluation Measures}\label{sec:objectives}
 
-\textbf{Source fidelity (TEF).} $Y_i\in\{0,1\}^M$ contains task $i$'s execution-match indicators, with $m,n$ indexing models. TEF compares accuracy, correct-count CDF indicators $\mathbf1\{\sum_mY_{i,m}\le k\}$, $k=0,\ldots,M-1$, and disagreement $|Y_{i,m}-Y_{i,n}|$. Here $\mathbf1\{\cdot\}$ is one when true, zero otherwise. With source/release feature means $\Psi_s,\Psi_z$,
+\textbf{Source fidelity (TEF).} $Y_i\in\{0,1\}^M$ contains task $i$'s execution-match indicators, with $m,n$ indexing models. TEF compares accuracy, correct-count CDF indicators $\mathbf1\{\sum_mY_{i,m}\le k\}$, $k=0,\ldots,M-1$, and disagreement $|Y_{i,m}-Y_{i,n}|$. Here $\mathbf1\{\cdot\}$ is one when true, zero otherwise. With source and release feature means $\Psi_s,\Psi_z$,
 \begin{equation}
  L_{\tef}(z)=\sum_\nu w_\nu|\Psi_{z,\nu}-\Psi_{s,\nu}|
  =D_{\rm diff}+D_{\rm acc}+\tfrac12D_{\rm dis}.
  \label{eq:tef}
 \end{equation}
-$\nu$ indexes coordinates with weights $w_\nu$: $1/M$ for accuracy/CDF and $1/(2\binom M2)$ for disagreement. $D_{\rm diff},D_{\rm acc},D_{\rm dis}$ are mean absolute differences in CDF, accuracy and disagreement, respectively. For selected domain items $z_d=\{i:z_i=1,d_i=d\}$, accuracy coordinate $\Psi^A_{z,m}$ averages databases equally:
+$\nu$ indexes coordinates with weights $w_\nu$: $1/M$ for accuracy and CDF and $1/(2\binom M2)$ for disagreement. $D_{\rm diff},D_{\rm acc},D_{\rm dis}$ are mean absolute differences in CDF, accuracy and disagreement, respectively. For selected domain items $z_d=\{i:z_i=1,d_i=d\}$, accuracy coordinate $\Psi^A_{z,m}$ averages databases equally:
 \begin{equation}
  \Psi^A_{z,m}=\frac1D\sum_d\frac1{N_d}\sum_{i\in z_d}Y_{i,m}.
 \end{equation}
@@ -141,21 +141,21 @@ Lower TEF and gap are better. For constructions $a,b$, $\Delta G(a,b)=G(a)-G(b)$
 
 Base scoring compares result values and column counts, including empty-result widths. Non-stop or unresolved outputs receive $[0,1]$; parser rejection or unordered LIMIT alone does not prove error. Neither scoring layer certifies question--SQL meaning.
 
-The Verified layer resolves unknowns using SQLite errors, row counts, unique ordering and checks of possible LIMIT results tied to original outputs (Table~\ref{tab:main}).
+The Verified layer resolves unknowns using SQLite errors, row counts, unique ordering and checks of possible LIMIT results tied to original outputs (Table~\ref{tab:main}). 
 \subsubsection{Comparisons with Unknown Scores}
 
-Unknown scores induce feature intervals. Direct contrasts share source/reference uncertainty, with target outcomes separate unless prompts and outputs are identical (Section~\ref{sec:ablation}). Coordinate relaxation gives conservative outer bounds, not confidence intervals or necessarily attainable endpoints. We do not subtract independently optimized row bounds.
+Unknown scores induce feature intervals. Direct contrasts share source and reference uncertainty; target outcomes remain separate unless prompts and outputs match (Section~\ref{sec:ablation}). Coordinate relaxation gives conservative outer bounds, not confidence intervals or necessarily attainable endpoints. We never subtract independently optimized row bounds.
 
-Bootstrap intervals condition on stated populations, weights and units; shared models/pools make pairs and releases dependent.
+Bootstrap intervals condition on stated populations, weights and units; shared models and pools make pairs and releases dependent.
 
-Lower/upper score bounds $[l_{i,m},u_{i,m}]$ are $[0,0]$, $[1,1]$ or $[0,1]$ for mismatch, match or unknown. Weighted means bound accuracy; CDF contributions lie between $\mathbf1\{\sum_m u_{i,m}\le k\}$ and $\mathbf1\{\sum_m l_{i,m}\le k\}$. Disagreement is fixed when both scores are fixed, otherwise relaxed to $[0,1]$.
+Lower and upper score bounds $[l_{i,m},u_{i,m}]$ are $[0,0]$, $[1,1]$ or $[0,1]$ for mismatch, match or unknown. Weighted means bound accuracy; CDF contributions lie between $\mathbf1\{\sum_m u_{i,m}\le k\}$ and $\mathbf1\{\sum_m l_{i,m}\le k\}$. Disagreement is fixed when both scores are fixed, otherwise relaxed to $[0,1]$. 
 
-For method-feature intervals $A=[a_-,a_+]$, $B=[b_-,b_+]$, the minimum/maximum absolute distances are
+For method-feature intervals $A=[a_-,a_+]$, $B=[b_-,b_+]$, the minimum and maximum absolute distances are
 \begin{align}
  d_-(A,B)&=\max(a_- - b_+,b_- - a_+,0),\\
  d_+(A,B)&=\max(|a_- - b_+|,|a_+ - b_-|).
 \end{align}
-For shared source-feature interval $S$, the discrepancy difference (first minus second) has lower/upper bounds
+For shared source-feature interval $S$, the discrepancy difference (first minus second) has lower and upper bounds
 \begin{align}
  \underline\Delta&=\min_{s\in S}\{d_-(\{s\},A)-d_+(\{s\},B)\},\\
  \overline\Delta&=\max_{s\in S}\{d_+(\{s\},A)-d_-(\{s\},B)\}.
@@ -164,22 +164,22 @@ For shared source-feature interval $S$, the discrepancy difference (first minus 
 Both terms share source value $s\in S$. We sum weighted coordinate bounds, evaluating endpoints and piecewise-linear breakpoints. Gap contrasts similarly share signed target-reference model gaps.
 
 \section{Experimental Results}\label{sec:experiments}
-In this section, we present the experimental setup (Section~\ref{sec:design}), main comparisons (Section~\ref{sec:measurement}), and ablations of Benchmark Construction and Workload Selection (Section~\ref{sec:construction}). We then examine robustness of Benchmark Evaluation (Section~\ref{sec:robustness}), generalization (Section~\ref{sec:external}) and implications (Section~\ref{sec:discussion}).
+We present the setup (Section~\ref{sec:design}), main results (Section~\ref{sec:measurement}) and construction and selection ablations (Section~\ref{sec:construction}), followed by robustness (Section~\ref{sec:robustness}), generalization (Section~\ref{sec:external}) and discussion (Section~\ref{sec:discussion}).
 
 \subsection{Experimental Setup}\label{sec:design}
 \subsubsection{Datasets and Models}
 
-The primary comparison uses eight databases from BIRD (Table~\ref{tab:screening}), ten models, 2,000 tasks/method and 906 shared references. Spider supplies 7,000 training SQLs for the source profile and 1,034 development items from 20 databases for evaluation. Prompts use data definition language (DDL) schemas from retained snapshots.
+The primary comparison uses eight BIRD databases (Table~\ref{tab:screening}), ten models, 2,000 tasks per method and 906 shared references. Spider supplies 7,000 training queries for source profiles and 1,034 development tasks across 20 databases for evaluation. Prompts include data definition language (DDL) schemas from retained snapshots.
 
 The panel comprises Qwen3-4B (Instruct-2507), Granite-3.3-8B-Instruct \citep{ibm2025granite}, Qwen2.5-Coder-7B-Instruct \citep{hui2024qwencoder}, Qwen2.5-7B-Instruct, Llama-3.1-8B-Instruct \citep{grattafiori2024llama3}, Mistral-7B-Instruct-v0.3 \citep{jiang2023mistral,mistral2024instruct03}, Qwen2.5-14B-Instruct, Qwen3-8B, Gemma-2-9B-it \citep{gemma2024gemma2} and Phi-4 \citep{abdin2024phi4}. Qwen2.5-7B also participates in generation \citep{qwen2024qwen25}.
 
 \paragraph{Initial qualification result}
-The original workload improved in 5/8 domains, failing the preregistered six-domain requirement. Later Qwen3-8B non-thinking reruns \citep{yang2025qwen3} and scoring changes do not revise this failure.
+The original workload improved in five of eight domains, below the preregistered six-domain requirement. Later Qwen3-8B non-thinking evaluations \citep{yang2025qwen3} and scoring changes do not revise this failure.
 
 \paragraph{Candidate screening and selection}
-Both pair members require normal termination and definite ten-model scores, including compilation and row-count evidence. Incorrect responses qualify; unresolved or truncated ones do not. Exclusions chiefly concern timeouts and unprojected ordering keys (Table~\ref{tab:screening}); overlapping reasons exclude earlier generation failures.
+Both tasks in each pair require normal output termination and definite ten-model scores, using compilation and row-count evidence. Incorrect responses qualify; unresolved or truncated responses do not. Most exclusions involve timeouts or unprojected ordering columns (Table~\ref{tab:screening}). Reasons can overlap and exclude earlier generation failures.
 
-The 3,778-ID pool supplies 250 pairs/domain using proportional largest-remainder quotas and within-stratum sampling. S2B features select both arms' IDs before cached scores are read; Template is not independently optimized. Equal quotas and $H\le0.01$ allow ten equal-cost swaps, precluding identification of normalization benefits. Ten releases overlap; scoring layers share membership. Outcome-dependent eligibility and unequal precision remain limitations.
+We sample 250 pairs per domain within strata from the 3,778-pair pool using proportional largest-remainder quotas. S2B features determine both arms' membership before cached scores are read; Template is not independently optimized. Equal quotas and $H\le0.01$ allow ten equal-cost swaps, preventing isolation of normalization benefits. Ten releases overlap; scoring layers share tasks. Outcome-dependent eligibility and unequal precision remain limitations.
 
 \begin{table}[t]\centering\small
 \caption{Available $\to$ retained candidates and references after ten-model eligibility screening. Each release selects 250 pairs per domain.}
@@ -200,35 +200,32 @@ Total &3,835$\to$3,778&1,118$\to$906\\\bottomrule
 
 \subsubsection{Baselines}\label{sec:comparators}
 
-Template/S2B share the paired pool; grounding differs (Section~\ref{sec:framework}). RingSQL-style combines template SQL with Qwen questions. Omni reuses SQL/question-generation components with local Qwen. Synth uses the author's SQL synthesis, question generation, backtranslation and self-comparison workflow with local Qwen, removing its 25-row cap.\footnote{SynthSQL toolkit: \url{https://github.com/NeginKhalifat/SQL-benchmark}, retained commit \texttt{dff8c75e}. It is distinct from SING-SQL and SynSQL.} These local adaptations are not full author-system reproductions. Release sizes and evaluation populations are fixed; generation budgets differ (Table~\ref{tab:cost}).
+Template and S2B share the paired pool but differ in grounding (Section~\ref{sec:framework}). Ring combines template SQL with Qwen-generated questions. Omni reuses SQL and question generation components with local Qwen models. Synth uses the author's SQL synthesis, question generation, backtranslation and self-comparison workflow with local Qwen models, removing its 25-row cap.\footnote{SynthSQL toolkit: \url{https://github.com/NeginKhalifat/SQL-benchmark}, retained commit \texttt{dff8c75e}. It is distinct from SING-SQL and SynSQL.} These local adaptations do not reproduce the complete original systems. Release sizes and evaluation populations are fixed; generation budgets differ (Table~\ref{tab:cost}).
 
-Each external method supplies one unpaired 2,000-item set. Omni replaces duplicates before response inspection; Synth expands adaptively and deduplicates in fixed order. Synth mixes reused/new outputs and batch/KV settings; 366 tasks lack post-run model checks after interrupted shards. These limitations and unequal generation budgets qualify the comparison.
+Each external method supplies one unpaired set of 2,000 tasks. Omni replaces duplicates before response inspection; Synth expands adaptively and deduplicates in fixed order. Synth combines reused and new outputs with different batch and key-value cache settings; interrupted shards leave 366 tasks without post-run model checks.
 
 
 \subsubsection{Scoring Settings}
-We apply both scoring layers from Section~\ref{sec:scoring} to the same selected tasks.
-Unknown scores fall from 692 to 607 among 10,340 source outputs and from 195 to zero among 9,060 reference outputs. Synth gains 1,433 matches and 1,676 mismatches; Omni gains 18/758, and other populations gain mismatches only. Proof coverage is unequal, concentrated in California for the first four methods. Semantic assessment is separate (Section~\ref{sec:semantic}).
+Unknowns decrease from 692 to 607 among 10,340 source scores and from 195 to zero among 9,060 reference scores. Evidence resolves 1,433 Synth matches and 1,676 mismatches, compared with 18 and 758 for Omni. Other populations gain mismatches only. Evidence coverage is unequal and concentrated in California for the first four methods. Semantic assessment is separate (Section~\ref{sec:semantic}).
 
 
 \subsection{Main Results}\label{sec:measurement}
 
 \input{sections/migration_tables_20261107}
 \subsubsection{Source Fidelity and Target Alignment}
-Source fidelity and target alignment favor different methods (Table~\ref{tab:main}). Schema2Bench improves Template's Verified gap by \textbf{0.055693} and source TEF over all comparators; Ring, Omni and Synth have lower gap.
+Schema2Bench improves source TEF over all four comparators under Verified scoring and reduces Template's target gap by \textbf{0.055693} (Table~\ref{tab:main}). Ring, Omni and Synth have lower gaps: source fidelity and target alignment favor different methods.
 
-Figure caps mark bounds; ticks mark coincident endpoints.
-
-All four mean Verified TEF contrasts remain negative across ten overlapping releases, reusing fixed Ring/Omni/Synth sets. Base means cross zero for Template/Ring/Synth; Omni remains favorable.
+All four mean Verified TEF contrasts remain negative over ten overlapping releases that reuse the fixed external sets. Base mean bounds cross zero for Template, Ring and Synth; the Omni contrast remains favorable.
 
 \subsubsection{Model Ranking}
-Across ten releases under Verified scoring, mean gap decreases from 0.224640 to 0.168988 (\textbf{5.5652 pp}) and mean domain $\tau$-b rises from 0.2292 to 0.3272. California and codebase nevertheless lose rank fidelity, distinguishing gap magnitude from ordering.
+Across ten Verified releases, mean gap decreases from 0.224640 to 0.168988 (\textbf{5.5652 pp}) and mean domain $\tau$-b increases from 0.2292 to 0.3272. Rank agreement decreases in California and codebase, distinguishing gap reduction from ordering.
 
-Per seed, 1,000 bootstrap draws separately resample matched SQL-skeleton clusters and references. All ten rank-difference estimates are positive; 8/10 conditional 95\% intervals exclude zero, omitting missingness and pool selection.
+For each seed, 1,000 bootstrap draws separately resample matched SQL-skeleton clusters and references. All ten rank-difference estimates are positive; eight conditional 95\% intervals exclude zero. These intervals omit missingness and pool selection.
 
 \subsubsection{Model Selection}\label{sec:decision}
-The regret rule was fixed before this post-hoc calculation. It retains all possible winners, including ties and unknowns, without ranking interval midpoints.
+The regret rule, fixed before this post-hoc calculation, retains every possible winner under ties and unknowns without ranking interval midpoints.
 \begin{table*}[t]\centering\small
-\caption{Model-selection regret (accuracy pp), retaining all possible tied winners. Mean/worst denote domain average/maximum; 906 and 1,118 denote reference counts. Columns distinguish scoring layers; endpoints are conservative.}
+\caption{Model-selection regret in accuracy percentage points, including all possible tied winners. Mean and worst denote domain average and maximum. Reference counts are 906 and 1,118; columns separate scoring layers. Bounds are conservative.}
 \label{tab:regret}
 \begin{tabular}{lrrrrr}\toprule
 Method & 906: base mean & 906: verified mean & 906: verified worst & 1,118: base mean & 1,118: verified mean\\\midrule
@@ -239,13 +236,13 @@ Omni & $[0.000, 17.895]$ & $[0.794, 12.246]$ & $[6.349, 19.512]$ & $[0.000, 28.0
 Synth & $[0.000, 27.258]$ & $[0.000, 19.046]$ & $[0.000, 25.490]$ & $[0.000, 37.369]$ & $[0.000, 23.858]$\\
 \bottomrule\end{tabular}\end{table*}
 
-With 906 Verified references, Ring has lower mean regret despite S2B's lower TEF (Table~\ref{tab:regret}), favoring Ring in California/codebase and S2B in Formula 1/superhero. Omni/Synth remain imprecise. Figure~\ref{fig:main-contrasts}(c) separates lower bounds from remaining ranges.
+With 906 references and Verified scoring, mean regret favors Ring despite S2B's lower TEF (Table~\ref{tab:regret}). Domain comparisons favor Ring in California and codebase, and S2B in Formula 1 and superhero. Omni and Synth bounds remain wide. Figure~\ref{fig:main-contrasts}(c) distinguishes lower bounds from remaining ranges.
 
-All 1,118 references give overlapping S2B/Ring ranges, with 1,356 Base and 706 Verified unknowns. Across ten overlapping releases with 906 references, S2B's mean lower/upper endpoints span 5.482--7.696/5.482--7.981 pp.
+All 1,118 references yield overlapping S2B and Ring bounds, with 1,356 Base and 706 Verified unknowns. Over ten overlapping releases with 906 references, S2B's mean regret has lower endpoints from 5.482 to 7.696 pp and upper endpoints from 5.482 to 7.981 pp.
 
 \subsection{Ablation Studies}\label{sec:construction}
 
-Selection controls share the candidate pool; column preference and value sampling use separate paired releases; question rewriting holds SQL fixed. Figure~\ref{fig:construction-effects} separates TEF and gap. Effects do not add up to the main gain.
+Selection controls share the pool; column preference and sampling use separate paired releases; rewriting fixes SQL. Figure~\ref{fig:construction-effects} separates TEF and gap. Effects do not additively decompose the main improvement.
 
 \begin{figure*}[t]
 \centering
@@ -255,54 +252,54 @@ Selection controls share the candidate pool; column preference and value samplin
 \end{figure*}
 
 \subsubsection{Workload Selection}\label{sec:selection}
-Most Template--S2B gap improvement precedes selection (Table~\ref{tab:anchor}(a)). Adjustment adds only 0.0204 pp over matched random under Verified scoring, positive in 9/10 seeds. The 16 random alternatives/seed match screening, directed stratum-removal counts, swaps and $H$. Thus structural control adds little target-gap benefit.
+Most gap improvement over Template precedes selection (Table~\ref{tab:anchor}(a)). Structural adjustment adds only 0.0204 pp over matched random swaps under Verified scoring, improving nine of ten seeds. The 16 random alternatives per seed match screening, directed removals per stratum, swaps and $H$. Additional target-gap benefits are therefore small.
 
 \begin{table}[t]\centering\small
-\caption{Selection results: ten overlapping 2,000-task releases per study. (a) BIRD, ten models; positive $I_G=G(\mathrm{Template})-G(\mathrm{S2B})$ favors S2B. (b) Earlier seven-database, seven-model study; lower losses are better.}
+\caption{Selection over ten overlapping 2,000-task releases. (a) BIRD, ten models: positive $I_G$ favors S2B over Template. (b) Earlier seven-database, seven-model study: lower is better. Bold compares (a) with Template and (b) with stratified random selection.}
 \label{tab:anchor}
 \begin{tabular}{lrrr}\toprule
 \multicolumn{4}{l}{\textit{(a) BIRD: construction versus selection}}\\
 Selection & Swaps & $H$ & $I_G\uparrow$ (pp)\\\midrule
-Initial stratified sample &0&0&5.5386\\
-Matched random swaps &10&0.01&\underline{5.5449}\\
+Initial stratified sample &0&0&\textbf{5.5386}\\
+Matched random swaps &10&0.01&\textbf{5.5449}\\
 Structural adjustment &10&0.01&\textbf{5.5652}\\\midrule
 \multicolumn{4}{l}{\textit{(b) Seven additional databases: selection}}\\
 Selector & \multicolumn{2}{c}{Structural loss} & TEF\\\midrule
 Stratified random & \multicolumn{2}{c}{0.269519} &0.050071\\
-Structural greedy & \multicolumn{2}{c}{\textbf{0.213055}} &\underline{0.048692}\\
-Bounded selection & \multicolumn{2}{c}{\underline{0.260790}} &\textbf{0.047229}\\\bottomrule
+Structural greedy & \multicolumn{2}{c}{\textbf{0.213055}} &\textbf{0.048692}\\
+Bounded selection & \multicolumn{2}{c}{\textbf{0.260790}} &\textbf{0.047229}\\\bottomrule
 \end{tabular}\end{table}
 
-Initial mean $\tau$-b is 0.2312/0.3270 for Template/S2B versus 0.2292/0.3272 after adjustment. Structural-minus-matched-random TEF is $[+0.000227,+0.000977]$ with source schema summaries (8/10 unfavorable; 2/10 unresolved) and $[-0.000777,+0.000452]$ with source DDL (2/10 favorable; 8/10 unresolved).
+Template and S2B have initial mean $\tau$-b values of 0.2312 and 0.3270, versus 0.2292 and 0.3272 after adjustment. Relative to matched random swaps, TEF changes by $[+0.000227,+0.000977]$ with source summaries (eight seeds unfavorable; two unresolved) and $[-0.000777,+0.000452]$ with source DDL (two favorable; eight unresolved).
 
 \paragraph{Seven additional databases}
-Earlier seven-model results favor bounded selection in TEF and greedy in structure; all 14 swaps occur in TPC-DS (Table~\ref{tab:anchor}(b)). Repair improves yield, but controlled construction yields fewer tasks at higher cost than Ring, without establishing main-study component gains.
+Earlier seven-model results favor bounded selection for TEF and greedy selection for structural loss; all 14 swaps occur in TPC-DS (Table~\ref{tab:anchor}(b)). Repair improves yield, but controlled construction produces fewer tasks at higher cost than Ring, without establishing main-study component benefits.
 
 \input{sections/paired_construction_20261109}
 \input{sections/question_realization_20261109}
 
 \subsubsection{Candidate Coverage}\label{sec:current-support}
 
-The 3,778-pair pool contains 311 easy, 2,688 medium and 779 hard tasks versus source proportions $(0.464,0.348,0.188)$. With 38 quotas allowing at most 173 easy items per 2,000, $h=(1,0,0)$ certifies $0.464-173/2000=0.3775$. Both $(173,1302,525)$ and the current $(173,1376,451)$ attain it. The latter meets $H=0.01$, so selection cannot reduce difficulty TV. Exact matching requires at least $928-173=755$ additional eligible easy items, without guaranteeing simultaneous type feasibility.
+The pool has 311 easy, 2,688 medium and 779 hard tasks, versus source proportions $(0.464,0.348,0.188)$. The 38 quotas allow at most 173 easy items per 2,000; $h=(1,0,0)$ certifies $0.464-173/2000=0.3775$. Both $(173,1302,525)$ and the current $(173,1376,451)$ attain it. The latter meets $H=0.01$, so selection cannot reduce difficulty TV. Exact matching needs at least $928-173=755$ additional eligible easy items, without ensuring joint type feasibility.
 
 \subsubsection{Additional Candidate Generation}\label{sec:acquisition}
 On a SynSQL-2.5M garment database with 159 synthetic references, adaptive expansion follows a 223/250 quota failure. Equal 1,200-attempt supplements yield 119 guided versus 29 untargeted candidates, but all pools retain difficulty-TV optimum 0.356. This bound relaxes $H$ and does not bound TEF.
 
-Ten overlapping releases reuse seven BIRD domains, with 250 tasks/domain, $H\le0.01$ and identical structural losses. Mean guided-minus-untargeted TEF is $[-0.000294,+0.000334]$; new-target gap is $[-0.000905,+0.000542]$, favorable/adverse/unresolved in 3/1/6 releases. References retain 111/1,590 unknowns. Higher yield leaves measurement contrasts unresolved and the structural deficit unchanged.
+Ten overlapping releases reuse seven BIRD domains, with 250 tasks per domain, $H\le0.01$ and identical structural losses. Guided-minus-untargeted mean TEF is $[-0.000294,+0.000334]$ and new-target gap is $[-0.000905,+0.000542]$. Gap differences are favorable in three releases, adverse in one and unresolved in six. Of 1,590 reference scores, 111 remain unknown. Higher yield leaves these contrasts unresolved and structural deficits unchanged.
 
 \begin{table*}[t]\centering\small
 \caption{Recorded tokens including failures. Evaluation rows are release means; generation rows cover different scopes.}
 \label{tab:cost}
 \begin{tabular}{lrrl}\toprule
 Stage & Input tokens & Output tokens & Scope\\\midrule
-Template evaluation &22,906,504&1,170,824&20,000 model--item records/release\\
-S2B evaluation &22,936,877&1,143,564&20,000 model--item records/release\\
+Template evaluation &22,906,504&1,170,824&20,000 model--item records per release\\
+S2B evaluation &22,936,877&1,143,564&20,000 model--item records per release\\
 Spider summary evaluation &1,816,236&370,097&10,340 source records\\
 Spider DDL evaluation &4,221,154&370,682&10,340 source records\\
 Synth final evaluation &22,041,137&804,975&20,000 records; 5,080 reused\\\midrule
 Ring question generation &417,101&125,758&2,400 records; excludes template SQL\\
 Omni SQL and question generation &31,498,785&5,905,818&Initial, additional and reserve generation\\
-Synth all recorded generation &553,507,001&15,411,464&258,674 calls, including failed/stopped attempts\\\bottomrule
+Synth all recorded generation &553,507,001&15,411,464&258,674 calls, including failed or stopped attempts\\\bottomrule
 \end{tabular}\end{table*}
 
 
@@ -310,31 +307,31 @@ Synth all recorded generation &553,507,001&15,411,464&258,674 calls, including f
 
 \subsection{Discussion}\label{sec:discussion}
 
-Ring has lower gap/regret despite worse source fidelity and fewer Astra-supported pairs (Table~\ref{tab:audit-expanded}). Fixed-SQL rewriting also changes this tradeoff: structural coverage, semantic support and model choice require separate checks.
+Ring's lower gap and mean regret accompany worse source fidelity and fewer Astra-supported pairs (Table~\ref{tab:audit-expanded}). Fixed-SQL rewriting also changes this tradeoff. Coverage, semantic support and model choice require separate assessment.
 
-An illustrative 0.003 tolerance (0.3 pp) accepts deeper sampling's gap cost of at most 0.002221 for better TEF, but not Rewritten-minus-Ring's 0.006397 upper bound. Prospective non-inferiority tests require fixed tolerances and sufficient precision.
+An illustrative 0.003 tolerance (0.3 pp) accepts deeper sampling's gap cost of at most 0.002221 for better TEF, but not rewriting's 0.006397 upper bound against Ring. Non-inferiority tests require prospective tolerances and sufficient precision.
 
-Screening, unequal budgets and evidence, shared data and possible training overlap limit generalization. External results are mixed; risk bounds keep unflagged scores fixed.
+These screening, budget, evidence and data-dependence limitations restrict generalization. External results are mixed; risk bounds keep unflagged scores fixed.
 
-Table~\ref{tab:cost} includes failed-call tokens. Retained artifacts support offline checks of scores, feasibility and saved execution evidence. Full reproduction requires external models, data and environments; redistribution rights remain unverified.
+Table~\ref{tab:cost} includes failed-call tokens. Artifacts support offline score, feasibility and execution-evidence checks. Full reproduction needs external models, data and environments; redistribution rights remain unverified.
 
 
 \section{Related Work}\label{sec:related}
 \subsection{Text-to-SQL}
-Text-to-SQL research has improved schema linking, representation learning and constrained decoding \citep{wang2020ratsql,lin2020bridge,lei2020schemalinking,li2023resdsql,scholak2021picard}. DAIL-SQL studies prompting and example selection, and CodeS develops specialized open models \citep{gao2024dailsql,li2024codes}. PURPLE retrieves demonstrations with relevant operator compositions; KaSLA formulates schema linking as knapsack optimization \citep{ren2024purple,yuan2026kasla}. Long-context NL2SQL examines the accuracy and latency effects of schema, values and other context \citep{chung2025longcontext}. These methods improve predictors; Schema2Bench constructs workloads for comparing them on new databases.
+Text-to-SQL research improves schema linking, representation learning and constrained decoding \citep{wang2020ratsql,lin2020bridge,lei2020schemalinking,li2023resdsql,scholak2021picard}. DAIL-SQL studies prompting and example selection; CodeS develops specialized open models \citep{gao2024dailsql,li2024codes}. PURPLE retrieves demonstrations by operator composition; KaSLA models schema linking as knapsack optimization \citep{ren2024purple,yuan2026kasla}. Long-context NL2SQL studies how schema, values and context affect accuracy and latency \citep{chung2025longcontext}. These methods improve predictors; Schema2Bench constructs workloads to compare them on new databases.
 
 DIN-SQL, MAC-SQL and SHARE use decomposition, collaboration or correction \citep{pourreza2023dinsql,wang2025macsql,qu2025share}; CycleSQL uses database-grounded explanations as feedback \citep{fan2025cyclesql}. These checks improve predictions but do not establish benchmark fidelity. Execution agreement itself requires qualification through test suites, formal checks and reference audits \citep{zhong2020testsuite,klopfenstein2026spotit,pourreza2023evaluating,liu2025nl2sqlbugs}.
 
 Spider, BIRD and conversational benchmarks provide shared evaluation tasks \citep{yu2018spider,li2023bird,yu2019sparc,yu2019cosql}. Spider 2.0, KaggleDBQA, ScienceBenchmark, BEAVER and customer-log evaluations extend the range of database demands \citep{lei2025spider2,lee2021kaggledbqa,zhang2024sciencebenchmark,chen2024beaver,ganti2024failures}. Perturbation benchmarks isolate linguistic, knowledge, schema and query changes \citep{gan2021spidersyn,gan2021spiderdk,pi2022adveta,chang2023drspider,zhou2026sqlstructeval,perlitz2026polysql}. SQLMorph adds join expansion and fine-grained execution metrics; VLD-Bench studies discrepancies between question values and database entries \citep{malekpour2026sqlmorph,koukouvinis2026value}.
 
-These diagnostics isolate prediction failures under specified task changes. They do not establish whether migration preserves a source response profile while reflecting model differences on a separate target workload. Following evidence-centered design and concurrence research \citep{liu2024ecbd,sun2023concurrence,kovatchev2024benchmark}, we separately evaluate source response profiles and target accuracy gaps, rankings and regret, retaining uncertainty when execution or semantic evidence is insufficient.
+These diagnostics isolate failures under task changes, without establishing source fidelity or target alignment after migration. Following evidence-centered design and concurrence research \citep{liu2024ecbd,sun2023concurrence,kovatchev2024benchmark}, we separately assess source response profiles and target accuracy gaps, rankings and regret, retaining uncertainty when execution or semantic evidence is insufficient.
 
 \subsection{Data Synthesis}
 Synthetic question--SQL pairs support pretraining and adaptation \citep{yu2021grappa,li2021semiautomatic,lent2021canonical}. RingSQL instantiates schema-independent templates; OmniSQL synthesizes large-scale training data \citep{sterbentz2026ringsql,li2025omnisql}. SING-SQL, EvolSQL and SynSQL study other synthesis settings \citep{caferoglu2025singsql,pan2026evolsql,habibollah2026synsql}. These training objectives do not establish evaluation fidelity. We compare local adaptations at fixed workload sizes and isolate wording effects with SQL fixed.
 
-Dataset distillation optimizes a small synthetic training set to approximate learning from a larger one \citep{wang2018distillation,zhao2021condensation}. Gradient-matching condensation explicitly matches training gradients. Schema2Bench constructs test workloads across databases without updating evaluator parameters. A synthetic training set is judged by the model learned from it; a migrated test set is judged by the model comparisons it supports. These objectives require different validation.
+Dataset distillation approximates learning from larger datasets with small synthetic training sets \citep{wang2018distillation,zhao2021condensation}; gradient-matching condensation matches training gradients. Schema2Bench instead constructs cross-database test workloads without updating evaluators. Distilled data are assessed through learned models; migrated benchmarks require validation of the model comparisons they support.
 
-Data selection reduces training or evaluation cost \citep{xie2023dsir,albalak2024dataselection,perlitz2024efficient}. TinyBenchmarks estimates full-benchmark performance from selected items; SMART filters items; SubLIME and FAFI study rank preservation \citep{maiapolo2024tiny,gupta2025smart,saranathan2025sublime,gusev2026ranking}. Schema2Bench uses moment matching and benefit--cost exchanges \citep{bach2012herding,derezinski2019minimax,khuller1999budgeted} to control SQL composition under domain quotas. Unlike reducing an existing test set, migration changes both database grounding and the candidate population. The framework bounds fidelity changes under structural exchanges and diagnoses candidate shortages that selection cannot fix. The small additional selection gain and mixed external results delimit the empirical benefits.
+Data selection reduces training or evaluation cost \citep{xie2023dsir,albalak2024dataselection,perlitz2024efficient}. TinyBenchmarks estimates benchmark performance from selected items; SMART filters items; SubLIME and FAFI study rank preservation \citep{maiapolo2024tiny,gupta2025smart,saranathan2025sublime,gusev2026ranking}. Schema2Bench uses moment matching and benefit--cost exchanges \citep{bach2012herding,derezinski2019minimax,khuller1999budgeted} to control SQL composition under domain quotas. Migration also changes grounding and candidate populations. We bound fidelity changes from structural exchanges and diagnose shortages that selection cannot fix. Small additional selection gains and mixed external results delimit the benefits.
 
 \FloatBarrier
 \begin{samepage}

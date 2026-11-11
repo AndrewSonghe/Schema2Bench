@@ -1,9 +1,9 @@
 {
-  "manuscript_version": "v40",
-  "date": "2026-11-11",
+  "manuscript_version": "v41",
+  "date": "2026-11-12",
   "title": "Schema2Bench: Evidence-Grounded Cross-Domain Text-to-SQL Benchmark Migration",
-  "paper_pdf": "paper/Schema2Bench_ICDE2027_v40.pdf",
-  "paper_pdf_sha256": "fb0a38a486e41be3c5ee86d1e6492593334cf918be1195c512a32251dd12f0e9",
+  "paper_pdf": "paper/Schema2Bench_ICDE2027_v41.pdf",
+  "paper_pdf_sha256": "0e0f3794f7cd7bf77a0b0574f0f32365b131402d7fb91b2a764103d1b48a047d",
   "body_pages": 12,
   "total_pages": 15,
   "terminology": {
@@ -11,9 +11,9 @@
     "S2B": "Abbreviation used in the manuscript",
     "refill": "Retained identifier in data and replay code"
   },
-  "scope": "Numerical emphasis and caption clarification. Bold/underlining mark established best/second within comparable groups; interval midpoints are not ranked. Scientific numbers, experiment records, scoring rules, thresholds and figures are unchanged from v39.",
+  "scope": "Paragraph-level language revision, consistent bold emphasis and restored short disclosure. All numerical results, equations, citations, figures, experimental records and thresholds are unchanged from v40.",
   "verification": {
-    "paper_build": "15 pages; all page text and pixels match the archived v40 PDF in the validation environment",
+    "paper_build": "15 pages, including 12 body pages; exact archived PDF supplied. Source rebuild checked for matching text and pixels.",
     "figure_sources": "Unchanged from v39; Figure 2-6 source regeneration was verified at commit bfe12dcce8547d1c43f10fd37ddb98ec30a13def",
     "font_fallback": "Figure 4 also renders with DejaVu Sans when Arial is unavailable",
     "offline_checks": [
@@ -34,11 +34,22 @@
       71
     ],
     "emphasis": {
-      "table_numeric_cells": 13,
+      "table_numeric_cells": 42,
       "narrative_values": 2,
       "main_verified_tef_rank": 1,
       "main_verified_gap_rank": 4,
-      "unresolved_orders_marked": false
-    }
+      "unresolved_orders_marked": false,
+      "rule": "Bold indicates supported improvements in a stated comparison, not global best/second ranks; no numeric underlining."
+    },
+    "regression_checks": [
+      "four-part abstract and In this paper opening",
+      "full-name section III",
+      "Experimental Results title",
+      "three module names",
+      "two related-work subsections and 71 citations",
+      "contextual full name and S2B usage",
+      "two-sentence disclosure restored verbatim from the accepted v32 wording",
+      "original qualification failure, adverse results and uncertainty retained"
+    ]
   }
 }
