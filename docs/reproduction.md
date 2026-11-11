@@ -1,6 +1,6 @@
 # Reproducing the analyses
 
-These instructions accompany manuscript v43. S2B is recorded as `refill` in
+These instructions accompany manuscript v44. S2B is recorded as `refill` in
 the unchanged data keys and replay output. Run commands from the repository root.
 The standard-library replay requires no
 installation. Optional construction and plotting commands use `requirements.txt`.
@@ -118,8 +118,8 @@ two figures illustrate the problem and method, not measured outcomes.
 
 The manuscript builds with fixed assets in `paper/figures/current/`. Plotting
 does not overwrite those assets. `paper/figures/v8/` retains the older layout;
-it is not used by the v43 build. To read the exact submission rendering, use
-`paper/Schema2Bench_ICDE2027_v43.pdf`. To rebuild from source:
+it is not used by the v44 build. To read the exact submission rendering, use
+`paper/Schema2Bench_ICDE2027_v44.pdf`. To rebuild from source:
 
 ```bash
 sh paper/build.sh

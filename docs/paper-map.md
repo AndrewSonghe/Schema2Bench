@@ -1,6 +1,6 @@
 # Paper-to-artifact map
 
-The map follows manuscript v43. "Replay" means a
+The map follows manuscript v44. "Replay" means a
 calculation is run from the included records. "Saved analysis" means the reported
 numerical output is included without its full input pipeline.
 
@@ -23,7 +23,7 @@ numerical output is included without its full input pipeline.
 | Sections V-D2/V-D3, Table VIII(c): uniform Terra review and joint semantic sensitivity | `evaluation/followup/semantic/`, `scripts/replay_followup.py` | Recounts 480 labels, parses 479 responses and replays the added score sensitivities |
 | Section V-E, Table XI: BEAVER pilot and schema-context control | `evaluation/followup/beaver/`, `scripts/replay_followup.py` | Recomputes TEF/gap tables, unknown counts and direct aggregate/domain contrasts from stored scores |
 | Sections V-D/V-E: revised references, model-panel checks, TACO pilot and seven-database diagnostic | `paper/` | Reported results; full rerun inputs are not included in this compact release |
-| Figures 1-6 and manuscript | `figures/`, `paper/figures/current/`, `paper/Schema2Bench_ICDE2027_v43.pdf` | Published figure assets, editable/plotting sources and the v43 PDF; see [figure instructions](reproduction.md#figures) |
+| Figures 1-6 and manuscript | `figures/`, `paper/figures/current/`, `paper/Schema2Bench_ICDE2027_v44.pdf` | Published figure assets, editable/plotting sources and the v44 PDF; see [figure instructions](reproduction.md#figures) |
 
 The package is sufficient to inspect the main construction components and
 recompute the main stored-score comparison. It should not be described as a
@@ -33,7 +33,7 @@ The manuscript calls the method Schema2Bench (S2B). Existing records retain
 `refill` as their method identifier. The paper's Figure 1 is illustrative;
 Figure 2 describes the workflow. Neither is an additional experimental result.
 
-In v43, ranking panels retain bold for established best values and underlining
+In v44, ranking panels retain bold for established best values and underlining
 for second place. Interval ranks that are not identified remain unmarked. The
 13 ranking marks from v42 are unchanged. API support counts describe recorded
 judgments, not semantic truth.
@@ -55,8 +55,12 @@ question wording, then selection. Improvements mostly precede selection;
 coverage diagnosis remains a separate contribution. External and semantic
 sensitivity results limit the generality of these claims.
 
-All eleven table number sequences, nine equation groups, 71 citation keys,
-six figure assets and experimental records are unchanged. The requested short
+All eleven table blocks, including the v43 ranking and contrast emphasis,
+nine equation groups, 71 citation keys, six figure assets and experimental
+records are unchanged. The five-method ten-release stored-score replay was
+rerun successfully for v44. The revised narrative states the supported
+source-fidelity advantage and Template gap improvement; it does not reclassify
+external gap disadvantages as small or statistically non-significant. The requested short
 language-assistance disclosure and prior terminology choices are retained.
 [Supplementary experiment details](../paper/EXPERIMENT_DETAILS.txt) preserve
 score counts, operational limits and auxiliary summaries moved from the main

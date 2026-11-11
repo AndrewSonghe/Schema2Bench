@@ -3,7 +3,7 @@ We isolate wording effects by holding SQL fixed. A preliminary comparison identi
 
 We retain all 2,000 first-release S2B queries and quotas, using Ring-style Qwen2.5-7B question generation. The plan and 160-item audit, with 20 items per domain, precede generation. This yields 1,999 correctly formatted questions and 19,990 predictions; the remaining item stays unknown.
 
-Rewriting reduces Verified gap in all eight domains and aggregate Base gap, but increases Verified TEF (Table~\ref{tab:realization-results}). Thus fixed SQL does not preserve model comparisons when questions change. Concordant pairs increase; regret intervals overlap. Against Ring, TEF is lower but gap remains unresolved.
+Rewriting reduces Verified gap in all eight domains and aggregate Base gap, but increases Verified TEF (Table~\ref{tab:realization-results}). Thus fixed SQL does not preserve model comparisons when questions change. Concordant pairs increase; regret intervals overlap. Rewriting approaches Ring's gap while retaining lower TEF; non-inferiority remains unestablished.
 
 \begin{table*}[t]\centering\small
 \caption{Fixed-SQL question rewriting. (a) Verified scores: concordances count definite agreement among 360 dependent model pairs; regret is in accuracy percentage points. Bold marks best and underlining second; gap and regret ranks remain unresolved. (b) Negative favors rewriting.}

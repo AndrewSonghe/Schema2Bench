@@ -20,7 +20,7 @@ Suppose models A and B score 75\% and 50\% on the source, but 50\% and 75\% on t
 
 \textbf{Our methodology.} Schema2Bench (S2B) has three modules (Fig.~\ref{fig:framework}). \emph{Benchmark Construction} instantiates source query patterns with target schemas and sampled values, then generates questions from SQL. \emph{Workload Selection} adjusts composition under fixed quotas, tightly bounds fidelity changes and identifies coverage deficits that selection cannot remove. \emph{Benchmark Evaluation} separates source fidelity from target alignment and retains unknowns in direct comparisons. Screening uses earlier outputs; selection reads no evaluator responses. Execution and consistency checks screen operational failures without certifying semantics.
 
-\textbf{Experimental evaluation.} On eight BIRD databases with ten models, S2B improves both source fidelity and target gap over Template. It also improves Verified source fidelity over three generation-based adaptations, which attain lower target gaps. Ablations locate most improvement before selection and show how wording changes this tradeoff.
+\textbf{Experimental evaluation.} On eight BIRD databases with ten models, S2B improves source fidelity and target gap over Template, demonstrating a gain beyond structural reuse. Verified source fidelity also exceeds that of three generation-based adaptations, which attain lower target gaps. Most improvement precedes selection; wording changes the tradeoff.
 
 \textbf{Contributions.} We make three contributions:
 \begin{enumerate}
@@ -128,7 +128,7 @@ $\nu$ indexes coordinates with weights $w_\nu$: $1/M$ for accuracy and CDF and $
 \end{equation}
 CDF and disagreement pool tasks; source accuracy averages 20 databases. Equal target quotas do not remove unequal source sizes. Block weights $(1,1,1/2)$ define the convention; Section~\ref{sec:sensitivity} varies these priorities over the nonnegative weight region without changing the structural objective.
 
-\textbf{Target alignment.} For construction $c$, let $a^r_{d,m}$ and $a^c_{d,m}$ be model $m$'s execution-match rates on reference and constructed tasks in domain $d$. Target gap measures differences between their pairwise accuracy gaps:
+\textbf{Target alignment.} For construction $c$, let $a^r_{d,m}$ and $a^c_{d,m}$ be model $m$'s execution-match rates on reference and constructed tasks in domain $d$. Target gap measures distortion in their pairwise accuracy gaps:
 \begin{equation}
  G(c)=\frac1D\sum_d\frac1{\binom M2}\sum_{m<n}
  \left|(a^r_{d,m}-a^r_{d,n})-(a^c_{d,m}-a^c_{d,n})\right|.
@@ -164,7 +164,7 @@ For shared source-feature interval $S$, the discrepancy difference (first minus 
 Both terms share source value $s\in S$. We sum weighted coordinate bounds, evaluating endpoints and piecewise-linear breakpoints. Gap contrasts similarly share signed target-reference model gaps.
 
 \section{Experimental Results}\label{sec:experiments}
-We compare source fidelity across methods (Section~\ref{sec:measurement}), the contributions of construction and selection (Section~\ref{sec:construction}), and robustness across assumptions and domains (Sections~\ref{sec:robustness}--\ref{sec:external}). TEF assesses source continuity; gap, ranking and regret test whether this also supports target model choice.
+We test whether S2B improves migration over Template and generation-based construction (Section~\ref{sec:measurement}), then examine component contributions (Section~\ref{sec:construction}) and robustness (Sections~\ref{sec:robustness}--\ref{sec:external}). TEF assesses preservation of source measurements; gap, ranking and regret separately assess target model choice.
 
 \subsection{Experimental Setup}\label{sec:design}
 \subsubsection{Datasets and Models}
@@ -213,12 +213,12 @@ Both scoring layers use the same tasks. Verified scoring resolves unknowns using
 
 \input{sections/migration_tables_20261107}
 \subsubsection{Source Fidelity and Target Alignment}
-Schema2Bench improves both objectives over Template: lower source TEF and a \textbf{0.055693} reduction in Verified target gap (Table~\ref{tab:main}). All four direct TEF bounds are strictly negative, establishing a fidelity advantage over the three generation-based adaptations despite overlapping marginal intervals. Ring, Omni and Synth attain lower gaps. S2B therefore offers better source continuity, while target alignment favors those alternatives.
+Schema2Bench improves over Template on both objectives: lower source TEF and a \textbf{0.055693} reduction in Verified target gap (Table~\ref{tab:main}). All four Verified direct TEF bounds are negative despite overlapping marginal intervals, supporting better source fidelity than the four comparators. Ring, Omni and Synth attain lower gaps, so S2B offers a source-fidelity advantage with a target-alignment tradeoff.
 
 All four mean Verified TEF contrasts remain negative across ten overlapping releases using fixed external sets, testing membership sensitivity rather than independent construction. Base mean bounds cross zero for Template, Ring and Synth; only the Omni contrast remains negative. The advantage over all four methods depends on additional execution evidence.
 
 \subsubsection{Model Ranking}
-Average model ordering also improves over Template: across ten Verified releases, mean gap falls from 0.224640 to 0.168988 (\textbf{5.5652 pp}) and mean domain $\tau$-b rises from 0.2292 to 0.3272. California and codebase lose rank agreement, limiting the domain-level conclusion.
+Aggregate model ordering also improves over Template: across ten Verified releases, mean gap falls from 0.224640 to 0.168988 (\textbf{5.5652 pp}) and mean domain $\tau$-b rises from 0.2292 to 0.3272. These aggregate gains coexist with lower rank agreement in California and codebase.
 
 For each seed, 1,000 bootstrap draws separately resample matched SQL-skeleton clusters and references. All ten rank-difference estimates are positive; eight conditional 95\% intervals exclude zero. These intervals omit missingness and pool selection.
 
@@ -311,9 +311,9 @@ Ten overlapping releases reuse seven BIRD domains, with 250 tasks per domain, $H
 
 \subsection{Discussion}\label{sec:discussion}
 
-Schema2Bench is supported for source-preserving migration: it improves both objectives over Template and Verified TEF over the three external adaptations. Ring's lower gap and mean regret favor it for target model selection, despite fewer Astra-supported pairs (Table~\ref{tab:audit-expanded}). The preferred method therefore depends on the measurement objective.
+These results support S2B when source continuity is required: main Verified TEF improves over all four comparators, and gap improves over Template. The Verified controls expose a tradeoff for value sampling and wording, while column preference improves both metrics (Tables~\ref{tab:ablation-layers}--\ref{tab:realization-results}).
 
-Retrospective tolerance choices do not establish non-inferiority, which requires prospective margins and sufficient precision.
+Ring has lower target gap and mean regret. Non-inferiority requires prospective margins and sufficient precision; retrospective tolerances do not establish it.
 
 Most improvement precedes selection, whose contribution is bounded adjustment and coverage diagnosis. Screening, budgets and shared data restrict generalization. External results are mixed; semantic-risk bounds fix unflagged scores.
 
@@ -340,7 +340,7 @@ Data selection reduces training or evaluation cost \citep{xie2023dsir,albalak202
 \FloatBarrier
 \begin{samepage}
 \section{Conclusion}
-Schema2Bench combines Benchmark Construction, Workload Selection and Benchmark Evaluation for source-preserving migration. On eight BIRD databases, it improves both source fidelity and target gap over Template, and achieves lower TEF than three external adaptations under Verified scoring and declared weights. Most gain precedes selection; coverage bounds identify deficits selection cannot repair. Lower external target gaps, semantic uncertainty and mixed external-domain results delimit this advantage.
+Schema2Bench combines Benchmark Construction, Workload Selection and Benchmark Evaluation to improve source-preserving migration. On eight BIRD databases under Verified scoring and declared weights, it reduces TEF against all four comparators and target gap against Template. Most gain precedes selection; coverage diagnostics identify deficits selection cannot repair. Lower external gaps, semantic uncertainty and mixed external-domain results limit broader claims.
 
 \label{closure:main-end}
 \end{samepage}

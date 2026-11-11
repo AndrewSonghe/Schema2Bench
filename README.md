@@ -10,7 +10,7 @@ changes in source fidelity and identifies candidate-pool deficits.
 **Benchmark Evaluation** separately measures source fidelity and agreement with
 model accuracy gaps on target references.
 
-This repository accompanies [manuscript v43](paper/Schema2Bench_ICDE2027_v43.pdf)
+This repository accompanies [manuscript v44](paper/Schema2Bench_ICDE2027_v44.pdf)
 (12 body pages, 15 pages including the AI-use disclosure and references).
 The retained identifier `refill` in data, filenames and replay output denotes S2B.
 
@@ -20,10 +20,14 @@ The main study compares five constructions on eight databases from BIRD with ten
 2,000 tasks per method and 906 target references. Under Verified execution
 scoring and the declared weights, S2B improves source fidelity over all four
 comparators and reduces Template's target-gap error from 0.225 to 0.169.
-Ring, Omni and Synth have lower target gap than S2B; Ring also has lower mean
-selection regret. Most improvement over Template precedes workload selection.
+These results support S2B when continuity with source evaluation is required.
+Target gap measures distortion in pairwise model accuracy differences against
+target references, not absolute accuracy loss. Ring, Omni and Synth have lower
+target gap than S2B; Ring also has lower mean selection regret. Most improvement
+over Template precedes workload selection.
 Under execution scoring, rewriting questions with SQL fixed improves
-target alignment but reduces source fidelity. A uniform semantic review leaves
+target alignment but reduces source fidelity. It approaches Ring's target gap
+while retaining lower TEF, without establishing non-inferiority. A uniform semantic review leaves
 both directions unresolved when sampled concerns are treated as unknown scores.
 
 Spider supplies the source query structures and source model responses.
@@ -72,7 +76,7 @@ outputs and additional commands.
 | `replay/` | Score matrices, membership lists and executable result checks |
 | `figures/` | Current figures, editable sources for Figures 1-2, and plotting code/data for Figures 3-6 |
 | `configs/` | Model fingerprints, database hashes and experiment settings |
-| `paper/` | v43 manuscript PDF, source and fixed figure assets |
+| `paper/` | v44 manuscript PDF, source and fixed figure assets |
 
 [Data formats](docs/data.md) explain the record fields and scoring layers.
 [Paper-to-artifact mapping](docs/paper-map.md) identifies which results can be
@@ -143,7 +147,7 @@ With TeX Live (including IEEEtran) and `latexmk` installed:
 sh paper/build.sh
 ```
 
-The PDF is written to `paper/build/main.pdf`. The build uses the supplied v43
+The PDF is written to `paper/build/main.pdf`. The build uses the supplied v44
 figures and does not rerun experiments or require plotting dependencies.
-The archived [v43 PDF](paper/Schema2Bench_ICDE2027_v43.pdf) and its SHA-256 are
+The archived [v44 PDF](paper/Schema2Bench_ICDE2027_v44.pdf) and its SHA-256 are
 identified in `provenance/manuscript.json`.
