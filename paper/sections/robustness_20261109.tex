@@ -19,13 +19,13 @@ An earlier stratified 400-task audit also leaves Synth unresolved under Terra's 
 The expanded audit fixes 100 records per method/domain, with one unavailable (Table~\ref{tab:audit-expanded}); exposed controls score 24/24 per class. The union of 1,133 audit concerns and 620 earlier SQL flags relaxes 1,433 items at the original denominators.
 
 \begin{table}[t]\centering\small
-\caption{API judgments. S/I/U: supported/incorrect/insufficient; NA/inv.: unavailable/invalid. Panels (b)/(c) compare judges on shared references and paired questions under the same Terra protocol.}
+\caption{API judgments: S/I/U = supported/incorrect/insufficient; NA/inv. = unavailable/invalid. Bold/underlining rank support counts within (a)/(c), not semantic truth; panel (b) compares judges.}
 \label{tab:audit-expanded}
 \begin{tabular}{lrrrr}\toprule
 \multicolumn{5}{l}{\textit{(a) Astra: 800 tasks/method, 100/domain}}\\
 Method & S & I & U & NA/inv.\\\midrule
-Template &800&0&0&0\\
-S2B &732&17&51&0\\
+Template &\textbf{800}&0&0&0\\
+S2B &\underline{732}&17&51&0\\
 Ring &603&123&73&1\\
 Omni &290&418&92&0\\
 Synth &442&308&50&0\\\midrule
@@ -35,8 +35,8 @@ Terra &89&54&17&0\\
 Qwen: strict JSON &76&9&1&74\\
 Qwen: code-fence parsing &121&37&2&0\\\midrule
 \multicolumn{5}{l}{\textit{(c) Terra: 160 paired tasks, 20/domain}}\\
-Original S2B &141&14&5&0\\
-Rewritten S2B &117&32&10&1\\\bottomrule
+Original S2B &\textbf{141}&14&5&0\\
+Rewritten S2B &\underline{117}&32&10&1\\\bottomrule
 \end{tabular}\end{table}
 
 Relaxing all 1,433 flags preserves S2B's TEF advantage over Template, $[-0.179682,-0.050176]$, but leaves external contrasts unresolved. Shared-source LP bounds for Ring/Omni/Synth are $[-0.293390,+0.139461]$, $[-0.840707,+0.132174]$ and $[-0.587412,+0.236106]$; joint gap bounds also cross zero. Three of 48 LP/mixed-integer gap endpoints reach time limits. Outward tolerances and earlier wider bounds remain.

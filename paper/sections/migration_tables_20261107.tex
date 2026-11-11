@@ -1,13 +1,13 @@
 \begin{table*}[t]
 \centering\small
 \setlength{\tabcolsep}{5pt}
-\caption{Fixed first release: 2,000 tasks/method, ten models, 906 target references and 1,034 source Spider items. $\downarrow$: lower is better. Direct $\Delta\mathrm{TEF}$: S2B minus row method, sharing source unknowns; negative favors S2B. Unknowns count cells out of 20,000; intervals bound unknown scores.}
+\caption{First release: 2,000 tasks/method, ten models, 906 target references and 1,034 Spider items. $\downarrow$: lower is better. Direct $\Delta\mathrm{TEF}$: S2B minus comparator with shared source unknowns; negative favors S2B. Unknowns are out of 20,000 scores. Across tables, bold/underlining mark identified best/second within comparable groups; unresolved ranks stay plain.}
 \label{tab:main}
 \begin{tabular}{lrrrr}\toprule
 Method & Target gap $G\downarrow$ & Spider--BIRD TEF $\downarrow$ & Direct $\Delta\mathrm{TEF}$ & Unknown\\\midrule
 \multicolumn{5}{l}{\textit{Verified execution scoring}}\\
 Template & $[0.224967, 0.224967]$ & $[0.243915, 0.390986]$ & $[-0.131730, -0.079099]$ & 0\\
-S2B & $[0.169275, 0.169275]$ & $[0.138501, 0.283651]$ & $0$ & 0\\
+S2B & $[0.169275, 0.169275]$ & $\boldsymbol{[0.138501, 0.283651]}$ & $0$ & 0\\
 RingSQL-style adaptation & $[0.096309, 0.100791]$ & $[0.283403, 0.435663]$ & $[-0.233594, -0.061506]$ & 46\\
 OmniSQL component adaptation & $[0.029731, 0.134760]$ & $[0.564696, 0.862439]$ & $[-0.665769, -0.324655]$ & 1,290\\
 SynthSQL-style local adaptation & $[0.013004, 0.166928]$ & $[0.268596, 0.642072]$ & $[-0.453605, -0.021084]$ & 2,040\\

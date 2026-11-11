@@ -8,7 +8,7 @@
     {
       "path": "CITATION.cff",
       "bytes": 607,
-      "sha256": "fb6ee0dc4179edd1722822dff3d4e674fff0102854a527bf8b995fe675c1093b"
+      "sha256": "d7dd0515a8791200c6c300cc8bbbbe93f8b55af89da813f42a5e51d3a2e18bd7"
     },
     {
       "path": "NOTICE.txt",
@@ -18,7 +18,7 @@
     {
       "path": "README.md",
       "bytes": 7323,
-      "sha256": "e95588668a7ccdee04bbf2824b281d268bafde37dc130ec5fc3708e557cf364c"
+      "sha256": "bcfaa773b415139cfd61969eeed7d3b74476695f099c6323b23374dda5b747a7"
     },
     {
       "path": "configs/databases.json",
@@ -373,12 +373,12 @@
     {
       "path": "docs/followup.md",
       "bytes": 4888,
-      "sha256": "9f3d8f2b0ce017b6ec7ee9e9a9e79286086592eb55f3368cb927987196c3541c"
+      "sha256": "f4d7b5c06c868269cb7e749abe3796bbcfa76b5a205564955f918309e1c0d9e7"
     },
     {
       "path": "docs/historical.md",
       "bytes": 1867,
-      "sha256": "4a22343cf07db1f14f3414527e7c7160270e587d14f01936948a95023dad947b"
+      "sha256": "ecbee28eb70ee5dc6660319c8b01f5d6b5d8e0d8543956554a31ba8301b9bdab"
     },
     {
       "path": "docs/overview.png",
@@ -387,13 +387,13 @@
     },
     {
       "path": "docs/paper-map.md",
-      "bytes": 3991,
-      "sha256": "86062aa1ec75edf24feaf70fe05e61fb4f30e21d4f812249a25b786884a3c637"
+      "bytes": 4472,
+      "sha256": "147abfd4f562753d66d489e6cb114c64abeffc17d466941900e4771973b7ddff"
     },
     {
       "path": "docs/reproduction.md",
       "bytes": 7063,
-      "sha256": "b5370c5e6a57b2a0815de19a7f9e6c65d98f09c29177138c3b32007a80821279"
+      "sha256": "42d58ec8d1a3866d6e3ffa35adf80d8ebb05407418027ebe541106208165ced0"
     },
     {
       "path": "evaluation/cache_check/original_result.json",
@@ -821,6 +821,11 @@
       "sha256": "ac8e30c15d1b7e576ba13172200ee97c22717d61a93a3c7fbc90955c514faf63"
     },
     {
+      "path": "paper/Schema2Bench_ICDE2027_v40.pdf",
+      "bytes": 814007,
+      "sha256": "fb0a38a486e41be3c5ee86d1e6492593334cf918be1195c512a32251dd12f0e9"
+    },
+    {
       "path": "paper/build.sh",
       "bytes": 147,
       "sha256": "af326de1038132f810c60aee612a0a34089079fca86fdf11d15d25bd8fdf1afb"
@@ -888,7 +893,7 @@
     {
       "path": "paper/main.tex",
       "bytes": 2497,
-      "sha256": "b44cfa2f8fcd4642ab1076d28b90f02665194c5c6029608b84bf4ddc93fb89a6"
+      "sha256": "415b22e2df4e1e44f4f5e7929137d7cb618b232ff09a443cdacc28eb32d6ac72"
     },
     {
       "path": "paper/references_submission.bib",
@@ -902,13 +907,13 @@
     },
     {
       "path": "paper/sections/current_scientific_main.tex",
-      "bytes": 37829,
-      "sha256": "017a1f497a257e4edac6cd0ff01fccec3e6cf4f5ea1e74da8acc28447d135dd8"
+      "bytes": 37918,
+      "sha256": "c57283d48779f0cbe4cd1f0791c8de00f43a6b7815c4fc84ab5cf5c68af1fe93"
     },
     {
       "path": "paper/sections/migration_tables_20261107.tex",
-      "bytes": 2032,
-      "sha256": "ce1cb1440f9bd055d3fd43d8b5f735dc67f0329cbe7e41cbafb947054e0d6379"
+      "bytes": 2117,
+      "sha256": "6bae5ef9647967319b406bad264d5b81940ce9c81634314ebce35e849df2e4c1"
     },
     {
       "path": "paper/sections/paired_construction_20261109.tex",
@@ -917,13 +922,13 @@
     },
     {
       "path": "paper/sections/question_realization_20261109.tex",
-      "bytes": 2168,
-      "sha256": "c039ccedf0d5802f24c1d42d696f01db0e909741a01db17276a92fc5b3e3e51e"
+      "bytes": 2226,
+      "sha256": "dca1585f93e0a76a6b25dc8aa7ff4051765fda56f512b8cfed8f9241bcce48aa"
     },
     {
       "path": "paper/sections/robustness_20261109.tex",
-      "bytes": 13102,
-      "sha256": "8b8b67a48d1b548ac94f1639ef622368534a8e14b0fb132151d89e0d66a72c79"
+      "bytes": 13143,
+      "sha256": "0e45b15d014374c6e5f46b28e4a39df2b59d6cdfad9e281ba93bcddd4f049ad2"
     },
     {
       "path": "paper/sections/submission_main.tex",
@@ -942,8 +947,8 @@
     },
     {
       "path": "provenance/manuscript.json",
-      "bytes": 1402,
-      "sha256": "336adfa052999f4425c5ccb1a6ecfc3b958deecc24108cb23036f89c9d10155c"
+      "bytes": 1996,
+      "sha256": "c0864b49afa7c13b51b49ab9baf6f5cb95e49280ee6219d03595d703593728fa"
     },
     {
       "path": "provenance/sources.json",
@@ -1176,6 +1181,6 @@
       "sha256": "300736032288807d04648c77963038207fbe4af907fd15d02083f9b72a4878de"
     }
   ],
-  "total_bytes": 59138274,
+  "total_bytes": 59953629,
   "scope": "Research artifact for offline reanalysis, including earlier seven-database selection and construction, BEAVER context and uniform semantic follow-ups; databases and model weights are external dependencies."
 }

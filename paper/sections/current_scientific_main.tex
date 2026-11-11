@@ -214,14 +214,14 @@ Unknown scores fall from 692 to 607 among 10,340 source outputs and from 195 to 
 
 \input{sections/migration_tables_20261107}
 \subsubsection{Source Fidelity and Target Alignment}
-Source fidelity and target alignment favor different methods (Table~\ref{tab:main}). Schema2Bench improves Template's Verified gap by 0.055693 and source TEF over all comparators; Ring, Omni and Synth have lower gap.
+Source fidelity and target alignment favor different methods (Table~\ref{tab:main}). Schema2Bench improves Template's Verified gap by \textbf{0.055693} and source TEF over all comparators; Ring, Omni and Synth have lower gap.
 
 Figure caps mark bounds; ticks mark coincident endpoints.
 
 All four mean Verified TEF contrasts remain negative across ten overlapping releases, reusing fixed Ring/Omni/Synth sets. Base means cross zero for Template/Ring/Synth; Omni remains favorable.
 
 \subsubsection{Model Ranking}
-Across ten releases under Verified scoring, mean gap decreases from 0.224640 to 0.168988 (5.5652 pp) and mean domain $\tau$-b rises from 0.2292 to 0.3272. California and codebase nevertheless lose rank fidelity, distinguishing gap magnitude from ordering.
+Across ten releases under Verified scoring, mean gap decreases from 0.224640 to 0.168988 (\textbf{5.5652 pp}) and mean domain $\tau$-b rises from 0.2292 to 0.3272. California and codebase nevertheless lose rank fidelity, distinguishing gap magnitude from ordering.
 
 Per seed, 1,000 bootstrap draws separately resample matched SQL-skeleton clusters and references. All ten rank-difference estimates are positive; 8/10 conditional 95\% intervals exclude zero, omitting missingness and pool selection.
 
@@ -262,15 +262,15 @@ Most Template--S2B gap improvement precedes selection (Table~\ref{tab:anchor}(a)
 \label{tab:anchor}
 \begin{tabular}{lrrr}\toprule
 \multicolumn{4}{l}{\textit{(a) BIRD: construction versus selection}}\\
-Selection & Swaps & $H$ & $I_G$ (pp)\\\midrule
+Selection & Swaps & $H$ & $I_G\uparrow$ (pp)\\\midrule
 Initial stratified sample &0&0&5.5386\\
-Matched random swaps &10&0.01&5.5449\\
-Structural adjustment &10&0.01&5.5652\\\midrule
+Matched random swaps &10&0.01&\underline{5.5449}\\
+Structural adjustment &10&0.01&\textbf{5.5652}\\\midrule
 \multicolumn{4}{l}{\textit{(b) Seven additional databases: selection}}\\
 Selector & \multicolumn{2}{c}{Structural loss} & TEF\\\midrule
 Stratified random & \multicolumn{2}{c}{0.269519} &0.050071\\
-Structural greedy & \multicolumn{2}{c}{0.213055} &0.048692\\
-Bounded selection & \multicolumn{2}{c}{0.260790} &0.047229\\\bottomrule
+Structural greedy & \multicolumn{2}{c}{\textbf{0.213055}} &\underline{0.048692}\\
+Bounded selection & \multicolumn{2}{c}{\underline{0.260790}} &\textbf{0.047229}\\\bottomrule
 \end{tabular}\end{table}
 
 Initial mean $\tau$-b is 0.2312/0.3270 for Template/S2B versus 0.2292/0.3272 after adjustment. Structural-minus-matched-random TEF is $[+0.000227,+0.000977]$ with source schema summaries (8/10 unfavorable; 2/10 unresolved) and $[-0.000777,+0.000452]$ with source DDL (2/10 favorable; 8/10 unresolved).
