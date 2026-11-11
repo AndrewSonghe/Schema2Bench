@@ -1,6 +1,8 @@
 # External and semantic checks
 
-The main comparison remains the eight-database BIRD study. Two later checks
+The main comparison remains the eight-database BIRD study. In manuscript v39,
+these checks appear in Sections V-D2/V-D3 (semantic assessment) and V-E
+(generalization). The original identifier `refill` remains in the saved records. Two later checks
 examine its transfer scope and the interpretation of question rewriting.
 Their score-based analyses can be replayed with:
 
@@ -12,21 +14,21 @@ python3 scripts/replay_followup.py
 
 The pilot uses the SQLite-converted BEAVER distribution provided by
 [CORE-T](https://github.com/UKPLab/emnlp2026-core-t), rather than the original
-MySQL environment. Template and Refill did not reach the original 250-pair
+MySQL environment. Template and S2B did not reach the original 250-pair
 construction requirement in two databases. A separate partial-panel protocol
 retains 250 tasks per method in DW, 198 in Nova and 24 in Neutron, together with
 121, 43 and 30 references. Nova and Neutron are related databases. These are
 fixed unequal populations, not three independent draws from a domain population.
 
-All ten models evaluate Template, Refill, Ring and the references. The first
+All ten models evaluate Template, S2B, Ring and the references. The first
 condition uses retrieved schemas. The control supplies all required tables and
 views, including view dependencies, selected using reference SQL. The SQL itself
 is hidden from the evaluator. All 1,610 target prompts use this oracle selection;
 the 1,034 Spider prompts use full compact DDL. Every prediction is regenerated in
 the control, and TEF uses the source scores from the corresponding context.
 
-The table reports Verified direct Refill-minus-comparator differences. Negative
-values favor Refill. Bounds preserve shared uncertain source/reference variables;
+The table reports Verified direct S2B-minus-comparator differences. Negative
+values favor S2B. Bounds preserve shared uncertain source/reference variables;
 they are conservative score bounds, not confidence intervals.
 
 | Context | Comparator | TEF difference | Target-gap difference |
@@ -36,7 +38,7 @@ they are conservative score bounds, not confidence intervals.
 | Sufficient schema | Template | [-0.142702, -0.028519] | [-0.083884, +0.049262] |
 | Sufficient schema | Ring | [-0.130602, +0.168975] | [-0.051570, +0.064633] |
 
-Refill's source-fidelity advantage over Template persists in both contexts.
+S2B's source-fidelity advantage over Template persists in both contexts.
 Against Ring it is unresolved in the sufficient-schema condition; Neutron's
 sufficient-schema TEF and gap both favor Ring. Reference scores contain 660 and
 663 unknowns out of 1,940, respectively, and only 21 definite matches in either
@@ -65,7 +67,7 @@ requests; these are not byte-identical requests.
 | Rewrite | 117 | 32 | 10 | 1 |
 | Reference | 89 | 54 | 17 | 0 |
 
-Union with prior flags gives 24 original Refill, 43 rewrite, 23 Ring and 71
+Union with prior flags gives 24 original S2B, 43 rewrite, 23 Ring and 71
 reference concerns. Only these scores are relaxed; no new labels are assigned
 to unsampled items. Denominators remain 2,000 tasks per method, 906 references
 and 1,034 source items. Under Verified scoring, rewrite-minus-original gap is

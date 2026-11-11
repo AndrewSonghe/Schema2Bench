@@ -3,4 +3,5 @@
 numpy>=1.24,<3
 scipy>=1.11,<2
 matplotlib>=3.8,<4
+pymupdf>=1.24,<2
 sqlglot==27.14.0

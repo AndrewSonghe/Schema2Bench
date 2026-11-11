@@ -19,8 +19,12 @@ def configure():
     for f in ['/System/Library/Fonts/Supplemental/Arial.ttf','/System/Library/Fonts/Supplemental/Arial Bold.ttf']:
         from pathlib import Path
         if Path(f).exists(): font_manager.fontManager.addfont(f)
-    font_manager.findfont('Arial',fallback_to_default=False)
-    plt.rcParams.update({'font.family':'Arial','font.size':8.5,'axes.titlesize':9.2,
+    try:
+        font_manager.findfont('Arial',fallback_to_default=False)
+        family = 'Arial'
+    except ValueError:
+        family = 'DejaVu Sans'
+    plt.rcParams.update({'font.family':family,'font.size':8.5,'axes.titlesize':9.2,
       'axes.labelsize':8.5,'xtick.labelsize':8,'ytick.labelsize':8.5,'pdf.fonttype':42,
       'svg.fonttype':'none','axes.spines.top':False,'axes.spines.right':False,
       'axes.linewidth':.7,'savefig.facecolor':'white','figure.facecolor':'white'})

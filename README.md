@@ -2,21 +2,27 @@
 
 **Evidence-Grounded Cross-Domain Text-to-SQL Benchmark Migration**
 
-Schema2Bench constructs Text-to-SQL benchmark workloads for new relational
-databases using schema constraints, sampled values and execution checks. It
-combines SQL construction and question generation with quota-constrained
-selection. A perturbation bound controls selection-induced changes in source
-fidelity, and structural coverage analysis identifies shortages in the candidate
-pool. Evaluation examines both source model behavior and model differences on
-target reference tasks.
+Schema2Bench (S2B) migrates Text-to-SQL evaluation workloads to new relational
+databases through three modules. **Benchmark Construction** grounds source SQL
+patterns in target schemas and sampled values, then generates questions.
+**Workload Selection** adjusts structural composition under fixed quotas, bounds
+changes in source fidelity and identifies candidate-pool deficits.
+**Benchmark Evaluation** separately measures source fidelity and agreement with
+model accuracy gaps on target references.
+
+This repository accompanies [manuscript v39](paper/Schema2Bench_ICDE2027_v39.pdf)
+(12 body pages, 15 pages including the AI-use disclosure and references).
+The retained identifier `refill` in data, filenames and replay output denotes S2B.
 
 ![Benchmark migration across databases](docs/overview.png)
 
 The main study compares five constructions on eight databases from BIRD with ten models,
-2,000 tasks per method and 906 target references. Refill improves source fidelity
-and target-gap error over the template baseline under the reported scoring
-convention. Ring-style construction gives lower target gap and mean selection
-regret. Under execution scoring, rewriting questions with SQL fixed improves
+2,000 tasks per method and 906 target references. Under Verified execution
+scoring and the declared weights, S2B improves source fidelity over all four
+comparators and reduces Template's target-gap error from 0.225 to 0.169.
+Ring, Omni and Synth have lower target gap than S2B; Ring also has lower mean
+selection regret. Most improvement over Template precedes workload selection.
+Under execution scoring, rewriting questions with SQL fixed improves
 target alignment but reduces source fidelity. A uniform semantic review leaves
 both directions unresolved when sampled concerns are treated as unknown scores.
 
@@ -47,7 +53,8 @@ python3 scripts/recount_historical.py
 
 The main replay recomputes both scoring layers for all ten releases and compares
 the tables and direct method contrasts with the archived values. It prints one
-confirmation per release. Semantic recount verifies the 4,000 API judgments;
+confirmation per release. Semantic recount checks the counts of 4,000 archived
+API judgments without validating their semantic correctness;
 the witness replay checks the saved binary assignment used in the reference-risk
 analysis. The follow-up replay checks the BEAVER schema-context comparison and
 the uniform semantic sensitivity. See [reproduction instructions](docs/reproduction.md) for expected
@@ -63,9 +70,9 @@ outputs and additional commands.
 | `evaluation/` | Execution scorer, proof records, semantic prompt and archived labels |
 | `data/` | Task sets, shared prompt prefixes and compact model-output records |
 | `replay/` | Score matrices, membership lists and executable result checks |
-| `figures/` | Plotting code and the data for Figures 3-6 |
+| `figures/` | Current figures, editable sources for Figures 1-2, and plotting code/data for Figures 3-6 |
 | `configs/` | Model fingerprints, database hashes and experiment settings |
-| `paper/` | Manuscript source and figures |
+| `paper/` | v39 manuscript PDF, source and fixed figure assets |
 
 [Data formats](docs/data.md) explain the record fields and scoring layers.
 [Paper-to-artifact mapping](docs/paper-map.md) identifies which results can be
@@ -99,7 +106,10 @@ paper's screened population or establish semantic correctness.
 
 ## Reproduction scope
 
-The repository supports offline reanalysis of the retained records. Database
+The repository supports offline reanalysis of the retained records. Some
+additional experiments are supplied as saved analyses or reported results only;
+the [coverage map](docs/paper-map.md) specifies the available inputs for each.
+Database
 files, model weights and full token-ID arrays are excluded. The compressed
 prediction files retain model output text, parsed SQL, termination information
 and input hashes. Re-running SQL requires the database snapshots identified in
@@ -133,4 +143,7 @@ With TeX Live (including IEEEtran) and `latexmk` installed:
 sh paper/build.sh
 ```
 
-The PDF is written to `paper/build/main.pdf`.
+The PDF is written to `paper/build/main.pdf`. The build uses the supplied v39
+figures and does not rerun experiments or require plotting dependencies.
+The archived [v39 PDF](paper/Schema2Bench_ICDE2027_v39.pdf) and its SHA-256 are
+identified in `provenance/manuscript.json`.

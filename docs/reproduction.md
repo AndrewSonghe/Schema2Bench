@@ -1,6 +1,8 @@
 # Reproducing the analyses
 
-Run commands from the repository root. The standard-library replay requires no
+These instructions accompany manuscript v39. S2B is recorded as `refill` in
+the unchanged data keys and replay output. Run commands from the repository root.
+The standard-library replay requires no
 installation. Optional construction and plotting commands use `requirements.txt`.
 
 ## Main comparison
@@ -56,7 +58,7 @@ python3 scripts/recount_semantic.py
 python3 scripts/replay_witness.py
 ```
 
-Semantic recount reproduces the generated-task panel in Table VIII from the
+Semantic recount reproduces the generated-task panel in Table VIII(a) from the
 final 4,000-item label file. The prompt and response schema are included under
 `evaluation/semantic/`. The one unavailable response remains in the denominator.
 The reference cross-check panel uses a different sample. The uniform Terra
@@ -93,6 +95,8 @@ database execution. Context definitions and interpretation are in
 
 ## Figures
 
+Install the optional dependencies from `requirements.txt`, then run:
+
 ```bash
 python3 figures/draw_fig3.py
 python3 figures/draw_fig4.py
@@ -100,10 +104,29 @@ python3 figures/draw_fig5.py
 python3 figures/draw_fig6.py
 ```
 
-The scripts check their saved numerical inputs and write PDFs, PNGs and local
-validation output. They redraw archived analyses; only the main matrix replay
-recomputes the complete five-method comparison from item scores. Figures 1 and 2
-are conceptual diagrams supplied with the manuscript.
+The scripts check their saved numerical inputs and write PDFs, SVGs and local
+validation output under `figures/`. Add `--preview /path/to/previews` to write
+PNGs. The published figures use Arial; plotting falls back to Matplotlib's
+DejaVu Sans when Arial is unavailable, so font metrics can differ. The original
+numerical inputs remain fixed. These commands redraw saved analyses; the main
+matrix replay separately recomputes the five-method comparison from item scores.
+
+Figure 1 is supplied as an editable PowerPoint drawing (`figures/Fig1.pptx`)
+and its exported PDF. Figure 2 is a vector diagram; `python3 figures/edit_fig2.py`
+recreates its current labels from `figures/Fig2_base.pdf` using PyMuPDF. These
+two figures illustrate the problem and method, not measured outcomes.
+
+The manuscript builds with fixed assets in `paper/figures/current/`. Plotting
+does not overwrite those assets. `paper/figures/v8/` retains the older layout;
+it is not used by the v39 build. To read the exact submission rendering, use
+`paper/Schema2Bench_ICDE2027_v39.pdf`. To rebuild from source:
+
+```bash
+sh paper/build.sh
+```
+
+The output is `paper/build/main.pdf`. This requires TeX Live with IEEEtran and
+`latexmk`, but no database, API key or plotting dependencies.
 
 ## Full reruns
 

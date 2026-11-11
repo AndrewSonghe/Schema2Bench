@@ -54,7 +54,7 @@ for method,offset,color in [('refill',-.17,BLUE),('ring',.17,ORANGE)]:
         bars.append({'method':method,'domain':d,'solid_height':lo,'hatched_height':hi-lo,'total_height':hi})
 ax.set(xlim=(-.6,7.6),ylim=(0,16.2),xticks=range(8),yticks=[0,5,10,15],ylabel='Regret (pp)')
 ax.set_xticklabels(short,fontsize=8.1);ax.tick_params(axis='x',length=0,pad=6)
-ax.legend(handles=[Patch(fc=BLUE,label='Refill'),Patch(fc=ORANGE,label='Ring'),
+ax.legend(handles=[Patch(fc=BLUE,label='S2B'),Patch(fc=ORANGE,label='Ring'),
  Patch(fc='white',ec=INK,hatch='////',label='Bounds')],loc='lower right',
  bbox_to_anchor=(1,1.025),borderaxespad=0,ncol=3,frameon=False,fontsize=8.3,
  handletextpad=.4,columnspacing=1.4,handlelength=1.4)

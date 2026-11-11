@@ -1,28 +1,25 @@
-\subsection{Question realization with fixed SQL}\label{sec:realization}
-A preliminary comparison finds 1,973 Ring--Template pairs sharing SQL, domain and schema prefixes but differing in questions. Ring's execution-match rate is $[-13.96,-13.73]$ pp lower, motivating a controlled wording intervention.
+\subsubsection{Question Generation}\label{sec:realization}
+To isolate the role of wording, we hold SQL fixed. A preliminary comparison finds 1,973 Ring--Template pairs sharing SQL, domain and schema prefixes but differing in questions. Ring's execution-match rate is $[-13.96,-13.73]$ pp lower, motivating a controlled wording intervention.
 
-We retain all 2,000 first-release Refill SQLs and quotas with Ring-style Qwen2.5-7B realization. The plan and 160-item audit (20/domain) precede generation. It yields 1,999 format-valid questions and 19,990 predictions; the remaining item stays unknown.
+We retain all 2,000 first-release S2B SQLs and quotas and use Ring-style Qwen2.5-7B question generation. The plan and 160-item audit (20/domain) precede generation. It yields 1,999 format-valid questions and 19,990 predictions; the remaining item stays unknown.
 
-
-
-
-Rewriting improves Verified gap in all eight domains (Fig.~\ref{fig:construction-effects}(d)) and aggregate Base gap, while reducing source fidelity (Table~\ref{tab:realization-results}). Concordances increase, but regret intervals overlap. Against Ring, rewritten questions retain lower TEF with unresolved gap difference.
+Rewriting improves Verified gap in all eight domains and aggregate Base gap, but worsens Verified TEF (Table~\ref{tab:realization-results}). Concordances increase; regret intervals overlap. Against Ring, TEF is lower and gap unresolved.
 
 \begin{table*}[t]\centering\small
-\caption{Same-SQL question rewriting on the first release. Panel (a) reports Verified outcomes; rank counts use 360 dependent model pairs and regret is in accuracy pp. Panel (b) reports direct unknown-score bounds; negative favors rewriting.}
+\caption{Question rewriting with fixed SQL on the first release. Panel (a): Verified outcomes; concordances are definite matching orders among 360 dependent model pairs; regret is in accuracy pp. Panel (b) reports direct bounds under unknown scores; negative favors rewriting.}
 \label{tab:realization-results}
 \begin{tabular}{lrrr}\toprule
-\multicolumn{4}{l}{\textit{(a) Release outcomes}}\\
+\multicolumn{4}{l}{\textit{(a) Overall results}}\\
 Release & Target gap & Definite concordances & Mean regret (pp)\\\midrule
-Original Refill & $0.169275$ & 229/360 & $[5.48,7.98]$\\
-Rewritten Refill & $[0.097452,0.102706]$ & 248/360 & $[4.30,5.57]$\\
+Original S2B & $0.169275$ & 229/360 & $[5.48,7.98]$\\
+Rewritten S2B & $[0.097452,0.102706]$ & 248/360 & $[4.30,5.57]$\\
 Ring & $[0.096309,0.100791]$ & 246/360 & $[4.41,4.96]$\\\midrule
 \multicolumn{4}{l}{\textit{(b) Direct differences}}\\
 Contrast & Scoring & $\Delta\mathrm{TEF}$ & $\Delta G$\\\midrule
-Rewritten $-$ original Refill & Verified & $[+0.035191,+0.203968]$ & $[-0.071823,-0.066569]$\\
+Rewritten $-$ original S2B & Verified & $[+0.035191,+0.203968]$ & $[-0.071823,-0.066569]$\\
 Rewritten $-$ Ring & Verified & $[-0.046174,-0.009796]$ & $[-0.003339,+0.006397]$\\
-Rewritten $-$ original Refill & Base & Crosses zero & $[-0.120114,-0.002971]$\\\bottomrule
+Rewritten $-$ original S2B & Base & Crosses zero & $[-0.120114,-0.002971]$\\\bottomrule
 \end{tabular}\end{table*}
 
-Terra labels 117/160 items supported, 32 incorrect and ten insufficient, with one unavailable, reusing exposed synthetic controls. Section~\ref{sec:risk-sources} examines sensitivity to these semantic judgments. This SQL pool is separate from the original frozen-pool qualification.
+Terra supports 117/160 tasks using exposed synthetic controls; concerns about changes in task meaning remain despite fixed SQL (Section~\ref{sec:risk-sources}). This intervention does not alter the original qualification outcome.
 

@@ -7,7 +7,7 @@
     -0.012477126604678732,
     -0.0012612722974425024
   ],
-  "fig4/Question realization/tef": [
+  "fig4/Question wording/tef": [
     0.03519058255204056,
     0.20396752104098725
   ],
@@ -83,39 +83,39 @@
     0.01217777777777778,
     0.012177777777777784
   ],
-  "fig4/Question realization/gap": [
+  "fig4/Question wording/gap": [
     -0.07182319673531166,
     -0.06656892662460517
   ],
-  "fig4/Question realization/california_schools/gap": [
+  "fig4/Question wording/california_schools/gap": [
     -0.1784,
     -0.1752
   ],
-  "fig4/Question realization/card_games/gap": [
+  "fig4/Question wording/card_games/gap": [
     -0.06029552669552666,
     -0.05949552669552666
   ],
-  "fig4/Question realization/codebase_community/gap": [
+  "fig4/Question wording/codebase_community/gap": [
     -0.06326913580246914,
     -0.056151633986928115
   ],
-  "fig4/Question realization/european_football_2/gap": [
+  "fig4/Question wording/european_football_2/gap": [
     -0.025830525030525003,
     -0.009187789987789964
   ],
-  "fig4/Question realization/financial/gap": [
+  "fig4/Question wording/financial/gap": [
     -0.09348943089430894,
     -0.08557181571815717
   ],
-  "fig4/Question realization/formula_1/gap": [
+  "fig4/Question wording/formula_1/gap": [
     -0.08600804899387575,
     -0.08600804899387575
   ],
-  "fig4/Question realization/superhero/gap": [
+  "fig4/Question wording/superhero/gap": [
     -0.0454854990583804,
     -0.03912919020715629
   ],
-  "fig4/Question realization/thrombosis_prediction/gap": [
+  "fig4/Question wording/thrombosis_prediction/gap": [
     -0.021807407407407428,
     -0.021807407407407428
   ]

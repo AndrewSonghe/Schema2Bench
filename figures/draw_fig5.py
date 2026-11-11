@@ -26,7 +26,7 @@ def draw_fig5(data,output,preview=None):
 
     for j,other in enumerate(['refill','ring']):
         left=.215+j*.41
-        fig.text(left,.945,f'({chr(97+j)}) Rewrite - {"Refill" if other=="refill" else "Ring"}',
+        fig.text(left,.945,f'({chr(97+j)}) Rewrite - {"S2B" if other=="refill" else "Ring"}',
           fontsize=9.2,fontweight='bold')
         ax=fig.add_axes([left,.52,.32,.34]);style.axes_style(ax)
         ax.axhspan(4.5,5.5,color='#F0F3F6',zorder=0)
@@ -54,11 +54,11 @@ def draw_fig5(data,output,preview=None):
 
     fig.text(.025,.865,'Target gap',fontsize=9.2,fontweight='bold')
     fig.text(.025,.337,'Source TEF',fontsize=9.2,fontweight='bold')
-    fig.text(.58,.043,'W  Adverse witness       ?  Unresolved',ha='center',va='center',fontsize=8.3)
+    fig.text(.58,.043,'W  Feasible reversal       ?  Unresolved',ha='center',va='center',fontsize=8.3)
     report=style.save(fig,output,preview)
     report.update({'layout':'fixed comparison columns; gap above TEF','scenario_count':6,
       'plotted_bound_pairs':len(plotted),'status_markers':statuses,
-      'legend_labels':['Adverse witness','Unresolved']})
+      'legend_labels':['Feasible reversal','Unresolved']})
     return plotted,report
 
 if __name__=='__main__':

@@ -1,9 +1,10 @@
 # Earlier seven-database experiments
 
-Section VI-A and Table IV(b) report experiments on Chinook, IMDb, Instacart,
+Section V-C1 and Table IV(b) of v39 report experiments on Chinook, IMDb, Instacart,
 SFDFFD, TPC-DS, TPC-H and USAccidents. They evaluate an earlier SQL-first
 constructor and selection modules. Their seven-model panel differs from the
-current ten-model deterministic Refill comparison on BIRD.
+current ten-model S2B comparison on BIRD. The identifier `refill` is retained
+in the archived files and replay output.
 
 The compact records in `evaluation/historical/` contain:
 
@@ -30,7 +31,7 @@ higher token cost.
 All 14 cost-aware exchanges occur in TPC-DS because the old release has unequal
 domain quotas. The pooled reduction does not show improvement within every
 database. Structural greedy retains lower structural loss. These are reused
-development records, not independent confirmation of the current Refill
+development records, not independent confirmation of the current S2B
 implementation or evidence of target model-selection gains. The recount checks
 archived cell and release summaries; it does not repeat inference or reconstruct
 every historical membership from item-level responses.

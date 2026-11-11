@@ -1,5 +1,8 @@
+% ICDE 2027 v39: S2B naming and database-oriented method and evaluation exposition.
+% Format-only snapshot and complete routing records are preserved.
 \documentclass[conference]{IEEEtran}
 \usepackage[numbers,sort&compress]{natbib}
+% Restore the IEEEtran bibliography font/spacing replaced by natbib.
 \renewcommand{\bibfont}{\footnotesize\interlinepenalty=10000}
 \setlength{\bibsep}{\IEEEbibitemsep}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
@@ -14,20 +17,19 @@
 \usepackage{placeins}
 \usepackage{flushend}
 \usepackage{pgfplots}
-\usepackage{microtype}
+\usepackage[protrusion=false]{microtype}
 \usepackage{hyperref}
 \usepackage{url}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{arrows.meta,positioning,fit,calc}
-\hypersetup{colorlinks=true,allcolors=black}
+\hypersetup{colorlinks=true,allcolors=black,pdftitle={Schema2Bench: Evidence-Grounded Cross-Domain Text-to-SQL Benchmark Migration}}
 \graphicspath{{./}}
-\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
-\setlength{\dbltextfloatsep}{12pt plus 2pt minus 2pt}
 
 \newtheorem{proposition}{Proposition}
 \newcommand{\tef}{\mathrm{TEF}}
 
 \title{Schema2Bench: Evidence-Grounded Cross-Domain Text-to-SQL Benchmark Migration}
+% Author order and affiliations from the supplied OpenReview page; Luo affiliation confirmed by user.
 \author{\IEEEauthorblockN{He Song\IEEEauthorrefmark{1}, Ning Liu\IEEEauthorrefmark{1}, Haitao Yuan\IEEEauthorrefmark{2}, Yonghui Xu\IEEEauthorrefmark{1}, Lizhen Cui\IEEEauthorrefmark{1},\\
 Wenpeng Hu\IEEEauthorrefmark{3}, Zhunchen Luo\IEEEauthorrefmark{3}, Guotong Geng\IEEEauthorrefmark{3}}
 \IEEEauthorblockA{\IEEEauthorrefmark{1}Shandong University\\
@@ -42,10 +44,9 @@ Wenpeng Hu\IEEEauthorrefmark{3}, Zhunchen Luo\IEEEauthorrefmark{3}, Guotong Geng
 
 
 \FloatBarrier
-\label{closure:main-end}
 \clearpage
 \section*{Acknowledgments and AI use disclosure}
-OpenAI Codex assisted with language editing, partial translation and partial data analysis. Qwen-based models supported SQL and question generation (Sections~\ref{sec:framework}--\ref{sec:construction}); OpenAI's \texttt{gpt-6-astra} API and Qwen/Terra models provided semantic judgments (Sections~\ref{sec:semantic}--\ref{sec:risk-sources}). The authors are responsible for the content and conclusions.
+OpenAI Codex assisted with language editing, analysis code (Sections~\ref{sec:objectives}, \ref{sec:methodology} and~\ref{sec:experiments}) and figure preparation (Figs.~\ref{fig:problem}--\ref{fig:weights}). Qwen-based models supported task generation, and OpenAI's \texttt{gpt-6-astra} API and Qwen/Terra models supported semantic assessment (Sections~\ref{sec:comparators}, \ref{sec:realization} and~\ref{sec:semantic}--\ref{sec:risk-sources}). The authors are responsible for the content and conclusions.
 \bibliography{references_submission}
 \bibliographystyle{IEEEtranN}
 \end{document}

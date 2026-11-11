@@ -1,12 +1,12 @@
-\subsection{Column preference and value sampling}\label{sec:ablation}
-Separate controls disable descriptive-column preference or reduce value sampling from fifty to five. Each uses ten models, 1,034 source tasks, 906 references, 38 strata, 250 tasks/domain/arm and $H=0.01$. Slots pair random states and plans with separate deduplication; both candidates must qualify in the same final stratum. These releases differ from the main comparison.
+\subsubsection{Column Preference and Value Sampling}\label{sec:ablation}
+Separate releases disable descriptive-column preference or reduce value sampling from fifty to five. They share the main model/source/reference panel, 38 strata, 250 tasks/domain/arm and $H=0.01$. Attempts pair random states and plans; separately deduplicated candidates must qualify in the same final stratum.
 
-Preference removes only descriptive-name priority, retaining identifier filtering, text preference, grounding and admission. Programmatic realization uses eight-second and 1,000-row caps. Four domains require 1,600 extra slots each before freezing; the arms share 1,159/2,000 question--SQL slots. Depth fixes 2,400 slots/domain/arm: fifty/five values admit 7,131/6,149 candidates, with 5,375 joint admissions and 769 shared released slots. Astra supports both versions of 80 depth pairs, 24 with identical prompts, using exposed controls. These admission differences remain part of the controls.
+The preference control removes only priority for descriptive column names, retaining identifier filtering, text preference, grounding and admission. Programmatic question generation uses eight-second and 1,000-row caps. Four domains require 1,600 extra slots each before freezing; the arms share 1,159/2,000 question--SQL slots. Depth fixes 2,400 slots/domain/arm: fifty/five values admit 7,131/6,149 candidates, with 5,375 joint admissions and 769 shared released slots. Astra supports both versions of 80 depth pairs, 24 with identical prompts, using exposed controls. These admission differences remain part of the controls.
 
-Native SQLite checks resolve 827 preference and 903 depth parser-rejected predictions as mismatches without rewriting SQL. Identical domain/request/prompt/gold/raw-output bindings share one unknown variable across arms; other unknowns remain conservatively relaxed. This post-hoc treatment changes dependence, not scores or membership. Table~\ref{tab:ablation-layers} retains the earlier independent-arm bounds.
+SQLite compilation resolves 827 preference and 903 depth parser rejections as mismatches without rewriting SQL. Identical requests and outputs share unknown outcomes across arms; other unknowns remain relaxed. This post-hoc treatment preserves scores, membership and identity records. Table~\ref{tab:ablation-layers} retains earlier independent-arm bounds.
 
 \begin{table*}[t]\centering\small
-\caption{Separate construction controls under Verified scoring. Negative favors full preference or fifty values. Shared-request bounds bind identical outcomes; independent-arm bounds retain the earlier relaxation.}
+\caption{Separate construction controls under Verified scoring. Negative favors full preference or fifty values. Bounds with shared variables bind identical outcomes; independent-arm bounds retain the earlier relaxation.}
 \label{tab:ablation-layers}
 \begin{tabular}{llrr}\toprule
 Intervention & Unknown-variable treatment & Direct TEF difference & Direct target-gap difference\\\midrule
@@ -16,11 +16,9 @@ Column preference & Shared identical requests & $[-0.016593,-0.005466]$ & $[-0.0
 50 versus 5 values & Shared identical requests & $[-0.012477,-0.001261]$ & $[+0.001863,+0.002221]$\\\bottomrule
 \end{tabular}\end{table*}
 
-Column preference improves both aggregate metrics; deeper sampling improves TEF at a small gap cost (Table~\ref{tab:ablation-layers}). Base-layer TEF also favors both; gap bounds cross zero. Numerical LP checks reproduce 26 aggregate/domain comparisons per intervention.
+Column preference improves both aggregate metrics; deeper sampling trades a small gap cost for better TEF (Table~\ref{tab:ablation-layers}). Base TEF favors both, with unresolved gaps. LP checks reproduce 26 aggregate/domain contrasts per intervention.
 
-Domain effects differ (Fig.~\ref{fig:construction-effects}(b)--(d)). Column preference worsens gap in card games and codebase. Excluding European football changes its seven-domain mean to $[+0.001899,+0.004625]$; excluding Formula 1 leaves the direction unresolved. Value depth also has mixed effects. By comparison, question realization improves verified gap in all eight domains.
-
-
+Column preference worsens gap in card games and codebase (Fig.~\ref{fig:construction-effects}(b)). Excluding European football changes its seven-domain mean to $[+0.001899,+0.004625]$; excluding Formula 1 leaves it unresolved. Value-depth effects also vary by domain.
 
 \paragraph{Testing the value-depth effect on more databases}
-Four SynSQL-2.5M training databases \citep{li2025omnisql} supply 1,000 identical pairs; BIRD \texttt{student\_club} changes 150/250 pairs. Three further targets stop below quota. The combined thirteen-domain analysis uses 3,250 tasks/arm and 1,733 references: Verified TEF/gap differences are $[-0.050927,+0.049902]$/$[-0.029026,+0.030559]$. Adding native proofs only on the original eight domains gives $[-0.013017,+0.011489]$/$[-0.004886,+0.007287]$. Both remain unresolved. Unchanged task pairs, unequal proof coverage and synthetic/training overlap limit independent replication.
+Four SynSQL-2.5M training databases \citep{li2025omnisql} supply 1,000 identical pairs; BIRD \texttt{student\_club} changes 150/250 pairs. Three further targets stop below quota. The combined thirteen-domain analysis uses 3,250 tasks/arm and 1,733 references: Verified TEF/gap differences are $[-0.050927,+0.049902]$/$[-0.029026,+0.030559]$. Adding SQLite evidence only on the original eight domains gives $[-0.013017,+0.011489]$/$[-0.004886,+0.007287]$. Both remain unresolved. Unchanged task pairs, unequal scoring evidence and synthetic/training overlap limit independent replication.

@@ -1,7 +1,7 @@
-"""Draw Figures 3--5 with one shared interval style; keep Figure 6 unchanged.
+"""Draw Figure 4 with the shared interval style.
 
-python draw_figures.py
-python draw_figures.py --preview /tmp/chart_check
+python draw_fig4.py
+python draw_fig4.py --preview /tmp/chart_check
 """
 from pathlib import Path
 import argparse,hashlib,json
@@ -26,7 +26,7 @@ rewrite=D['rewrite']['results']['verified']['original']
 controls=[
  ('Column preference','on - off',PURPLE,name['full_minus_nohint_tef'],name['full_minus_nohint_macro_gap'],name['domain_gap_differences']),
  ('Value sampling','50 - 5 values',TEAL,depth['full_minus_nohint_tef'],depth['full_minus_nohint_macro_gap'],depth['domain_gap_differences']),
- ('Question realization','rewritten - original',ORANGE,rewrite['contrasts']['refill']['tef_rewrite_minus'],rewrite['contrasts']['refill']['gap_rewrite_minus'],{d:rewrite['domains'][d]['rewrite_minus_refill_gap'] for d in domains})]
+ ('Question wording','rewritten - original',ORANGE,rewrite['contrasts']['refill']['tef_rewrite_minus'],rewrite['contrasts']['refill']['gap_rewrite_minus'],{d:rewrite['domains'][d]['rewrite_minus_refill_gap'] for d in domains})]
 fig=plt.figure(figsize=(7.16,3.75));ax=fig.add_axes([.28,.79,.68,.14]);axes_style(ax)
 ax.set_title('(a) Source TEF',loc='left',fontweight='bold',pad=7)
 for i,(label,contrast,color,tef,gap,per) in enumerate(controls):
@@ -50,6 +50,6 @@ reports['Fig4']=save(fig,P/'Fig4',args.preview)
 
 
 expected={k:v for k,v in read(P/'data/ORIGINAL_INTERVAL_VALUES.json').items() if k.startswith('fig4/')}
-assert plotted==expected
+assert {k.replace('Question wording','Question realization'):v for k,v in plotted.items()}==expected
 (P/'validation/FIG4_CHECK.json').write_text(json.dumps({'bound_pairs_unchanged':len(plotted),'figures':reports},indent=2)+'\n')
 (P/'FIG4_VALUES.json').write_text(json.dumps(plotted,indent=2)+'\n')

@@ -2,6 +2,10 @@
 
 ## Task sets
 
+The manuscript uses Schema2Bench (S2B) for the method. The original `refill`
+identifier is retained in files, matrix keys and replay output to preserve
+record bindings; it denotes S2B in the main comparison.
+
 `data/tasks/{template,refill,ring,omni,synth}.jsonl` contains the first release,
 with 2,000 tasks per construction. `reference.jsonl` has 906 target references;
 `source.jsonl` has 1,034 Spider source tasks. Each record identifies its database,

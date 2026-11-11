@@ -1,0 +1,31 @@
+{
+  "manuscript_version": "v39",
+  "date": "2026-11-11",
+  "title": "Schema2Bench: Evidence-Grounded Cross-Domain Text-to-SQL Benchmark Migration",
+  "paper_pdf": "paper/Schema2Bench_ICDE2027_v39.pdf",
+  "paper_pdf_sha256": "ac8e30c15d1b7e576ba13172200ee97c22717d61a93a3c7fbc90955c514faf63",
+  "body_pages": 12,
+  "total_pages": 15,
+  "terminology": {
+    "Schema2Bench": "Full method name",
+    "S2B": "Abbreviation used in the manuscript",
+    "refill": "Retained identifier in data and replay code"
+  },
+  "scope": "Manuscript, figure presentation and documentation synchronization. Experiment records, scoring rules and thresholds are retained. Offline replay is not complete end-to-end regeneration.",
+  "verification": {
+    "paper_build": "15 pages; all page text and pixels match the archived v39 PDF in the validation environment",
+    "figure_sources": "Figures 2-6 regenerated with matching text and pixels; numerical input assertions passed",
+    "font_fallback": "Figure 4 also renders with DejaVu Sans when Arial is unavailable",
+    "offline_checks": [
+      "ten-release main comparison",
+      "4000 semantic-label recount",
+      "saved binary witness",
+      "BEAVER and uniform semantic follow-up",
+      "historical summaries",
+      "first-release selection",
+      "difficulty support"
+    ],
+    "experiment_record_changes": false,
+    "new_model_or_database_runs": false
+  }
+}
