@@ -1,6 +1,6 @@
 # External and semantic checks
 
-The main comparison remains the eight-database BIRD study. In manuscript v41,
+The main comparison remains the eight-database BIRD study. In manuscript v42,
 these checks appear in Sections V-D2/V-D3 (semantic assessment) and V-E
 (generalization). The original identifier `refill` remains in the saved records. Two later checks
 examine its transfer scope and the interpretation of question rewriting.

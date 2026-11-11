@@ -5,7 +5,7 @@ For the first-release gap difference $-0.0556925$, 1,000 bootstrap draws resampl
 Leave-one-domain-out contrasts and all 56 three-domain means remain favorable. These checks condition on observed pools, excluding independent construction variance.
 
 \paragraph{A revised target reference}
-We evaluate all 417 same-domain items in BIRD's October 2026 Mini-Dev SQLite revision.\footnote{\url{https://github.com/bird-bench/mini_dev}} Question and database hashes match the publisher manifest and original snapshots. References do not overlap by domain, question and evidence identity. All reference SQL executes; 67 predictions truncate.
+We evaluate all 417 same-domain items in BIRD's October 2026 Mini-Dev SQLite revision.\footnote{\url{https://github.com/bird-bench/mini_dev}} References do not overlap by domain, question and evidence identity. All reference SQL executes; 67 predictions truncate.
 
 Revised-reference gap favors S2B over Template in six domains, with California and Formula 1 unresolved (Table~\ref{tab:reference-stress}); S2B-minus-Ring is $[+0.040718,+0.103446]$. The unpaired revision has more queries rated hard by SQL complexity and more nested SELECTs. Domains and source TEF are unchanged.
 
@@ -13,18 +13,18 @@ Revised-reference gap favors S2B over Template in six domains, with California a
 OpenAI's \texttt{gpt-6-astra} API assesses question--SQL agreement \citep{zheng2023judge,liu2023geval} from question, schema and SQL, using a fixed prompt and medium reasoning effort, blind to methods and scores. Qwen and Terra cross-check supported, incorrect and insufficient-evidence labels. Evaluator bias \citep{wang2024faireval} limits these judgments; they are not human verification or calibrated confidence. Sensitivity analyses make flagged scores unknown at fixed denominators.
 
 \paragraph{Generated-task audits}
-An earlier stratified 400-task audit leaves Synth unresolved under Terra's scenarios with 135 or 137 flags. Retaining only 654 nonempty Synth roundtrip matches gives ten-release mean TEF difference bounds $[-1.076911,+0.283264]$; other scores remain unknown at the fixed denominator.
+The earlier stratified 400-task audit and the sensitivity retaining only 654 nonempty Synth roundtrip matches also leave Synth unresolved; full bounds accompany the artifacts.
 
 The expanded audit fixes 100 records per method in each domain, with one unavailable (Table~\ref{tab:audit-expanded}); exposed controls score 24/24 per class. The union of 1,133 audit concerns and 620 earlier SQL flags makes 1,433 items unknown at the original denominators.
 
 \begin{table}[t]\centering\small
-\caption{Model judgments, not verified semantics. S: supported; I: incorrect; U: insufficient evidence; NA: unavailable or invalid. Bold compares S2B with external adaptations in (a) and original with rewritten tasks in (c). Panel (b) compares judges.}
+\caption{API judgments: S, supported; I, incorrect; U, insufficient evidence; NA, unavailable or invalid. Bold and underlining rank support counts in (a) and (c); (b) compares judges. These judgments do not verify semantics.}
 \label{tab:audit-expanded}
 \begin{tabular}{lrrrr}\toprule
 \multicolumn{5}{l}{\textit{(a) Astra: 800 tasks per method, 100 per domain}}\\
 Method & S & I & U & NA\\\midrule
-Template &800&0&0&0\\
-S2B &\textbf{732}&17&51&0\\
+Template &\textbf{800}&0&0&0\\
+S2B &\underline{732}&17&51&0\\
 Ring &603&123&73&1\\
 Omni &290&418&92&0\\
 Synth &442&308&50&0\\\midrule
@@ -35,7 +35,7 @@ Qwen: strict JSON &76&9&1&74\\
 Qwen: code-fence parsing &121&37&2&0\\\midrule
 \multicolumn{5}{l}{\textit{(c) Terra: 160 paired tasks, 20 per domain}}\\
 Original S2B &\textbf{141}&14&5&0\\
-Rewritten S2B &117&32&10&1\\\bottomrule
+Rewritten S2B &\underline{117}&32&10&1\\\bottomrule
 \end{tabular}\end{table}
 
 Making all 1,433 flagged items unknown preserves S2B's TEF advantage over Template, $[-0.179682,-0.050176]$, but leaves external contrasts unresolved. Shared-source LP bounds for Ring, Omni and Synth are $[-0.293390,+0.139461]$, $[-0.840707,+0.132174]$ and $[-0.587412,+0.236106]$, respectively; joint gap bounds also cross zero. Three of 48 gap optimizations reach time limits. Outward tolerances and earlier wider bounds remain.
@@ -51,16 +51,16 @@ Making all 1,433 flagged items unknown preserves S2B's TEF advantage over Templa
 Parsing JSON inside code fences gives Qwen and Terra agreement on 107 of 160 references (Table~\ref{tab:audit-expanded}(b)); independently generated SQL sometimes contradicts labels. The 105-item strict union treats format failures and non-supported judgments as risks, not established errors.
 
 \begin{table*}[t]\centering\small
-\caption{Sensitivity of the S2B-minus-Template target-gap difference on the first release under Verified scoring. Each risk scenario retains its denominator and unflagged scores; ranges bound unknown scores.}
+\caption{Sensitivity of the first-release Verified S2B-minus-Template gap. Scenarios retain denominators and unflagged scores; intervals bound unknown scores.}
 \label{tab:reference-stress}
 \begin{tabular}{llrr}\toprule
 Generated-task concerns & Reference condition & Reference count & Direct gap difference\\\midrule
-None added & Original reference &906&$\boldsymbol{-0.055693}$\\
-1,433 union flags & Original reference &906&$\boldsymbol{[-0.077344,-0.026784]}$\\
-None added & 71 Terra reference concerns &906&$\boldsymbol{[-0.098374,-0.010170]}$\\
+None added & Original reference &906&$-0.055693$\\
+1,433 union flags & Original reference &906&$[-0.077344,-0.026784]$\\
+None added & 71 Terra reference concerns &906&$[-0.098374,-0.010170]$\\
 137 original audit flags & 105 strict cross-judge concerns &906&$[-0.114491,+0.013951]$\\
-137 original audit flags & 79 code-fence sensitivity concerns &906&$\boldsymbol{[-0.105686,-0.002284]}$\\
-None added & Revised BIRD reference &417&$\boldsymbol{[-0.076995,-0.024912]}$\\
+137 original audit flags & 79 code-fence sensitivity concerns &906&$[-0.105686,-0.002284]$\\
+None added & Revised BIRD reference &417&$[-0.076995,-0.024912]$\\
 1,433 union flags & Revised BIRD reference &417&$[-0.105428,+0.000213]$\\\bottomrule
 \end{tabular}\end{table*}
 
@@ -98,17 +98,17 @@ Figure~\ref{fig:weights} varies nonnegative accuracy, CDF and disagreement weigh
 \label{tab:panel-coverage}
 \begin{tabular}{lrrrl}\toprule
 Setting & Pairs & References & Gap improvement $I_G$ & Interpretation\\\midrule
-Non-Qwen panel &2,000&906&$\boldsymbol{0.026560}$&Ten-release mean\\
-Broader reference coverage &3,778&982&$\boldsymbol{0.053302\ [0.041870,0.063207]}$&Conditional 95\% CI\\
-Equal-skeleton weighting &3,778&982&$\boldsymbol{0.046936\ [0.034298,0.057670]}$&Conditional 95\% CI\\
-Full available pool &3,835&1,118&$\boldsymbol{[0.009303,0.090704]}$&Unknown-score bound\\\midrule
-Fourteen models: strict &2,000&906&$\boldsymbol{[0.002662,0.059226]}$&Unknown-score bound\\
-Fourteen models: database checks &2,000&906&$\boldsymbol{[0.025795,0.032495]}$&Unknown-score bound\\
-Fourteen models: strict &3,778&906&$\boldsymbol{[0.002188,0.059640]}$&Unknown-score bound\\
-Fourteen models: database checks &3,778&906&$\boldsymbol{[0.025787,0.032648]}$&Unknown-score bound\\\bottomrule
+Non-Qwen panel &2,000&906&$0.026560$&Ten-release mean\\
+Broader reference coverage &3,778&982&$0.053302\ [0.041870,0.063207]$&Conditional 95\% CI\\
+Equal-skeleton weighting &3,778&982&$0.046936\ [0.034298,0.057670]$&Conditional 95\% CI\\
+Full available pool &3,835&1,118&$[0.009303,0.090704]$&Unknown-score bound\\\midrule
+Fourteen models: strict &2,000&906&$[0.002662,0.059226]$&Unknown-score bound\\
+Fourteen models: database checks &2,000&906&$[0.025795,0.032495]$&Unknown-score bound\\
+Fourteen models: strict &3,778&906&$[0.002188,0.059640]$&Unknown-score bound\\
+Fourteen models: database checks &3,778&906&$[0.025787,0.032648]$&Unknown-score bound\\\bottomrule
 \end{tabular}
 
-\smallskip\parbox{\textwidth}{\footnotesize The full pool uses 8,788 prompts per model. The 2,000-pair fourteen-model rows average endpoints over ten overlapping releases. Of 728 dependent model pairs, 567 are concordant and 136 inverted for 2,000 task pairs, compared with 533 and 168 for 3,778 task pairs.}
+\smallskip\parbox{\textwidth}{\footnotesize The 2,000-pair fourteen-model rows average endpoints over ten overlapping releases.}
 \end{table*}
 
 S2B has lower TEF than Template throughout the weight region. Emphasizing disagreement can favor Ring and leaves comparisons with Omni and Synth unresolved.
@@ -123,18 +123,18 @@ LIMIT appears in 1,739 Template, 2,000 S2B, 1,753 Ring, 424 Omni and 872 Synth t
 
 \subsection{Generalization Experiments}\label{sec:external}
 \begin{table*}[t]\centering\small
-\caption{External pilots: S2B minus comparator; negative favors S2B. TACO uses 750 tasks per method, 595 references and database and reference checks. BEAVER uses 472 tasks per method and all 194 references. Pilots use matching source context, pooled TEF and domain-averaged gap; rows separate scoring and schemas.}
+\caption{External pilots: S2B minus comparator; negative favors S2B. TACO uses 750 tasks per method and 595 references with database and reference checks; BEAVER uses 472 and all 194, respectively. Both use matching source context, pooled TEF and domain-averaged gap; rows separate scoring and schemas.}
 \label{tab:external-pilot}
 \begin{tabular}{llrr}\toprule
 Setting & Comparator & $\Delta\mathrm{TEF}$ & $\Delta G$\\\midrule
 TACO: retrieved schema & Template & $[-0.006024,+0.016398]$ & $[-0.030517,+0.044555]$\\
 TACO: retrieved schema & Ring & $[+0.133673,+0.280760]$ & $[+0.148866,+0.277121]$\\\midrule
-BEAVER: retrieved, Base & Template & $\boldsymbol{[-0.146373,-0.033660]}$ & $[-0.081035,+0.060364]$\\
-BEAVER: retrieved, Base & Ring & $\boldsymbol{[-0.242054,-0.013075]}$ & $[-0.056789,+0.099330]$\\
-BEAVER: oracle schema, Base & Template & $\boldsymbol{[-0.142702,-0.028519]}$ & $[-0.083884,+0.049262]$\\
+BEAVER: retrieved, Base & Template & $[-0.146373,-0.033660]$ & $[-0.081035,+0.060364]$\\
+BEAVER: retrieved, Base & Ring & $[-0.242054,-0.013075]$ & $[-0.056789,+0.099330]$\\
+BEAVER: oracle schema, Base & Template & $[-0.142702,-0.028519]$ & $[-0.083884,+0.049262]$\\
 BEAVER: oracle schema, Base & Ring & $[-0.130602,+0.168975]$ & $[-0.051570,+0.064633]$\\\midrule
-BEAVER: retrieved, Verified & Template & $\boldsymbol{[-0.146163,-0.037765]}$ & $[-0.081035,+0.060364]$\\
-BEAVER: retrieved, Verified & Ring & $\boldsymbol{[-0.235815,-0.016203]}$ & $[-0.056789,+0.099330]$\\\bottomrule
+BEAVER: retrieved, Verified & Template & $[-0.146163,-0.037765]$ & $[-0.081035,+0.060364]$\\
+BEAVER: retrieved, Verified & Ring & $[-0.235815,-0.016203]$ & $[-0.056789,+0.099330]$\\\bottomrule
 \end{tabular}\end{table*}
 
 TACO OpenData \citep{deng2026taco} supplies two related Beijing databases and Connecticut, with potentially synthetic references. Admission and initial sampling differ from the main study. With 16 retrieved objects, contrasts are unresolved against Template and favor Ring (Table~\ref{tab:external-pilot}). Incomplete schemas limit semantic assessment; unfinished Omni and Synth runs miss 250-task quotas.

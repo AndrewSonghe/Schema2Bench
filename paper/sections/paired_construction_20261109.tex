@@ -1,22 +1,22 @@
 \subsubsection{Column Preference and Value Sampling}\label{sec:ablation}
-Separate paired releases disable descriptive-column preference or reduce sampling from fifty values to five. They use the main models, source tasks and references, with 38 strata, 250 tasks per domain in each arm and $H=0.01$. Attempts share random states and plans; separately deduplicated candidates must qualify in the same final stratum.
+To test the grounding choices, paired releases disable descriptive-column preference or reduce sampling from fifty values to five. They use the main models, source tasks and references, with 38 strata, 250 tasks per domain in each arm and $H=0.01$. Attempts share random states and plans; separately deduplicated candidates must qualify in the same final stratum.
 
-The preference control retains identifier filtering, text preference, grounding and admission rules. Programmatic question generation uses eight-second and 1,000-row limits. Four domains require 1,600 extra slots each before freezing; the arms share 1,159 of 2,000 question--SQL pairs. Sampling uses 2,400 slots per domain in each arm: fifty and five values admit 7,131 and 6,149 candidates, respectively, with 5,375 joint admissions and 769 shared release slots. Astra supports both versions of 80 sampling-control pairs, 24 with identical prompts, using exposed controls. Admission differences remain part of the comparison.
+The preference control retains identifier filtering, text preference, grounding and admission rules. Four domains require 1,600 extra slots each before freezing; the arms share 1,159 of 2,000 question--SQL pairs. Sampling uses 2,400 slots per domain in each arm: fifty and five values admit 7,131 and 6,149 candidates, respectively, with 5,375 joint admissions and 769 shared release slots. Admission differences remain part of the comparison.
 
 SQLite compilation resolves 827 preference and 903 sampling-control parser rejections as mismatches without rewriting SQL. Identical requests and outputs share unknowns across arms; others remain relaxed. This post-hoc treatment preserves scores, membership and identity records. Table~\ref{tab:ablation-layers} also retains earlier independent-arm bounds.
 
 \begin{table*}[t]\centering\small
-\caption{Separate construction controls under Verified scoring. Negative favors full preference or fifty values. Bounds with shared variables bind identical outcomes; independent-arm bounds retain the earlier relaxation.}
+\caption{Construction controls under Verified scoring. Negative favors full preference or fifty values. Shared variables bind identical outcomes; independent-arm bounds retain the earlier relaxation.}
 \label{tab:ablation-layers}
 \begin{tabular}{llrr}\toprule
 Intervention & Unknown-variable treatment & Direct TEF difference & Direct target-gap difference\\\midrule
 Column preference & Independent arms & $[-0.029752,+0.008062]$ & $[-0.011942,+0.006559]$\\
-Column preference & Shared identical requests & $\boldsymbol{[-0.016593,-0.005466]}$ & $\boldsymbol{[-0.003816,-0.001425]}$\\
+Column preference & Shared identical requests & $[-0.016593,-0.005466]$ & $[-0.003816,-0.001425]$\\
 50 versus 5 values & Independent arms & $[-0.024987,+0.011333]$ & $[-0.006878,+0.011031]$\\
-50 versus 5 values & Shared identical requests & $\boldsymbol{[-0.012477,-0.001261]}$ & $[+0.001863,+0.002221]$\\\bottomrule
+50 versus 5 values & Shared identical requests & $[-0.012477,-0.001261]$ & $[+0.001863,+0.002221]$\\\bottomrule
 \end{tabular}\end{table*}
 
-With shared unknowns, column preference improves both metrics; deeper sampling improves TEF at a small gap cost (Table~\ref{tab:ablation-layers}). Base TEF favors both, with unresolved gaps. LP checks reproduce 26 aggregate and domain contrasts per intervention.
+Bounds with shared unknowns support column preference on both metrics and deeper sampling on TEF at a small gap cost (Table~\ref{tab:ablation-layers}). Grounding benefits therefore depend on the metric. Base TEF favors both, with unresolved gaps.
 
 Column preference increases the gap in card games and codebase (Fig.~\ref{fig:construction-effects}(b)). Excluding European football changes its seven-domain mean difference to $[+0.001899,+0.004625]$; excluding Formula 1 leaves it unresolved. Sampling effects also vary by domain.
 

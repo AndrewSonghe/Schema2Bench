@@ -1,0 +1,41 @@
+Supplementary experiment details retained from manuscript v41
+
+The v42 main text prioritizes comparative evidence, component analyses and
+claim scope. These details are retained from v41; they describe no new runs.
+LaTeX notation is preserved.
+
+current_scientific_main.tex
+Move score-resolution bookkeeping to accompanying experiment details; preserve unequal evidence coverage in the paper.
+Unknowns decrease from 692 to 607 among 10,340 source scores and from 195 to zero among 9,060 reference scores. Evidence resolves 1,433 Synth matches and 1,676 mismatches, compared with 18 and 758 for Omni. Other populations gain mismatches only. Evidence coverage is unequal and concentrated in California for the first four methods. Semantic assessment is separate (Section~\ref{sec:semantic}).
+
+paired_construction_20261109.tex
+Move operational caps to accompanying experiment details.
+Programmatic question generation uses eight-second and 1,000-row limits.
+
+paired_construction_20261109.tex
+Move the small auxiliary API check with its shared-prompt and exposed-control limitations to accompanying details.
+Astra supports both versions of 80 sampling-control pairs, 24 with identical prompts, using exposed controls.
+
+paired_construction_20261109.tex
+Move numerical implementation verification to accompanying details.
+LP checks reproduce 26 aggregate and domain contrasts per intervention.
+
+robustness_20261109.tex
+Keep release dependence in the table; move supplementary prompt and pair-count summaries to accompanying details.
+\smallskip\parbox{\textwidth}{\footnotesize The full pool uses 8,788 prompts per model. The 2,000-pair fourteen-model rows average endpoints over ten overlapping releases. Of 728 dependent model pairs, 567 are concordant and 136 inverted for 2,000 task pairs, compared with 533 and 168 for 3,778 task pairs.}
+
+current_scientific_main.tex
+Retain broader-reference uncertainty in the main paper; move the supplementary range of ten-release regret endpoints to the details.
+All 1,118 references yield overlapping S2B and Ring bounds, with 1,356 Base and 706 Verified unknowns. Over ten overlapping releases with 906 references, S2B's mean regret has lower endpoints from 5.482 to 7.696 pp and upper endpoints from 5.482 to 7.981 pp.
+
+robustness_20261109.tex
+Keep the unresolved Synth conclusion in the main text and preserve the exact earlier scenario counts and bounds here.
+An earlier stratified 400-task audit leaves Synth unresolved under Terra's scenarios with 135 or 137 flags. Retaining only 654 nonempty Synth roundtrip matches gives ten-release mean TEF difference bounds $[-1.076911,+0.283264]$; other scores remain unknown at the fixed denominator.
+
+robustness_20261109.tex
+Retain the publisher-manifest and database-hash check in supplementary protocol details.
+Question and database hashes match the publisher manifest and original snapshots. References do not overlap by domain, question and evidence identity.
+
+current_scientific_main.tex
+Retain the illustrative retrospective margin calculation here; main tables preserve both component effects and the paper states that non-inferiority requires prospective margins.
+An illustrative 0.003 tolerance (0.3 pp) accepts deeper sampling's gap cost of at most 0.002221 for better TEF, but not rewriting's 0.006397 upper bound against Ring. Non-inferiority tests require prospective tolerances and sufficient precision.

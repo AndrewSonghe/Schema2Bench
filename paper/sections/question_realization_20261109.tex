@@ -3,22 +3,22 @@ We isolate wording effects by holding SQL fixed. A preliminary comparison identi
 
 We retain all 2,000 first-release S2B queries and quotas, using Ring-style Qwen2.5-7B question generation. The plan and 160-item audit, with 20 items per domain, precede generation. This yields 1,999 correctly formatted questions and 19,990 predictions; the remaining item stays unknown.
 
-Rewriting reduces Verified gap in all eight domains and aggregate Base gap, but increases Verified TEF (Table~\ref{tab:realization-results}). Concordant model pairs increase; regret intervals overlap. Against Ring, TEF is lower but the gap difference remains unresolved.
+Rewriting reduces Verified gap in all eight domains and aggregate Base gap, but increases Verified TEF (Table~\ref{tab:realization-results}). Thus fixed SQL does not preserve model comparisons when questions change. Concordant pairs increase; regret intervals overlap. Against Ring, TEF is lower but gap remains unresolved.
 
 \begin{table*}[t]\centering\small
-\caption{Question rewriting with fixed SQL on the first release. Panel (a) reports Verified results; concordances count definite agreement in ordering among 360 dependent model pairs. Regret is in accuracy percentage points. Bold in (a) compares rewriting with the original; (b) reports direct difference bounds, where negative favors rewriting.}
+\caption{First-release question rewriting with fixed SQL. (a) Verified results: concordances count definite agreement among 360 dependent model pairs; regret is in accuracy percentage points. Gap and regret ranks are unresolved. (b) Direct difference bounds; negative favors rewriting.}
 \label{tab:realization-results}
 \begin{tabular}{lrrr}\toprule
 \multicolumn{4}{l}{\textit{(a) Overall results}}\\
 Release & Target gap $\downarrow$ & Definite concordances $\uparrow$ & Mean regret (pp) $\downarrow$\\\midrule
 Original S2B & $0.169275$ & 229/360 & $[5.48,7.98]$\\
-Rewritten S2B & $\boldsymbol{[0.097452,0.102706]}$ & \textbf{248/360} & $[4.30,5.57]$\\
-Ring & $[0.096309,0.100791]$ & 246/360 & $[4.41,4.96]$\\\midrule
+Rewritten S2B & $[0.097452,0.102706]$ & \textbf{248/360} & $[4.30,5.57]$\\
+Ring & $[0.096309,0.100791]$ & \underline{246/360} & $[4.41,4.96]$\\\midrule
 \multicolumn{4}{l}{\textit{(b) Direct differences}}\\
 Contrast & Scoring & $\Delta\mathrm{TEF}$ & $\Delta G$\\\midrule
-Rewritten $-$ original S2B & Verified & $[+0.035191,+0.203968]$ & $\boldsymbol{[-0.071823,-0.066569]}$\\
-Rewritten $-$ Ring & Verified & $\boldsymbol{[-0.046174,-0.009796]}$ & $[-0.003339,+0.006397]$\\
-Rewritten $-$ original S2B & Base & Crosses zero & $\boldsymbol{[-0.120114,-0.002971]}$\\\bottomrule
+Rewritten $-$ original S2B & Verified & $[+0.035191,+0.203968]$ & $[-0.071823,-0.066569]$\\
+Rewritten $-$ Ring & Verified & $[-0.046174,-0.009796]$ & $[-0.003339,+0.006397]$\\
+Rewritten $-$ original S2B & Base & Crosses zero & $[-0.120114,-0.002971]$\\\bottomrule
 \end{tabular}\end{table*}
 
 Using exposed synthetic controls, Terra supports 117 of 160 tasks. Changes in task meaning remain a concern despite fixed SQL (Section~\ref{sec:risk-sources}).
